@@ -1,0 +1,28 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About — ${SITE_TITLE}`} description="About Ken Mazaika" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<Header />
+		<main class="about-content">
+			<p class="eyebrow">About</p>
+			<h1>I write about the systems behind good engineering work.</h1>
+			<p class="about-lead">I'm an engineering manager exploring how AI changes the way teams build software—and what remains stubbornly human when the tools get better.</p>
+			<hr />
+			<p>This site is where I work through questions about engineering leadership, AI productivity, apprenticeship, judgment, and practical systems that hold up outside the demo.</p>
+			<p>The writing is aimed at engineering managers and senior engineers trying to use new tools without losing the habits that make teams effective.</p>
+		</main>
+		<Footer />
+	</body>
+</html>

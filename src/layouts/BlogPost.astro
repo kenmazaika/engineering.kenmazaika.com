@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+
+type Props = CollectionEntry<'blog'>['data'] & { readingMinutes?: number };
+const { title, description, pubDate, updatedDate, readingMinutes = 1 } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${title} — ${SITE_TITLE}`} description={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<Header />
+		<main class="article-shell">
+			<article>
+				<header class="article-header">
+					<a href="/blog" class="back-link">Back to writing</a>
+					<h1>{title}</h1>
+					{description && <p class="article-deck">{description}</p>}
+					<div class="article-meta">
+						<span>By Ken Mazaika</span><span aria-hidden="true">·</span>
+						<FormattedDate date={pubDate} /><span aria-hidden="true">·</span>
+						<span>{readingMinutes} min read</span>
+						{updatedDate && <span>Updated <FormattedDate date={updatedDate} /></span>}
+					</div>
+				</header>
+				<div class="prose"><slot /></div>
+				<footer class="article-footer">
+					<p><strong>Ken Mazaika</strong> writes about engineering leadership, AI productivity, and practical systems.</p>
+					<a href="/blog" class="back-link">Back to all posts</a>
+				</footer>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
