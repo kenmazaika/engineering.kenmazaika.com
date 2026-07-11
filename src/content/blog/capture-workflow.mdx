@@ -1,0 +1,244 @@
+---
+title: 'Capture workflow: a reusable Hermes use case for work that contains your judgment'
+description: 'A practical Hermes workflow that adds one deliberate checkpoint before execution so important work gets better direction.'
+pubDate: 'Jul 11, 2026'
+---
+
+This workflow saves me time on important work by adding one deliberate checkpoint before Hermes builds the final deliverable.
+
+It is not the best approach for every task. It is the best approach when the request contains my judgment, the direction is still forming, and I want Hermes to reflect my thinking back before committing to execution.
+
+## What this use case produces
+
+If I set it up once, I get:
+
+- a dedicated Telegram topic for capture
+- a reusable Raw/Shaped/Riff contract
+- a saved Markdown artifact I can reference across topics
+- a separate execution step for final deliverables
+- optionally, a Proof document when the artifact needs iteration
+
+The outcome is better direction before execution, not just faster output.
+
+## One-shot versus two-shot
+
+A normal one-shot prompt looks like this:
+
+```text
+Hey Hermes, create an outline for a video. Here is my idea...
+```
+
+That works for simple work. But for important work, one-shotting hides two problems inside one request:
+
+- what I actually mean
+- what Hermes should build from it
+
+A two-shot workflow separates them.
+
+**One-shot output:** video outline
+**Two-shot output:** video outline + identified spine + saved capture file + multi-video concept in Proof
+
+## The case study
+
+I thought I needed an outline for one video.
+
+I dictated for roughly twenty minutes and sent the result into Hermes. It returned Raw, Shaped, and Riff.
+
+The Riff pointed out that I did not have a structured outline yet. I had a pile of use cases with no spine. The suggested spine was that Hermes turns messy intent into useful artifacts, then keeps those artifacts moving through a workflow.
+
+That was the moment where the direction changed. I realized I had too much material for one video. The request changed from “outline this video” to “turn this into a multi-video concept.”
+
+Hermes created the **Hermes in the Real World** series concept in a Proof document.
+
+## How the workflow works
+
+```text
+Wispr Flow voice input
+  → dedicated Telegram topic
+  → Hermes: Raw + Shaped + Riff
+  → saved Markdown artifact
+  → review and steer
+  → execute in a separate prompt
+```
+
+This is not a general-purpose improvement. It is a decision checkpoint.
+
+## What Raw, Shaped, and Riff do
+
+**Raw** preserves the original transcription. I use it when the shaped version seems too clean or too far from what I actually said.
+
+**Shaped** makes the thinking easier to read. It removes filler, organizes related thoughts, and keeps uncertainty where I was genuinely uncertain. It should not invent a cleaner opinion than the one I expressed.
+
+**Riff** adds connections, pressure tests, missing questions, and follow-up ideas. It should add value without claiming authorship.
+
+## The exact topic prompt I use
+
+A dedicated Telegram topic makes this repeatable. The contract runs automatically every time I send a new capture.
+
+If your agent is reading this post, it can use the block below as setup.
+
+```markdown
+# Wispr Dictation Workflow
+
+You are in the **Wispr Dictation topic**. Every message here is a voice dictation from Ken.
+
+## Your Response Format
+
+For every dictation, respond with **three sections**:
+
+### 1. Raw (code block)
+Put the raw transcription in a code block so Ken can easily copy/paste it:
+```
+[raw transcription here]
+```
+
+### 2. Shaped
+Take what Ken said and format it into a clean, readable version:
+- Fix grammar, remove filler words, tighten phrasing
+- Keep Ken's voice and intent — don't sanitize the personality
+- Use headers, bold, bullet points where it helps readability
+- If it's a rant/complaint, preserve the energy while making it skimmable
+
+### 3. Riff
+Analyze what Ken said and add value:
+- Find connections to previous dictations (check `~/.hermes/dictations/` for past ones)
+- Identify patterns, contradictions, or evolving thinking
+- Surface relevant context from other conversations (BAS channel, LinkedIn posts, etc.)
+- Push back gently if the take needs pressure-testing
+- Suggest follow-up actions if applicable
+
+## Saving
+
+After responding, save the full output to:
+```
+~/.hermes/dictations/D-NNN.md
+```
+
+Where NNN is the next sequential ID. Check existing files in `~/.hermes/dictations/` to find the highest number and increment.
+
+The file should contain:
+```markdown
+# Dictation D-NNN — [date]
+
+## Topic: [topic title derived from content]
+
+---
+
+## ① Raw
+[raw transcription]
+
+---
+
+## ② Shaped
+[formatted version]
+
+---
+
+## ③ Riff
+[analysis and connections]
+
+---
+
+## Tags
+[relevant tags]
+```
+
+## Rules
+- Always respond with all three sections
+- Always save to file
+- Share the ID in a code block: `D-NNN`
+- Don't ask clarifying questions — just process the dictation
+- If the dictation is short/low-signal, the Riff section can be brief
+- If the dictation is about a specific project or topic, check related files for context
+```
+
+## How to set it up
+
+1. Create a dedicated Telegram topic for capture.
+2. Attach the topic prompt above.
+3. Use Wispr Flow, Telegram voice notes, Discord voice notes, or typed notes.
+4. Save outputs to `~/.hermes/dictations/D-NNN.md`.
+5. Review the capture before asking Hermes to execute.
+6. Reference the saved file in a separate execution prompt.
+7. Use Proof when the artifact needs comments, iteration, or collaboration.
+
+A dictation file usually looks like this:
+
+```markdown
+# Dictation D-NNN — [date]
+
+## Topic: [derived topic]
+
+---
+
+## ① Raw
+[raw transcription]
+
+---
+
+## ② Shaped
+[faithful version of what I meant]
+
+---
+
+## ③ Riff
+[connections, follow-ups, pressure tests]
+
+---
+
+## Tags
+[relevant tags]
+```
+
+## When to use this
+
+**One-shot it when:**
+- the task is small
+- the result is obvious
+- mistakes are cheap
+- it is easy to regenerate
+- there is not much judgment inside the request
+
+**Two-shot it when:**
+- the request contains my judgment
+- the problem is still forming
+- I am deciding between competing directions
+- the final artifact will be expensive to revise
+- I want missing considerations surfaced
+- the thinking should become reusable source material
+
+## Operating rules
+
+- If I do not actually steer, the checkpoint is useless.
+- If the Shaped section removes uncertainty, tighten the contract.
+- If the Riff becomes generic advice, improve the instructions.
+- If I stop reviewing the capture, the workflow loses most of its value.
+- If the dictation is sensitive, store it carefully.
+- If I need collaboration, move the result into Proof.
+- If the task is reversible or simple, just one-shot it.
+
+## Proof comes after the direction is clear
+
+Proof is the iteration surface. I use it when the artifact needs comments, edits, and shared collaboration.
+
+Once the direction is clear, I ask Hermes to create a Proof document. That is much easier than going back and forth in chat trying to describe changes to an invisible draft.
+
+## The actual value
+
+This workflow is not about talking to my phone. It is about creating one deliberate pause between thinking and building.
+
+That pause makes the final deliverable better because the direction improves first.
+
+## Watch the full walkthrough
+
+<div style="position:relative;padding-top:56.25%;">
+  <iframe
+    src="https://www.youtube.com/embed/aC45oifNNyI"
+    title="Part I: Real World Hermes Use Case - Wispr Flow, Telegram Topics, and Proof Editor"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+  ></iframe>
+</div>
