@@ -446,9 +446,9 @@ a:hover { color: var(--color-link-hover); }
   font-family: var(--font-body);
   font-size: 0.72rem;
   letter-spacing: 0.02em;
-  color: #efe7de;
-  background: #3b3632;
-  border: 1px solid rgba(239, 231, 222, 0.10);
+  color: #6b6760;
+  background: #f3f0eb;
+  border: 1px solid rgba(26, 24, 20, 0.08);
   border-bottom: 0;
   border-radius: 10px 10px 0 0;
 }
@@ -459,7 +459,7 @@ a:hover { color: var(--color-link-hover); }
   inset: 0 0 auto 0;
   height: 100%;
   border-radius: 10px 10px 0 0;
-  background: radial-gradient(80% 200% at 10% 0%, rgba(194, 65, 12, 0.07), transparent 60%);
+  background: radial-gradient(80% 200% at 10% 0%, rgba(194, 65, 12, 0.05), transparent 60%);
   pointer-events: none;
 }
 
@@ -476,12 +476,12 @@ a:hover { color: var(--color-link-hover); }
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: rgba(239, 231, 222, 0.24);
-  box-shadow: 0 0 0 1px rgba(239, 231, 222, 0.10) inset;
+  background: rgba(26, 24, 20, 0.12);
+  box-shadow: 0 0 0 1px rgba(26, 24, 20, 0.08) inset;
 }
 
 .code-block-label span {
-  color: #f6efe6;
+  color: #6b6760;
 }
 
 [data-copy-button] {
@@ -489,8 +489,8 @@ a:hover { color: var(--color-link-hover); }
   z-index: 1;
   appearance: none;
   border: 0;
-  background: rgba(239, 231, 222, 0.10);
-  color: #faf6f0;
+  background: rgba(26, 24, 20, 0.06);
+  color: #3a3632;
   font-family: var(--font-body);
   font-size: 0.68rem;
   letter-spacing: 0.01em;
@@ -501,7 +501,7 @@ a:hover { color: var(--color-link-hover); }
 }
 
 [data-copy-button]:hover {
-  background: rgba(239, 231, 222, 0.18);
+  background: rgba(26, 24, 20, 0.10);
   transform: translateY(-1px);
 }
 
@@ -512,7 +512,7 @@ a:hover { color: var(--color-link-hover); }
 .code-block-wrapper pre {
   margin: 0;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
-  border-top: 1px solid rgba(239, 231, 222, 0.08);
+  border-top: 1px solid rgba(26, 24, 20, 0.06);
 }
 
 .code-block-wrapper pre::before {
@@ -521,17 +521,17 @@ a:hover { color: var(--color-link-hover); }
 
 .prose pre {
   position: relative;
-  background: #33302b;
-  color: #f6efe6;
+  background: #f8f7f4;
+  color: hsl(230, 8%, 24%);
   padding: 1.15rem 1.15rem 1.25rem;
   border-radius: 10px;
   overflow-x: auto;
   font-size: 0.82rem;
   line-height: 1.72;
   margin: 1.5em 0;
-  box-shadow: 0 1px 0 rgba(239, 231, 222, 0.06) inset, 0 14px 30px rgba(58, 54, 50, 0.18);
-  border: 1px solid rgba(239, 231, 222, 0.10);
-  background-image: linear-gradient(180deg, rgba(239, 231, 222, 0.03), rgba(239, 231, 222, 0));
+  box-shadow: 0 1px 0 rgba(26, 24, 20, 0.04) inset, 0 10px 24px rgba(58, 54, 50, 0.10);
+  border: 1px solid rgba(26, 24, 20, 0.08);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 247, 244, 1));
 }
 
 .prose pre::before {
@@ -539,7 +539,7 @@ a:hover { color: var(--color-link-hover); }
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  background: radial-gradient(120% 60% at 0% 0%, rgba(194, 65, 12, 0.10), transparent 60%);
+  background: radial-gradient(120% 60% at 0% 0%, rgba(194, 65, 12, 0.05), transparent 60%);
   pointer-events: none;
 }
 

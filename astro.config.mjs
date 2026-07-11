@@ -3,11 +3,22 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const oneLightTheme = JSON.parse(
+  fs.readFileSync(path.resolve('./src/styles/one-light-custom.json'), 'utf-8')
+);
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://engineering.kenmazaika.com',
 	integrations: [mdx(), sitemap()],
+	markdown: {
+		shikiConfig: {
+			theme: oneLightTheme,
+		},
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),
