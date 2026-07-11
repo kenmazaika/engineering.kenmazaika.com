@@ -77,20 +77,17 @@ A dedicated Telegram topic makes this repeatable. The contract runs automaticall
 
 If your agent is reading this post, it can use the block below as setup.
 
-```markdown
+```text
 # Wispr Dictation Workflow
 
-You are in the **Wispr Dictation topic**. Every message here is a voice dictation from Ken.
+You are in the Wispr Dictation topic. Every message here is a voice dictation from Ken.
 
 ## Your Response Format
 
-For every dictation, respond with **three sections**:
+For every dictation, respond with three sections:
 
 ### 1. Raw (code block)
-Put the raw transcription in a code block so Ken can easily copy/paste it:
-```
-[raw transcription here]
-```
+Put the raw transcription in a code block so Ken can easily copy/paste it.
 
 ### 2. Shaped
 Take what Ken said and format it into a clean, readable version:
@@ -101,7 +98,7 @@ Take what Ken said and format it into a clean, readable version:
 
 ### 3. Riff
 Analyze what Ken said and add value:
-- Find connections to previous dictations (check `~/.hermes/dictations/` for past ones)
+- Find connections to previous dictations (check ~/.hermes/dictations/ for past ones)
 - Identify patterns, contradictions, or evolving thinking
 - Surface relevant context from other conversations (BAS channel, LinkedIn posts, etc.)
 - Push back gently if the take needs pressure-testing
@@ -110,43 +107,14 @@ Analyze what Ken said and add value:
 ## Saving
 
 After responding, save the full output to:
-```
 ~/.hermes/dictations/D-NNN.md
-```
 
-Where NNN is the next sequential ID. Check existing files in `~/.hermes/dictations/` to find the highest number and increment.
-
-The file should contain:
-```markdown
-# Dictation D-NNN — [date]
-
-## Topic: [topic title derived from content]
-
----
-
-## ① Raw
-[raw transcription]
-
----
-
-## ② Shaped
-[formatted version]
-
----
-
-## ③ Riff
-[analysis and connections]
-
----
-
-## Tags
-[relevant tags]
-```
+Where NNN is the next sequential ID. Check existing files in ~/.hermes/dictations/ to find the highest number and increment.
 
 ## Rules
 - Always respond with all three sections
 - Always save to file
-- Share the ID in a code block: `D-NNN`
+- Share the ID in a code block: D-NNN
 - Don't ask clarifying questions — just process the dictation
 - If the dictation is short/low-signal, the Riff section can be brief
 - If the dictation is about a specific project or topic, check related files for context
@@ -164,24 +132,24 @@ The file should contain:
 
 A dictation file usually looks like this:
 
-```markdown
+```text
 # Dictation D-NNN — [date]
 
 ## Topic: [derived topic]
 
 ---
 
-## ① Raw
+## 1. Raw
 [raw transcription]
 
 ---
 
-## ② Shaped
+## 2. Shaped
 [faithful version of what I meant]
 
 ---
 
-## ③ Riff
+## 3. Riff
 [connections, follow-ups, pressure tests]
 
 ---
@@ -231,7 +199,7 @@ That pause makes the final deliverable better because the direction improves fir
 
 ## Watch the full walkthrough
 
-<div style="position:relative;padding-top:56.25%;">
+<div class="video-embed">
   <iframe
     src="https://www.youtube.com/embed/aC45oifNNyI"
     title="Part I: Real World Hermes Use Case - Wispr Flow, Telegram Topics, and Proof Editor"
@@ -239,6 +207,5 @@ That pause makes the final deliverable better because the direction improves fir
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
   ></iframe>
 </div>
