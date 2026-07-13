@@ -9,7 +9,7 @@ import CodeCopyScript from '../components/CodeCopyScript.astro';
 import { SITE_TITLE } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { readingMinutes?: number };
-const { title, description, pubDate, updatedDate, readingMinutes = 1 } = Astro.props;
+const { title, description, pubDate, updatedDate, readingMinutes = 1, hideDefaultNewsletter = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -36,7 +36,7 @@ const { title, description, pubDate, updatedDate, readingMinutes = 1 } = Astro.p
 					</div>
 				</header>
 				<div class="prose"><slot /></div>
-				<NewsletterSignup />
+				{!hideDefaultNewsletter && <NewsletterSignup />}
 				<footer class="article-footer">
 					<p><strong>Ken Mazaika</strong> writes about engineering leadership, AI productivity, and practical systems.</p>
 					<a href="/blog" class="back-link">Back to all posts</a>

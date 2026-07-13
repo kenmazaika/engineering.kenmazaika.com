@@ -1,0 +1,156 @@
+---
+title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+description: 'AI is doing more of the building. The argument now is how engineers learn enough to review it—and what happens to the people who refuse the shift.'
+pubDate: 'Jul 12, 2026'
+hideDefaultNewsletter: true
+---
+
+import IndustryPulseSignup from '../../components/IndustryPulseSignup.astro';
+
+**This week in engineering:** One company says AI can take a Jira ticket almost all the way to a tested pull request. An AI-generated GPU kernel beat an optimized human baseline by 18.71×. Models can now complete 16.1% of real freelance assignments. And one manager is wondering whether refusing to use AI has become a performance problem.
+
+Four stories. One uncomfortable question: if AI does more of the building, how do engineers learn enough to review what it produces?
+
+Let’s get into it.
+
+---
+
+## 1. If Developers Stop Writing Code, Where Do Future Senior Engineers Come From?
+
+An engineer described a company that is automating almost the entire development loop with AI.
+
+The system reads a Jira ticket, searches the repositories, identifies the likely root cause, creates an implementation plan, writes the code, runs QA, attaches the evidence, opens the pull request, and updates the ticket.
+
+Management’s message is that developers will eventually write much less code. Their job will be to design the system and review what AI produces.
+
+The [r/EngineeringManagers discussion](https://www.reddit.com/r/EngineeringManagers/comments/1unatom/is_anyone_elses_company_automating_software/) drew roughly 90 points and 115 comments because people could see two very different futures inside the same story.
+
+One side said this is simply what engineering is becoming:
+
+> “If your engineers are writing code by hand instead of leveraging AI, you’re doing it wrong.”
+
+Their argument is reasonable. Engineering was never supposed to be a typing contest. If AI can handle implementation while people focus on architecture, controls, and business outcomes, that is leverage.
+
+The other side asked where those architecture and review skills come from.
+
+Senior engineers learned by building systems, making mistakes, debugging failures, and taking the call when something broke. If junior engineers begin as supervisors of generated work, they may learn how to move output through a pipeline without developing the instincts needed to know when that output is wrong.
+
+One commenter summed up the concern:
+
+> “You can’t conduct an orchestra without knowing music.”
+
+My read: companies should not preserve manual coding because suffering builds character. But they do need to identify which parts of implementation create judgment before automating those experiences away.
+
+Otherwise, they may create extremely productive junior engineers and discover a few years later that they did not create senior engineers.
+
+---
+
+## 2. What Happens When AI Writes Code Humans Can’t Properly Review?
+
+This is why the GPU story is interesting.
+
+According to Jack Clark’s [*Import AI 464*](https://importai.substack.com/p/import-ai-464-fables-writes-gpu-kernels), Fable generated a CUDA “megakernel” that ran **18.71× faster than an optimized PyTorch baseline** on an RTX PRO 6000 Blackwell.
+
+The result was not only faster than the baseline. It was meaningfully ahead of other model-generated attempts: Claude Opus 4.8 reached 14.4×, GLM-5.2 reached 11.14×, and GPT-5.5 reached 4.34×. Fable’s implementation also used one cooperative kernel launch per decoded token, while the other strong entries needed four to fourteen.[^1]
+
+The exciting interpretation is obvious. AI may be starting to improve the low-level machinery that makes AI itself cheaper and faster. Specialized performance work that once required rare expertise could become much easier to explore.
+
+But here is the part engineering leaders should care about: what happens when the best implementation is also the one nobody on the team would have written—or can fully explain?
+
+A benchmark shows that the kernel ran quickly under tested conditions. It does not show how it behaves across different hardware, workloads, compiler versions, numerical edge cases, or months of production changes.
+
+One side says the code ran, it was measured, and it won. Stop moving the goalposts.
+
+The other side says somebody still has to know where it can fail and take responsibility when it does.
+
+Both are right.
+
+My read: AI can make implementation cheaper while making proof more expensive. Senior engineers may write less code but spend more time designing adversarial tests, checking assumptions, planning rollbacks, and deciding whether an impressive result is safe enough to ship.
+
+That is not the disappearance of engineering work. It is engineering work moving into review—and raising the stakes of who is qualified to perform it.
+
+<IndustryPulseSignup placement="mid" />
+
+---
+
+## 3. Is 16% of Freelance Work Terrible—or a Warning?
+
+The GPU kernel is a narrow technical result. The [Remote Labor Index](https://remotelabor.ai/) tests AI on broader assignments that people currently pay freelancers to complete. Its formal measure is the **full-automation rate**: the share of projects where human judges decide the AI’s deliverable is at least as good as the work produced by the paid professional.
+
+The projects include redesigning a ring in 3D, producing a one-minute animated advertisement, and turning scans and site photographs into a dimensioned floor plan.
+
+When the benchmark launched, the strongest system completed about 2.5% of the projects at an acceptable professional standard. The current leaderboard puts Fable 5 at **16.1%**, Opus 4.8 at **8.33%**, and GPT-5.5 at **6.25%**.[^2]
+
+Start with the obvious: 16.1% is still awful if you need dependable work. A freelancer cannot finish one project out of six and tell the client to ignore the rest. Real work also includes clarification, revisions, communication, and responsibility for the final result.
+
+There is another complication: even evaluating the work still needs people. The Center for AI Safety found that an automated judge substantially overrated newer models compared with human evaluators.[^3]
+
+So no, AI is not ready to own a freelancer’s job.
+
+But the other side is watching the slope. The leading score moved from roughly 2.5% to 16.1% in under a year. AI does not need to replace an entire professional to change the market. It only needs to make enough pieces of the job cheaper or easier to supervise.
+
+That word—*supervise*—is doing a lot of work.
+
+If someone still has to clarify the request, inspect every artifact, repair the mistakes, handle the revisions, and accept responsibility for the result, the labor did not disappear. It moved to someone with better judgment.
+
+My read: 16.1% is too low to justify replacing people and too high to ignore. The immediate change is not whole jobs disappearing. It is jobs being broken into tasks, with managers deciding which pieces AI attempts and which pieces humans still own.
+
+---
+
+## 4. When Does Refusing AI Become a Performance Problem?
+
+Now bring all of that back to one manager who inherited a very immediate version of the argument.
+
+In another [r/EngineeringManagers thread](https://www.reddit.com/r/EngineeringManagers/comments/1upxi49/inherited_direct_report_refuses_to_use_any_ai/), a hardware engineer refused to use any AI tools. No coding agent. No web chatbot. Not even the company’s internal account.
+
+The engineer’s objections were ethical and practical. AI threatens jobs, consumes energy, weakens people’s thinking, and can send hardware engineers chasing plausible nonsense.
+
+The manager saw someone spending hours on vendor research, plotting, and API work that AI could accelerate. Worse, the manager believed the employee’s code was already below the quality of AI-assisted output and that teammates were beginning to absorb the difference.
+
+Then the disagreement turned into a loop. The manager set deadlines. The engineer said the deadlines were unrealistic without AI. The manager’s response was essentially: that is exactly why I expect you to use it. The engineer still refused.
+
+At that point, this stopped being a philosophical argument about technology and became a very normal management problem: what happens when an employee rejects the tool that makes the team’s new expectations possible?
+
+The clean answer is to measure outcomes rather than tool usage. Set the same expectations for quality and timeliness. If the engineer can meet them without AI, there is no problem.
+
+That protects employees from managers turning enthusiasm for a fashionable tool into a performance metric.
+
+But the manager’s side also has a point. Tool choice stops being entirely personal when one person consistently misses expectations and peers have to pick up the difference. Engineers can refuse an IDE or automated testing too. They still have to meet the standard those tools make possible.
+
+My read: managers should not measure AI usage. They should measure output, quality, understanding, collaboration, and ownership.
+
+An engineer who meets those expectations without AI does not have an AI problem. An engineer who cannot meet them and refuses tools that could plausibly close the gap may have a performance problem.
+
+The same rule has to work in reverse. An engineer who produces twice as much AI-generated work but cannot explain, debug, or support it is not necessarily outperforming anyone.
+
+---
+
+## Who Builds, Who Reviews, and Who Gets Left Behind?
+
+The case for the shift is straightforward. Engineering was never about typing code. AI removes mechanical work, engineers move into design and supervision, and teams accomplish more.
+
+The risk is just as straightforward. Judgment develops through implementation and failure. If companies automate that experience away, they may hollow out the expertise required to review what AI produces.
+
+I don’t think the answer is preserving manual coding for its own sake.
+
+The answer is being honest about where judgment comes from—and building a replacement before the old apprenticeship path disappears.
+
+Ownership is no longer just who wrote the code. It is who can explain its boundaries, prove its behavior, recognize when the evidence is weak, and take the call when it fails.
+
+If companies want engineers to become supervisors of generated work, they need to build people capable of owning that work. That part will not automate itself.
+
+<IndustryPulseSignup placement="end" />
+
+---
+
+## Sources
+
+- [Is anyone else’s company automating software development this aggressively with AI? — r/EngineeringManagers](https://www.reddit.com/r/EngineeringManagers/comments/1unatom/is_anyone_elses_company_automating_software/)
+- [Import AI 464: Fable writes GPU kernels; AI automation; and analog computation](https://importai.substack.com/p/import-ai-464-fables-writes-gpu-kernels)
+- [Remote Labor Index leaderboard and methodology](https://remotelabor.ai/)
+- [A Significant Increase in Digital Labor Automation — Center for AI Safety](https://safe.ai/blog/significant-increase-in-digital-labor-automation)
+- [Inherited direct report refuses to use any AI tools — r/EngineeringManagers](https://www.reddit.com/r/EngineeringManagers/comments/1upxi49/inherited_direct_report_refuses_to_use_any_ai/)
+
+[^1]: Jack Clark, [*Import AI 464*](https://importai.substack.com/p/import-ai-464-fables-writes-gpu-kernels), reporting KernelBench-Mega results.
+[^2]: [Remote Labor Index](https://remotelabor.ai/) leaderboard at the time of review: Fable 5, 16.10%; Opus 4.8, 8.33%; GPT-5.5, 6.25%.
+[^3]: Center for AI Safety, [“A Significant Increase in Digital Labor Automation”](https://safe.ai/blog/significant-increase-in-digital-labor-automation). Its automated judge materially overestimated newer-model performance relative to human evaluation.
