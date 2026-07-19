@@ -14,7 +14,7 @@ The cleanest distinction I have found is this:
 
 > **Memory retrieves what I already know. A skill repeats what I already learned how to do. A wiki creates the conditions for learning something new.**
 
-Obsidian can display all of it beautifully. But Obsidian is not the learning loop.
+Obsidian can display the Markdown layers beautifully. But Obsidian is not the learning loop.
 
 ## The four layers in my actual setup
 
@@ -85,7 +85,7 @@ The separation is useful. The first job decides **what is worth knowing**. The s
 
 ## One question found three completely different paths
 
-One gap analysis noticed that the wiki had plenty of ideas for producing engineering-leadership content but no model for what that content could eventually become. So it asked:
+One gap-analysis run noticed that the wiki had plenty of ideas for producing engineering-leadership content but no model for what that content could eventually become. So it asked:
 
 > What content formats, distribution strategies, and audience milestones have actually led engineering-management writers to meaningful professional or business outcomes?
 
