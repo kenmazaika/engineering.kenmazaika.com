@@ -4,8 +4,6 @@ description: 'How I use a dedicated inbox, a scoring skill, and a daily Hermes j
 pubDate: 'Jul 18, 2026'
 ---
 
-# Hermes Workflow: Using the Scouting Pattern for Apartment Hunting
-
 Apartment hunting burns time in a predictable way. You scroll across several sites, reopen the same listings, and spend ten minutes on a place before noticing the bad commute, missing outdoor space, or outdated interior.
 
 Saved searches help with discovery. They do not tell me which apartments are worth my attention.
