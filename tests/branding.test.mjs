@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import path from 'node:path';
+import sharp from 'sharp';
 
 const root = path.resolve(import.meta.dirname, '..');
 
@@ -24,6 +25,33 @@ test('the production site uses the single-K identity in favicon and header asset
   assert.match(header, />K</);
   assert.equal(await exists('public/favicon.ico'), true);
   assert.equal(await exists('public/apple-touch-icon.png'), true);
+});
+
+test('the single-K favicon is optically centered inside its frame', async () => {
+  const { data, info } = await sharp(path.join(root, 'public/apple-touch-icon.png'))
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const xs = [];
+  const ys = [];
+
+  // Restrict the scan to the center so the rust frame is excluded.
+  for (let y = 25; y <= 155; y += 1) {
+    for (let x = 25; x <= 155; x += 1) {
+      const offset = (y * info.width + x) * info.channels;
+      const [red, green, blue] = data.subarray(offset, offset + 3);
+      if (red > 120 && green < 100 && blue < 80) {
+        xs.push(x);
+        ys.push(y);
+      }
+    }
+  }
+
+  assert.ok(xs.length > 0, 'expected to find the rust K');
+  const centerX = (Math.min(...xs) + Math.max(...xs)) / 2;
+  const centerY = (Math.min(...ys) + Math.max(...ys)) / 2;
+  assert.ok(centerX >= 89 && centerX <= 90.5, `K horizontal center was ${centerX}`);
+  assert.ok(centerY >= 89 && centerY <= 91.5, `K vertical center was ${centerY}`);
 });
 
 function pngDimensions(buffer) {

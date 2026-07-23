@@ -130,6 +130,11 @@ a:hover { color: var(--color-link-hover); }
   line-height: 1;
 }
 
+.site-mark-glyph {
+  display: block;
+  transform: translate(-0.01em, 0.05em);
+}
+
 .site-title:hover {
   color: var(--color-accent);
   text-decoration: none;
