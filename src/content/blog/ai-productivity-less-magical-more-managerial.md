@@ -1,6 +1,8 @@
 ---
 title: 'The AI Productivity Story Is Getting Less Magical and More Managerial'
 description: 'Why AI adoption is turning into a team-management problem, not just a tooling story.'
+socialTitle: 'AI Productivity Is Getting More Managerial'
+ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Jul 5, 2026'
 ---
 

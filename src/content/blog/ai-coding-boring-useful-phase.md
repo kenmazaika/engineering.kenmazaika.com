@@ -1,6 +1,7 @@
 ---
 title: 'AI Coding Is Entering Its Boring, Useful Phase'
 description: 'AI coding is moving past hype and slop toward clearer evidence, ownership, and practical engineering norms.'
+ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Jul 20, 2026'
 ---
 

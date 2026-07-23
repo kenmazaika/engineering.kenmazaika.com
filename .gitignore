@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local design exploration (production assets are generated separately)
+mockups/
+
+# obsolete local font copies retained outside the production generator
+scripts/og-fonts/

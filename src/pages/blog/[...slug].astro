@@ -12,6 +12,6 @@ const { Content } = await render(post);
 const readingMinutes = Math.max(1, Math.ceil(post.body.trim().split(/\s+/).length / 220));
 ---
 
-<BlogPost {...post.data} readingMinutes={readingMinutes}>
+<BlogPost {...post.data} slug={post.id} readingMinutes={readingMinutes}>
 	<Content />
 </BlogPost>

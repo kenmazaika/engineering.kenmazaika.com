@@ -1,6 +1,8 @@
 ---
 title: 'Hermes Workflow: Using the Scouting Pattern for Apartment Hunting'
 description: 'How I use a dedicated inbox, a scoring skill, and a daily Hermes job to turn apartment alerts into a short list worth reviewing.'
+socialTitle: 'A Scouting Workflow for Apartment Hunting'
+ogCategory: 'Field Note · Practical Automation'
 pubDate: 'Jul 18, 2026'
 ---
 

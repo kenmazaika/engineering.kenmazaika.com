@@ -1,6 +1,7 @@
 ---
 title: 'Engineering Management Pulse — June 2026'
 description: 'What people in the industry are actually talking about this month.'
+ogCategory: 'Industry Pulse · Engineering Leadership'
 pubDate: 'Jun 21, 2026'
 ---
 

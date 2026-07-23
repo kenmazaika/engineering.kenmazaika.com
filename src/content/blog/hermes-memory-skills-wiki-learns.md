@@ -1,6 +1,8 @@
 ---
 title: 'Hermes Workflow: Memory Remembers, Skills Repeat, and a Wiki Learns'
 description: 'How I separate persistent memory, executable skills, a research wiki, and Obsidian so Hermes can recall facts, repeat workflows, and build new understanding.'
+socialTitle: 'How Hermes Remembers, Repeats, and Learns'
+ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Jul 18, 2026'
 ---
 

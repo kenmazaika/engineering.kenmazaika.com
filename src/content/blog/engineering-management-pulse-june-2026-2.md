@@ -1,6 +1,7 @@
 ---
 title: 'Engineering Management Pulse — June 2026'
 description: 'A quick pulse check on what engineering managers and senior engineers were actually arguing about this week. Not a newsletter — more like notes from the hallway after everyone left the meeting.'
+ogCategory: 'Industry Pulse · Engineering Leadership'
 pubDate: 'Jun 28, 2026'
 ---
 

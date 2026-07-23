@@ -8,14 +8,31 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 import CodeCopyScript from '../components/CodeCopyScript.astro';
 import { SITE_TITLE } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'] & { readingMinutes?: number };
-const { title, description, pubDate, updatedDate, readingMinutes = 1, hideDefaultNewsletter = false } = Astro.props;
+type Props = CollectionEntry<'blog'>['data'] & { slug: string; readingMinutes?: number };
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	slug,
+	socialTitle,
+	readingMinutes = 1,
+	hideDefaultNewsletter = false,
+} = Astro.props;
+const socialImage = `/og/${slug}.png`;
+const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`${title} — ${SITE_TITLE}`} description={description} />
+		<BaseHead
+			title={`${title} — ${SITE_TITLE}`}
+			description={description}
+			image={socialImage}
+			imageAlt={socialImageAlt}
+			type="article"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
