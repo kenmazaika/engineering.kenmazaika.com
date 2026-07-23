@@ -28,3 +28,9 @@ mockups/
 
 # obsolete local font copies retained outside the production generator
 scripts/og-fonts/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
