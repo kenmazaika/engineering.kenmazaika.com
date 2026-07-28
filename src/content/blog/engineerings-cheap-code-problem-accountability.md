@@ -2,7 +2,7 @@
 title: "Engineering's Cheap-Code Problem Is Now an Accountability Problem"
 description: 'The week AI stopped looking like a writing shortcut and started looking like a review, context, and governance test.'
 ogCategory: 'Industry Pulse · Engineering Leadership'
-pubDate: 'Jul 20, 2026'
+pubDate: 'Jul 28, 2026'
 ---
 
 > The week AI stopped looking like a writing shortcut and started looking like a review, context, and governance test.
