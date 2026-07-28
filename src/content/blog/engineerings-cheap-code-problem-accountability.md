@@ -85,8 +85,6 @@ Code got cheaper. Review did not. Context did not. Trust did not. Accountability
 
 But the stories do not all point the same direction.
 
-Reddit is a warning about inheriting code nobody understands. Anthropic is a hopeful sign that models are getting better faster than our prompts. Open weights are a trust and governance problem that most EMs will not solve personally. Debian is proof that smart people genuinely disagree about where the line belongs.
-
 The clean executive story is seductive: code used to be expensive, now code is cheap, so teams should ship more with less friction. Some work really is faster now: scaffolding, repetitive tests, framework translation, first drafts of migrations, and one-off internal tools.
 
 But the messier reality is that each of these four stories has its own shape. The Reddit story is about maintenance. The Anthropic story is about capability. The open-weight story is about control. The Debian story is about disagreement.
