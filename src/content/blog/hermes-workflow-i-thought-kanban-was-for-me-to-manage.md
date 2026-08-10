@@ -1,5 +1,5 @@
 ---
-title: 'I thought Kanban was for me to manage'
+title: 'Hermes Workflow: I thought Kanban was for me to manage'
 description: 'A two-word instruction that hands the orchestration middle to Hermes: three distinct profiles make, critique, and verify the work while I keep the kickoff and the final judgment.'
 socialTitle: 'I Thought Kanban Was for Me to Manage'
 ogCategory: 'Field Note · Hermes Workflows'
