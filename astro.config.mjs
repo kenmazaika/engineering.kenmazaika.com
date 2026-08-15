@@ -3,6 +3,7 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
+import { HIDDEN_SLUGS } from './src/consts';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -13,7 +14,12 @@ const oneLightTheme = JSON.parse(
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://engineering.kenmazaika.com',
-	integrations: [mdx(), sitemap()],
+	integrations: [
+		mdx(),
+		sitemap({
+			filter: (page) => !HIDDEN_SLUGS.some((slug) => page.includes(`/blog/${slug}/`)),
+		}),
+	],
 	markdown: {
 		shikiConfig: {
 			theme: oneLightTheme,

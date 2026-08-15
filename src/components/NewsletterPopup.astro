@@ -1,0 +1,209 @@
+---
+// NewsletterPopup.astro
+// Slide-up (scroll depth) + exit-intent newsletter capture, wired to Buttondown.
+// Mounted per-post via the `showPopup` frontmatter flag (see BlogPost.astro).
+// Test controls: append ?popup=1 to the URL to bypass the 7-day frequency cap.
+---
+
+<div id="nl-popup" class="nl-popup" role="dialog" aria-modal="false" aria-label="Newsletter signup" aria-hidden="true">
+	<div class="nl-popup-card">
+		<button id="nl-popup-close" class="nl-popup-close" type="button" aria-label="Close popup">✕</button>
+		<p class="nl-popup-kicker">Stay in the loop</p>
+		<h2 class="nl-popup-title">Get the next field note.</h2>
+		<p class="nl-popup-copy">Practical writing about engineering leadership, AI productivity, and building teams in the agent era.</p>
+		<form
+			class="nl-popup-form"
+			action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+			method="post"
+		>
+			<label class="nl-popup-label" for="nl-popup-email">Email address</label>
+			<div class="nl-popup-fields">
+				<input type="email" name="email" id="nl-popup-email" autocomplete="email" placeholder="you@example.com" required />
+				<input type="hidden" name="embed" value="1" />
+				<button type="submit">Subscribe</button>
+			</div>
+		</form>
+		<p id="nl-popup-trigger" class="nl-popup-trigger" aria-hidden="true"></p>
+	</div>
+</div>
+
+<style>
+	.nl-popup {
+		position: fixed;
+		z-index: 60;
+		bottom: 1rem;
+		left: 1rem;
+		right: 1rem;
+		max-width: 22rem;
+		margin: 0 auto;
+		pointer-events: none;
+	}
+	@media (min-width: 40rem) {
+		.nl-popup {
+			left: auto;
+			right: 1.5rem;
+			margin: 0;
+		}
+	}
+	.nl-popup-card {
+		pointer-events: auto;
+		position: relative;
+		background: #fffdfa;
+		border: 1px solid #e8e3db;
+		border-radius: 0.75rem;
+		box-shadow: 0 12px 32px rgb(26 24 20 / 0.16);
+		padding: 1.25rem 1.25rem 1rem;
+		transform: translateY(calc(100% + 2rem));
+		transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	.nl-popup.is-open .nl-popup-card {
+		transform: translateY(0);
+	}
+	.nl-popup-close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		width: 1.75rem;
+		height: 1.75rem;
+		display: grid;
+		place-items: center;
+		border: 0;
+		background: transparent;
+		color: #6b6760;
+		font-size: 0.85rem;
+		cursor: pointer;
+		border-radius: 0.375rem;
+	}
+	.nl-popup-close:hover {
+		background: #f0ece4;
+		color: #1a1814;
+	}
+	.nl-popup-kicker {
+		margin: 0 0 0.25rem;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #c2410c;
+	}
+	.nl-popup-title {
+		margin: 0 0 0.35rem;
+		font-family: Newsreader, Georgia, serif;
+		font-size: 1.3rem;
+		font-weight: 600;
+		line-height: 1.15;
+		color: #1a1814;
+	}
+	.nl-popup-copy {
+		margin: 0 0 0.75rem;
+		font-size: 0.85rem;
+		line-height: 1.45;
+		color: #6b6760;
+	}
+	.nl-popup-label {
+		display: block;
+		margin-bottom: 0.3rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: #1a1814;
+	}
+	.nl-popup-fields {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.nl-popup-fields input[type='email'] {
+		flex: 1;
+		min-width: 0;
+		padding: 0.5rem 0.65rem;
+		font: inherit;
+		font-size: 0.85rem;
+		color: #1a1814;
+		background: #fff;
+		border: 1px solid #d8d1c7;
+		border-radius: 0.375rem;
+	}
+	.nl-popup-fields input[type='email']:focus {
+		outline: 2px solid #c2410c;
+		outline-offset: 1px;
+		border-color: transparent;
+	}
+	.nl-popup-fields button {
+		padding: 0.5rem 0.85rem;
+		font: inherit;
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: #fff;
+		background: #1a1814;
+		border: 0;
+		border-radius: 0.375rem;
+		cursor: pointer;
+		white-space: nowrap;
+	}
+	.nl-popup-fields button:hover {
+		background: #c2410c;
+	}
+	.nl-popup-trigger {
+		margin: 0.5rem 0 0;
+		min-height: 1em;
+		font-size: 0.7rem;
+		color: #9a948a;
+	}
+</style>
+
+<script>
+	const popup = document.getElementById('nl-popup');
+	const closeBtn = document.getElementById('nl-popup-close');
+	const triggerLabel = document.getElementById('nl-popup-trigger');
+	if (!popup || !closeBtn || !triggerLabel) throw new Error('NewsletterPopup: missing elements');
+
+	const KEY = 'km-nl-popup-seen';
+	const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+	const force = new URLSearchParams(window.location.search).get('popup') === '1';
+	let shown = false;
+
+	function isEligible() {
+		if (force) return true;
+		const last = Number(localStorage.getItem(KEY) || 0);
+		return Date.now() - last > SEVEN_DAYS;
+	}
+
+	function cleanup() {
+		window.removeEventListener('scroll', onScroll, { capture: true });
+		document.removeEventListener('mouseout', onMouseOut);
+	}
+
+	function show(reason, detail) {
+		if (shown || !isEligible()) return;
+		shown = true;
+		localStorage.setItem(KEY, String(Date.now()));
+		triggerLabel.textContent = detail || '';
+		popup.classList.add('is-open');
+		popup.setAttribute('aria-hidden', 'false');
+		closeBtn.focus();
+		cleanup();
+	}
+
+	function hide() {
+		popup.classList.remove('is-open');
+		popup.setAttribute('aria-hidden', 'true');
+		cleanup();
+	}
+
+	function onScroll() {
+		const doc = document.documentElement;
+		const progress = (window.scrollY + window.innerHeight) / doc.scrollHeight;
+		if (progress >= 0.55) show('scroll', `triggered: scrolled ${Math.round(progress * 100)}% of the page`);
+	}
+
+	function onMouseOut(event) {
+		// Exit intent: cursor leaves the window through the top edge.
+		if (!event.relatedTarget && event.clientY <= 0) show('exit', 'triggered: exit intent (cursor left the top of the window)');
+	}
+
+	closeBtn.addEventListener('click', hide);
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') hide();
+	});
+	window.addEventListener('scroll', onScroll, { passive: true, capture: true });
+	document.addEventListener('mouseout', onMouseOut);
+</script>

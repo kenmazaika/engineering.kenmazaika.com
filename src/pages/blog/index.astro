@@ -7,7 +7,9 @@ import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 const readingTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog'))
+	.filter((post) => !post.data.hidden)
+	.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
