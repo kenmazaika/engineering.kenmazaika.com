@@ -1,29 +1,59 @@
 ---
 // NewsletterPopup.astro
-// Slide-up (scroll depth) + exit-intent newsletter capture, wired to Buttondown.
-// Mounted per-post via the `showPopup` frontmatter flag (see BlogPost.astro).
-// Test controls: append ?popup=1 to the URL to bypass the 7-day frequency cap.
+// Slide-up (scroll depth) + exit-intent capture card, wired per post via frontmatter.
+// Modes:
+//   - 'email' (default): Buttondown email capture (showPopup: true)
+//   - 'link': CTA card linking to a post (showPopup + popupMode: link + popupHref)
+// Test control: append ?popup=1 to the URL to bypass the 7-day frequency cap.
+interface Props {
+	mode?: 'email' | 'link';
+	href?: string;
+	title?: string;
+	copy?: string;
+	cta?: string;
+}
+
+const { mode = 'email', href = '/blog/', title, copy, cta } = Astro.props;
+
+const isLink = mode === 'link';
+const kicker = isLink ? 'The Hermes Kit' : 'Stay in the loop';
+const popupTitle =
+	title ??
+	(isLink
+		? 'Stop configuring by vibes.'
+		: 'Get the next field note.');
+const popupCopy =
+	copy ??
+	(isLink
+		? 'Which models, memory, and setup actually hold up on real work? I ran mine through five real tasks — receipts included, nothing cherry-picked.'
+		: 'Practical writing about engineering leadership, AI productivity, and building teams in the agent era.');
+const popupCta = cta ?? (isLink ? 'Read the post' : 'Subscribe');
 ---
 
-<div id="nl-popup" class="nl-popup" role="dialog" aria-modal="false" aria-label="Newsletter signup" aria-hidden="true">
+<div id="nl-popup" class="nl-popup" role="dialog" aria-modal="false" aria-label={kicker} aria-hidden="true">
 	<div class="nl-popup-card">
 		<button id="nl-popup-close" class="nl-popup-close" type="button" aria-label="Close popup">✕</button>
-		<p class="nl-popup-kicker">Stay in the loop</p>
-		<h2 class="nl-popup-title">Get the next field note.</h2>
-		<p class="nl-popup-copy">Practical writing about engineering leadership, AI productivity, and building teams in the agent era.</p>
-		<form
-			class="nl-popup-form"
-			action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
-			method="post"
-		>
-			<label class="nl-popup-label" for="nl-popup-email">Email address</label>
-			<div class="nl-popup-fields">
-				<input type="email" name="email" id="nl-popup-email" autocomplete="email" placeholder="you@example.com" required />
-				<input type="hidden" name="embed" value="1" />
-				<button type="submit">Subscribe</button>
-			</div>
-		</form>
-		<p id="nl-popup-trigger" class="nl-popup-trigger" aria-hidden="true"></p>
+		<p class="nl-popup-kicker">{kicker}</p>
+		<h2 class="nl-popup-title">{popupTitle}</h2>
+		<p class="nl-popup-copy">{popupCopy}</p>
+		{
+			isLink ? (
+				<a class="nl-popup-cta" href={href}>{popupCta}<span aria-hidden="true"> →</span></a>
+			) : (
+				<form
+					class="nl-popup-form"
+					action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+					method="post"
+				>
+					<label class="nl-popup-label" for="nl-popup-email">Email address</label>
+					<div class="nl-popup-fields">
+						<input type="email" name="email" id="nl-popup-email" autocomplete="email" placeholder="you@example.com" required />
+						<input type="hidden" name="embed" value="1" />
+						<button type="submit">{popupCta}</button>
+					</div>
+				</form>
+			)
+		}
 	</div>
 </div>
 
@@ -127,11 +157,16 @@
 		outline-offset: 1px;
 		border-color: transparent;
 	}
-	.nl-popup-fields button {
-		padding: 0.5rem 0.85rem;
+	.nl-popup-fields button,
+	.nl-popup-cta {
+		display: block;
+		width: 100%;
+		padding: 0.55rem 0.85rem;
 		font: inherit;
 		font-size: 0.85rem;
 		font-weight: 600;
+		text-align: center;
+		text-decoration: none;
 		color: #fff;
 		background: #1a1814;
 		border: 0;
@@ -139,22 +174,25 @@
 		cursor: pointer;
 		white-space: nowrap;
 	}
-	.nl-popup-fields button:hover {
+	.nl-popup-fields button:hover,
+	.nl-popup-cta:hover {
 		background: #c2410c;
+		color: #fff;
 	}
-	.nl-popup-trigger {
-		margin: 0.5rem 0 0;
-		min-height: 1em;
-		font-size: 0.7rem;
-		color: #9a948a;
+	.nl-popup-fields {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.nl-popup-fields button {
+		width: auto;
+		flex-shrink: 0;
 	}
 </style>
 
 <script>
 	const popup = document.getElementById('nl-popup');
 	const closeBtn = document.getElementById('nl-popup-close');
-	const triggerLabel = document.getElementById('nl-popup-trigger');
-	if (!popup || !closeBtn || !triggerLabel) throw new Error('NewsletterPopup: missing elements');
+	if (!popup || !closeBtn) throw new Error('NewsletterPopup: missing elements');
 
 	const KEY = 'km-nl-popup-seen';
 	const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
@@ -172,11 +210,10 @@
 		document.removeEventListener('mouseout', onMouseOut);
 	}
 
-	function show(reason, detail) {
+	function show() {
 		if (shown || !isEligible()) return;
 		shown = true;
 		localStorage.setItem(KEY, String(Date.now()));
-		triggerLabel.textContent = detail || '';
 		popup.classList.add('is-open');
 		popup.setAttribute('aria-hidden', 'false');
 		closeBtn.focus();
@@ -192,12 +229,12 @@
 	function onScroll() {
 		const doc = document.documentElement;
 		const progress = (window.scrollY + window.innerHeight) / doc.scrollHeight;
-		if (progress >= 0.55) show('scroll', `triggered: scrolled ${Math.round(progress * 100)}% of the page`);
+		if (progress >= 0.55) show();
 	}
 
 	function onMouseOut(event) {
 		// Exit intent: cursor leaves the window through the top edge.
-		if (!event.relatedTarget && event.clientY <= 0) show('exit', 'triggered: exit intent (cursor left the top of the window)');
+		if (!event.relatedTarget && event.clientY <= 0) show();
 	}
 
 	closeBtn.addEventListener('click', hide);

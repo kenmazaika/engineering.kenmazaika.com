@@ -4,12 +4,14 @@ description: 'Hidden test page for the newsletter popup. Scroll about halfway an
 pubDate: 'Aug 15, 2026'
 hidden: true
 showPopup: true
+popupMode: link
+popupHref: '/blog/hermes-kit/'
 hideDefaultNewsletter: true
 ---
 
-_This is a hidden test page for the newsletter popup. It is not linked from the blog index, the RSS feed, or the sitemap._
+_This is a hidden test page for the popup. It is not linked from the blog index, the RSS feed, or the sitemap._
 
-_How to test the popup: scroll about halfway down this page and it slides up. Move the cursor to the top edge of the window to test the exit-intent trigger. It shows at most once per week — append `?popup=1` to the URL to force it again._
+_How to test the popup: scroll about halfway down this page and it slides up. Move the cursor to the top edge of the window to test the exit-intent trigger. It shows at most once per week — append `?popup=1` to the URL to force it again. The popup now links to the Hermes Kit (currently a hidden placeholder page)._
 
 ## Lorem ipsum dolor sit amet
 

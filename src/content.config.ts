@@ -22,6 +22,12 @@ const blog = defineCollection({
 			hidden: z.boolean().optional(),
 			// Opt a post into the slide-up / exit-intent newsletter popup.
 			showPopup: z.boolean().optional(),
+			// Popup mode: 'email' (Buttondown capture) or 'link' (CTA to a post).
+			popupMode: z.enum(['email', 'link']).optional(),
+			popupHref: z.string().optional(),
+			popupTitle: z.string().optional(),
+			popupCopy: z.string().optional(),
+			popupCta: z.string().optional(),
 		}),
 });
 
