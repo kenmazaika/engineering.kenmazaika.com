@@ -1,7 +1,7 @@
 ---
-title: "I Ran Ten AI Models on Real Agentic Workflows in Hermes"
+title: "I Ran Eleven AI Models on Real Agentic Workflows in Hermes"
 description: "Five real agentic tasks, identical prompts, full receipts — and the models I'd actually pay for."
-socialTitle: '10 AI models, 5 real agentic tasks, full receipts'
+socialTitle: '11 AI models, 5 real agentic tasks, full receipts'
 ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Aug 19, 2026'
 ---
@@ -16,7 +16,7 @@ I wanted to know something different: **how do these things actually feel inside
 
 That's the way you really learn a model, I think. You can read all the benchmarks you want, but at the end of the day you start playing around with it — and that's when you find out how it behaves. You get a vibe: *oh, sol gives me really thorough output when I'm doing design stuff. grok feels sharp. deepseek gets things done for cheap.* But it's all vibes. "I've run some stuff and I have a feeling" is not an answer.
 
-So I made the vibe check systematic. I built a test battery: five tasks shaped like work I actually do, run against ten models, identical prompts, out of the box, no per-model tuning. If you tune each model to its strengths, you're not comparing models anymore — you're just grading your own tweaks. Every output was saved side by side, and the raw results ship alongside this post as a 101-page PDF with every prompt and every artifact.
+So I made the vibe check systematic. I built a test battery: five tasks shaped like work I actually do, run against eleven models, identical prompts, out of the box, no per-model tuning. If you tune each model to its strengths, you're not comparing models anymore — you're just grading your own tweaks. Every output was saved side by side, and the raw results ship alongside this post as a 101-page PDF with every prompt and every artifact.
 
 This matters right now because model rankings change every week and every vendor is selling something. The question worth answering is the one the benchmarks don't touch: what should you actually run for the work you do every day — and what does it cost when you're done?
 
@@ -24,7 +24,7 @@ The honest headline, up front: **the same prompt produces wildly different behav
 
 ## The battery
 
-Five tests, in the shape of work I really do (run on 2026-08-17, out of the box):
+Five tests, in the shape of work I really do (original run on 2026-08-17, with a glm-5.3 refresh on 2026-08-20, out of the box):
 
 1. **The weekly workflow** — browse Reddit for a contentious engineering-leadership thread, write a "both sides + my read" blurb.
 2. **The PRD** — write a product requirements doc for a real tool I want (a Hermes cost tracker), researching the docs and a real session database, all on a kanban board.
@@ -32,19 +32,22 @@ Five tests, in the shape of work I really do (run on 2026-08-17, out of the box)
 4. **The job finder** — build a job-search *skill* from scratch, then execute it live.
 5. **The vision test** — design a chart from a real figure spec, then look at your own diagram with your own vision, critique it, and fix it.
 
-Ten models: deepseek-v4-flash, glm-4.5, glm-4.5-flash, mimo-v2.5, kimi-k2.6, grok-4.6, gpt-5.5, gpt-5.6-luna, gpt-5.6-terra, gpt-5.6-sol — plus GLM's vision model, glm-5v-turbo, on the one test that needs eyes.
+Eleven models: deepseek-v4-flash, glm-4.5, glm-4.5-flash, glm-5.3, mimo-v2.5, kimi-k2.6, grok-4.6, gpt-5.5, gpt-5.6-luna, gpt-5.6-terra, gpt-5.6-sol — plus GLM-family native vision on the tests that need eyes.
 
 Here's the scoreboard, then the stories behind it.
 
-|            | deepseek            | glm-4.5            | glm-4.5-flash | mimo             | kimi          | grok               | gpt-5.5     | luna        | terra            | sol              |
-| :--------- | :------------------ | :----------------- | :------------ | :--------------- | :------------ | :----------------- | :---------- | :---------- | :--------------- | :--------------- |
-| **Pulse**  | ✓ real thread       | ✗ generic          | ✗ generic     | ✓ real thread    | ✓ real thread | ✓ real thread      | ✗ generic   | ✗ generic   | ✓ real thread    | ✓ real thread    |
-| **PRD**    | ✓ on spec           | ✓ 126 hits         | ✓ ok          | ✓ solid          | ✓ terse       | ✓ deepest          | ✓ 71 hits   | ✓ 46 hits   | ✓ 88 hits        | ✓ 104 hits       |
-| **Build**  | ✓ **$60.49** 6/6    | ✗ $20.29           | ✗ $90.67      | ✓ **$60.49** 6/6 | ✗ $69.06      | ≈ $56.44 — very close | ✗ $45.59 | ✗ $112.26   | ✓ **$60.49** 6/6 | ✓ **$60.49** 6/6 |
-| **Jobs**   | ✓ 23 surfaced, 3 pass | ✗ 8 surfaced, 0 pass | —          | ✗ 6 surfaced, 0 pass | —         | ✗ 7 surfaced, 0 pass | ✗ 6 surfaced, 0 pass | ✗ 6 surfaced, 0 pass | ✗ 5 surfaced, 0 pass | ✗ 6 surfaced, 0 pass |
-| **Vision** | — not run           | ✓ via glm-5v-turbo | — not run     | ✓ saw it         | ✓ iterated 4× | ✓ deepest critique | ✓ saw flaws | ✓ saw flaws | ✓ saw flaws      | ✓ saw flaws      |
+|            | deepseek            | glm-4.5            | glm-4.5-flash | glm-5.3          | mimo             | kimi          | grok               | gpt-5.5     | luna        | terra            | sol              |
+| :--------- | :------------------ | :----------------- | :------------ | :--------------- | :--------------- | :------------ | :----------------- | :---------- | :---------- | :--------------- | :--------------- |
+| **Pulse**  | ✓ real thread       | ✗ generic          | ✗ generic     | ✓ real thread    | ✓ real thread    | ✓ real thread | ✓ real thread      | ✗ generic   | ✗ generic   | ✓ real thread    | ✓ real thread    |
+| **PRD**    | ✓ on spec           | ✓ 126 hits         | ✓ ok          | ✓ 27KB PRD       | ✓ solid          | ✓ terse       | ✓ deepest          | ✓ 71 hits   | ✓ 46 hits   | ✓ 88 hits        | ✓ 104 hits       |
+| **Build**  | ✓ **$60.49** 6/6    | ✗ $20.29           | ✗ $90.67      | ✗ $41.90 wider window | ✓ **$60.49** 6/6 | ✗ $69.06 | ≈ $56.44 — very close | ✗ $45.59 | ✗ $112.26   | ✓ **$60.49** 6/6 | ✓ **$60.49** 6/6 |
+| **Jobs**   | ✓ 23 surfaced, 3 pass | ✗ 8 surfaced, 0 pass | —          | ✓ 14 verified    | ✗ 6 surfaced, 0 pass | —         | ✗ 7 surfaced, 0 pass | ✗ 6 surfaced, 0 pass | ✗ 6 surfaced, 0 pass | ✗ 5 surfaced, 0 pass | ✗ 6 surfaced, 0 pass |
+| **Vision** | — not run           | ✓ via glm-5v-turbo | — not run     | ✓ GLM vision refresh | ✓ saw it      | ✓ iterated 4× | ✓ deepest critique | ✓ saw flaws | ✓ saw flaws | ✓ saw flaws      | ✓ saw flaws      |
 
-*On the build test, ✓ means the app landed every vendor inside the converged band (the PDF scoreboard uses a looser bar — ✓ = 4+ of 6 vendors in band; I'm using the stricter one). ≈ means very close — within a few dollars, missing only one vendor. Full numbers below.*
+*On the build test, ✓ means the app landed every vendor inside the converged band (the PDF scoreboard uses a looser bar — ✓ = 4+ of 6 vendors in band; I'm using the stricter one). ≈ means very close — within a few dollars, missing only one vendor. The glm-5.3 app ran successfully, but against a wider window, so I'm not counting its $41.90 as a convergence result. Full numbers below.*
+
+
+**The short version, by family:** the gpt line — sol, terra, gpt-5.5, luna — pretty much got everything; sol and terra converged on the reference cost answer. grok did well at most things — its cost app was within a few dollars of the converged answer, and its vision work was excellent. deepseek was the value story: it converged on the cost test and was the only original model to surface usable jobs. mimo was quietly solid — it converged too. GLM was mixed: glm-4.5 and glm-4.5-flash were weak, while the glm-5.3 refresh found a real pulse thread, wrote a substantial PRD, produced a working-but-different-window cost report, built the strongest standalone job shortlist, and got a real GLM-family vision pass through pixels.
 
 ## Test 1 — The weekly workflow: research vs. generic
 
@@ -58,9 +61,8 @@ The other end of the spectrum: gpt-5.5 wrote "The Hands-On Engineering Manager D
 
 And the worst behavior: a couple of the generic essays leaned on my own wiki notes instead of the internet — not what I asked for, and looking in places I didn't want them to. It rubbed me the wrong way, honestly.
 
-Same prompt, ten ways: some models went out and found something real, some wrote essays they didn't need the internet for. That gap is the first thing you notice, before any rubric matters.
+Same prompt, eleven ways: some models went out and found something real, some wrote essays they didn't need the internet for. That gap is the first thing you notice, before any rubric matters.
 
-**The short version, by family:** the gpt line — sol, terra, gpt-5.5, luna — pretty much got everything; sol and terra even converged on the correct cost answer. grok did well at most things — its cost app was within a few dollars of the converged answer, and its vision work was excellent. deepseek was the value story: it converged on the cost test and was the only model to surface usable jobs. mimo was quietly solid — it converged too. And GLM — glm-4.5 and glm-4.5-flash — didn't do well at anything, though its vision SKU (glm-5v-turbo) was the sharpest pair of eyes on the one test that needed them.
 
 ## Test 2 — The PRD: process is table stakes
 
@@ -80,7 +82,9 @@ And I could check the answer, because it's *my* spend. My real 30-day bill was k
 
 One thing up front, so nobody reads the numbers wrong: **$60.49 is the cost of my actual usage over the last 30 days** — my real workload across the models I run day to day, in whatever proportions I actually used them. It is not the cost of running this battery. The test runs themselves were a rounding error next to my normal usage. What the apps were being checked against was a different question entirely: given the usage data, can you reconstruct my real bill?
 
-Here's what happened: **sol and deepseek-v4-flash converged on the same answer — $60.49 total metered — so that answer is the correct one.** Everyone else is graded within 40% of it.
+Here's what happened: **most of the tools that got accounting right converged around the same answer — $60.49 total metered — and that answer was close to what actually left my wallet.** I use that converged calculation as the reference, and everyone else is graded within 40% of it.
+
+Also worth knowing: the web-portal bills don't exactly match the calculated numbers — free credits, sliding date windows, price changes all muddy what actually left the wallet. The calculated answer is the reference, not the bills.
 
 | Vendor            | Correct answer       |
 | :---------------- | :------------------- |
@@ -111,9 +115,7 @@ The full grid, every app against every vendor (✓ = inside the converged band):
 
 Four of the ten apps landed every vendor inside the converged band: deepseek, mimo, sol, terra — all at $60.49. grok was very close ($56.44 — within a few dollars of the converged answer, missing one vendor because its session filter read a fraction of the usage). kimi overshot ($69.06, reading deepseek and xiaomi above the band). And then the failures, each different: glm-4.5 never priced xai at all ($20.29). gpt-5.5 under-read the metered vendors ($45.59) — its first run, before its units bug was fixed, reported $293,534.88. luna still estimated ($112.26). glm-4.5-flash was the outlier — its fallback-rate path inflated deepseek and priced quota sessions as if they were cash ($90.67, one vendor in band out of six).
 
-One honest correction: this test had a false start. The first "correct answer" was $9.27 — computed with rate cards roughly double the published ones. Once every app's rate table was regenerated from the shared source of truth (including deepseek's 2026-07-31 price change), the converged answer became $60.49 — which is about what I actually spent over those 30 days. **The rate table, not the model, was the variable.** Point any of these apps at the right rates and it produces the right total.
-
-Also worth knowing: the web-portal bills don't exactly match the calculated numbers — free credits, sliding date windows, price changes all muddy what actually left the wallet. The calculated answer is the reference, not the bills.
+One honest correction: this test had a false start. The first “correct answer” was $9.27 because the rate cards were wrong; after every app used the same source-of-truth rates, the converged answer became $60.49. **The rate table, not the model, was the variable.**
 
 ## Test 4 — The job finder: the meta-skill, and the numbers game
 
@@ -125,7 +127,7 @@ The results were a crapshoot — and that's the finding. deepseek surfaced 23 ro
 
 Why did deepseek win? It played the numbers game. It filtered less and handed me raw volume; quantity did the work. When a model is cheap, you can afford to let it spray and then filter yourself. Raw recall beats precision for a daily driver.
 
-In retrospect, my prompt mentioned location and recency but didn't make them dealbreakers — out of the box, most of the models just didn't treat them that way.
+In retrospect, my prompt mentioned location and recency but didn't make them dealbreakers — out of the box, most of the models just didn't treat them that way. The glm-5.3 refresh was better as a process artifact — 14 employer-ATS roles verified live, 9 Apply / 1 Watch / 4 Skip — but it also changed the effective filter to include relocation-heavy frontier-lab roles, so I keep it as a refresh note rather than pretending it is the same scoreboard.
 
 ## Test 5 — The vision test: can it see what it made?
 
@@ -135,11 +137,11 @@ Designing is one thing. **Seeing is the test.**
 
 Everyone with vision actually saw: each model critiqued its own diagram, found real flaws, and shipped a redesign. The interesting part isn't the critique prose — it's the before-and-after, and how different each model's eye turned out to be. The finals below speak for themselves.
 
-deepseek and glm-4.5 are text-only on zai, so GLM ran its vision model instead — glm-5v-turbo — and it was strikingly pixel-accurate: *"the 39-point gap existed only as text, not as geometry."*
+For the GLM refresh, I ran the current GLM-family vision model directly on the pixels. It saw the chart, found the real issue — the 39-point bracket was mathematically right but visually floating — and shipped a v2 where the gap reads as geometry instead of just text.
 
 An independent reviewer ranked the v2 figures blind — best figure: grok.
 
-### The finals (v2, all eight)
+### The finals (v2, all nine)
 
 **mimo — v2**
 
@@ -173,12 +175,16 @@ An independent reviewer ranked the v2 figures blind — best figure: grok.
 
 ![glm-5v-turbo — v2](/figures/v2/glm-5v-turbo-v2.png)
 
-The before/after pairs are in the PDF, pages 16–19 — these are the after.
+**glm-5.3 refresh — v2**
+
+![glm-5.3 refresh — v2](/figures/v2/glm-5.3-v2.png)
+
+The before/after pairs are in the PDF — these are the after.
 
 
 ## What I actually learned
 
-**The same prompt, ten ways, produces wildly different behavior — and the differences are consistent enough to act on.** It's nice to have a second model in your pocket for the days your rates change or your main provider throttles you.
+**The same prompt, eleven ways, produces wildly different behavior — and the differences are consistent enough to act on.** It's nice to have a second model in your pocket for the days your rates change or your main provider throttles you.
 
 The stack, now with evidence behind it:
 
