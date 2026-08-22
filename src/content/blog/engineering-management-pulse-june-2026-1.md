@@ -3,6 +3,11 @@ title: 'Engineering Management Pulse — June 2026'
 description: 'What people in the industry are actually talking about this month.'
 ogCategory: 'Industry Pulse · Engineering Leadership'
 pubDate: 'Jun 21, 2026'
+related:
+  - title: 'Engineering Management Pulse — June 2026: The Apprenticeship Edition'
+    url: '/blog/engineering-management-pulse-june-2026-2/'
+  - title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+    url: '/blog/engineerings-new-argument-who-builds-who-reviews/'
 ---
 
 ## The News

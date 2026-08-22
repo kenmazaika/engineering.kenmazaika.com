@@ -1,8 +1,13 @@
 ---
-title: 'Engineering Management Pulse — June 2026'
+title: 'Engineering Management Pulse — June 2026: The Apprenticeship Edition'
 description: 'A quick pulse check on what engineering managers and senior engineers were actually arguing about this week. Not a newsletter — more like notes from the hallway after everyone left the meeting.'
 ogCategory: 'Industry Pulse · Engineering Leadership'
 pubDate: 'Jun 28, 2026'
+related:
+  - title: 'Engineering Management Pulse — June 2026'
+    url: '/blog/engineering-management-pulse-june-2026-1/'
+  - title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+    url: '/blog/engineerings-new-argument-who-builds-who-reviews/'
 ---
 
 > A quick pulse check on what engineering managers and senior engineers were actually arguing about this week. Not a newsletter — more like notes from the hallway after everyone left the meeting.

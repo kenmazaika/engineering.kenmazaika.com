@@ -11,6 +11,28 @@ const oneLightTheme = JSON.parse(
   fs.readFileSync(path.resolve('./src/styles/one-light-custom.json'), 'utf-8')
 );
 
+// Build a slug -> lastmod map from blog frontmatter so the sitemap can carry
+// accurate per-page <lastmod> (updatedDate when present, else pubDate).
+function buildLastmodMap() {
+  const dir = path.resolve('./src/content/blog');
+  const map = {};
+  for (const file of fs.readdirSync(dir)) {
+    if (!/\.(md|mdx)$/.test(file)) continue;
+    const raw = fs.readFileSync(path.join(dir, file), 'utf-8');
+    const fm = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!fm) continue;
+    const slug = file.replace(/\.(md|mdx)$/, '');
+    const dateMatch = fm[1].match(/^(?:updatedDate|pubDate):\s*['"]?([^'"\n]+)/m);
+    if (dateMatch) {
+      const parsed = new Date(dateMatch[1]);
+      if (!Number.isNaN(parsed.valueOf())) map[slug] = parsed;
+    }
+  }
+  return map;
+}
+
+const lastmodBySlug = buildLastmodMap();
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://engineering.kenmazaika.com',
@@ -18,6 +40,14 @@ export default defineConfig({
 		mdx(),
 		sitemap({
 			filter: (page) => !HIDDEN_SLUGS.some((slug) => page.includes(`/blog/${slug}/`)),
+			serialize: (item) => {
+				const match = item.url.match(/\/blog\/([^/]+)\/$/);
+				if (match) {
+					const lastmod = lastmodBySlug[match[1]];
+					if (lastmod) item.lastmod = lastmod;
+				}
+				return item;
+			},
 		}),
 	],
 	markdown: {

@@ -16,6 +16,7 @@ const {
 	pubDate,
 	updatedDate,
 	slug,
+	seoTitle,
 	socialTitle,
 	readingMinutes = 1,
 	hideDefaultNewsletter = false,
@@ -25,21 +26,47 @@ const {
 	popupTitle,
 	popupCopy,
 	popupCta,
+	noindex = false,
+	related = [],
 } = Astro.props;
 const socialImage = `/og/${slug}.png`;
 const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
+const pageTitle = `${seoTitle ?? title} — ${SITE_TITLE}`;
+const canonicalURL = new URL(`/blog/${slug}/`, Astro.site);
+
+const articleSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: title,
+	description,
+	image: new URL(socialImage, Astro.site).href,
+	author: {
+		'@type': 'Person',
+		name: 'Ken Mazaika',
+		url: new URL('/about/', Astro.site).href,
+	},
+	publisher: {
+		'@type': 'Person',
+		name: 'Ken Mazaika',
+	},
+	datePublished: pubDate.toISOString(),
+	...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
+	mainEntityOfPage: canonicalURL.href,
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead
-			title={`${title} — ${SITE_TITLE}`}
+			title={pageTitle}
 			description={description}
 			image={socialImage}
 			imageAlt={socialImageAlt}
 			type="article"
+			noindex={noindex}
 		/>
+		<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -60,6 +87,16 @@ const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
 					</div>
 				</header>
 				<div class="prose"><slot /></div>
+				{related.length > 0 && (
+					<nav class="related-posts" aria-label="Related reading">
+						<h2>Related reading</h2>
+						<ul>
+							{related.map((item) => (
+								<li><a href={item.url}>{item.title}</a></li>
+							))}
+						</ul>
+					</nav>
+				)}
 				{!hideDefaultNewsletter && <NewsletterSignup />}
 				{showPopup && (
 					<NewsletterPopup

@@ -4,6 +4,11 @@ description: 'How I use a dedicated inbox, a scoring skill, and a daily Hermes j
 socialTitle: 'A Scouting Workflow for Apartment Hunting'
 ogCategory: 'Field Note · Practical Automation'
 pubDate: 'Jul 18, 2026'
+related:
+  - title: 'Hermes Workflow: I thought Kanban was for me to manage'
+    url: '/blog/hermes-workflow-i-thought-kanban-was-for-me-to-manage/'
+  - title: 'Capture workflow: a reusable Hermes use case for work that contains your judgment'
+    url: '/blog/capture-workflow/'
 showPopup: true
 ---
 

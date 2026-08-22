@@ -10,6 +10,20 @@ const blog = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.string(),
+			// Optional search-engine title (defaults to title). Lets the visible
+			// H1 stay narrative while the <title> targets a search query.
+			seoTitle: z.string().optional(),
+			// Suppress indexing entirely (used for hidden test pages).
+			noindex: z.boolean().optional(),
+			// Related posts shown in the article footer (title + path).
+			related: z
+				.array(
+					z.object({
+						title: z.string(),
+						url: z.string(),
+					}),
+				)
+				.optional(),
 			socialTitle: z.string().optional(),
 			ogCategory: z.string().optional(),
 			// Transform string to Date object

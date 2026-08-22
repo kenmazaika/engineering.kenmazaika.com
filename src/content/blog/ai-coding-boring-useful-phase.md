@@ -3,6 +3,11 @@ title: 'AI Coding Is Entering Its Boring, Useful Phase'
 description: 'AI coding is moving past hype and slop toward clearer evidence, ownership, and practical engineering norms.'
 ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Jul 20, 2026'
+related:
+  - title: 'AI Made the Code Cheap. It Made the Review Expensive.'
+    url: '/blog/ai-made-the-code-cheap-review-expensive/'
+  - title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+    url: '/blog/engineerings-new-argument-who-builds-who-reviews/'
 ---
 
 *The interesting shift this week wasn’t a dramatic new capability. It was teams getting more specific about what acceptable AI-assisted work looks like.*

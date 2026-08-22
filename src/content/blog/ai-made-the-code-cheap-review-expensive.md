@@ -3,6 +3,11 @@ title: "AI Made the Code Cheap. It Made the Review Expensive."
 description: "When AI-generated artifacts look senior but the engineer doesn't, the bottleneck moves from writing code to proving it works."
 ogCategory: 'Industry Pulse · Engineering Leadership'
 pubDate: 'Aug 03, 2026'
+related:
+  - title: "Tests Pass. That's No Longer Enough."
+    url: '/blog/tests-pass-thats-no-longer-enough/'
+  - title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+    url: '/blog/engineerings-new-argument-who-builds-who-reviews/'
 ---
 
 A team lead on r/ExperiencedDevs said the quiet part out loud this week: junior developers are producing clean PRs with passing tests, then failing basic questions about why the code works.

@@ -1,9 +1,15 @@
 ---
 title: "I Ran Eleven AI Models on Real Agentic Workflows in Hermes"
 description: "Five real agentic tasks, identical prompts, full receipts — and the models I'd actually pay for."
+seoTitle: '11 AI Models, 5 Real Tasks — Tested on Real Agentic Work in Hermes'
 socialTitle: '11 AI models, 5 real agentic tasks, full receipts'
-ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Aug 19, 2026'
+related:
+  - title: 'My Default Model Stack for AI Agent Work'
+    url: '/blog/my-default-model-stack-for-ai-agent-work/'
+  - title: 'Before You Blame the Model, Audit Your Hermes Setup'
+    url: '/blog/before-you-blame-the-model-audit-your-hermes-setup/'
+ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
 ---
 

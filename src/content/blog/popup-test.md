@@ -3,6 +3,7 @@ title: "Newsletter Popup Test"
 description: 'Hidden test page for the newsletter popup. Scroll about halfway and the popup slides up. Move the cursor to the top of the window to test exit intent. Add ?popup=1 to force it.'
 pubDate: 'Aug 15, 2026'
 hidden: true
+noindex: true
 showPopup: true
 hideDefaultNewsletter: true
 ---

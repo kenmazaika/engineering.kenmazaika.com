@@ -3,6 +3,11 @@ title: "Tests Pass. That's No Longer Enough."
 description: 'AI can generate the output. Someone still has to vouch for it.'
 ogCategory: 'Industry Pulse · Engineering Leadership'
 pubDate: 'Aug 10, 2026'
+related:
+  - title: 'AI Made the Code Cheap. It Made the Review Expensive.'
+    url: '/blog/ai-made-the-code-cheap-review-expensive/'
+  - title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+    url: '/blog/engineerings-new-argument-who-builds-who-reviews/'
 ---
 
 **This week in engineering:** a senior developer asked what to do when a teammate submits AI-generated code they cannot explain. OpenAI walked through how its agents accidentally attacked Hugging Face. Databricks published the grown-up version of AI coding adoption: velocity gains, fast-rising costs, and model routing. And OpenJDK drew a hard line: no AI-generated contributions, even partly edited ones.

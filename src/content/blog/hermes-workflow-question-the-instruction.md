@@ -4,6 +4,11 @@ description: 'A persistent memory instruction that helps Hermes identify the roo
 socialTitle: 'Teach Your Agent to Question the Instruction'
 ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Aug 8, 2026'
+related:
+  - title: 'Hermes Workflow: I thought Kanban was for me to manage'
+    url: '/blog/hermes-workflow-i-thought-kanban-was-for-me-to-manage/'
+  - title: 'Before You Blame the Model, Audit Your Hermes Setup'
+    url: '/blog/before-you-blame-the-model-audit-your-hermes-setup/'
 showPopup: true
 ---
 

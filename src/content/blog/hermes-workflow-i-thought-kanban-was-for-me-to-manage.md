@@ -2,8 +2,13 @@
 title: 'Hermes Workflow: I thought Kanban was for me to manage'
 description: 'A two-word instruction that hands the orchestration middle to Hermes: three distinct profiles make, critique, and verify the work while I keep the kickoff and the final judgment.'
 socialTitle: 'I Thought Kanban Was for Me to Manage'
-ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Aug 10, 2026'
+related:
+  - title: 'Hermes Workflow: Teach Your Agent to Question the Instruction'
+    url: '/blog/hermes-workflow-question-the-instruction/'
+  - title: 'Hermes Workflow: Using the Scouting Pattern for Apartment Hunting'
+    url: '/blog/hermes-workflow-apartment-scouting/'
+ogCategory: 'Field Note · Hermes Workflows'
 showPopup: true
 ---
 

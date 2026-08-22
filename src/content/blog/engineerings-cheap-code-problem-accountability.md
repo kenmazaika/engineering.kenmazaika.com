@@ -3,6 +3,11 @@ title: "Engineering's Cheap-Code Problem Is Now an Accountability Problem"
 description: 'The week AI stopped looking like a writing shortcut and started looking like a review, context, and governance test.'
 ogCategory: 'Industry Pulse · Engineering Leadership'
 pubDate: 'Jul 28, 2026'
+related:
+  - title: 'AI Made the Code Cheap. It Made the Review Expensive.'
+    url: '/blog/ai-made-the-code-cheap-review-expensive/'
+  - title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+    url: '/blog/engineerings-new-argument-who-builds-who-reviews/'
 ---
 
 > The week AI stopped looking like a writing shortcut and started looking like a review, context, and governance test.

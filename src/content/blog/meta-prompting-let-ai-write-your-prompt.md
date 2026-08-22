@@ -4,6 +4,11 @@ description: 'Describe what you want in plain language. Ask the AI to turn it in
 socialTitle: 'Let the AI Write Your Prompt'
 ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Aug 07, 2026'
+related:
+  - title: 'Hermes Workflow: Teach Your Agent to Question the Instruction'
+    url: '/blog/hermes-workflow-question-the-instruction/'
+  - title: 'Capture workflow: a reusable Hermes use case for work that contains your judgment'
+    url: '/blog/capture-workflow/'
 showPopup: true
 ---
 

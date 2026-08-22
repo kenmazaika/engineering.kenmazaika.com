@@ -1,8 +1,12 @@
 ---
 title: 'My Default Model Stack for AI Agent Work'
 description: 'One frontier subscription, one cheap workhorse, one vision specialist — and why the vision layer earned its spot after my workhorse told me it was blind.'
-ogCategory: 'Field Note · AI & Engineering'
+seoTitle: 'My Default AI Model Stack for Agent Work — What I Run in Hermes'
 pubDate: 'Aug 22, 2026'
+related:
+  - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'
+    url: '/blog/i-ran-ten-ai-models-on-my-real-work/'
+ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
 ---
 

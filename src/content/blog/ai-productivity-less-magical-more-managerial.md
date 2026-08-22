@@ -4,6 +4,11 @@ description: 'Why AI adoption is turning into a team-management problem, not jus
 socialTitle: 'AI Productivity Is Getting More Managerial'
 ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Jul 5, 2026'
+related:
+  - title: 'Engineering’s New Argument: Who Builds, Who Reviews, and Who Gets Left Behind?'
+    url: '/blog/engineerings-new-argument-who-builds-who-reviews/'
+  - title: 'Engineering Management Pulse — June 2026: The Apprenticeship Edition'
+    url: '/blog/engineering-management-pulse-june-2026-2/'
 ---
 
 The clean pitch is still: AI writes more code, faster. The messier version this week is: AI also creates more review, more trust problems, more measurement fights, and more weird cultural pressure inside engineering orgs.
