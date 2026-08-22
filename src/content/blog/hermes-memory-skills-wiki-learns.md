@@ -4,6 +4,7 @@ description: 'How I separate persistent memory, executable skills, a research wi
 socialTitle: 'How Hermes Remembers, Repeats, and Learns'
 ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Jul 18, 2026'
+showPopup: true
 ---
 
 I have used Obsidian for years. I have persistent memory turned on in Hermes. I have a growing collection of skills. And now I have a Markdown wiki that Hermes researches and maintains.

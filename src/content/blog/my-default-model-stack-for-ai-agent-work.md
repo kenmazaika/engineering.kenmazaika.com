@@ -3,6 +3,7 @@ title: 'My Default Model Stack for AI Agent Work'
 description: 'One frontier subscription, one cheap workhorse, one vision specialist — and why the vision layer earned its spot after my workhorse told me it was blind.'
 ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Aug 22, 2026'
+showPopup: true
 ---
 
 People ask which models I actually use for agent work. The honest answer is that the specific models matter less than people think, but the *shape* of the answer matters a lot. My default stack is three layers, not a model zoo:

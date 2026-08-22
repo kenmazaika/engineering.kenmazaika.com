@@ -4,6 +4,7 @@ description: 'A persistent memory instruction that helps Hermes identify the roo
 socialTitle: 'Teach Your Agent to Question the Instruction'
 ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Aug 8, 2026'
+showPopup: true
 ---
 
 Add this to your Hermes user profile:

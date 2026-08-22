@@ -4,6 +4,7 @@ description: 'A two-word instruction that hands the orchestration middle to Herm
 socialTitle: 'I Thought Kanban Was for Me to Manage'
 ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Aug 10, 2026'
+showPopup: true
 ---
 
 I used to think Kanban was a tool that helped me manage Hermes. I pictured myself watching the board, routing work to specialists, and coordinating the handoffs. Honestly, that did not seem especially valuable. It still made me the project manager for a group of agents.

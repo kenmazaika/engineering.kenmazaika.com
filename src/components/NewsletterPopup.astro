@@ -16,18 +16,18 @@ interface Props {
 const { mode = 'email', href = '/blog/', title, copy, cta } = Astro.props;
 
 const isLink = mode === 'link';
-const kicker = isLink ? 'The Hermes Kit' : 'Stay in the loop';
+const kicker = isLink ? 'The Hermes Kit' : 'The Hermes Kit';
 const popupTitle =
 	title ??
 	(isLink
 		? 'Stop configuring by vibes.'
-		: 'Get the next field note.');
+		: 'Get the Hermes Kit model scorecard.');
 const popupCopy =
 	copy ??
 	(isLink
 		? 'Which models, memory, and setup actually hold up on real work? I ran mine through five real tasks — receipts included, nothing cherry-picked.'
-		: 'Practical writing about engineering leadership, AI productivity, and building teams in the agent era.');
-const popupCta = cta ?? (isLink ? 'Read the post' : 'Subscribe');
+		: 'Which models actually hold up on real agentic work? I ran 11 models through 5 real tasks — same prompts, no tuning, receipts included.');
+const popupCta = cta ?? (isLink ? 'Read the post' : 'Send me the scorecard');
 ---
 
 <div id="nl-popup" class="nl-popup" role="dialog" aria-modal="false" aria-label={kicker} aria-hidden="true">
@@ -49,6 +49,7 @@ const popupCta = cta ?? (isLink ? 'Read the post' : 'Subscribe');
 					<div class="nl-popup-fields">
 						<input type="email" name="email" id="nl-popup-email" autocomplete="email" placeholder="you@example.com" required />
 						<input type="hidden" name="embed" value="1" />
+						<input type="hidden" name="metadata__optin" value="scorecard" />
 						<button type="submit">{popupCta}</button>
 					</div>
 				</form>

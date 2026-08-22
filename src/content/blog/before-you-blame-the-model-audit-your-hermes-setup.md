@@ -3,6 +3,7 @@ title: 'Before You Blame the Model, Audit Your Hermes Setup'
 description: 'A copyable prompt for finding missing tools, silent fallbacks, and configuration problems before you spend hours comparing AI models.'
 ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Jul 14, 2026'
+showPopup: true
 ---
 
 I spent a few hours testing different models in Hermes because I was not happy with the quality of the research results.

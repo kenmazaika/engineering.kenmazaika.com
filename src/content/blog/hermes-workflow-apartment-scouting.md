@@ -4,6 +4,7 @@ description: 'How I use a dedicated inbox, a scoring skill, and a daily Hermes j
 socialTitle: 'A Scouting Workflow for Apartment Hunting'
 ogCategory: 'Field Note · Practical Automation'
 pubDate: 'Jul 18, 2026'
+showPopup: true
 ---
 
 Apartment hunting burns time in a predictable way. You scroll across several sites, reopen the same listings, and spend ten minutes on a place before noticing the bad commute, missing outdoor space, or outdated interior.

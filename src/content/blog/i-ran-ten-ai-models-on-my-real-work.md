@@ -4,6 +4,7 @@ description: "Five real agentic tasks, identical prompts, full receipts — and 
 socialTitle: '11 AI models, 5 real agentic tasks, full receipts'
 ogCategory: 'Field Note · AI & Engineering'
 pubDate: 'Aug 19, 2026'
+showPopup: true
 ---
 
 > **The full battery, 101 pages:** every prompt, every scored result, every receipt — **[download the PDF here (2.1 MB)](/battery-post-raw-data.pdf)**. Everything below is a summary of what's in it; you should draw your own conclusions.
