@@ -31,6 +31,8 @@ The difference was in the fine print, and the fine print is where the money is.
 
 You can run DeepSeek several ways, and the most cost-effective route isn't necessarily the DeepSeek service directly. DeepSeek's official API recently moved to peak/off-peak pricing — $0.66/M output off-peak, $1.32/M at peak. But OpenRouter serves the same model at $0.168/M output. Same model, about a quarter of the off-peak rate, no migration.
 
+But cheaper on paper isn't the same as cheaper in practice, and this is where the ledger earned its keep. My agent runs are long sessions with heavy prompt caching — most of every run is a cached prefix, not fresh input. On that blend the arithmetic flips: DeepSeek direct's cache-hit input is $0.007/M, while the aggregators charge roughly two and a half times that for a cached read. The route that looked cheaper on output price wasn't cheaper for the work I actually do. I only caught that because the grounded run's numbers were traceable enough to interrogate.
+
 The ungrounded run flattened all of this into "use DeepSeek." It also got a few of the prices slightly wrong, on exactly the numbers that would change a decision. The grounded run didn't miss any of them — every number had to trace to a quoted source or get marked `[unverified]`.
 
 That's the difference. Grounded Citations converts a plausible answer into one you can act on.
