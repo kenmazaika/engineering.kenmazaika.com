@@ -51,7 +51,7 @@ Here's the scoreboard, then the stories behind it.
 
 *On the build test, ✓ means the app landed every vendor inside the converged band (the PDF scoreboard uses a looser bar — ✓ = 4+ of 6 vendors in band; I'm using the stricter one). ≈ means very close — within a few dollars, missing only one vendor. The glm-5.3 app ran successfully, but against a wider window, so I'm not counting its $41.90 as a convergence result. Full numbers below.*
 
-**The short version, by family:** the gpt line — sol, terra, gpt-5.5, luna — pretty much got everything; sol and terra converged on the reference cost answer. grok did well at most things — its cost app was within a few dollars of the converged answer, and its vision work was excellent. deepseek was the value story: it converged on the cost test and was the only original model to surface usable jobs. mimo was quietly solid — it converged too. GLM was mixed: glm-4.5 and glm-4.5-flash were weak, while the glm-5.3 refresh found a real pulse thread, wrote a substantial PRD, produced a working-but-different-window cost report, built the strongest standalone job shortlist, and got a real GLM-family vision pass through pixels.
+**The short version, by family:** the OpenAI line was not uniform — of the four (sol, terra, gpt-5.5, luna), **only sol and terra converged** on the reference cost answer; gpt-5.5 under-read the metered vendors and luna still estimated. grok did well at most things — its cost app was within a few dollars of the converged answer, and its vision work was excellent. deepseek was the value story: it converged on the cost test and was the only original model to surface usable jobs. mimo was quietly solid — it converged too. GLM was mixed: glm-4.5 and glm-4.5-flash were weak, while the glm-5.3 refresh found a real pulse thread, wrote a substantial PRD, produced a working-but-different-window cost report, built the strongest standalone job shortlist, and got a real GLM-family vision pass through pixels.
 
 ### The read on each model
 
@@ -237,7 +237,7 @@ The stack, now with evidence behind it:
 
 * **deepseek is the daily driver.** It converged on the correct answer, found the only viable jobs, and I have yet to see anything beat it for the cost. The grunt work goes to deepseek.
 
-* **The OpenAI subscription is the anchor.** Use it to the maximum. sol is the top tier — thorough, but it burns your rate limit fast if you play with it. 5.5 is the solid mid-tier baseline. terra is quietly excellent.
+* **The OpenAI subscription is the anchor.** Use it to the maximum. sol is the top tier — thorough, but it burns your rate limit fast if you play with it. terra is quietly excellent — the most reliable of the OpenAI line. gpt-5.5 and luna were the weaker end of the same family: gpt-5.5 under-read the metered vendors on the build test (and wrote the generic essay on the research test), and luna still estimated instead of computing.
 
 * **grok earned its $30/month.** Much better than I anticipated — tier one for design and vision (its PRD was the deepest of the battery, and its critique of its own chart was the sharpest), and strong for other work too; the battery PDF itself was built with grok's design output. For image work specifically, pay-per-token is for testing; the quota is worth it if you actually use it.
 
