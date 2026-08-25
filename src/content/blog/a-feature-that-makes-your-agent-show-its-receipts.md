@@ -8,7 +8,7 @@ related:
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
   - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'
-    url: '/blog/i-ran-ten-ai-models-on-my-real-work/'
+    url: '/blog/best-ai-model-for-agent-work/'
   - title: 'Before You Blame the Model, Audit Your Hermes Setup'
     url: '/blog/before-you-blame-the-model-audit-your-hermes-setup/'
 ogCategory: 'Field Note · Hermes Workflows'

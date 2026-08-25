@@ -53,6 +53,25 @@ Here's the scoreboard, then the stories behind it.
 
 **The short version, by family:** the gpt line — sol, terra, gpt-5.5, luna — pretty much got everything; sol and terra converged on the reference cost answer. grok did well at most things — its cost app was within a few dollars of the converged answer, and its vision work was excellent. deepseek was the value story: it converged on the cost test and was the only original model to surface usable jobs. mimo was quietly solid — it converged too. GLM was mixed: glm-4.5 and glm-4.5-flash were weak, while the glm-5.3 refresh found a real pulse thread, wrote a substantial PRD, produced a working-but-different-window cost report, built the strongest standalone job shortlist, and got a real GLM-family vision pass through pixels.
 
+### The read on each model
+
+| model | read from the battery |
+| :- | :- |
+| gpt-5.6-sol | heavy-lifter. OAuth/Codex at $20/month makes it great for deep work, engineering work, and vision. Verbose, though — it takes the long way around |
+| gpt-5.6-terra | all-around great OpenAI model and my standard OpenAI driver. Reliable, reasonable on rate limit, and less prone to over-engineering |
+| glm-5.3 | great at compelling writing, graphics, and vision. Caveat: this was a refresh after the original battery, not perfectly apples-to-apples |
+| deepseek-v4-flash | general go-to. Even after the price hike, still well-rounded. Not always as refined for research/writing, but solid, beat most models, and remains strong for the price |
+| grok-4.6 | some tests ran long or timed out. Design and writing were solid; coding seemed close to the other strong results. I used grok's design output for the battery PDF because it fit the task |
+| mimo-v2.5 | useful alternate when OpenAI is rate-limited and I want something besides deepseek. Quietly reliable |
+| kimi-k2.6 | another alternate for the same situation. Terse and compliant; hits requirements without much extra judgment |
+| **baseline / control** | |
+| glm-4.5 | the old GLM — followed process, but weak when the answer became checkable |
+| glm-4.5-flash | the old GLM — the one I wouldn't reach for from this run |
+| gpt-5.5 | useful baseline, but more likely to produce the generic essay |
+| gpt-5.6-luna | seems useful for basic stuff, but since I'm not really tuning per-model usage, keeping terra as the standard OpenAI driver seems more practical |
+
+**What I actually run now:** sol for deep and engineering work, terra as the standard OpenAI driver, glm-5.3 when I want compelling writing or strong graphics, deepseek for daily work, grok when design matters, and mimo or kimi when OpenAI throttles me. The rankings will rot. The battery is the reusable part.
+
 ## Why I tested this way (the method)
 
 I run most of my actual work through Hermes, the agent platform that sits between me and the models — and the models underneath it change constantly. There are a lot of benchmarks for them, and they all ask the same kind of questions: how does it do tool calls, how does it do long context, how does it do *this*, how does it do *that*.

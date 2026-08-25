@@ -8,7 +8,7 @@ related:
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
   - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'
-    url: '/blog/i-ran-ten-ai-models-on-my-real-work/'
+    url: '/blog/best-ai-model-for-agent-work/'
 ogCategory: 'Field Note · Hermes Workflows'
 showPopup: true
 ---
@@ -39,7 +39,7 @@ The monthly cost has two parts. The first is the $20/month ChatGPT subscription,
 
 That's the estimate. Here's the measurement.
 
-In [the battery post](/blog/i-ran-ten-ai-models-on-my-real-work/), eleven models reconstructed my actual bill from my own usage data, and the ones that got the accounting right converged on $60.49 for 30 days. That number is my real usage — not the cost of running the test.
+In [the battery post](/blog/best-ai-model-for-agent-work/), eleven models reconstructed my actual bill from my own usage data, and the ones that got the accounting right converged on $60.49 for 30 days. That number is my real usage — not the cost of running the test.
 
 So I'm not going to hand you one flat number. Here's the honest version:
 

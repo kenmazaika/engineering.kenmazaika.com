@@ -8,7 +8,7 @@ related:
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
   - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'
-    url: '/blog/i-ran-ten-ai-models-on-my-real-work/'
+    url: '/blog/best-ai-model-for-agent-work/'
   - title: 'My $175 AI Agent Rig: What It Actually Costs to Run'
     url: '/blog/my-175-ai-agent-rig/'
 ogCategory: 'Field Note · AI & Engineering'

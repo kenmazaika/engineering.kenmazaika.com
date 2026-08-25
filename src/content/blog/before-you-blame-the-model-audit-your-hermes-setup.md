@@ -4,7 +4,7 @@ description: 'A copyable prompt for finding missing tools, silent fallbacks, and
 pubDate: 'Jul 14, 2026'
 related:
   - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'
-    url: '/blog/i-ran-ten-ai-models-on-my-real-work/'
+    url: '/blog/best-ai-model-for-agent-work/'
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
 ogCategory: 'Field Note · Hermes Workflows'

@@ -5,7 +5,7 @@ seoTitle: 'My Default AI Model Stack for Agent Work — What I Run in Hermes'
 pubDate: 'Aug 22, 2026'
 related:
   - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'
-    url: '/blog/i-ran-ten-ai-models-on-my-real-work/'
+    url: '/blog/best-ai-model-for-agent-work/'
 ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
 ---
@@ -77,7 +77,7 @@ That's the candy problem: as soon as quota is available, I'm the kid who eats al
 
 ## What the battery confirmed
 
-I recently ran an eleven-model test battery across five real agentic tasks — the method and full verdicts are in [the battery post](/blog/i-ran-ten-ai-models-on-my-real-work/), so I won't re-litigate the scoreboard here. What matters for this post is that the battery didn't change the stack. It confirmed it with data.
+I recently ran an eleven-model test battery across five real agentic tasks — the method and full verdicts are in [the battery post](/blog/best-ai-model-for-agent-work/), so I won't re-litigate the scoreboard here. What matters for this post is that the battery didn't change the stack. It confirmed it with data.
 
 - **The cost tracker with a checkable answer:** DeepSeek and OpenAI converged on the same number. Grok came very close. Some others were wildly off. The stack's top two layers hold.
 - **The vision test:** Grok tier one, Sol runner-up, OpenAI mid-tier, then a cliff — the same order the blind-model story pointed to.
