@@ -28,6 +28,7 @@ const {
 	popupCta,
 	noindex = false,
 	related = [],
+	faq = [],
 } = Astro.props;
 const socialImage = `/og/${slug}.png`;
 const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
@@ -53,6 +54,20 @@ const articleSchema = {
 	...(updatedDate ? { dateModified: updatedDate.toISOString() } : {}),
 	mainEntityOfPage: canonicalURL.href,
 };
+
+// FAQPage schema — emitted only when the post defines `faq` in frontmatter.
+const faqSchema = faq && faq.length > 0 ? {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faq.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.answer,
+		},
+	})),
+} : null;
 ---
 
 <!doctype html>
@@ -67,6 +82,7 @@ const articleSchema = {
 			noindex={noindex}
 		/>
 		<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+		{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />

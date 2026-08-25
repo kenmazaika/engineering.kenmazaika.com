@@ -26,6 +26,16 @@ const blog = defineCollection({
 				.optional(),
 			socialTitle: z.string().optional(),
 			ogCategory: z.string().optional(),
+			// Optional FAQ (question/answer pairs). When present, rendered as
+			// FAQPage JSON-LD structured data for rich results + AEO.
+			faq: z
+				.array(
+					z.object({
+						question: z.string(),
+						answer: z.string(),
+					}),
+				)
+				.optional(),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),

@@ -1,45 +1,43 @@
 ---
-title: "I Ran Eleven AI Models on Real Agentic Workflows in Hermes"
-description: "Five real agentic tasks, identical prompts, full receipts — and the models I'd actually pay for."
-seoTitle: '11 AI Models, 5 Real Tasks — Tested on Real Agentic Work in Hermes'
+title: "Which AI Model Should You Run for Agent Work? 11 Models, 5 Real Tasks, Receipts"
+description: "I ran 11 AI models on 5 real agentic tasks with identical prompts — and the receipts show which to actually run. DeepSeek is the cheap daily driver, OpenAI the quality anchor, grok the vision pick. Full measured results + the real $60.49 bill."
+seoTitle: "Best AI Model for Agent Work in 2026: 11 Models, 5 Real Tasks, Receipted Results"
 socialTitle: '11 AI models, 5 real agentic tasks, full receipts'
 pubDate: 'Aug 19, 2026'
+updatedDate: 'Aug 24, 2026'
 related:
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
+  - title: 'My $175 AI Agent Rig: What It Actually Costs to Run'
+    url: '/blog/my-175-ai-agent-rig/'
+  - title: 'Designing Blind: What a Vision Model Actually Buys You'
+    url: '/blog/designing-blind/'
   - title: 'Before You Blame the Model, Audit Your Hermes Setup'
     url: '/blog/before-you-blame-the-model-audit-your-hermes-setup/'
 ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
+faq:
+  - question: "Is DeepSeek good enough for daily agent work?"
+    answer: "Yes — it's the value story of the whole battery. It converged on the correct $60.49 bill, surfaced the only usable job results (23 roles, 3 verified passes), and costs a fraction of the frontier models. If you want to confirm before committing, the method + receipts are in the PDF."
+  - question: "Which model is best for vision / design work?"
+    answer: "Grok. It was tier one in the blind-ranked vision test (deepest critique of its own chart), and it built the best PRD in the battery. For image work, pay-per-token is for testing; the $30/month quota is worth it if you actually use it."
+  - question: "Should I use a subscription or pay-per-token?"
+    answer: "Both, for different jobs. The OpenAI subscription is the quality anchor for anything polished (a document someone else reads, a report you're putting your name on) at $0 marginal cost. Pay-per-token (DeepSeek, grok) is for volume and for things where the price is small enough that you don't watch the meter. My real $60.49 bill shows the mix in practice."
+  - question: "Which models should I avoid?"
+    answer: "The negative results matter as much as the winners. glm-4.5 and glm-4.5-flash were the weak end of the battery — generic output and the outlier $90.67 cost figure. luna consistently estimated instead of computing ($112.26). Knowing which to ignore is as valuable as knowing which to use — the side-by-side lets you show it rather than assert it."
+  - question: "What does running an AI agent actually cost?"
+    answer: "In my case, $60.49 over 30 days across seven providers — the converged answer four models independently reached. That's a real workload figure, not an estimate. For the deeper cost story, see my $175 rig breakdown and the model stack post."
+  - question: "Should I trust the number that's only $5 off vs. the one that's $30 off?"
+    answer: "No — this battery showed the number that's $5 off looks exactly as confident as the one that's $30 off. Check your work. For cost accounting, checking is the work."
 ---
 
 > **The full battery, 101 pages:** every prompt, every scored result, every receipt — **[download the PDF here (2.1 MB)](/battery-post-raw-data.pdf)**. Everything below is a summary of what's in it; you should draw your own conclusions.
 
-***
+## The short answer
 
-I run most of my actual work through Hermes, the agent platform that sits between me and the models — and the models underneath it change constantly. There are a lot of benchmarks for them, and they all ask the same kind of questions: how does it do tool calls, how does it do long context, how does it do *this*, how does it do *that*.
+I ran 11 AI models on 5 real agentic tasks with identical prompts, out of the box, and kept the receipts. The measured answer: **no single model wins** — DeepSeek is the cheap daily driver, the OpenAI subscription is the quality anchor, and grok earned its $30/month for vision. On the test with a checkable answer, four models converged on the correct figure — **my real 30-day bill: $60.49**.
 
-I wanted to know something different: **how do these things actually feel inside an agentic workflow?**
-
-That's the way you really learn a model, I think. You can read all the benchmarks you want, but at the end of the day you start playing around with it — and that's when you find out how it behaves. You get a vibe: *oh, sol gives me really thorough output when I'm doing design stuff. grok feels sharp. deepseek gets things done for cheap.* But it's all vibes. "I've run some stuff and I have a feeling" is not an answer.
-
-So I made the vibe check systematic. I built a test battery: five tasks shaped like work I actually do, run against eleven models, identical prompts, out of the box, no per-model tuning. If you tune each model to its strengths, you're not comparing models anymore — you're just grading your own tweaks. Every output was saved side by side, and the raw results ship alongside this post as a 101-page PDF with every prompt and every artifact.
-
-This matters right now because model rankings change every week and every vendor is selling something. The question worth answering is the one the benchmarks don't touch: what should you actually run for the work you do every day — and what does it cost when you're done?
-
-The honest headline, up front: **the same prompt produces wildly different behavior — consistently enough to act on.** Side by side is the only way to see it clearly, and it's also how you find out which models you can't afford to lose.
-
-## The battery
-
-Five tests, in the shape of work I really do (original run on 2026-08-17, with a glm-5.3 refresh on 2026-08-20, out of the box):
-
-1. **The weekly workflow** — browse Reddit for a contentious engineering-leadership thread, write a "both sides + my read" blurb.
-2. **The PRD** — write a product requirements doc for a real tool I want (a Hermes cost tracker), researching the docs and a real session database, all on a kanban board.
-3. **The build** — implement that tool from your own PRD, against real usage data, with a **correct answer** you can check against.
-4. **The job finder** — build a job-search *skill* from scratch, then execute it live.
-5. **The vision test** — design a chart from a real figure spec, then look at your own diagram with your own vision, critique it, and fix it.
-
-Eleven models: deepseek-v4-flash, glm-4.5, glm-4.5-flash, glm-5.3, mimo-v2.5, kimi-k2.6, grok-4.6, gpt-5.5, gpt-5.6-luna, gpt-5.6-terra, gpt-5.6-sol — plus GLM-family native vision on the tests that need eyes.
+**The one-line takeaway:** the same prompt produces wildly different behavior — consistently enough to act on. Side by side is the only way to see it clearly, and it's also how you find out which models you can't afford to lose.
 
 Here's the scoreboard, then the stories behind it.
 
@@ -53,10 +51,35 @@ Here's the scoreboard, then the stories behind it.
 
 *On the build test, ✓ means the app landed every vendor inside the converged band (the PDF scoreboard uses a looser bar — ✓ = 4+ of 6 vendors in band; I'm using the stricter one). ≈ means very close — within a few dollars, missing only one vendor. The glm-5.3 app ran successfully, but against a wider window, so I'm not counting its $41.90 as a convergence result. Full numbers below.*
 
-
 **The short version, by family:** the gpt line — sol, terra, gpt-5.5, luna — pretty much got everything; sol and terra converged on the reference cost answer. grok did well at most things — its cost app was within a few dollars of the converged answer, and its vision work was excellent. deepseek was the value story: it converged on the cost test and was the only original model to surface usable jobs. mimo was quietly solid — it converged too. GLM was mixed: glm-4.5 and glm-4.5-flash were weak, while the glm-5.3 refresh found a real pulse thread, wrote a substantial PRD, produced a working-but-different-window cost report, built the strongest standalone job shortlist, and got a real GLM-family vision pass through pixels.
 
-## Test 1 — The weekly workflow: research vs. generic
+## Why I tested this way (the method)
+
+I run most of my actual work through Hermes, the agent platform that sits between me and the models — and the models underneath it change constantly. There are a lot of benchmarks for them, and they all ask the same kind of questions: how does it do tool calls, how does it do long context, how does it do *this*, how does it do *that*.
+
+I wanted to know something different: **how do these things actually feel inside an agentic workflow?**
+
+That's the way you really learn a model, I think. You can read all the benchmarks you want, but at the end of the day you start playing around with it — and that's when you find out how it behaves. You get a vibe: *oh, sol gives me really thorough output when I'm doing design stuff. grok feels sharp. deepseek gets things done for cheap.* But it's all vibes. "I've run some stuff and I have a feeling" is not an answer.
+
+So I made the vibe check systematic. I built a test battery: five tasks shaped like work I actually do, run against eleven models, identical prompts, out of the box, no per-model tuning. If you tune each model to its strengths, you're not comparing models anymore — you're just grading your own tweaks. Every output was saved side by side, and the raw results ship alongside this post as a 101-page PDF with every prompt and every artifact.
+
+This matters right now because model rankings change every week and every vendor is selling something. The question worth answering is the one the benchmarks don't touch: what should you actually run for the work you do every day — and what does it cost when you're done?
+
+### The battery
+
+Five tests, in the shape of work I really do (original run on 2026-08-17, with a glm-5.3 refresh on 2026-08-20, out of the box):
+
+1. **The weekly workflow** — browse Reddit for a contentious engineering-leadership thread, write a "both sides + my read" blurb.
+2. **The PRD** — write a product requirements doc for a real tool I want (a Hermes cost tracker), researching the docs and a real session database, all on a kanban board.
+3. **The build** — implement that tool from your own PRD, against real usage data, with a **correct answer** you can check against.
+4. **The job finder** — build a job-search *skill* from scratch, then execute it live.
+5. **The vision test** — design a chart from a real figure spec, then look at your own diagram with your own vision, critique it, and fix it.
+
+Eleven models: deepseek-v4-flash, glm-4.5, glm-4.5-flash, glm-5.3, mimo-v2.5, kimi-k2.6, grok-4.6, gpt-5.5, gpt-5.6-luna, gpt-5.6-terra, gpt-5.6-sol — plus GLM-family native vision on the tests that need eyes.
+
+## The results by task
+
+### Test 1 — The weekly workflow: research vs. generic
 
 The task was simple: find a contentious, highly upvoted engineering-leadership thread on Reddit, cover both sides, add "my read." The Philip DeFranco move, basically.
 
@@ -70,8 +93,7 @@ And the worst behavior: a couple of the generic essays leaned on my own wiki not
 
 Same prompt, eleven ways: some models went out and found something real, some wrote essays they didn't need the internet for. That gap is the first thing you notice, before any rubric matters.
 
-
-## Test 2 — The PRD: process is table stakes
+### Test 2 — The PRD: process is table stakes
 
 The product: a Hermes cost tracker. Hermes tracks token usage but never computes the dollar cost — I want a tool that turns the usage data into actual USD. Real gap, not a contrived exercise — it's a tool I want for my own Hermes setup. (Hermes is the agent platform I run everything through; the tracker is the piece it's missing.) Each model had to research the docs and a real session database, write a PRD, and use a kanban board to do it.
 
@@ -81,7 +103,7 @@ The PRDs themselves ranged from grok's 30,798 bytes — requirements, non-goals,
 
 The takeaway here was almost boring: **when the process is explicit, everyone can do the process.** The battery's value shows up elsewhere.
 
-## Test 3 — The build: the test with a correct answer
+## What the receipts show (cost) — the test with a correct answer
 
 This is the centerpiece, because real work has a checkable answer. Each model had to implement the cost tracker from its own PRD — parse a real SQLite database of 1,024 sessions across seven Hermes profiles, apply per-provider rate cards, aggregate over a locked 30-day window — and produce the report. Python standard library only. It had to actually run.
 
@@ -122,9 +144,9 @@ The full grid, every app against every vendor (✓ = inside the converged band):
 
 Four of the ten apps landed every vendor inside the converged band: deepseek, mimo, sol, terra — all at $60.49. grok was very close ($56.44 — within a few dollars of the converged answer, missing one vendor because its session filter read a fraction of the usage). kimi overshot ($69.06, reading deepseek and xiaomi above the band). And then the failures, each different: glm-4.5 never priced xai at all ($20.29). gpt-5.5 under-read the metered vendors ($45.59) — its first run, before its units bug was fixed, reported $293,534.88. luna still estimated ($112.26). glm-4.5-flash was the outlier — its fallback-rate path inflated deepseek and priced quota sessions as if they were cash ($90.67, one vendor in band out of six).
 
-One honest correction: this test had a false start. The first “correct answer” was $9.27 because the rate cards were wrong; after every app used the same source-of-truth rates, the converged answer became $60.49. **The rate table, not the model, was the variable.**
+One honest correction: this test had a false start. The first "correct answer" was $9.27 because the rate cards were wrong; after every app used the same source-of-truth rates, the converged answer became $60.49. **The rate table, not the model, was the variable.**
 
-## Test 4 — The job finder: the meta-skill, and the numbers game
+### Test 4 — The job finder: the meta-skill, and the numbers game
 
 The task: build a job-search *skill* from scratch, then execute it. The candidate: an engineering manager in Santa Monica with 6+ years of experience. The skill had to find Engineering Manager / Director roles at AI companies, score every role three separate ways (fit, career acceleration, realistic shot), end with Apply / Hold / Skip / Watch, verify each posting live on the employer's own ATS, and never fabricate compensation or dates. No tuning, no coaching — out of the box.
 
@@ -136,7 +158,7 @@ Why did deepseek win? It played the numbers game. It filtered less and handed me
 
 In retrospect, my prompt mentioned location and recency but didn't make them dealbreakers — out of the box, most of the models just didn't treat them that way. The glm-5.3 refresh was better as a process artifact — 14 employer-ATS roles verified live, 9 Apply / 1 Watch / 4 Skip — but it also changed the effective filter to include relocation-heavy frontier-lab roles, so I keep it as a refresh note rather than pretending it is the same scoreboard.
 
-## Test 5 — The vision test: can it see what it made?
+### Test 5 — The vision test: can it see what it made?
 
 The last test runs on pixels. Each model designed a chart from a real figure spec — the "39-point perception gap," from the METR 2025 study (arXiv:2507.09089): developers *predicted* AI would make them 24% faster, *believed* it had made them 20% faster, and the timer recorded them 19% *slower*. Thirty-nine points between what developers felt and what the clock said. Worth noting: the study is from 2025, with the tools of that era — the specific numbers are the chart's subject, not a claim about today's models. It still makes a compelling picture, which is why it's the anchor chart. Then each model had to load its own diagram, critique it like a senior design reviewer, and ship a redesign.
 
@@ -148,7 +170,9 @@ For the GLM refresh, I ran the current GLM-family vision model directly on the p
 
 An independent reviewer ranked the v2 figures blind — best figure: grok.
 
-### The finals (v2, all nine)
+### The vision results: each model's redesigned chart
+
+Below are the "after" figures — the v2 chart each vision-capable model shipped after critiquing its own first attempt. Nine of the eleven models produced a redesign; deepseek and the two glm-4.5 variants didn't run vision finals. (The "before" pairs are in the PDF.)
 
 **mimo — v2**
 
@@ -186,9 +210,6 @@ An independent reviewer ranked the v2 figures blind — best figure: grok.
 
 ![glm-5.3 refresh — v2](/figures/v2/glm-5.3-v2.png)
 
-The before/after pairs are in the PDF — these are the after.
-
-
 ## What I actually learned
 
 **The same prompt, eleven ways, produces wildly different behavior — and the differences are consistent enough to act on.** It's nice to have a second model in your pocket for the days your rates change or your main provider throttles you.
@@ -203,8 +224,21 @@ The stack, now with evidence behind it:
 
 * **The rest are insurance.**
 
-
 One more lesson, for the failures: when a model's behavior surprises you, check the harness before blaming the model. An image mode that passes no image doesn't mean the model is blind. A provider timeout that kills a slow build doesn't mean the model can't build. The failures that turned out to be genuine model bugs — grok's date-format bug in its cost app (easy fix, then it ran fine), the rate-unit mistakes — were easy to diagnose once the harness was ruled out.
+
+## FAQ
+
+**Is DeepSeek good enough for daily agent work?** Yes — it's the value story of the whole battery. It converged on the correct $60.49 bill, surfaced the only usable job results (23 roles, 3 verified passes), and costs a fraction of the frontier models. If you want to confirm before committing, the method + receipts are in the PDF.
+
+**Which model is best for vision / design work?** Grok. It was tier one in the blind-ranked vision test (deepest critique of its own chart), and it built the best PRD in the battery. For image work, pay-per-token is for testing; the $30/month quota is worth it if you actually use it.
+
+**Should I use a subscription or pay-per-token?** Both, for different jobs. The OpenAI subscription is the quality anchor for anything polished (a document someone else reads, a report you're putting your name on) at $0 marginal cost. Pay-per-token (DeepSeek, grok) is for volume and for things where the price is small enough that you don't watch the meter. My real $60.49 bill shows the mix in practice.
+
+**Which models should I avoid?** The negative results matter as much as the winners. glm-4.5 and glm-4.5-flash were the weak end of the battery — generic output and the outlier $90.67 cost figure. luna consistently estimated instead of computing ($112.26). Knowing which to ignore is as valuable as knowing which to use — the side-by-side lets you show it rather than assert it.
+
+**What does running an AI agent actually cost?** In my case, $60.49 over 30 days across seven providers — the converged answer four models independently reached. That's a real workload figure, not an estimate. (For the deeper cost story, see my [$175 rig breakdown](/blog/my-175-ai-agent-rig/) and the [model stack post](/blog/my-default-model-stack-for-ai-agent-work/).)
+
+**Should I trust the number that's only $5 off vs. the one that's $30 off?** No — this battery showed the number that's $5 off looks exactly as confident as the one that's $30 off. Check your work. For cost accounting, checking is the work.
 
 ## The receipts
 
@@ -213,3 +247,5 @@ The full battery is published alongside this post: **[the 101-page PDF (2.1 MB)]
 I'm not planning a rerun — but the method, prompts and all, is in the PDF if you want to run the battery on your own stack. The rankings will change; the method won't.
 
 The same prompt produces wildly different behavior — research or generic, spot-on or wildly off. The receipts let you draw your own conclusions.
+
+*Last updated Aug 24, 2026 (SEO retrofit — title, structure, FAQ. All test data unchanged from the original Aug 19, 2026 run and the Aug 20 glm-5.3 refresh.)*
