@@ -6,12 +6,12 @@ socialTitle: "AI's impact on dev teams is enormous. The metric doesn't exist."
 pubDate: 'Aug 21, 2026'
 updatedDate: 'Aug 26, 2026'
 related:
-  - title: 'AI Productivity Is Less Magical and More Managerial'
-    url: '/blog/ai-productivity-less-magical-more-managerial/'
-  - title: 'Who Still Understands the System?'
-    url: '/blog/who-still-understands-the-system/'
-  - title: 'AI Made the Code Cheap. Review Got Expensive.'
-    url: '/blog/ai-made-the-code-cheap-review-expensive/'
+  - title: 'Which AI Model Should You Run for Agent Work?'
+    url: '/blog/best-ai-model-for-agent-work/'
+  - title: 'Does AI Citation Grounding Actually Catch Errors?'
+    url: '/blog/a-feature-that-makes-your-agent-show-its-receipts/'
+  - title: 'My Default Model Stack for AI Agent Work'
+    url: '/blog/my-default-model-stack-for-ai-agent-work/'
 ogCategory: 'Field Note · AI & Engineering'
 faq:
   - question: "How do you measure AI's impact on developer productivity?"

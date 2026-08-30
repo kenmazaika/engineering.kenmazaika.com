@@ -28,14 +28,14 @@ const [featured, ...remaining] = posts;
 		<Header />
 		<main>
 			<section class="hero">
-				<p class="hero-kicker">Engineering leadership in the agent era</p>
-				<h1 class="hero-tagline">How AI changes the way teams build software.</h1>
-				<p class="hero-sub">Field notes on engineering management, AI productivity, and practical systems that hold up outside the demo.</p>
+				<p class="hero-kicker">Operating AI agents on real work</p>
+				<h1 class="hero-tagline">Workflows, model choices, costs, and receipts.</h1>
+				<p class="hero-sub">Hands-on field notes from running AI agents, plus long-form essays on the engineering systems around them.</p>
 			</section>
 
 			{featured && (
 				<section class="featured-wrap" aria-labelledby="featured-label">
-					<div class="featured-rule"><span id="featured-label">Latest essay</span></div>
+					<div class="featured-rule"><span id="featured-label">Featured field note</span></div>
 					<a class="featured-post" href={`/blog/${featured.id}/`}>
 						<p class="featured-meta"><FormattedDate date={featured.data.pubDate} /> · {readingTime(featured.body)} min read</p>
 						<h2>{featured.data.title}</h2>
@@ -47,7 +47,7 @@ const [featured, ...remaining] = posts;
 
 			{remaining.length > 0 && (
 				<section class="archive-preview" aria-labelledby="recent-writing">
-					<div class="section-label"><h2 id="recent-writing">Recent writing</h2><a href="/blog">View all</a></div>
+					<div class="section-label"><h2 id="recent-writing">Field notes and essays</h2><a href="/blog">View all</a></div>
 					<ul class="post-list">
 						{remaining.map((post) => (
 							<li class="post-item">

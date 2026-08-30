@@ -9,7 +9,7 @@ execFileSync('npm', ['run', 'build'], { cwd: root, stdio: 'pipe' });
 const expectedAction = 'https://buttondown.com/api/emails/embed-subscribe/mazaika';
 const pages = [
   join(root, 'dist/index.html'),
-  join(root, 'dist/blog/ai-productivity-less-magical-more-managerial/index.html'),
+  join(root, 'dist/blog/best-ai-model-for-agent-work/index.html'),
 ];
 
 for (const page of pages) {
