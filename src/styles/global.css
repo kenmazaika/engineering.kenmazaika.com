@@ -784,6 +784,8 @@ a:hover { color: var(--color-link-hover); }
 .archive-list { max-width: 820px; }
 
 .article-shell { width: min(100% - 3rem, 840px); margin-inline: auto; padding: 3.25rem 0 0; }
+/* Masthead pages: no white gap above the hero on mobile; desktop keeps a small gap */
+.article-shell:has(.article-masthead) { padding-top: 0; }
 
 /* Masthead variant: full-bleed hero with layered headline */
 /* Mobile-first: stacked layout — image at 16/9, then a dark text block below it.

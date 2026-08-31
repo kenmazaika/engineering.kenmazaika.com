@@ -1,6 +1,6 @@
 ---
 title: "Discord vs. Telegram for Agentic Work: Three Setups Across Hermes and OpenClaw"
-description: "I've set up my agent home three times: twice on Discord, once on Telegram, across Hermes and OpenClaw. Discord won — not because it's easier, but because threads contain projects while channels scatter them. Here's the one thing Telegram still does better, and the file-baton workaround for it."
+description: "Three setups, two agent platforms, one verdict: Discord won as my agent home — not because it's easier to set up, but because threads contain projects while channels scatter them. Telegram still wins on raw message length, and the file-baton pattern is the fix that doesn't require switching."
 seoTitle: "Discord vs Telegram for Agentic Work (Hermes & OpenClaw): Three Setups, One Verdict"
 socialTitle: 'Set Up My Agent Home Three Times. Discord Won — And Not Because It Is Easier.'
 pubDate: 'Aug 30, 2026'
