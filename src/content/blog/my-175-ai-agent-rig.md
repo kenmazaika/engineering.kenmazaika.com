@@ -4,13 +4,13 @@ description: "I run my AI agent 24/7 on a used $175 computer. The real bill: $17
 seoTitle: "What Running an AI Agent 24/7 Actually Costs: A Real Measured Bill"
 socialTitle: 'My $175 AI Agent Rig: What It Really Costs'
 pubDate: 'Aug 22, 2026'
-updatedDate: 'Aug 25, 2026'
+updatedDate: 'Aug 30, 2026'
 related:
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
-  - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'
+  - title: 'Which AI Model Should You Run for Agent Work?'
     url: '/blog/best-ai-model-for-agent-work/'
-ogCategory: 'Field Note · Hermes Workflows'
+ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
 faq:
   - question: "How much does it cost to run an AI agent?"
@@ -29,11 +29,13 @@ faq:
 
 I run my AI agent 24/7 on a used $175 computer. The real bill: **$175 once for hardware, $20/month for a subscription I already had, and metered usage that ran about $10-15 in routine months — but $60.49 in the month I actually measured**, plus about $21/month for search. Here's the honest breakdown and what the agent does to earn it.
 
+> **Setup note:** I measured this setup on Hermes in August 2026. I've since started moving the same rig and workflows to OpenClaw. The hardware and bills below are unchanged; once I have enough real OpenClaw usage to compare honestly, I'll publish that as the next chapter.
+
 Until I signed a lease, every morning at 8am I got an email with one to three apartments worth a look. Each one is already filtered by school district, commute time, budget, bedrooms, and whether the photos show decent light. When I pay the cleaner for the Airbnb, I send one line and it lands in Google Sheets. My LinkedIn content starts as dictated rambling and comes back as drafts.
 
 All of it runs on a used Dell OptiPlex I bought on Facebook Marketplace for $175.
 
-I'm not an AI researcher. I'm just an engineering manager. The agent is Hermes, which I run most of my actual work through, and it has been sitting in my house for months. I mostly talk to it over Telegram.
+I'm not an AI researcher. I'm just an engineering manager. During the period measured here, the agent was Hermes. It sat in my house for months, and I mostly talked to it over Telegram.
 
 ## The real bill
 

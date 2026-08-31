@@ -4,7 +4,7 @@ description: "I ran 11 AI models on 5 real agentic tasks with identical prompts 
 seoTitle: "Best AI Model for Agent Work in 2026: 11 Models, 5 Real Tasks, Receipted Results"
 socialTitle: '11 AI models, 5 real agentic tasks, full receipts'
 pubDate: 'Aug 19, 2026'
-updatedDate: 'Aug 24, 2026'
+updatedDate: 'Aug 30, 2026'
 related:
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
@@ -32,6 +32,8 @@ faq:
 ---
 
 > **The full battery, 101 pages:** every prompt, every scored result, every receipt — **[download the PDF here (2.1 MB)](/battery-post-raw-data.pdf)**. Everything below is a summary of what's in it; you should draw your own conclusions.
+
+> **Setup note:** I ran this battery on Hermes in August 2026. I've since started moving the same workloads to OpenClaw. The measurements and rankings below are unchanged: this is a dated experiment, not a permanent recommendation. Once I have enough comparable OpenClaw usage, I'll publish the rerun and link it here.
 
 ## The short answer
 
@@ -70,11 +72,11 @@ Here's the scoreboard, then the stories behind it.
 | gpt-5.5 | useful baseline, but more likely to produce the generic essay |
 | gpt-5.6-luna | seems useful for basic stuff, but since I'm not really tuning per-model usage, keeping terra as the standard OpenAI driver seems more practical |
 
-**What I actually run now:** sol for deep and engineering work, terra as the standard OpenAI driver, glm-5.3 when I want compelling writing or strong graphics, deepseek for daily work, grok when design matters, and mimo or kimi when OpenAI throttles me. The rankings will rot. The battery is the reusable part.
+**What I ran after this battery:** sol for deep and engineering work, terra as the standard OpenAI driver, glm-5.3 when I wanted compelling writing or strong graphics, deepseek for daily work, grok when design mattered, and mimo or kimi when OpenAI throttled me. The rankings will rot. The battery—the method for testing models against real work—is the reusable part.
 
 ## Why I tested this way (the method)
 
-I run most of my actual work through Hermes, the agent platform that sits between me and the models — and the models underneath it change constantly. There are a lot of benchmarks for them, and they all ask the same kind of questions: how does it do tool calls, how does it do long context, how does it do *this*, how does it do *that*.
+At the time of this test, I ran most of my actual work through Hermes, the agent platform that sat between me and the models — and the models underneath it changed constantly. There were a lot of benchmarks for them, and they all asked the same kind of questions: how does it do tool calls, how does it do long context, how does it do *this*, how does it do *that*.
 
 I wanted to know something different: **how do these things actually feel inside an agentic workflow?**
 
