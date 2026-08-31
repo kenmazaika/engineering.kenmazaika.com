@@ -1,6 +1,6 @@
 ---
-title: "Discord vs. Telegram for Agentic Work: Three Setups Across Hermes and OpenClaw"
-description: "Three setups, two agent platforms, one verdict: Discord won as my agent home — not because it's easier to set up, but because threads contain projects while channels scatter them. Telegram still wins on raw message length, and the file-baton pattern is the fix that doesn't require switching."
+title: "Discord vs. Telegram for Agentic Work: Three Setups, One Verdict"
+description: "Three setups, one verdict: Discord won as my agent home — not because it's easier to set up, but because threads contain projects while channels scatter them. Telegram still wins on raw message length, and the file-baton pattern is the fix that doesn't require switching."
 seoTitle: "Discord vs Telegram for Agentic Work (Hermes & OpenClaw): Three Setups, One Verdict"
 socialTitle: 'Set Up My Agent Home Three Times. Discord Won — And Not Because It Is Easier.'
 pubDate: 'Aug 30, 2026'
@@ -11,21 +11,21 @@ hideDefaultNewsletter: true
 heroImage: ../../assets/headers/discord-vs-telegram-masthead.png
 ---
 
-I've set up my agent home three times: twice on Discord, once on Telegram, across two agent platforms — Hermes and OpenClaw. Discord is where it ended up. Not because it's easier. It isn't.
+I've set up my agent home three times: twice on Discord, once on Telegram. Discord is where it ended up. Not because it's easier. It isn't.
 
 The setup advice everyone repeats is "use Telegram, it's the easiest" — and it is. BotFather hands you a token in five minutes and you're talking to an agent. Discord wants a developer portal, a bot application, privileged intents, an OAuth invite, and a server you control. Telegram wins setup by a mile, and that advice is still wrong for agentic work. Here's what actually happened across three setups, and the one thing Telegram still does that Discord can't.
 
-## Setup 1: Discord, because it was the default
+## The default
 
-The first time, I set up OpenClaw on Discord because that's what everyone seemed to do. I didn't really know what I was doing — one server, one channel, and I chatted with my agent like it was a single long ChatGPT window. No structure, no workflows, no projects. Just one scrolling wall of conversation. It worked, and I got almost nothing out of it, because I hadn't built anything around it yet. The platform wasn't the problem. I wasn't using the platform.
+The first time, I set up my agent on Discord because that's what everyone seemed to do. I didn't really know what I was doing — one server, one channel, and I chatted with my agent like it was a single long ChatGPT window. No structure, no workflows, no projects. Just one scrolling wall of conversation. It worked, and I got almost nothing out of it, because I hadn't built anything around it yet. The platform wasn't the problem. I wasn't using the platform.
 
 ![A Discord server with one general channel and nothing else](/post-assets/discord-vs-telegram/discord-single-channel-era.png)
 
-*Setup 1, in one image: a server with a single #general channel. One long ChatGPT window, nothing built around it.*
+*The first home, in one image: a server with a single #general channel. One long ChatGPT window, nothing built around it.*
 
-## Setup 2: Telegram, because it was the "easiest"
+## The "easiest" option
 
-Second machine, fresh start. I set up Hermes this time, and the de facto path was Telegram. The claim was right: create a bot with @BotFather, paste the token, done. It was fast, and it felt good on mobile.
+Second machine, fresh start. The de facto path for a new agent setup was Telegram. The claim was right: create a bot with @BotFather, paste the token, done. It was fast, and it felt good on mobile.
 
 I'd learned one thing by then: multiple channels beat one. So I made four, each mapped to a workflow — this channel is for dictations, this one for research, this one for writing. The idea was "a workflow gets a channel, and you keep triggering that workflow in its channel." The dictation channel clicked immediately — that flow is still one of my favorites. The other three never did. They just sat there.
 
@@ -35,19 +35,19 @@ I'd learned one thing by then: multiple channels beat one. So I made four, each 
 
 ## The clutter failure
 
-Then the real problem showed up. My general channel would be mid-turn — Hermes churning on something, me waiting on output — and I'd want to do something else in parallel. So I'd grab one of those unused workflow channels and use it for whatever I was actually doing, which was almost never the workflow it was named for.
+Then the real problem showed up. My general channel would be mid-turn — my agent churning on something, me waiting on output — and I'd want to do something else in parallel. So I'd grab one of those unused workflow channels and use it for whatever I was actually doing, which was almost never the workflow it was named for.
 
 That's how the messages got strewn everywhere. Project A's context lived in four channels, none of them the one project A belonged to. The organization I'd built had inverted on me: channels designed for specific workflows were carrying random project traffic, and the projects themselves had no home. I was working around my own system every single day. That's the failure mode nobody warns you about — not "Telegram is hard to set up," but "your work stops fitting the shape you gave it."
 
-## Setup 3: Discord, chosen on purpose
+## The deliberate rebuild
 
-Third machine, and I'd had enough of the re-setup ritual. I was back on OpenClaw, and the question was where to put it. Telegram worked. But I'd lived in Discord before, I knew what it could do, and I went back — even knowing the setup would hurt. It did: developer portal, intents, invite link, the whole dance. Worth it.
+Third machine, and I'd had enough of the re-setup ritual. The question was where to put the new agent. Telegram worked. But I'd lived in Discord before, I knew what it could do, and I went back — even knowing the setup would hurt. It did: developer portal, intents, invite link, the whole dance. Worth it.
 
 The difference is threads. Instead of a channel per workflow, I have a channel per area and a thread per project. Multi-day work lives in its own thread, stays open while I'm working on it, and I can pop back and forth without losing the thread — literally and figuratively. Projects that used to span four channels and a week of "where did I put that?" now live in one place for their whole life. The thing I was missing wasn't more organization. It was organization at the right unit: the project, not the workflow.
 
 ![Discord server sidebar with threads nested under channels](/post-assets/discord-vs-telegram/discord-thread-per-project.png)
 
-*Same server, later era: threads nested under channels — Discord vs. Telegram for Agentic Work, OpenClaw vs Hermes, Content Blog Deploy, one per project.*
+*Same server, later era: threads nested under channels, one per project.*
 
 ![A Discord thread preview card with 14 replies](/post-assets/discord-vs-telegram/discord-thread-card.png)
 
@@ -87,7 +87,7 @@ That's the pattern I run now: long dictations and docs go to a file, the file la
 
 The question I keep getting asked — and the one I'd have wanted answered — is whether this changes if you run Hermes instead of OpenClaw. It doesn't. Both are agentic platforms; both connect to Telegram and Discord as delivery surfaces, and the agent brain — memory, skills, tools — is identical either way. The platform is the surface you talk through, not the agent itself.
 
-That's the part that generalizes: threads vs. channels is a property of Discord and Telegram, not of Hermes or OpenClaw. Whatever agent software you run, the same three setups play out the same way. Pick the surface by how your work is shaped — and if your work is multi-day projects, that's threads.
+That's the part that generalizes: threads vs. channels is a property of Discord and Telegram, not of the agent software. Whatever agent platform you run, the same three setups play out the same way. Pick the surface by how your work is shaped — and if your work is multi-day projects, that's threads.
 
 One honest bound. This is my experience across three setups, not a controlled study, and Telegram has real trust baggage right now — it was pulled from the App Store for a few hours in August 2026 over a CSAM report, and its founder has been fighting legal battles on two continents since 2024. Those are context, not the argument. The argument is organizational: threads contain projects, channels scatter them, and the length gap has a file-shaped hole in it.
 
