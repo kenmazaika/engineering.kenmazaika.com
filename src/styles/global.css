@@ -788,10 +788,10 @@ a:hover { color: var(--color-link-hover); }
 /* Masthead variant: full-bleed hero with layered headline */
 /* Mobile-first: stacked layout — image at 16/9, then a dark text block below it.
    No absolute overlay on small screens, so the headline can never clip or bleed. */
-.article-masthead { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-top: 1.75rem; }
-.masthead-bg { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.article-masthead { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-top: 0; }
+.masthead-bg { display: block; width: 100%; height: 150px; object-fit: cover; object-position: center top; }
 .masthead-scrim { display: none; }
-.masthead-content { position: static; background: #0D0D12; padding: 1.75rem 1.5rem 2.25rem; }
+.masthead-content { position: static; background: #0D0D12; padding: 1.5rem 1.5rem 2rem; }
 .masthead-textblock { max-width: 640px; }
 .masthead-content .back-link-light { color: rgba(255,255,255,0.92); margin-bottom: .9rem; text-shadow: 0 1px 8px rgba(0,0,0,.65); }
 .masthead-content .back-link-light:hover { color: #fff; }
