@@ -5,8 +5,6 @@ seoTitle: "Discord vs Telegram for Agentic Work (Hermes & OpenClaw): Three Setup
 socialTitle: 'Set Up My Agent Home Three Times. Discord Won — And Not Because It Is Easier.'
 pubDate: 'Aug 30, 2026'
 ogCategory: 'Field Note · Agent Home'
-hidden: true
-noindex: true
 hideDefaultNewsletter: true
 heroImage: ../../assets/headers/discord-vs-telegram-masthead.png
 ---
