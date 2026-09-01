@@ -807,7 +807,7 @@ a:hover { color: var(--color-link-hover); }
 @media (min-width: 761px) {
   .article-shell:has(.article-masthead) { padding-top: 1.25rem; }
   .article-masthead { margin-top: 0; position: relative; overflow: hidden; }
-  .masthead-bg { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .masthead-bg { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
   .masthead-scrim { display: block; position: absolute; inset: 0; background: radial-gradient(ellipse 58% 92% at 40% 52%, rgba(10,10,14,0.82) 0%, rgba(10,10,14,0.5) 52%, rgba(10,10,14,0) 100%), linear-gradient(180deg, rgba(10,10,14,0.28) 0%, rgba(10,10,14,0) 26%, rgba(10,10,14,0) 58%, rgba(10,10,14,0.72) 100%); }
   .masthead-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: 0 2.75rem 2.75rem; max-width: 980px; margin-inline: auto; width: 100%; }
   .masthead-content h1 { font-size: clamp(2.2rem, 3.9vw, 3.3rem); max-width: 16ch; }
