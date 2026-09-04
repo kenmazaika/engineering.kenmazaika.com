@@ -1,6 +1,6 @@
 ---
 title: "Hermes vs OpenClaw: I Expected Hermes to Win. Then Its Memory Repeated the Same Post."
-description: "I ran my actual work through Hermes Agent and OpenClaw, kept the paired artifacts, and expected Hermes to win. OpenClaw started edging ahead. Then the same review-bottleneck story resurfaced in a fresh content test, and memory became the deciding factor."
+description: "App building came out even. Research leaned Hermes; executive framing leaned OpenClaw. The scoreboard didn't decide it — how each tool learns did."
 seoTitle: "Hermes vs OpenClaw 2026: Real-Work Benchmark, Receipts, and My Verdict"
 socialTitle: "I expected Hermes to win. OpenClaw kept edging ahead, then memory made the decision."
 pubDate: 'Sep 4, 2026'
@@ -39,7 +39,7 @@ The surface you talk to them through is not a tiebreaker. Both connect to extern
 
 Even the skills are portable. Skills are markdown under the hood — Claude skills, OpenClaw skills, and Hermes skills are the same species. In this comparison I took a Hermes skill, handed it to OpenClaw, and said "learn this." It adapted the skill to its own environment, it worked, and in some specific ways it outperformed the original. Pick either tool and you are not locking yourself out of the other's ecosystem.
 
-So the marketing frame — Hermes sells the self-improving learning loop, OpenClaw sells the personal operating system — describes a real emphasis difference, not a different product category. In a nutshell these tools are extremely similar. The differences are in how they learn, how they show their work, and what they do when your instructions are ambiguous.
+So the marketing frame — Hermes sells the self-improving learning loop, OpenClaw sells the personal operating system — describes a real emphasis difference, not a different product category. Peel the framing away and these tools are extremely similar. The differences are in how they learn, how they show their work, and what they do when your instructions are ambiguous.
 
 ## Where they actually differ
 
@@ -47,19 +47,19 @@ So the marketing frame — Hermes sells the self-improving learning loop, OpenCl
 
 This is the real distinction, and it cuts both ways.
 
-Hermes has a learning loop that runs automatically. It watches what you do, writes its own skills, and remembers your preferences without being asked. The most concrete example in this whole comparison is the PDFs. Look at the artifacts below: Hermes produced genuinely designed documents — executive layouts, clean typography — mostly because, over months, I had tweaked some PDF builds and it absorbed the design taste. I never wrote it a skill that said "design documents like this." It just learned. OpenClaw's documents were competent and bare-bones — headlines and structure — because I never explicitly taught it my design preferences.
+Hermes has a learning loop that runs automatically. It watches what you do, writes its own skills, and remembers your preferences without being asked. The most concrete example in this whole comparison is the PDFs. Look at the artifacts below: Hermes's PDFs look designed — executive layouts, clean typography — because over months I'd tweaked some PDF builds and it absorbed the design taste. I never wrote it a skill that said "design documents like this." It just learned. OpenClaw's documents were competent and bare-bones — headlines and structure — because I never explicitly taught it my design preferences.
 
-That automatic learning is genuinely handy. It is also the danger. When you get learning for free, you also get **memories you did not realize you were getting.** Hermes learned a preference for the code-review bottleneck idea from one compliment I gave it early on, and that preference quietly became a global rule that steered months of fresh work. It wasn't wrong in the way it was stored — it was a bias that kept its finger on the scale. The full autopsy is in [My Agent Kept Writing the Same Post. The Memory Was the Problem.](/blog/my-agent-kept-writing-the-same-post/)
+That automatic learning is handy. It is also the danger: get learning for free and you also get **memories you did not realize you were getting.** Hermes learned a preference for the code-review bottleneck idea from one compliment I gave it early on, and that preference quietly became a global rule that steered months of fresh work. It wasn't wrong in the way it was stored — it was a bias that kept its finger on the scale. The full autopsy is in [My Agent Kept Writing the Same Post. The Memory Was the Problem.](/blog/my-agent-kept-writing-the-same-post/)
 
-There is a mindset shift that comes with each approach. With Hermes — my main tool from June through August — the automatic learning made me lazier in a specific way: I would throw ad hoc instructions at it and hope they eventually got codified, without shaping them into something it could learn as a meta-skill. With OpenClaw, you have to slow down and decide: what is the skill I want to teach, and what is the right way to teach it? That friction makes workflows more methodical — you build the skill instead of hoping the vibe sticks. Hermes feels like the advanced system because it has the learning loop; in practice it is closer to training wheels, because it handles the meta-work for you and occasionally gets the lesson wrong.
+Each mode changes how you work, too. With Hermes — my main tool from June through August — the automatic learning made me lazier in a specific way: I'd throw ad hoc instructions at it and hope they eventually got codified, instead of shaping them into something it could learn. With OpenClaw, you have to slow down and decide: what is the skill I want to teach, and what is the right way to teach it? That friction makes workflows more methodical — you build the skill instead of hoping the vibe sticks. Hermes feels like the advanced system because it has the learning loop. In practice it's closer to training wheels — it does the meta-work for you, and occasionally gets the lesson wrong.
 
 ### Research: Hermes writes the paper. OpenClaw writes the briefing.
 
-Run both on the same research question and the outputs diverge in a consistent, visible way. Hermes's reports are academic: they cite sources (the rearchitecture report carries 64 source URLs), label claims **[FACT]** / **[INTERPRETATION]** / **[SYNTHESIS]**, and rate confidence. It is showing its work the way a researcher does. OpenClaw's reports lead with an executive summary and organize around decisions — failure modes, a case template, a lesson per case. Less visible citation, more "here is what you should do about this."
+Run both on the same research question and the outputs diverge in a consistent, visible way. Hermes's reports are academic: they cite sources (the rearchitecture report carries 64 source URLs), label claims **[FACT]** / **[INTERPRETATION]** / **[SYNTHESIS]**, and rate confidence. It's showing its work the way a researcher does. OpenClaw's reports lead with an executive summary and organize around decisions — failure modes, a case template, a lesson per case. Less visible citation, more "here is what you should do about this."
 
-The blurb test shows the same split in miniature. Hermes's blurb linked both Reddit threads with engagement counts so I could audit its premise. OpenClaw's blurb was the better read — specific, alive, story-shaped — and contained a $2,000-per-engineer figure with no source at all. I could fact-check one; the other I wanted to read and then had to go verify.
+The blurb test shows the same split, smaller. Hermes's blurb linked both Reddit threads with engagement counts so I could audit its premise. OpenClaw's blurb was the better read — specific, alive, story-shaped — and contained a $2,000-per-engineer figure with no source at all. I could fact-check one; the other I wanted to read and then had to go verify.
 
-Here is the honest part: I like to think of myself as a data-driven, receipts-first person. Day to day, what I actually want is mostly high-level instructions on how to do the thing — the executive framing. That is OpenClaw's strength. The academic version is what you want when the answer has to survive scrutiny; the briefing is what you want when you have to act.
+I like to think of myself as a data-driven, receipts-first person. Day to day, what I actually want is mostly high-level instructions on how to do the thing — the executive framing. That's OpenClaw's strength. The academic version is what you want when the answer has to survive scrutiny; the briefing is what you want when you have to act.
 
 ### Judgment: what happens when the assignment is ambiguous
 
@@ -79,11 +79,11 @@ Scores are my judgment from reading the paired artifacts side by side, not a mea
 | Executive framing / action-ready output | 7 | 10 |
 | Learning | automatic | explicit |
 
-App building is a wash because both are mind-blowingly good at it — give either a one-shot PRD and it will spec, build, verify, and ship. Research splits the way the artifacts say it does: Hermes unilaterally produces the more academic, better-cited work. Executive framing is OpenClaw's side of the same coin. And learning is not a score at all — it is a mode: one accumulates automatically, including the parts you wish it hadn't; the other waits for you to teach it deliberately.
+App building is a wash because both are mind-blowingly good at it — give either a one-shot PRD and it will spec, build, verify, and ship. Research splits the way the artifacts do: Hermes produces the more academic, better-cited work. Executive framing is OpenClaw's side of the same coin. And learning is not a score at all — it is a mode: one accumulates automatically, including the parts you wish it hadn't; the other waits for you to teach it deliberately.
 
 ## The receipts — why you can trust the claims above
 
-The sweeping claims up top are not marketing. They are backed by the artifacts below: seven or eight benchmark runs against both tools, depending on how you count the NYC round (it was really two or three tasks — spec, build, analyze). Every output was preserved, and the links are here for you to check the work yourself.
+The sweeping claims up top are not marketing. They're backed by the artifacts below: seven or eight benchmark runs against both tools, depending on how you count the NYC round (it was really two or three tasks — spec, build, analyze). Every output was preserved, and the links are here for you to check the work yourself.
 
 One framing note before the details: treat the specifics as case studies. They were contrived to test the tools, and the value is in what each tool's behavior reveals — not in the particular findings. Whether a given NYC complaint category is rising, or what a Reddit thread happened to say that week, is not the lesson. The lesson is what each harness did with the same brief.
 
@@ -101,7 +101,7 @@ OpenClaw, same brief, opened like this:
 
 > An AI startup CEO broke the script and told the truth about what AI is actually doing to engineering orgs: most teams don't have great ideas waiting to be unblocked — expensive implementation was quietly filtering them. Most workers aren't trying to be 10x; they're using AI to churn their tasks with less energy. And the two engineers who actually leaned in? Flattened by everyone else's slop, and about to quit. The CFO just noticed each engineer now costs $2,000/month in LLM bills.
 
-That is a better hook — specific, alive, a story. It is also not publishable as-is: no source, and I can't verify where the $2,000 figure came from. Same brief, two instincts: Hermes made something I could fact-check; OpenClaw made something I wanted to read. Not a clean win either way. Reading Hermes's blurb back now, the tell is on page one — even when it was good, it was circling the review-burden idea.
+That's a better hook — specific, alive, a story. It's also not publishable as-is: no source, and I can't verify where the $2,000 figure came from. Same brief, two instincts: Hermes made something I could fact-check; OpenClaw made something I wanted to read. Not a clean win either way. Reading Hermes's blurb back now, the tell is on page one — even when it was good, it was circling the review-burden idea.
 
 **Receipts:** [Hermes blurb](/post-assets/hermes-vs-openclaw/hermes-industry-pulse-blurb.md) · [OpenClaw blurb](/post-assets/hermes-vs-openclaw/openclaw-industry-pulse-blurb.md)
 
@@ -117,7 +117,7 @@ Both converged on the same conclusion: complexity gets relocated rather than rem
 
 ### Run 3 — NYC 311: build the app, then argue with the data
 
-This is the round that pulls the comparison together, because it ends where real work ends: a report someone has to understand. It is really two or three tasks in one — spec, build, analyze.
+This is the round that pulls the comparison together, because it ends where real work ends: a report someone has to understand.
 
 The assignment was deliberately vague: a shared dataset of roughly 12.95 million NYC 311 records (Jan 2023–Aug 2026), and one sentence — *write an application that analyzes this and finds interesting trends.* No stack, no schema, no UI, no report format.
 
@@ -142,7 +142,7 @@ For an autonomous agent, I value the second more. One boundary I'm keeping visib
 
 ### Run 4 — The content flagship: the memory problem
 
-This is the test that changed my tool, and the deck was stacked against OpenClaw going in.
+This is the test that changed my tool, and OpenClaw should have lost it.
 
 The assignment came from a workflow I trusted on Hermes: a one-person [media-company skill](/blog/hermes-workflow-six-bots-one-media-company/) that researches and writes flagship posts. I suspected kanban was the engine running it behind the scenes, invoking different agents and models — and kanban is a feature OpenClaw doesn't have. OpenClaw isn't architected that way, and I honestly didn't know whether the skill would work there at all. I asked it to port it anyway.
 
@@ -154,11 +154,11 @@ I had seen it before. The core was, again: **review is the bottleneck.** I had t
 
 **Receipt:** [Hermes flagship PDF](/post-assets/hermes-vs-openclaw/hermes-flagship-team-effectiveness.pdf)
 
-OpenClaw wrote **"Team effectiveness is a context problem, not a talent problem."** Different route entirely: Project Aristotle, Westrum, and the idea that the shared mechanism is information flow — can the person who sees a problem say it out loud without becoming the problem? Its best move is explaining why a team can run retrospectives and design reviews and still not improve: if the local context punishes honesty, the ceremony becomes theater. Less operationally concrete than Hermes's levers, but a different frame, and it was not dragged back into the groove.
+OpenClaw wrote **"Team effectiveness is a context problem, not a talent problem."** Different route entirely: Project Aristotle, Westrum, and the idea that the shared mechanism is information flow — can the person who sees a problem say it out loud without becoming the problem? Its best move is explaining why a team can run retrospectives and design reviews and still not improve: if the local context punishes honesty, the ceremony becomes theater. Less operationally concrete than Hermes's levers, but a different frame — and it wasn't dragged back into the groove.
 
 **Receipt:** [OpenClaw flagship PDF](/post-assets/hermes-vs-openclaw/openclaw-flagship-team-effectiveness.pdf)
 
-To be clear: an article about code review is not bad. An agent that decides every fresh topic is secretly an article about code review — after being told to stop — is a product problem, not a prompt problem. This is where memory became a double-edged sword for me. It got me up and running fast, without re-explaining myself every session. It also quietly locks decisions in: the bias always puts its finger on the scale, and unless you know exactly what you're looking for, unwinding it is hard. Bad memory is worse than no memory at all — it doesn't just repeat; it narrows the space of answers you can get.
+To be clear: an article about code review is not bad. An agent that decides every fresh topic is secretly an article about code review — after being told to stop — is a product problem, not a prompt problem. This is where memory cut both ways for me. It got me up and running fast — no re-explaining myself every session. It also quietly locks decisions in, and unless you know exactly what you're looking for, unwinding it is hard. Bad memory is worse than no memory at all — it doesn't just repeat; it narrows the space of answers you can get.
 
 ### Run 5 — The job search: the assignment was location
 
@@ -166,7 +166,7 @@ Stop me if you've seen this pattern. Hermes ran first, with a 45-day freshness r
 
 OpenClaw ran later, with a 90-day window, and treated the constraint as the assignment: 262 title matches → 40 location-qualified roles → 11 scored, ATS-verified. It logged 72 endpoint failures instead of pretending every check passed. Six Apply, four Hold, one Watch — and the Applys were places I could actually work: Snap in Los Angeles, ZipRecruiter in Santa Monica.
 
-I asked for jobs I could do, near me. The unicorn remote role was not the assignment. If you search remote-only, you're competing with every engineer on the internet — an arms race where the only move is a million applications. On the brief as given, this wasn't close: Hermes answered the question it inferred from context; OpenClaw answered the one I actually asked. The mechanics were fine on both sides — the difference was judgment.
+I asked for jobs I could do, near me. The unicorn remote role was not the assignment. If you search remote-only, you're competing with every engineer on the internet — an arms race where the only move is a million applications. On the brief as given, this wasn't close: Hermes answered the question it inferred from context; OpenClaw answered the one I actually asked.
 
 **Receipts:** [Hermes job-search results](/post-assets/hermes-vs-openclaw/hermes-job-search-results.md) · [OpenClaw job-search shortlist](/post-assets/hermes-vs-openclaw/openclaw-job-search-shortlist.md)
 
@@ -174,7 +174,7 @@ I asked for jobs I could do, near me. The unicorn remote role was not the assign
 
 **The capability gap is smaller than the packaging gap.** Run the same meaningful assignment through both and the underlying work is surprisingly close — both are capable tools. The differences are consistent, though: Hermes interrogates the task and its own output; OpenClaw carries the work through to a decision-ready artifact. Most of the time you want both halves.
 
-**Learning mode is the feature that decides.** Hermes's automatic learning loop is real and genuinely useful — it absorbed my design taste and produced documents I never taught it to make. But automatic learning includes the memories you didn't ask for. Once fresh work started feeling pre-decided, the loop stopped being leverage and became a constraint. OpenClaw's explicit teaching is slower, more deliberate, and easier to audit — you know what it learned because you taught it.
+**Learning mode is the feature that decides.** Hermes's automatic learning loop is real and useful — it absorbed my design taste and produced documents I never taught it to make. But automatic learning includes the memories you didn't ask for. Once fresh work started arriving with the ending already chosen, the loop stopped being leverage and became a constraint. OpenClaw's explicit teaching is slower, more deliberate, and easier to audit — you know what it learned because you taught it.
 
 **Which should you use?**
 - Choosing based on a demo is a mistake. Give both tools a task with a failure you can recognize, and keep the outputs.
