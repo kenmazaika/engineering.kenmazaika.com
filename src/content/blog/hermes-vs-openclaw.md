@@ -133,12 +133,7 @@ The reports show the same split as Run 2, now in data form. Hermes structures ev
 
 OpenClaw's report treats volume and response time as separate axes and uses that to find the operational cluster: boilers, residential noise, encampments, drug activity, taxi complaints. Its best example: **New Tree Request down 96.3%** — it checks the related categories, sees the underlying problem did not disappear, and labels it a likely program or intake change rather than a win. It runs Theil–Sen slopes and Mann–Kendall significance tests, catches its own bugs (a test suite that overwrote the production cube; a window flag that was halving volumes), and fixes both before publishing. The layout is what an executive summary should be: ranked charts, borough and agency comparisons, a seasonality heatmap. I understood the data after reading it. Hermes's report gave me rigorous facts I would immediately forget, because nothing tied them into a story.
 
-Put the two side by side and the pattern is consistent — when I had a second model score the pair, Hermes edged out on academic grounds (better citations, more rigor in the scientific method) and OpenClaw won the product. On the assignment as given — run the data, produce a useful report — OpenClaw did the better job, and the reason is almost philosophical:
-
-- Hermes handled the dataset it *had* extremely intelligently.
-- OpenClaw made sure it *had* the dataset it needed.
-
-For an autonomous agent, I value the second more. One boundary I'm keeping visible: the reports measure response time differently (created-to-closed vs. created-to-first-response), so the exact numbers are not interchangeable — they corroborate patterns, they don't confirm each other's figures. I did not independently re-verify the trend math; the PDFs are the agents' own work, and the source data is public.
+Put the two side by side and the pattern is consistent — when I had a second model score the pair, Hermes edged out on academic grounds (better citations, more rigor in the scientific method) and OpenClaw won the product. On the assignment as given — run the data, produce a useful report — OpenClaw did the better job. One boundary I'm keeping visible: the reports measure response time differently (created-to-closed vs. created-to-first-response), so the exact numbers are not interchangeable — they corroborate patterns, they don't confirm each other's figures. I did not independently re-verify the trend math; the PDFs are the agents' own work, and the source data is public.
 
 ### Run 4 — The content flagship: the memory problem
 
