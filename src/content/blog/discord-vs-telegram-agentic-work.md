@@ -8,7 +8,7 @@ ogCategory: 'Field Note · Agent Home'
 hideDefaultNewsletter: true
 heroImage: ../../assets/headers/discord-vs-telegram-masthead.png
 related:
-  - title: "Hermes vs OpenClaw: I Expected Hermes to Win. Then Its Memory Repeated the Same Post."
+  - title: "Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included)."
     url: "/blog/hermes-vs-openclaw/"
 ---
 

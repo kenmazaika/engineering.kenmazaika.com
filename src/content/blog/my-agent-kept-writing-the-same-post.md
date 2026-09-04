@@ -8,7 +8,7 @@ ogCategory: 'Field Note · Agent Memory'
 hideDefaultNewsletter: true
 heroImage: ../../assets/headers/my-agent-kept-writing-the-same-post-masthead.png
 related:
-  - title: "Hermes vs OpenClaw: I Expected Hermes to Win. Then Its Memory Repeated the Same Post."
+  - title: "Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included)."
     url: "/blog/hermes-vs-openclaw/"
 ---
 

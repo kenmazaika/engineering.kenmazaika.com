@@ -14,7 +14,7 @@ related:
     url: '/blog/designing-blind/'
   - title: 'Before You Blame the Model, Audit Your Hermes Setup'
     url: '/blog/before-you-blame-the-model-audit-your-hermes-setup/'
-  - title: 'Hermes vs OpenClaw: I Expected Hermes to Win. Then Its Memory Repeated the Same Post.'
+  - title: 'Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included).'
     url: '/blog/hermes-vs-openclaw/'
 ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
