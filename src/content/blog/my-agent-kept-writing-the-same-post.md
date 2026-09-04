@@ -7,6 +7,9 @@ pubDate: 'Sep 1, 2026'
 ogCategory: 'Field Note · Agent Memory'
 hideDefaultNewsletter: true
 heroImage: ../../assets/headers/my-agent-kept-writing-the-same-post-masthead.png
+related:
+  - title: "Hermes vs OpenClaw: I Expected Hermes to Win. Then Its Memory Repeated the Same Post."
+    url: "/blog/hermes-vs-openclaw/"
 ---
 
 Every engineering brief my agent wrote came back with the same story: the review is the bottleneck. Different title, same thesis, week after week. I kept telling it to stop — "don't repeat the same ideas as the other posts" — and it kept re-converging. The problem wasn't the model or the prompts. It was memory: one liked idea, generalized into a global rule and written into every layer the writing pipeline reads. Bad memory is worse than no memory at all.
@@ -17,7 +20,7 @@ A month of engineering output on one theme: "the review is the bottleneck." Blog
 
 ## The detection
 
-I was experimenting with OpenClaw at the time, running the same research task one-shot on both harnesses. The Hermes output got pulled into the same well-worn track — the review bottleneck again. The OpenClaw output didn't. One run isn't a controlled experiment, and I'm not claiming it is. But it made the question concrete: what in my setup was doing the steering?
+I was experimenting with OpenClaw at the time, running the same research task one-shot on both harnesses. The Hermes output got pulled into the same well-worn track — the review bottleneck again. The OpenClaw output didn't. One run isn't a controlled experiment, and I'm not claiming it is. But it made the question concrete: what in my setup was doing the steering? (The full side-by-side field test is [Hermes vs OpenClaw](/blog/hermes-vs-openclaw/).)
 
 ## The root cause
 

@@ -14,6 +14,8 @@ related:
     url: '/blog/designing-blind/'
   - title: 'Before You Blame the Model, Audit Your Hermes Setup'
     url: '/blog/before-you-blame-the-model-audit-your-hermes-setup/'
+  - title: 'Hermes vs OpenClaw: I Expected Hermes to Win. Then Its Memory Repeated the Same Post.'
+    url: '/blog/hermes-vs-openclaw/'
 ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
 faq:
@@ -33,7 +35,7 @@ faq:
 
 > **The full battery, 101 pages:** every prompt, every scored result, every receipt — **[download the PDF here (2.1 MB)](/battery-post-raw-data.pdf)**. Everything below is a summary of what's in it; you should draw your own conclusions.
 
-> **Setup note:** I ran this battery on Hermes in August 2026. I've since started moving the same workloads to OpenClaw. The measurements and rankings below are unchanged: this is a dated experiment, not a permanent recommendation. Once I have enough comparable OpenClaw usage, I'll publish the rerun and link it here.
+> **Setup note:** I ran this battery on Hermes in August 2026. I've since run the same kind of real work through OpenClaw side by side — the full comparison with receipts is [Hermes vs OpenClaw](/blog/hermes-vs-openclaw/) — and moved the main workflow there. The measurements and rankings below are unchanged: this is a dated experiment, not a permanent recommendation.
 
 ## The short answer
 

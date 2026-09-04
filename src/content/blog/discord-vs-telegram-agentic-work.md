@@ -7,6 +7,9 @@ pubDate: 'Aug 30, 2026'
 ogCategory: 'Field Note · Agent Home'
 hideDefaultNewsletter: true
 heroImage: ../../assets/headers/discord-vs-telegram-masthead.png
+related:
+  - title: "Hermes vs OpenClaw: I Expected Hermes to Win. Then Its Memory Repeated the Same Post."
+    url: "/blog/hermes-vs-openclaw/"
 ---
 
 I've set up my agent home three times: twice on Discord, once on Telegram. Discord is where it ended up. Not because it's easier. It isn't.
@@ -83,7 +86,7 @@ That's the pattern I run now: long dictations and docs go to a file, the file la
 
 ## Telegram or Discord in Hermes? The same answer for OpenClaw.
 
-The question I keep getting asked — and the one I'd have wanted answered — is whether this changes if you run Hermes instead of OpenClaw. It doesn't. Both are agentic platforms; both connect to Telegram and Discord as delivery surfaces, and the agent brain — memory, skills, tools — is identical either way. The platform is the surface you talk through, not the agent itself.
+The question I keep getting asked — and the one I'd have wanted answered — is whether this changes if you run Hermes instead of OpenClaw. It doesn't. Both are agentic platforms; both connect to Telegram and Discord as delivery surfaces, and the agent brain — memory, skills, tools — is identical either way. The platform is the surface you talk through, not the agent itself. (For the harness-level comparison with receipts, see [Hermes vs OpenClaw](/blog/hermes-vs-openclaw/).)
 
 That's the part that generalizes: threads vs. channels is a property of Discord and Telegram, not of the agent software. Whatever agent platform you run, the same three setups play out the same way. Pick the surface by how your work is shaped — and if your work is multi-day projects, that's threads.
 
