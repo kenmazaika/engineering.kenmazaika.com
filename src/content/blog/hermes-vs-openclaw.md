@@ -6,6 +6,7 @@ socialTitle: "I expected Hermes to win. OpenClaw kept edging ahead, then memory 
 pubDate: 'Sep 4, 2026'
 ogCategory: 'Field Note · AI & Engineering'
 hideDefaultNewsletter: true
+showPopup: true
 heroImage: ../../assets/headers/hermes-vs-openclaw-masthead.png
 related:
   - title: "My Agent Kept Writing the Same Post. The Memory Was the Problem."
