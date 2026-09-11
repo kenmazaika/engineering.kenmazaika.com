@@ -1,0 +1,328 @@
+---
+// Hidden landing / sign-up page for the $97 OpenClaw workshop (rung 1 teaser).
+// Excluded from the index, RSS, and sitemap; carries noindex/nofollow; not linked from nav.
+// See: QBall openclaw-consulting-cold-email → receipts/workshop-signup-page-strategy-2026-09-11/
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+
+// ── Easy-to-edit values ────────────────────────────────────────────────────
+// Swap CHECKOUT_MODE to 'checkout' and set CHECKOUT_URL once the Stripe/Lemon
+// Squeezy link exists; the hero CTA then points straight at checkout.
+const CHECKOUT_MODE: 'list' | 'checkout' = 'list';
+const CHECKOUT_URL = ''; // e.g. 'https://buy.stripe.com/xxxx'
+const SESSION_DATE = 'Date to be announced — the list hears first';
+const EARLY_PRICE = '$97';
+const FULL_PRICE = '$147';
+const SEAT_CAP = 'capped, so the review blocks actually work';
+const BUTTONDOWN_ACTION = 'https://buttondown.com/api/emails/embed-subscribe/mazaika';
+// ───────────────────────────────────────────────────────────────────────────
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`The 3-Hour OpenClaw Workshop — ${SITE_TITLE}`}
+			description="A live, 3-hour working session on the OpenClaw setup I actually run in production. Bring your messiest manual workflow; leave with a named diagnosis of what's eating your week."
+			noindex={true}
+		/>
+	</head>
+	<body>
+		<Header />
+		<main class="ws">
+			<section class="ws-hero">
+				<p class="ws-eyebrow">Live workshop · 3 hours</p>
+				<h1>Your team is drowning in manual work — bring one of those workflows and leave with a diagnosis.</h1>
+				<p class="ws-sub">
+					A 3-hour live working session on the OpenClaw setup I actually run in production.
+					You'll watch it run on real problems, apply it to your own messiest process, and walk out
+					with a <strong>named diagnosis</strong> of what's eating your week. Not a slide deck.
+				</p>
+				<ul class="ws-facts">
+					<li><span>Format</span>3 hours, live, interactive</li>
+					<li><span>Where</span>Zoom — link on confirmation</li>
+					<li><span>When</span>{SESSION_DATE}</li>
+					<li><span>Room</span>{SEAT_CAP}</li>
+				</ul>
+				<div class="ws-cta-row">
+					<a class="ws-btn" href="#reserve">Reserve a seat — {EARLY_PRICE}</a>
+					<span class="ws-cta-note">Early bird {EARLY_PRICE} · <s>{FULL_PRICE}</s> after</span>
+				</div>
+			</section>
+
+			<section class="ws-section">
+				<h2>The problem this is for</h2>
+				<p>
+					You're hiring for a role that is really a backlog. Support tickets, onboarding steps,
+					data entry, ops reporting, compliance chasing — work that a person is doing by hand today
+					because nobody has built the system that removes it. A hire is $60–100K a year; most of
+					that backlog is automatable now.
+				</p>
+				<p>
+					The blocker isn't information — there's more AI content than anyone can read. It's that
+					you've never seen a real setup running on work like yours, and you don't know which of
+					your processes is worth fixing first.
+				</p>
+			</section>
+
+			<section class="ws-section">
+				<h2>What you'll actually do</h2>
+				<p>
+					Five blocks: <strong>20 minutes teaching, 20 minutes applying it to your own business,
+					10 minutes of me reviewing your work.</strong> The review is the point — it's where you
+					find out what's actually wrong with your setup, not a generic version of it.
+				</p>
+				<table class="ws-agenda">
+					<tbody>
+						<tr><td class="n">0:00–0:20</td><td>How an agent actually runs real work — the setup, in plain terms.</td></tr>
+						<tr><td class="n">0:20–0:40</td><td>You map your messiest manual workflow, live.</td></tr>
+						<tr><td class="n">0:40–0:50</td><td>Review: I read your workflow back and name the bottleneck.</td></tr>
+						<tr><td class="n">0:50–1:50</td><td>Repeat ×2 — the same loop on two more processes.</td></tr>
+						<tr><td class="n">1:50–3:00</td><td>Live build-along + open review on attendee stacks.</td></tr>
+					</tbody>
+				</table>
+				<p class="ws-note">
+					<strong>Come with:</strong> your messiest manual workflow. Describe it in a few lines —
+					who does it, how often, what breaks. You'll leave with a diagnosis you can act on
+					whether or not you ever pay me anything else.
+				</p>
+			</section>
+
+			<section class="ws-section">
+				<h2>Why this isn't free</h2>
+				<p>
+					Everything I'll teach is written down somewhere, for free. What isn't free is watching a
+					real production setup get applied to <em>your</em> problem, live, with someone telling you
+					which part is actually broken. That's the whole product.
+				</p>
+				<p>
+					I'll be running my own environment on-screen the entire time — the one I use daily — so you
+					can see exactly what "working" looks like, settings and all. No stock demos, no slideware.
+				</p>
+			</section>
+
+			<section class="ws-section">
+				<h2>Who this is for</h2>
+				<div class="ws-cols">
+					<div class="ws-for">
+						<h3>It's for you if</h3>
+						<ul>
+							<li>You run a 10–30 person company and still touch operations yourself.</li>
+							<li>You have a specific process that eats hours every week.</li>
+							<li>You want to see it done, not read about it.</li>
+						</ul>
+					</div>
+					<div class="ws-not">
+						<h3>It isn't for you if</h3>
+						<ul>
+							<li>You want a recorded course you can watch later.</li>
+							<li>You're looking for enterprise procurement or a big-company rollout.</li>
+							<li>You've already got a working agent stack you're happy with.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section class="ws-section">
+				<h2>Questions</h2>
+				<dl class="ws-faq">
+					<dt>Do I need to be technical?</dt>
+					<dd>No. If you can describe the workflow in plain English, you can participate. I'll keep the build-along at a level you can follow.</dd>
+					<dt>Is it recorded?</dt>
+					<dd>No recording. It's live and it stays in the room — that's what makes the review honest.</dd>
+					<dt>What if the date doesn't work?</dt>
+					<dd>Seats are transferable to a future session. Just reply to your confirmation email.</dd>
+					<dt>What do I get for the money?</dt>
+					<dd>The live session, the diagnosis of your own workflow, and everything I demonstrate. There's no upsell you have to buy to make the session useful.</dd>
+				</dl>
+			</section>
+
+			<section class="ws-section ws-reserve" id="reserve">
+				<h2>Reserve a seat</h2>
+				<p class="ws-price"><span class="ws-amount">{EARLY_PRICE}</span> <span class="ws-was">early bird · {FULL_PRICE} after</span></p>
+				<p>
+					Put your email in and I'll send the seat link and session details as soon as the date is locked.
+					One email, no drip. If it's not for you, ignore it and you'll never hear about it again.
+				</p>
+				<form class="ws-form" action={BUTTONDOWN_ACTION} method="post">
+					<label for="ws-email">Email address</label>
+					<div class="ws-fields">
+						<input type="email" name="email" id="ws-email" autocomplete="email" placeholder="you@company.com" required />
+						<input type="hidden" name="embed" value="1" />
+						<input type="hidden" name="metadata__optin" value="workshop" />
+						<button type="submit">Send me the seat link</button>
+					</div>
+					<p class="ws-fine">
+						No spam, unsubscribe anytime.
+						<a href="https://buttondown.com/refer/mazaika" target="_blank" rel="noopener noreferrer">Powered by Buttondown.</a>
+					</p>
+				</form>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.ws {
+		max-width: 740px;
+		margin: 0 auto;
+		padding: 3rem 2.5rem 1rem;
+	}
+	.ws-hero {
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--color-border);
+	}
+	.ws-eyebrow {
+		font-size: 0.8rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--color-accent);
+		font-weight: 600;
+		margin: 0 0 0.9rem;
+	}
+	.ws-hero h1 {
+		font-family: var(--font-heading);
+		font-size: 2.35rem;
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		margin: 0 0 1rem;
+	}
+	.ws-sub {
+		font-size: 1.1rem;
+		color: var(--color-text-secondary);
+		line-height: 1.7;
+		margin: 0 0 1.6rem;
+	}
+	.ws-facts {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.75rem 1.5rem;
+		padding: 1.1rem 1.25rem;
+		margin: 0 0 1.9rem;
+		background: var(--color-bg-card);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+	}
+	.ws-facts li {
+		font-size: 0.95rem;
+		color: var(--color-text);
+	}
+	.ws-facts span {
+		display: block;
+		font-size: 0.72rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--color-text-muted);
+		margin-bottom: 0.15rem;
+	}
+	.ws-cta-row {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.ws-btn {
+		display: inline-block;
+		background: var(--color-accent);
+		color: #fff;
+		font-weight: 600;
+		font-size: 1rem;
+		padding: 0.85rem 1.5rem;
+		border-radius: var(--border-radius);
+		text-decoration: none;
+	}
+	.ws-btn:hover { background: var(--color-accent-hover); color: #fff; }
+	.ws-cta-note { font-size: 0.9rem; color: var(--color-text-secondary); }
+	.ws-cta-note s { color: var(--color-text-muted); }
+	.ws-section { padding: 2.2rem 0; border-bottom: 1px solid var(--color-border-light); }
+	.ws-section:last-of-type { border-bottom: none; }
+	.ws h2 {
+		font-family: var(--font-heading);
+		font-size: 1.5rem;
+		letter-spacing: -0.01em;
+		margin: 0 0 0.8rem;
+		border: none;
+		padding: 0;
+	}
+	.ws h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+	.ws p { margin: 0 0 0.9rem; }
+	.ws-agenda {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0 0 1.1rem;
+		font-size: 0.95rem;
+	}
+	.ws-agenda td {
+		padding: 0.6rem 0.75rem;
+		border-bottom: 1px solid var(--color-border-light);
+		vertical-align: top;
+	}
+	.ws-agenda .n {
+		white-space: nowrap;
+		color: var(--color-text-secondary);
+		font-variant-numeric: tabular-nums;
+		width: 8.5rem;
+	}
+	.ws-note {
+		background: var(--color-accent-light);
+		border-radius: var(--border-radius);
+		padding: 0.9rem 1.1rem;
+		font-size: 0.95rem;
+		margin: 0;
+	}
+	.ws-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+	.ws-cols ul { margin: 0; padding-left: 1.1rem; }
+	.ws-cols li { font-size: 0.95rem; margin: 0.35rem 0; }
+	.ws-for h3 { color: var(--color-accent); }
+	.ws-not h3 { color: var(--color-text-muted); }
+	.ws-faq dt { font-weight: 600; margin-top: 1rem; }
+	.ws-faq dd { margin: 0.3rem 0 0; color: var(--color-text-secondary); font-size: 0.98rem; }
+	.ws-reserve { padding-top: 2.4rem; }
+	.ws-price { display: flex; align-items: baseline; gap: 0.6rem; margin: 0 0 1rem; }
+	.ws-amount { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 600; }
+	.ws-was { color: var(--color-text-muted); font-size: 0.95rem; }
+	.ws-form label {
+		display: block;
+		font-size: 0.8rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--color-text-muted);
+		margin-bottom: 0.4rem;
+	}
+	.ws-fields { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+	.ws-fields input[type='email'] {
+		flex: 1 1 16rem;
+		min-width: 0;
+		padding: 0.8rem 0.9rem;
+		font: inherit;
+		font-size: 1rem;
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+		background: var(--color-bg-card);
+		color: var(--color-text);
+	}
+	.ws-fields button {
+		padding: 0.8rem 1.4rem;
+		font: inherit;
+		font-size: 1rem;
+		font-weight: 600;
+		color: #fff;
+		background: var(--color-accent);
+		border: none;
+		border-radius: var(--border-radius);
+		cursor: pointer;
+	}
+	.ws-fields button:hover { background: var(--color-accent-hover); }
+	.ws-fine { font-size: 0.82rem; color: var(--color-text-muted); margin: 0.7rem 0 0; }
+	@media (max-width: 620px) {
+		.ws { padding: 2rem 1.25rem 0.5rem; }
+		.ws-hero h1 { font-size: 1.85rem; }
+		.ws-facts { grid-template-columns: 1fr; }
+		.ws-cols { grid-template-columns: 1fr; }
+		.ws-fields button { flex: 1 1 100%; }
+	}
+</style>

@@ -3,7 +3,7 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
-import { HIDDEN_SLUGS } from './src/consts';
+import { HIDDEN_PATHS, HIDDEN_SLUGS } from './src/consts';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -39,7 +39,9 @@ export default defineConfig({
 	integrations: [
 		mdx(),
 		sitemap({
-			filter: (page) => !HIDDEN_SLUGS.some((slug) => page.includes(`/blog/${slug}/`)),
+			filter: (page) =>
+				!HIDDEN_SLUGS.some((slug) => page.includes(`/blog/${slug}/`)) &&
+				!HIDDEN_PATHS.some((p) => page.includes(p)),
 			serialize: (item) => {
 				const match = item.url.match(/\/blog\/([^/]+)\/$/);
 				if (match) {
