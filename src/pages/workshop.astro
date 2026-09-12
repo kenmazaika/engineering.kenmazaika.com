@@ -8,15 +8,11 @@ import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 
 // ── Easy-to-edit values ────────────────────────────────────────────────────
-// Swap CHECKOUT_MODE to 'checkout' and set CHECKOUT_URL once the Stripe/Lemon
-// Squeezy link exists; the hero CTA then points straight at checkout.
-const CHECKOUT_MODE: 'list' | 'checkout' = 'list';
-const CHECKOUT_URL = ''; // e.g. 'https://buy.stripe.com/xxxx'
-const SESSION_DATE = 'Date to be announced — the list hears first';
+const CHECKOUT_URL = 'https://buy.stripe.com/7sY149efa5NVa87gsw7AI00';
+const SESSION_DATE = 'Thursday, October 8, 2026 · 3:00 PM PT / 6:00 PM ET';
 const EARLY_PRICE = '$97';
 const FULL_PRICE = '$147';
-const SEAT_CAP = 'capped, so the review blocks actually work';
-const BUTTONDOWN_ACTION = 'https://buttondown.com/api/emails/embed-subscribe/mazaika';
+const SEAT_CAP = 'seats are capped so the review blocks actually work';
 // ───────────────────────────────────────────────────────────────────────────
 ---
 
@@ -47,7 +43,7 @@ const BUTTONDOWN_ACTION = 'https://buttondown.com/api/emails/embed-subscribe/maz
 					<li><span>Room</span>{SEAT_CAP}</li>
 				</ul>
 				<div class="ws-cta-row">
-					<a class="ws-btn" href="#reserve">Reserve a seat — {EARLY_PRICE}</a>
+					<a class="ws-btn" href={CHECKOUT_URL} target="_blank" rel="noopener">Get my seat — {EARLY_PRICE}</a>
 					<span class="ws-cta-note">Early bird {EARLY_PRICE} · <s>{FULL_PRICE}</s> after</span>
 				</div>
 			</section>
@@ -130,7 +126,9 @@ const BUTTONDOWN_ACTION = 'https://buttondown.com/api/emails/embed-subscribe/maz
 				<dl class="ws-faq">
 					<dt>Do I need to be technical?</dt>
 					<dd>No. If you can describe the workflow in plain English, you can participate. I'll keep the build-along at a level you can follow.</dd>
-					<dt>Is it recorded?</dt>
+					<dt>How do I pay?</dt>
+				<dd>Card, Apple Pay, or Google Pay through Stripe's secure checkout. You'll get a receipt by email straight away.</dd>
+				<dt>Is it recorded?</dt>
 					<dd>No recording. It's live and it stays in the room — that's what makes the review honest.</dd>
 					<dt>What if the date doesn't work?</dt>
 					<dd>Seats are transferable to a future session. Just reply to your confirmation email.</dd>
@@ -143,22 +141,14 @@ const BUTTONDOWN_ACTION = 'https://buttondown.com/api/emails/embed-subscribe/maz
 				<h2>Reserve a seat</h2>
 				<p class="ws-price"><span class="ws-amount">{EARLY_PRICE}</span> <span class="ws-was">early bird · {FULL_PRICE} after</span></p>
 				<p>
-					Put your email in and I'll send the seat link and session details as soon as the date is locked.
-					One email, no drip. If it's not for you, ignore it and you'll never hear about it again.
+					Three hours, live, {SEAT_CAP.charAt(0).toUpperCase() + SEAT_CAP.slice(1)}.
+					Grab a seat and your Zoom link and session details land in your inbox straight away.
 				</p>
-				<form class="ws-form" action={BUTTONDOWN_ACTION} method="post">
-					<label for="ws-email">Email address</label>
-					<div class="ws-fields">
-						<input type="email" name="email" id="ws-email" autocomplete="email" placeholder="you@company.com" required />
-						<input type="hidden" name="embed" value="1" />
-						<input type="hidden" name="metadata__optin" value="workshop" />
-						<button type="submit">Send me the seat link</button>
-					</div>
-					<p class="ws-fine">
-						No spam, unsubscribe anytime.
-						<a href="https://buttondown.com/refer/mazaika" target="_blank" rel="noopener noreferrer">Powered by Buttondown.</a>
-					</p>
-				</form>
+				<div class="ws-cta-row">
+					<a class="ws-btn" href={CHECKOUT_URL} target="_blank" rel="noopener">Get my seat — {EARLY_PRICE}</a>
+					<span class="ws-cta-note">Secure checkout · Card, Apple Pay &amp; Google Pay</span>
+				</div>
+				<p class="ws-fine">Seats are transferable to a future session — just reply to your confirmation email.</p>
 			</section>
 		</main>
 		<Footer />
