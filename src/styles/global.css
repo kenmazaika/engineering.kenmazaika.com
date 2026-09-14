@@ -866,3 +866,337 @@ a:hover { color: var(--color-link-hover); }
 }
 
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+
+/* ─── AI work harness — opt-in editorial feature ─── */
+.variant-harness {
+  --harness-paper: #f2eee5;
+  --harness-paper-light: #faf8f2;
+  --harness-ink: #282724;
+  --harness-ink-soft: #5f615f;
+  --harness-rule: #d2ccc0;
+  --harness-rule-dark: #999489;
+  --harness-thread: #9d3f32;
+  background: var(--harness-paper-light);
+  color: var(--harness-ink);
+}
+
+.variant-harness .site-header {
+  background: rgba(250, 248, 242, 0.97);
+  border-bottom-color: var(--harness-rule);
+}
+
+.variant-harness .site-mark {
+  color: var(--harness-thread);
+  background: var(--harness-paper);
+  border-color: var(--harness-thread);
+}
+
+.variant-harness .article-shell,
+.variant-harness .article-shell:has(.article-masthead) {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+.variant-harness .article-masthead {
+  width: min(calc(100% - 3rem), 1180px);
+  margin: clamp(1rem, 2.5vw, 2rem) auto 0;
+  overflow: hidden;
+  background: var(--harness-paper);
+  border-top: 1px solid var(--harness-ink);
+  border-bottom: 1px solid var(--harness-ink);
+}
+
+.variant-harness .masthead-bg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  border-bottom: 1px solid var(--harness-rule-dark);
+}
+
+.variant-harness .masthead-scrim {
+  display: none;
+}
+
+.variant-harness .masthead-content {
+  position: static;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(1.6rem, 3.5vw, 3.25rem);
+  background: var(--harness-paper);
+  color: var(--harness-ink);
+}
+
+.variant-harness .masthead-textblock {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.variant-harness .masthead-content .back-link-light {
+  margin: 0 0 1.2rem;
+  color: var(--harness-ink-soft);
+  text-shadow: none;
+}
+
+.variant-harness .masthead-content .back-link-light:hover {
+  color: var(--harness-ink);
+}
+
+.variant-harness .masthead-content h1 {
+  max-width: 13ch;
+  margin: 0 0 1rem;
+  color: var(--harness-ink);
+  font-size: clamp(2.65rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  text-shadow: none;
+}
+
+.variant-harness .masthead-content .article-deck {
+  max-width: 620px;
+  margin: 0 0 1.35rem;
+  color: var(--harness-ink-soft);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.62;
+  text-shadow: none;
+}
+
+.variant-harness .masthead-content .article-meta {
+  color: var(--harness-ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.035em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.variant-harness .prose {
+  width: min(100%, 820px);
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) 2.5rem 0;
+  color: var(--harness-ink);
+  font-size: 1.06rem;
+  line-height: 1.82;
+}
+
+.variant-harness .prose > p:first-child {
+  color: #41423f;
+  font-family: var(--font-heading);
+  font-size: clamp(1.32rem, 2vw, 1.55rem);
+  line-height: 1.55;
+}
+
+.variant-harness .prose h2 {
+  position: relative;
+  margin-top: 2.4em;
+  padding: 0 0 0.65rem;
+  border-bottom: 1px solid var(--harness-rule);
+  color: var(--harness-ink);
+  font-size: clamp(1.85rem, 3vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.variant-harness .prose h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 4.5rem;
+  height: 2px;
+  background: var(--harness-thread);
+}
+
+.variant-harness .prose h3 {
+  color: var(--harness-ink);
+  font-weight: 500;
+}
+
+.variant-harness .prose a {
+  color: var(--harness-ink);
+  text-decoration-color: var(--harness-rule-dark);
+}
+
+.variant-harness .prose a:hover {
+  color: var(--harness-thread);
+  text-decoration-color: var(--harness-thread);
+}
+
+.variant-harness .prose li::marker {
+  color: var(--harness-ink-soft);
+}
+
+.variant-harness .prose blockquote {
+  margin: 2.25em 0;
+  padding: 1.25rem 1.5rem;
+  color: var(--harness-ink);
+  background: var(--harness-paper);
+  border: 1px solid var(--harness-rule);
+  border-left: 3px solid var(--harness-rule-dark);
+  border-radius: 0;
+  font-family: var(--font-heading);
+  font-size: 1.22rem;
+  line-height: 1.55;
+}
+
+.variant-harness .related-posts,
+.variant-harness .article-footer,
+.variant-harness .article-shell .newsletter-signup {
+  width: min(calc(100% - 3rem), 740px);
+  max-width: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.variant-harness .related-posts {
+  margin-top: 4rem;
+  padding: 1.6rem 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--harness-ink);
+  border-bottom: 1px solid var(--harness-rule);
+  border-radius: 0;
+}
+
+.variant-harness .related-posts h2 {
+  margin: 0 0 1rem;
+  color: var(--harness-ink);
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.variant-harness .related-posts ul {
+  gap: 0;
+}
+
+.variant-harness .related-posts li {
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--harness-rule);
+}
+
+.variant-harness .related-posts a {
+  color: var(--harness-ink);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.variant-harness .article-shell .newsletter-signup {
+  margin-top: 3.5rem;
+  background: var(--harness-paper);
+  border-color: var(--harness-rule);
+  border-radius: 0;
+}
+
+.variant-harness .article-footer {
+  color: var(--harness-ink-soft);
+  border-top-color: var(--harness-rule);
+}
+
+.variant-harness .site-footer {
+  background: var(--harness-paper);
+  border-top-color: var(--harness-rule);
+}
+
+@media (min-width: 980px) {
+  .variant-harness .masthead-textblock {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+    grid-template-rows: auto auto auto;
+    column-gap: clamp(3rem, 7vw, 7rem);
+    align-items: start;
+  }
+
+  .variant-harness .masthead-content .back-link-light {
+    grid-column: 1 / -1;
+  }
+
+  .variant-harness .masthead-content h1 {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    margin-bottom: 0;
+  }
+
+  .variant-harness .masthead-content .article-deck {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .variant-harness .masthead-content .article-meta {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 760px) {
+  .variant-harness .article-masthead {
+    width: 100%;
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .variant-harness .masthead-bg {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 62% 45%;
+  }
+
+  .variant-harness .masthead-content {
+    padding: 2rem 1.4rem 2.35rem;
+  }
+
+  .variant-harness .masthead-content h1 {
+    max-width: 12ch;
+    margin-bottom: 1.15rem;
+    font-size: clamp(2.3rem, 10.5vw, 3rem);
+    line-height: 1.0;
+  }
+
+  .variant-harness .masthead-content .article-deck {
+    font-size: 1.02rem;
+    line-height: 1.62;
+    max-width: 34ch;
+  }
+
+  .variant-harness .masthead-content .article-meta {
+    margin-top: 1.35rem;
+  }
+
+  .variant-harness .prose {
+    width: 100%;
+    padding: 3rem 1.25rem 0;
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+
+  .variant-harness .prose > p:first-child {
+    font-size: 1.27rem;
+  }
+
+  .variant-harness .prose h2 {
+    font-size: 1.85rem;
+  }
+
+  .variant-harness .related-posts,
+  .variant-harness .article-footer,
+  .variant-harness .article-shell .newsletter-signup {
+    width: calc(100% - 2.5rem);
+  }
+
+  .variant-harness .article-shell .newsletter-signup {
+    padding: 1.5rem;
+  }
+}

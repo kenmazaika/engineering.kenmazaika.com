@@ -30,6 +30,7 @@ const {
 	related = [],
 	faq = [],
 	heroImage,
+	layoutVariant,
 } = Astro.props;
 const socialImage = `/og/${slug}.png`;
 const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
@@ -88,7 +89,7 @@ const faqSchema = faq && faq.length > 0 ? {
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 	</head>
-	<body>
+	<body class={layoutVariant ? `variant-${layoutVariant}` : undefined}>
 		<Header />
 		<main class="article-shell">
 			<article>

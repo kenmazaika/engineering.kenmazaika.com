@@ -40,6 +40,9 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			// Optional per-post visual treatment. Scoped by body class `variant-<name>`
+			// so a single post can carry its own styling without touching other pages.
+			layoutVariant: z.enum(['harness']).optional(),
 			hideDefaultNewsletter: z.boolean().optional(),
 			// Hidden posts exist at their direct URL but are excluded from the
 			// index, RSS feed, and sitemap (used for tests and staged launches).
