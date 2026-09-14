@@ -247,7 +247,7 @@ The stack, now with evidence behind it:
 
 * **The rest are insurance.**
 
-One more lesson, for the failures: when a model's behavior surprises you, check the harness before blaming the model. An image mode that passes no image doesn't mean the model is blind. A provider timeout that kills a slow build doesn't mean the model can't build. The failures that turned out to be genuine model bugs — grok's date-format bug in its cost app (easy fix, then it ran fine), the rate-unit mistakes — were easy to diagnose once the harness was ruled out.
+One more lesson, for the failures: when a model's behavior surprises you, [check the harness before blaming the model](/blog/what-is-an-ai-harness/). An image mode that passes no image doesn't mean the model is blind. A provider timeout that kills a slow build doesn't mean the model can't build. The failures that turned out to be genuine model bugs — grok's date-format bug in its cost app (easy fix, then it ran fine), the rate-unit mistakes — were easy to diagnose once the harness was ruled out.
 
 ## FAQ
 

@@ -34,7 +34,7 @@ The one-line takeaway: side by side is the only way to see which failure you can
 
 ## What these two actually are
 
-Before the differences, the category. Hermes and OpenClaw are the same kind of thing: **a harness that sits between you and the models.** You plug in multiple models and hot-swap them. The harness gives them tool calls, your file system, skills, and persistent memory. That combination is what makes this category of tool powerful — not any single model, but the agentic scaffolding around it.
+Before the differences, the category. Hermes and OpenClaw are the same kind of thing: **a harness that sits between you and the models.** You plug in multiple models and hot-swap them. The harness gives them tool calls, your file system, skills, and persistent memory. That combination is what makes this category of tool powerful — not any single model, but the agentic scaffolding around it. I unpack that layer, and why the repeated middle of the work is the part worth automating, in [What Is an AI Work Harness?](/blog/what-is-an-ai-harness/).
 
 The surface you talk to them through is not a tiebreaker. Both connect to external chat apps like Discord or Telegram, or ship their own interfaces; most people end up living in a chat app either way (I have a separate post on [Discord vs. Telegram for agentic work](/blog/discord-vs-telegram-agentic-work/)). And the business use cases overlap almost entirely: research, building apps, managing servers, keeping notes or a wiki, content production, marketing, brainstorming, generating PDFs. Anything you can do on one, you can set up on the other.
 

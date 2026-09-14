@@ -5,8 +5,20 @@ seoTitle: "What Is an AI Work Harness? Turn Repetitive Runbooks Into Reliable Wo
 socialTitle: "Your AI wrote the answer. Who moved it into the system?"
 ogCategory: 'Field Note \u00b7 AI & Engineering'
 pubDate: 'Sep 11, 2026'
+updatedDate: 'Sep 14, 2026'
 heroImage: ../../assets/headers/what-is-an-ai-harness-work-thread.png
 layoutVariant: harness
+faq:
+  - question: "What is an AI work harness?"
+    answer: "The system that does the repeated middle of a workflow: it reads an input, applies a written runbook, records the result in the right place, and routes the exceptions to a person. It gives a capable model durable instructions, narrow access to the systems involved, a trigger, and an exception path."
+  - question: "How is an AI work harness different from a chatbot?"
+    answer: "A chat window answers, then hands the work back — you still carry the answer to the ticket, the CRM, or the report. A harness owns the repeated path end to end, keeps its procedure in a file you can inspect, and returns a visible exception queue instead of a cheerful summary."
+  - question: "What is a runbook in an AI work harness?"
+    answer: "The smallest repeatable unit: the input to watch, the rubric for deciding what matters, where to record or send the result, when the job runs, and the exception that needs a person. If a careful junior operator could follow those five lines, a harness can often execute them."
+  - question: "Do you have to give an AI work harness access to everything?"
+    answer: "No. Start with a dedicated account or a limited-access queue, keep early actions in a review queue, and put destructive changes and external messages behind approval. Narrow access is what makes the first workflow safe enough to trust."
+  - question: "What is a good first workflow for an AI work harness?"
+    answer: "One repeated job with four properties: it happens often enough that someone resents it, its input is reachable with narrow permission, its output has a clear home, and a human can recognize a bad result before it does damage. Common first picks are a support queue, a weekly CRM clean-up, or meeting follow-ups."
 related:
   - title: 'Which AI Model Should You Run for Agent Work? 11 Models, 5 Real Tasks, Receipts'
     url: '/blog/best-ai-model-for-agent-work/'
@@ -50,7 +62,7 @@ That chain is exactly where chat alone runs out of road.
 
 ## A useful AI work harness has a small job
 
-A model is the part that can read, reason, and write. The harness is the environment that lets it finish one repeatable workflow tomorrow, not just answer a question today.
+A [model](/blog/best-ai-model-for-agent-work/) is the part that can read, reason, and write. The harness is the environment that lets it finish one repeatable workflow tomorrow, not just answer a question today. The general form of that idea has a name — an **agent harness**, the second half of “agent = model + harness.” Most writing about harnesses aims at software teams pointing an agent at a codebase. Point the same layer at operational work — a queue, a CRM, a meeting — and it becomes an AI work harness.
 
 The useful unit is a runbook:
 
@@ -62,7 +74,7 @@ The useful unit is a runbook:
 
 If you could teach a careful junior operator to follow those five lines, you can often teach a harness to execute the repeated middle. The human still writes the rules, checks the work, and makes the decisions that matter. This is not an argument to hide the decision maker. It is an argument to stop wasting them on transport.
 
-OpenClaw and Hermes are two examples of tools built around this shape. They can keep instructions in readable files, call approved tools, and run work on a schedule or in response to an event. Their feature lists matter less than the practical consequence: a workflow can retain its procedure, touch the right systems, and come back with exceptions after you close the chat tab.
+[OpenClaw and Hermes](/blog/hermes-vs-openclaw/) are two examples of tools built around this shape. They can keep instructions in readable files, call approved tools, and run work on a schedule or in response to an event. Their feature lists matter less than the practical consequence: a workflow can retain its procedure, touch the right systems, and come back with exceptions after you close the chat tab.
 
 ## What it looks like in a support queue
 
@@ -103,7 +115,7 @@ ChatGPT, Claude, and other chat products are useful. I use them. But a chat wind
 
 It does not wake up before the Monday meeting because that is when the report needs to exist. It does not retain an inspectable procedure unless you put one somewhere durable. It does not know where a proposed update belongs unless you connect the system and grant a carefully constrained permission. And it cannot tell the difference between a routine request and a consequential exception unless you write that distinction down.
 
-The file is a bigger deal than it sounds. A skill or runbook can be a Markdown document: the checklist, the source rules, the output format, the confidence threshold, and the conditions that stop the process. When you correct it, the correction is there for the next run. You are no longer hoping to repeat a good conversation.
+The file is a bigger deal than it sounds. A skill or runbook can be a [Markdown document](/blog/more-context-makes-your-agent-dumber/): the checklist, the source rules, the output format, the confidence threshold, and the conditions that stop the process. When you correct it, the correction is there for the next run. You are no longer hoping to repeat a good conversation.
 
 ## Do not hand it the keys to everything
 
