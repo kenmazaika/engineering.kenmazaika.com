@@ -9,12 +9,10 @@ import { SITE_TITLE } from '../consts';
 
 // ── Easy-to-edit values ────────────────────────────────────────────────────
 const CHECKOUT_URL = 'https://buy.stripe.com/7sY149efa5NVa87gsw7AI00';
-const SESSION_DATE = 'Saturday, October 10, 2026 · 10:00 AM PT / 1:00 PM ET';
+const SESSION_DATE = 'Thursday, October 8, 2026 · 3:00 PM PT / 6:00 PM ET';
 const EARLY_PRICE = '$97';
 const FULL_PRICE = '$147';
-const SEAT_CAP = 'seats are capped so the review blocks actually work';
-const MIN_SEATS = 'The session runs with at least 5 paid seats — if it doesn\'t fill, you get a full refund or a transfer.';
-const WEEKDAY_FALLBACK = 'If enough people ask, I\'ll open a weekday cohort.';
+const SEAT_CAP = '8 seats maximum so the review blocks actually work';
 // ───────────────────────────────────────────────────────────────────────────
 ---
 
@@ -37,10 +35,6 @@ const WEEKDAY_FALLBACK = 'If enough people ask, I\'ll open a weekday cohort.';
 					A 3-hour live working session on the OpenClaw setup I actually run in production.
 					You'll watch it run on real problems, apply it to your own messiest process, and walk out
 					with a <strong>named diagnosis</strong> of what's eating your week. Not a slide deck.
-				</p>
-				<p class="ws-sub ws-sub-note">
-					It runs on a Saturday morning for one reason: it's the one block where nobody else's
-					calendar gets a vote.
 				</p>
 				<ul class="ws-facts">
 					<li><span>Format</span>3 hours, live, interactive</li>
@@ -137,9 +131,7 @@ const WEEKDAY_FALLBACK = 'If enough people ask, I\'ll open a weekday cohort.';
 				<dt>Is it recorded?</dt>
 					<dd>Yes — registrants get the replay, so you can go back over anything. But come live: the review blocks are the product, and a replay can't review <em>your</em> workflow.</dd>
 					<dt>What if the date doesn't work?</dt>
-					<dd>Two options. Every seat is transferable to a future session, and {WEEKDAY_FALLBACK} Reply to your confirmation email and say so.</dd>
-					<dt>What if not enough people sign up?</dt>
-					<dd>{MIN_SEATS}</dd>
+					<dd>Every seat is transferable to a future session. Reply to your confirmation email and say so.</dd>
 					<dt>What do I get for the money?</dt>
 					<dd>The live session, the diagnosis of your own workflow, and everything I demonstrate. There's no upsell you have to buy to make the session useful.</dd>
 				</dl>
@@ -156,7 +148,7 @@ const WEEKDAY_FALLBACK = 'If enough people ask, I\'ll open a weekday cohort.';
 					<a class="ws-btn" href={CHECKOUT_URL} target="_blank" rel="noopener">Get my seat — {EARLY_PRICE}</a>
 					<span class="ws-cta-note">Secure checkout · Card, Apple Pay &amp; Google Pay</span>
 				</div>
-				<p class="ws-fine">Seats are transferable to a future session — just reply to your confirmation email. {WEEKDAY_FALLBACK} The session runs with at least 5 paid seats; if it doesn't fill, you get a full refund or a transfer.</p>
+				<p class="ws-fine">Seats are transferable to a future session — just reply to your confirmation email.</p>
 			</section>
 		</main>
 		<Footer />
