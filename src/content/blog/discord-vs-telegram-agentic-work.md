@@ -7,6 +7,7 @@ pubDate: 'Aug 30, 2026'
 ogCategory: 'Field Note · Agent Home'
 hideDefaultNewsletter: true
 heroImage: ../../assets/headers/discord-vs-telegram-masthead.png
+layoutVariant: harness
 related:
   - title: "Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included)."
     url: "/blog/hermes-vs-openclaw/"

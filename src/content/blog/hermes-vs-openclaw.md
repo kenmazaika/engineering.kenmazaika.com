@@ -8,6 +8,7 @@ ogCategory: 'Field Note · AI & Engineering'
 hideDefaultNewsletter: true
 showPopup: true
 heroImage: ../../assets/headers/hermes-vs-openclaw-masthead.png
+layoutVariant: harness
 related:
   - title: "My Agent Kept Writing the Same Post. The Memory Was the Problem."
     url: "/blog/my-agent-kept-writing-the-same-post/"

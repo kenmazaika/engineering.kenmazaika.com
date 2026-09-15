@@ -6,6 +6,7 @@ socialTitle: "More Context Makes Your Agent Dumber. The Fix Is a File Handoff."
 pubDate: 'Sep 10, 2026'
 ogCategory: 'Field Note · Agent Architecture'
 heroImage: ../../assets/headers/more-context-makes-your-agent-dumber-masthead.png
+layoutVariant: harness
 related:
   - title: 'Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included)'
     url: '/blog/hermes-vs-openclaw/'
