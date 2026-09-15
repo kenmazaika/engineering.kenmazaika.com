@@ -1,0 +1,153 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Start here: running an AI agent for real work — ${SITE_TITLE}`}
+			description="A guided path through choosing, building, and debugging an AI work harness, based on real Hermes and OpenClaw work."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main id="main" class="start-page">
+			<section class="start-hero" aria-labelledby="page-title">
+				<p class="eyebrow">A guided reading path</p>
+				<h1 id="page-title">Run an AI agent for real work.</h1>
+				<p class="dek">AI agents are easy to demo and surprisingly hard to trust. This is my curated path through building and running a dependable AI work harness—based on actual Hermes and OpenClaw work, organized by the question you have now.</p>
+				<div class="start-card">
+					<p class="start-label">If you’re new, start here</p>
+					<a href="/blog/what-is-an-ai-harness/">What Is an AI Work Harness? →</a>
+					<p>Learn what the layer around a model actually does—and whether your work has the repeatable middle that makes a harness useful.</p>
+				</div>
+			</section>
+
+			<div class="contents-wrap">
+				<nav class="contents" aria-labelledby="contents-title">
+					<div class="contents-head"><h2 id="contents-title">On this page</h2><p>Already running agents? Jump to the problem you have now.</p></div>
+					<ol>
+						<li><a href="#what"><span>01</span>What is a harness?</a></li>
+						<li><a href="#choose"><span>02</span>Which setup?</a></li>
+						<li><a href="#workflow"><span>03</span>First workflow</a></li>
+						<li><a href="#models"><span>04</span>Which models?</a></li>
+						<li><a href="#diagnose"><span>05</span>Why is it wrong?</a></li>
+						<li><a href="#help"><span>06</span>Guided help</a></li>
+					</ol>
+				</nav>
+			</div>
+
+			<div class="journey">
+				<section class="stage" id="what" aria-labelledby="what-title">
+					<p class="stage-no">Stage 01</p><h2 id="what-title">What is an AI work harness—and do I need one?</h2>
+					<p class="outcome">A harness gives a model tools, memory, instructions, schedules, files, and a place to work. It is useful when a repeated job has a clear middle—not when you only need a one-off answer.</p>
+					<a class="featured" href="/blog/what-is-an-ai-harness/"><strong>What Is an AI Work Harness? →</strong><span>Read this for the plain-English definition, the jobs a harness is good at, and the line between automation and judgment.</span></a>
+					<p class="support-label">Also useful</p><ul class="support"><li><a href="/blog/my-175-ai-agent-rig/">My $175 AI Agent Rig: What It Really Costs</a></li></ul>
+					<p class="bridge">Once the job fits a harness, the next decision is the working environment.</p>
+				</section>
+
+				<section class="stage" id="choose" aria-labelledby="choose-title">
+					<p class="stage-no">Stage 02</p><h2 id="choose-title">Which setup should I choose?</h2>
+					<p class="outcome">Choose the environment whose defaults fit how you work. The differences show up in memory, research, orchestration, and whether the agent follows the assignment you actually gave it.</p>
+					<a class="featured" href="/blog/hermes-vs-openclaw/"><strong>Hermes vs. OpenClaw: Why I Moved My Main Workflow →</strong><span>Read my real-work comparison—including where each won and why memory changed my decision.</span></a>
+					<p class="support-label">Decision guides</p><ul class="support"><li><a href="/blog/discord-vs-telegram-agentic-work/">Discord vs. Telegram for Agentic Work</a></li><li><a href="/blog/my-175-ai-agent-rig/">My $175 AI Agent Rig</a></li></ul>
+					<p class="aside">My short version: OpenClaw is my main tool for assignment fidelity and tighter memory control. I still use Hermes for established workflows and research-oriented work.</p>
+					<p class="bridge">The platform matters less than the first bounded job you give it.</p>
+				</section>
+
+				<section class="stage" id="workflow" aria-labelledby="workflow-title">
+					<p class="stage-no">Stage 03</p><h2 id="workflow-title">How do I turn a repeated task into a workflow?</h2>
+					<p class="outcome">Start with one bounded runbook: a clear trigger, repeatable middle, visible output, and human judgment at the end. Let the agent own coordination without pretending to replace judgment.</p>
+					<a class="featured" href="/blog/capture-workflow/"><strong>A Capture Workflow for Work That Contains Your Judgment →</strong><span>Read this to see a messy voice note become a shaped brief before execution.</span></a>
+					<p class="support-label">Pick the closest shape</p><ul class="support"><li><a href="/blog/hermes-workflow-apartment-scouting/">Using the Scouting Pattern for Apartment Hunting</a></li><li><a href="/blog/hermes-workflow-i-thought-kanban-was-for-me-to-manage/">I Thought Kanban Was for Me to Manage</a></li><li><a href="/blog/hermes-memory-skills-wiki-learns/">Memory Remembers, Skills Repeat, and a Wiki Learns</a></li></ul>
+					<p class="aside">I have not yet published a true “first useful hour” guide. Until then, copy the shape of one example—not its domain.</p>
+					<p class="bridge">Once the workflow is clear, choose the least expensive model stack that can inspect its own work.</p>
+				</section>
+
+				<section class="stage" id="models" aria-labelledby="models-title">
+					<p class="stage-no">Stage 04</p><h2 id="models-title">Which models should I use?</h2>
+					<p class="outcome">Use a cheap, capable workhorse for routine steps and a model that can see for visual work and final inspection. You do not need a model zoo.</p>
+					<a class="featured" href="/blog/best-ai-model-for-agent-work/"><strong>Which AI Model Should You Run for Agent Work? →</strong><span>Compare 11 models on five real tasks with identical prompts, measured costs, and full receipts.</span></a>
+					<p class="support-label">Build the stack</p><ul class="support"><li><a href="/blog/my-default-model-stack-for-ai-agent-work/">My Default Model Stack for AI Agent Work</a></li><li><a href="/blog/designing-blind/">Designing Blind</a></li></ul>
+					<p class="aside">For my own work, DeepSeek is the economical daily driver; I use an OpenAI model for a quality anchor or vision.</p>
+					<p class="bridge">A weak tool, retrieval failure, or bad handoff can make every model look bad.</p>
+				</section>
+
+				<section class="stage" id="diagnose" aria-labelledby="diagnose-title">
+					<p class="stage-no">Stage 05</p><h2 id="diagnose-title">What should I check when the agent gets things wrong?</h2>
+					<p class="outcome">Before switching models, inspect the system around the model: tools, retrieved evidence, active context, and persistent memory.</p>
+					<a class="featured" href="/blog/before-you-blame-the-model-audit-your-hermes-setup/"><strong>Before You Blame the Model, Audit Your Hermes Setup →</strong><span>Use a copyable prompt to find missing tools, silent fallbacks, and configuration bottlenecks.</span></a>
+					<p class="support-label">Follow the evidence</p><ul class="support"><li><a href="/blog/a-feature-that-makes-your-agent-show-its-receipts/">Does AI Citation Grounding Actually Catch Errors?</a></li><li><a href="/blog/my-agent-kept-writing-the-same-post/">My Agent Kept Writing the Same Post</a></li><li><a href="/blog/more-context-makes-your-agent-dumber/">More Context Makes Your Agent Dumber</a></li></ul>
+					<p class="aside">A useful order: verify tools, inspect evidence, reduce active context, check persistent memory, and only then compare models.</p>
+					<p class="bridge">If the system is still only a pile of good intentions, bring one real runbook and map it with help.</p>
+				</section>
+
+				<section class="stage" id="help" aria-labelledby="help-title">
+					<p class="stage-no">Stage 06</p><h2 id="help-title">I want guided help applying this.</h2>
+					<p class="outcome">Reading can show the patterns. It cannot choose the right workflow inside your business or force the first version across the finish line.</p>
+					<div class="workshop"><p>I run a live, hands-on workshop for founders and engineering leaders. Bring one real runbook; we will map the repeated middle, choose the human checkpoints, and leave with a concrete implementation plan.</p><p class="details">Thursday, October 8, 2026 · 11:00 AM PT / 2:00 PM ET · $97 · eight seats</p><a href="/workshop/">See the workshop details and reserve a seat →</a></div>
+					<p class="aside">Not ready for guided help? Keep reading and build one small workflow first. The goal is not to automate everything—it is to let the agent own coordination while you keep judgment.</p>
+				</section>
+
+				<section class="deep" aria-labelledby="deep-title"><p class="eyebrow">Continue exploring</p><h2 id="deep-title">Already running an agent? Go deeper.</h2><p>These pieces improve leverage rather than merely add complexity.</p><ul><li><a href="/blog/hermes-workflow-question-the-instruction/">Teach Your Agent to Question the Instruction →</a></li><li><a href="/blog/meta-prompting-let-ai-write-your-prompt/">Meta-Prompting: Let the AI Write Your Prompt →</a></li><li><a href="/blog/hermes-workflow-six-bots-one-media-company/">Six Bots, One Media Company →</a></li><li><a href="/blog/more-context-makes-your-agent-dumber/">More Context Makes Your Agent Dumber →</a></li></ul><p class="archive-end">Prefer chronology? Browse <a href="/blog/">all writing</a>.</p></section>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	:global(html) { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+	.start-page { overflow: hidden; }
+	.start-hero { max-width: 1120px; margin: auto; padding: clamp(4rem, 8vw, 7.8rem) 28px 4.5rem; }
+	.eyebrow, .stage-no, .start-label, .support-label { color: var(--color-accent); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+	.eyebrow { margin: 0 0 1.2rem; }
+	.start-hero h1 { max-width: 930px; margin: 0; font-size: clamp(3.2rem, 6.25vw, 5.75rem); line-height: .98; letter-spacing: -.052em; text-wrap: balance; }
+	.dek { max-width: 700px; margin: 1.6rem 0 0; color: var(--color-text-secondary); font-size: clamp(1.05rem, 1.65vw, 1.22rem); line-height: 1.65; }
+	.start-card { max-width: 760px; margin-top: 2.7rem; padding: 1.5rem 1.65rem 1.6rem; background: var(--color-bg-card); border-top: 2px solid var(--color-accent); box-shadow: 0 12px 35px rgba(38,28,18,.06); }
+	.start-label { margin: 0 0 .35rem; color: var(--color-text-secondary); }
+	.start-card a { display: inline-block; font-family: var(--font-heading); font-size: 1.5rem; line-height: 1.25; font-weight: 600; }
+	.start-card p:last-child { margin: .45rem 0 0; color: var(--color-text-secondary); font-size: .91rem; line-height: 1.55; }
+	.contents-wrap { background: var(--color-bg-secondary); border-block: 1px solid var(--color-border); }
+	.contents { max-width: 1120px; margin: auto; padding: 2rem 28px; }
+	.contents-head { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; margin-bottom: 1.15rem; }
+	.contents h2 { margin: 0; padding: 0; border: 0; font-size: 1.35rem; }
+	.contents-head p { margin: 0; color: var(--color-text-secondary); font-size: .82rem; }
+	.contents ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+	.contents li { min-width: 0; border-left: 1px solid #d8d1c7; padding: .2rem 1rem .3rem; }
+	.contents li:first-child { border-left: 2px solid var(--color-accent); }
+	.contents a { display: block; color: var(--color-text); font-family: var(--font-heading); font-size: .98rem; line-height: 1.25; overflow-wrap: anywhere; }
+	.contents a span { display: block; color: var(--color-text-secondary); font-family: var(--font-body); font-size: .68rem; margin-bottom: .3rem; }
+	.journey { max-width: 760px; margin: auto; padding: 2rem 28px 6rem; }
+	.stage { padding: 5.4rem 0; border-bottom: 1px solid var(--color-border); scroll-margin-top: 74px; }
+	.stage-no { margin: 0 0 .75rem; }
+	.stage h2 { margin: 0 0 1.5rem; padding: 0; border: 0; font-size: clamp(2.15rem, 3.8vw, 3.3rem); line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
+	.outcome { margin: .1rem 0 1.6rem; font-size: 1.01rem; line-height: 1.7; }
+	.featured { display: block; padding: 1.25rem 1.35rem; background: var(--color-bg-card); border-left: 3px solid var(--color-accent); color: var(--color-text); }
+	.featured strong { display: block; font-family: var(--font-heading); font-size: 1.32rem; line-height: 1.25; }
+	.featured span { display: block; margin-top: .45rem; color: var(--color-text-secondary); font-size: .86rem; line-height: 1.55; }
+	.support-label { margin: 1.65rem 0 .55rem; color: var(--color-text-secondary); }
+	.support { list-style: none; margin: 0; padding: 0; }
+	.support li { border-top: 1px solid var(--color-border); padding: .7rem 0; }
+	.support a { font-size: .9rem; line-height: 1.45; font-weight: 500; }
+	.aside { margin: 1.35rem 0 0; color: var(--color-text-secondary); font-size: .86rem; line-height: 1.6; }
+	.bridge { margin: 1.8rem 0 -2.7rem; color: var(--color-text-secondary); font-family: var(--font-heading); font-style: italic; font-size: 1rem; }
+	.workshop { background: var(--color-bg-secondary); padding: 1.45rem 1.5rem; border-top: 1px solid #d5cec3; }
+	.workshop p { margin: 0 0 .8rem; font-size: .9rem; }
+	.workshop .details { color: var(--color-text-secondary); font-size: .78rem; }
+	.deep { max-width: 720px; margin: 0 auto; padding: 5rem 0 1rem; }
+	.deep h2 { padding: 0; border: 0; font-size: 2.35rem; line-height: 1.08; margin: 0 0 1rem; }
+	.deep > p:not(.eyebrow) { color: var(--color-text-secondary); }
+	.deep ul { list-style: none; margin: 2rem 0 0; padding: 0; }
+	.deep li { padding: 1rem 0; border-top: 1px solid var(--color-border); }
+	.deep li a { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 600; }
+	.archive-end { margin-top: 2.5rem; color: var(--color-text-secondary); font-size: .9rem; }
+	@media (max-width: 900px) { .contents ol { grid-template-columns: repeat(2, 1fr); row-gap: 1.1rem; } .contents li:nth-child(3), .contents li:nth-child(5) { border-left: 2px solid var(--color-accent); } }
+	@media (max-width: 680px) { .start-hero { padding: 3.1rem 20px 3rem; } .start-hero h1 { font-size: clamp(2.8rem, 13vw, 4rem); } .dek { font-size: 1rem; margin-top: 1.25rem; } .start-card { margin-top: 2rem; padding: 1.25rem 1.2rem; } .start-card a { font-size: 1.32rem; } .contents { padding: 1.6rem 20px; } .contents-head { display: block; margin-bottom: 1rem; } .contents-head p { margin-top: .35rem; } .contents ol { gap: .75rem 0; } .contents li { padding: .2rem .8rem; } .journey { padding: 0 20px 4rem; } .stage { padding: 4rem 0; } .stage h2 { font-size: 2.05rem; } .outcome { font-size: .96rem; } .featured { padding: 1.15rem; width: 100%; } .featured strong { font-size: 1.23rem; } .bridge { margin-bottom: -2rem; } .deep { padding-top: 4rem; } .deep h2 { font-size: 2rem; } }
+	@media (max-width: 360px) { .start-hero, .contents, .journey { padding-left: 16px; padding-right: 16px; } .start-hero h1 { font-size: 2.65rem; } .contents ol { grid-template-columns: 1fr; } .contents li, .contents li:nth-child(3), .contents li:nth-child(5) { border-left: 2px solid var(--color-accent); } }
+	@media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } }
+</style>
