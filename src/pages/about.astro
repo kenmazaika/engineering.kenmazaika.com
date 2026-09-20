@@ -15,10 +15,19 @@ import { SITE_TITLE } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main class="about-content">
+		<main id="main" class="about-content">
 			<p class="eyebrow">About</p>
 			<h1>I document what happens when AI agents meet real work.</h1>
-			<p class="about-lead">I'm an engineering manager and operator. I run AI agents on practical work, keep the receipts, and write down what holds up outside the demo.</p>
+			<div class="about-identity">
+				<picture>
+					<source type="image/webp" srcset="/images/ken/ken-mazaika-256.webp 256w, /images/ken/ken-mazaika-640.webp 640w" sizes="88px" />
+					<img src="/images/ken/ken-mazaika-640.jpg" srcset="/images/ken/ken-mazaika-256.jpg 256w, /images/ken/ken-mazaika-640.jpg 640w" sizes="88px" width="88" height="88" alt="Ken Mazaika" />
+				</picture>
+				<div>
+					<p class="about-lead">I'm an engineering manager and operator. I run AI agents on practical work, keep the receipts, and write down what holds up outside the demo.</p>
+					<p>I'm the former cofounder of the Firehose project, which was acquired by Trilogy Education. I developed the curriculum that taught career switchers what they need, and I've taught coding-education workshops for business people at Harvard Business School, RISD, Carnegie Mellon, Babson, and Brown.</p>
+				</div>
+			</div>
 			<hr />
 			<p>The field notes cover workflows, model choices, costs, failures, and the systems I use to make agents useful. The longer essays examine how AI changes engineering organizations and why large software transformations fail.</p>
 			<p>This is practitioner writing for engineers and technical leaders who want evidence, not demos.</p>
@@ -26,3 +35,14 @@ import { SITE_TITLE } from '../consts';
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.about-identity { display: flex; align-items: flex-start; gap: 1.35rem; }
+	.about-identity picture { flex: 0 0 auto; }
+	.about-identity img { display: block; width: 88px; height: 88px; object-fit: cover; border-radius: 50%; }
+	.about-identity p:last-child { margin-bottom: 0; }
+	@media (max-width: 520px) {
+		.about-identity { display: block; }
+		.about-identity picture { display: block; margin-bottom: 1rem; }
+	}
+</style>

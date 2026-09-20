@@ -2,6 +2,7 @@
 import { SITE_TITLE } from '../consts';
 ---
 
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
 	<div class="content">
 		<a href="/" class="site-title"><span class="site-mark" aria-hidden="true"><span class="site-mark-glyph">K</span></span><span>{SITE_TITLE}</span></a>
@@ -24,3 +25,19 @@ import { SITE_TITLE } from '../consts';
 		</div>
 	</div>
 </header>
+
+<style>
+	.skip-link {
+		position: fixed;
+		top: .75rem;
+		left: .75rem;
+		z-index: 1000;
+		padding: .65rem .9rem;
+		color: #fff;
+		background: var(--color-accent);
+		border-radius: var(--border-radius);
+		font-weight: 600;
+		transform: translateY(-200%);
+	}
+	.skip-link:focus { transform: translateY(0); }
+</style>

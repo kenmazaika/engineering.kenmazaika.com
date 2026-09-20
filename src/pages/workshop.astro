@@ -6,13 +6,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
+import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '../workshop';
 
 // ── Easy-to-edit values ────────────────────────────────────────────────────
-const CHECKOUT_URL = 'https://buy.stripe.com/7sY149efa5NVa87gsw7AI00';
-const SESSION_DATE = 'Thursday, October 8, 2026 · 11:00 AM PT / 2:00 PM ET';
-const EARLY_PRICE = '$97';
-const FULL_PRICE = '$147';
-const SEAT_CAP = '8 seats maximum so the review blocks actually work';
 // ───────────────────────────────────────────────────────────────────────────
 ---
 
@@ -27,7 +23,7 @@ const SEAT_CAP = '8 seats maximum so the review blocks actually work';
 	</head>
 	<body>
 		<Header />
-		<main class="ws">
+		<main id="main" class="ws">
 			<section class="ws-hero">
 				<p class="ws-eyebrow">Live workshop · 3 hours</p>
 				<h1>Your team is drowning in manual work — bring one of those workflows and leave with a diagnosis.</h1>

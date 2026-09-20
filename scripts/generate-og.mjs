@@ -100,6 +100,47 @@ function cardTree({ title, category, active }) {
   );
 }
 
+function startCardTree(portrait) {
+  return element('div', {
+    style: {
+      width: '1200px', height: '630px', display: 'flex', position: 'relative',
+      backgroundColor: colors.background, color: colors.text, borderLeft: `14px solid ${colors.accent}`,
+      fontFamily: 'Inter',
+    },
+  },
+    element('div', { style: { position: 'absolute', left: '62px', top: '76px', width: '1048px', height: '2px', backgroundColor: colors.border } }),
+    element('div', { style: { position: 'absolute', left: '62px', top: '75px', width: '100px', height: '4px', backgroundColor: colors.accent } }),
+    element('div', { style: {
+      position: 'absolute', left: '62px', top: '105px', color: colors.accent,
+      fontSize: '18px', fontWeight: 600, letterSpacing: '1.6px', textTransform: 'uppercase',
+    } }, 'START HERE · KEN MAZAIKA'),
+    element('div', { style: {
+      position: 'absolute', left: '62px', top: '164px', width: '760px', height: '250px',
+      fontFamily: 'Newsreader', fontSize: '76px', lineHeight: 1.04, fontWeight: 600,
+      letterSpacing: '-1.5px', display: 'flex', alignItems: 'flex-start',
+    } }, 'Run an AI agent for real work.'),
+    element('div', { style: {
+      position: 'absolute', left: '62px', top: '438px', color: colors.muted,
+      fontSize: '24px', fontWeight: 400,
+    } }, '11 models · 5 tasks · measured costs'),
+    element('img', {
+      src: portrait,
+      width: 220,
+      height: 220,
+      style: { position: 'absolute', right: '76px', top: '160px', width: '220px', height: '220px', borderRadius: '110px', objectFit: 'cover' },
+    }),
+    element('div', { style: { position: 'absolute', left: '62px', top: '531px', width: '1048px', height: '2px', backgroundColor: colors.border } }),
+    element('div', { style: {
+      position: 'absolute', left: '62px', top: '555px', fontSize: '20px', fontWeight: 600,
+      letterSpacing: '1.2px',
+    } }, '@kenmazaika'),
+    element('div', { style: {
+      position: 'absolute', right: '76px', top: '556px', fontSize: '19px', fontWeight: 400,
+      color: colors.muted,
+    } }, 'engineering.kenmazaika.com/start/'),
+  );
+}
+
 function hashActive(value) {
   return [...value].reduce((sum, char) => sum + char.codePointAt(0), 0) % 4;
 }
@@ -132,10 +173,15 @@ async function main() {
   ];
 
   const entries = (await readdir(contentDir)).filter((name) => /\.(md|mdx)$/.test(name));
+  const portrait = `data:image/jpeg;base64,${(await readFile(path.join(root, 'public/images/ken/ken-mazaika-640.jpg'))).toString('base64')}`;
   await renderCard({
     title: 'Engineering Leadership in the Agent Era',
     ogCategory: 'KEN MAZAIKA · FIELD NOTES & SYSTEMS',
   }, 'default.png', fonts);
+
+  const startSvg = await satori(startCardTree(portrait), { width: 1200, height: 630, fonts });
+  await sharp(Buffer.from(startSvg)).png().toFile(path.join(outputDir, 'start.png'));
+  console.log('Generated public/og/start.png');
 
   for (const entry of entries) {
     const source = await readFile(path.join(contentDir, entry), 'utf8');
