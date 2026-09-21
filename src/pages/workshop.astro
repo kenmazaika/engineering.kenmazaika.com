@@ -1,12 +1,12 @@
 ---
 // Hidden landing / sign-up page for the $97 OpenClaw workshop (rung 1 teaser).
-// Excluded from the index, RSS, and sitemap; carries noindex/nofollow; not linked from nav.
+// Linked from the site nav; carries noindex/nofollow; excluded from the index, RSS, and sitemap.
 // See: QBall openclaw-consulting-cold-email → receipts/workshop-signup-page-strategy-2026-09-11/
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
-import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '../workshop';
+import { CHECKOUT_URL, EARLY_PRICE, SEAT_CAP, SESSION_DATE } from '../workshop';
 
 // ── Easy-to-edit values ────────────────────────────────────────────────────
 // ───────────────────────────────────────────────────────────────────────────
@@ -16,8 +16,8 @@ import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '.
 <html lang="en">
 	<head>
 		<BaseHead
-			title={`The 3-Hour OpenClaw Workshop — ${SITE_TITLE}`}
-			description="A live, 3-hour working session on the OpenClaw setup I actually run in production. Bring your messiest manual workflow; leave with a named diagnosis of what's eating your week."
+			title={`Build One Working AI-Ops Workflow in 3 Hours — ${SITE_TITLE}`}
+			description="A live OpenClaw build workshop for founders and engineering leaders. Build one working workflow, get live feedback, and leave with a written map of what to automate next."
 			noindex={true}
 		/>
 	</head>
@@ -25,12 +25,10 @@ import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '.
 		<Header />
 		<main id="main" class="ws">
 			<section class="ws-hero">
-				<p class="ws-eyebrow">Live workshop · 3 hours</p>
-				<h1>Your team is drowning in manual work — bring one of those workflows and leave with a diagnosis.</h1>
+				<p class="ws-eyebrow">Live AI-ops Build Workshop · 3 hours · 8 seats</p>
+				<h1>Build one working AI-ops workflow in three hours.</h1>
 				<p class="ws-sub">
-					A 3-hour live working session on the OpenClaw setup I actually run in production.
-					You'll watch it run on real problems, apply it to your own messiest process, and walk out
-					with a <strong>named diagnosis</strong> of what's eating your week. Not a slide deck.
+					Bring the workflow that's eating your week. I'll show you the OpenClaw setup I run in production, then you'll build one working version for your business — from research and a real tool call to saved state and scheduling — and leave with a written map of what to automate next. Not a slide deck.
 				</p>
 				<ul class="ws-facts">
 					<li><span>Format</span>3 hours, live, interactive</li>
@@ -39,18 +37,26 @@ import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '.
 					<li><span>Room</span>{SEAT_CAP}</li>
 				</ul>
 				<div class="ws-cta-row">
-					<a class="ws-btn" href={CHECKOUT_URL} target="_blank" rel="noopener">Get my seat — {EARLY_PRICE}</a>
-					<span class="ws-cta-note">Early bird {EARLY_PRICE} · <s>{FULL_PRICE}</s> after</span>
+					<a class="ws-btn" href={CHECKOUT_URL} target="_blank" rel="noopener">Build my workflow — {EARLY_PRICE}</a>
+					<span class="ws-cta-note">Secure Stripe checkout · Card, Apple Pay &amp; Google Pay · Seat transferable</span>
 				</div>
+			</section>
+
+			<section class="ws-section">
+				<h2>Built and taught by Ken Mazaika</h2>
+				<p>
+					I'm the former cofounder of the Firehose Project, acquired by Trilogy Education.
+					I developed curriculum for career switchers and have taught coding workshops for
+					businesspeople at Harvard Business School, RISD, Carnegie Mellon, Babson, and Brown.
+					In this workshop, I demo the agent setup I run every day — then help you build
+					against your own workflow.
+				</p>
 			</section>
 
 			<section class="ws-section">
 				<h2>The problem this is for</h2>
 				<p>
-					You're hiring for a role that is really a backlog. Support tickets, onboarding steps,
-					data entry, ops reporting, compliance chasing — work that a person is doing by hand today
-					because nobody has built the system that removes it. A hire is $60–100K a year; most of
-					that backlog is automatable now.
+					You're hiring for a role that is really a backlog — support tickets, onboarding steps, data entry, ops reporting, compliance chasing. A new hire is expensive, but the first question is smaller: which repeated parts of that backlog can a well-scoped agent handle safely, with a human checkpoint where judgment still matters?
 				</p>
 				<p>
 					The blocker isn't information — there's more AI content than anyone can read. It's that
@@ -62,36 +68,55 @@ import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '.
 			<section class="ws-section">
 				<h2>What you'll actually do</h2>
 				<p>
-					Five blocks: <strong>20 minutes teaching, 20 minutes applying it to your own business,
-					10 minutes of me reviewing your work.</strong> The review is the point — it's where you
-					find out what's actually wrong with your setup, not a generic version of it.
+					One build, three work cycles, two breaks. I demonstrate the pattern, you build it
+					against your workflow, and we stop at known-good checkpoints before moving on.
+					The goal is not to watch five demos. It is to finish one working workflow.
 				</p>
 				<table class="ws-agenda">
 					<tbody>
-						<tr><td class="n">0:00–0:20</td><td>How an agent actually runs real work — the setup, in plain terms.</td></tr>
-						<tr><td class="n">0:20–0:40</td><td>You map your messiest manual workflow, live.</td></tr>
-						<tr><td class="n">0:40–0:50</td><td>Review: I read your workflow back and name the bottleneck.</td></tr>
-						<tr><td class="n">0:50–1:50</td><td>Repeat ×2 — the same loop on two more processes.</td></tr>
-						<tr><td class="n">1:50–3:00</td><td>Live build-along + open review on attendee stacks.</td></tr>
+						<tr><td class="n">0:00–0:15</td><td>Choose the workflow. Define the trigger, inputs, owner, and what "working" means.</td></tr>
+						<tr><td class="n">0:15–0:50</td><td>Watch it run end to end. I show my production setup gathering information, calling a real tool, saving state, and producing an output. Then we choose your build target.</td></tr>
+						<tr><td class="n">0:50–1:05</td><td>Start your build. Complete the first working step and rejoin from a known-good checkpoint if you get stuck.</td></tr>
+						<tr><td class="n">1:05–1:15</td><td>Break.</td></tr>
+						<tr><td class="n">1:15–1:55</td><td>Guided build I. Turn research into a durable artifact, then connect one real system. We finish with a checkpoint and repair lane.</td></tr>
+						<tr><td class="n">1:55–2:05</td><td>Run it yourself. Laptop vs. VPS vs. hosted, model choice, and expected monthly cost.</td></tr>
+						<tr><td class="n">2:05–2:15</td><td>Break.</td></tr>
+						<tr><td class="n">2:15–2:40</td><td>Guided build II. Save state, package the workflow as one reusable skill, and schedule it.</td></tr>
+						<tr><td class="n">2:40–2:55</td><td>Live workflow clinic. I review each attendee's workflow, name the bottleneck, and identify the highest-leverage next automation.</td></tr>
+						<tr><td class="n">2:55–3:00</td><td>Write your Automation Map. Name your top three manual-work losses, the pattern that fits each, and what to fix first.</td></tr>
 					</tbody>
 				</table>
 				<p class="ws-note">
 					<strong>Come with:</strong> your messiest manual workflow. Describe it in a few lines —
-					who does it, how often, what breaks. You'll leave with a diagnosis you can act on
-					whether or not you ever pay me anything else.
+					who does it, how often, what breaks. You'll leave with a working build and a map you
+					can act on whether or not you ever pay me anything else.
 				</p>
+			</section>
+
+			<section class="ws-section">
+				<h2>What you'll leave with</h2>
+				<p>This workshop is complete on its own. By the end, you'll have:</p>
+				<ul>
+					<li><strong>One working AI-ops workflow</strong> you built during the session.</li>
+					<li><strong>One reusable skill and schedule</strong> so the workflow can run again without rebuilding it from scratch.</li>
+					<li><strong>A written Automation Map</strong> naming your three biggest manual-work losses, the pattern that fits each, and which one to fix first.</li>
+					<li><strong>A clear run-it-yourself path</strong> for hosting, model choice, and expected monthly cost.</li>
+					<li><strong>The session replay</strong> so you can revisit the build.</li>
+				</ul>
+				<p class="ws-fine">The Automation Map is a short, attendee-written next step — not a full company-wide assessment.</p>
 			</section>
 
 			<section class="ws-section">
 				<h2>Why this isn't free</h2>
 				<p>
-					Everything I'll teach is written down somewhere, for free. What isn't free is watching a
-					real production setup get applied to <em>your</em> problem, live, with someone telling you
-					which part is actually broken. That's the whole product.
+					The internet can teach you what agents are. This workshop gets one real workflow
+					working. You'll see my production setup, build against your own process, and get
+					live feedback when the build breaks. The scheduled room, the finished artifact, and
+					the feedback are what you're buying.
 				</p>
 				<p>
-					I'll be running my own environment on-screen the entire time — the one I use daily — so you
-					can see exactly what "working" looks like, settings and all. No stock demos, no slideware.
+					I demo my production environment first. Then you build alongside me on your own
+					workflow, with checkpoints that keep one setup problem from derailing the room.
 				</p>
 			</section>
 
@@ -121,7 +146,8 @@ import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '.
 				<h2>Questions</h2>
 				<dl class="ws-faq">
 					<dt>Do I need to be technical?</dt>
-					<dd>No. If you can describe the workflow in plain English, you can participate. I'll keep the build-along at a level you can follow.</dd>
+					<dd>No. You don't need to write code, but you do need a laptop and to be comfortable following step-by-step browser and terminal instructions. Before the session I'll send a short setup check.</dd>
+					<dt>What should I bring?</dt><dd>A laptop and one non-sensitive workflow: who does it, what triggers it, what tools it touches, how often it runs, and what usually breaks. Please don't bring customer secrets, production keys, or regulated data.</dd>
 					<dt>How do I pay?</dt>
 				<dd>Card, Apple Pay, or Google Pay through Stripe's secure checkout. You'll get a receipt by email straight away.</dd>
 				<dt>Is it recorded?</dt>
@@ -129,20 +155,20 @@ import { CHECKOUT_URL, EARLY_PRICE, FULL_PRICE, SEAT_CAP, SESSION_DATE } from '.
 					<dt>What if the date doesn't work?</dt>
 					<dd>Every seat is transferable to a future session. Reply to your confirmation email and say so.</dd>
 					<dt>What do I get for the money?</dt>
-					<dd>The live session, the diagnosis of your own workflow, and everything I demonstrate. There's no upsell you have to buy to make the session useful.</dd>
+					<dd>Your seat includes the live build workshop, the workflow you build, your written Automation Map, the run-it-yourself guidance, and the replay. The workshop is useful on its own. If you want help mapping the rest of your company afterward, I'll explain that optional next step at the end.</dd>
 				</dl>
 			</section>
 
 			<section class="ws-section ws-reserve" id="reserve">
 				<h2>Reserve a seat</h2>
-				<p class="ws-price"><span class="ws-amount">{EARLY_PRICE}</span> <span class="ws-was">early bird · {FULL_PRICE} after</span></p>
+				<p class="ws-price"><span class="ws-amount">{EARLY_PRICE}</span></p>
 				<p>
 					Three hours, live, {SEAT_CAP.charAt(0).toUpperCase() + SEAT_CAP.slice(1)}.
 					Grab a seat and your Zoom link and session details land in your inbox straight away.
 				</p>
 				<div class="ws-cta-row">
-					<a class="ws-btn" href={CHECKOUT_URL} target="_blank" rel="noopener">Get my seat — {EARLY_PRICE}</a>
-					<span class="ws-cta-note">Secure checkout · Card, Apple Pay &amp; Google Pay</span>
+					<a class="ws-btn" href={CHECKOUT_URL} target="_blank" rel="noopener">Build my workflow — {EARLY_PRICE}</a>
+					<span class="ws-cta-note">Secure checkout · Card, Apple Pay &amp; Google Pay · Seat transferable</span>
 				</div>
 				<p class="ws-fine">Seats are transferable to a future session — just reply to your confirmation email.</p>
 			</section>
