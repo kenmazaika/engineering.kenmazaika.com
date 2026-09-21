@@ -9,7 +9,6 @@ import { SITE_TITLE } from '../consts';
 		<nav class="site-nav" aria-label="Primary">
 			<a href="/start/" aria-current={Astro.url.pathname === '/start/' ? 'page' : undefined}>Start here</a>
 			<a href="/blog" aria-current={Astro.url.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</a>
-			<a href="/workshop/" aria-current={Astro.url.pathname === '/workshop/' ? 'page' : undefined}>Workshop</a>
 			<a href="/about" aria-current={Astro.url.pathname === '/about' ? 'page' : undefined}>About</a>
 		</nav>
 		<div class="site-nav-mobile">
@@ -18,7 +17,6 @@ import { SITE_TITLE } from '../consts';
 				<summary>Menu</summary>
 				<nav aria-label="More destinations">
 					<a href="/blog">Blog</a>
-					<a href="/workshop/">Workshop</a>
 					<a href="/about">About</a>
 				</nav>
 			</details>

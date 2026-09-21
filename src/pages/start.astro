@@ -3,13 +3,11 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
-import { CHECKOUT_URL, EARLY_PRICE, SEAT_CAP, SESSION_DATE, SESSION_START_ISO } from '../workshop';
 
 const X_HANDLE = '@kenmazaika';
 const xUsername = X_HANDLE.slice(1);
 const xProfileUrl = `https://x.com/${xUsername}`;
 const xFollowUrl = `https://x.com/intent/follow?screen_name=${xUsername}`;
-const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 ---
 
 <!doctype html>
@@ -40,7 +38,6 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 				<p class="eyebrow">A guided reading path</p>
 				<h1 id="page-title">Run an AI agent for real work.</h1>
 				<a class="follow-primary" href={xFollowUrl} target="_blank" rel="noopener">Follow {X_HANDLE} on X →</a>
-				<p class="email-rung">In a hurry? <a href="/workshop/">The workshop is the shortcut →</a></p>
 				<p class="dek">AI agents are easy to demo and surprisingly hard to trust. This is my curated path through building and running a dependable AI work harness—based on actual Hermes and OpenClaw work, organized by the question you have now.</p>
 				<p class="proof"><strong>One receipt:</strong> 11 models · 5 real tasks · identical prompts · measured costs.</p>
 				<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form hero-subscribe">
@@ -51,7 +48,7 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 					<div><p class="start-label">New to agents?</p><a href="#what">Start with what a harness does →</a><p>Learn what the layer around a model actually does—and whether your work has the repeatable middle that makes a harness useful.</p></div>
 					<div><p class="start-label">Already running one?</p><a href="/blog/best-ai-model-for-agent-work/">Start with the model receipts →</a><p>Eleven models, five real tasks, identical prompts, measured costs, and the raw artifacts.</p></div>
 				</div>
-				<p class="onramp">Not an engineer, and this is all new? Start with <a href="/blog/what-is-an-ai-harness/">the plain-English definition</a>, or skip straight to <a href="/workshop/">the workshop</a>.</p>
+				<p class="onramp">Not an engineer, and this is all new? Start with <a href="/blog/what-is-an-ai-harness/">the plain-English definition</a>.</p>
 			</section>
 
 			<div class="contents-wrap">
@@ -63,7 +60,6 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 						<li><a href="#workflow"><span>03</span>First workflow</a></li>
 						<li><a href="#models"><span>04</span>Which models?</a></li>
 						<li><a href="#diagnose"><span>05</span>Why is it wrong?</a></li>
-						<li><a href="#help"><span>06</span>Guided help</a></li>
 					</ol>
 				</nav>
 			</div>
@@ -123,23 +119,6 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 
 				<section class="deep" aria-labelledby="deep-title"><p class="eyebrow">Continue exploring</p><h2 id="deep-title">Already running an agent? Go deeper.</h2><p>These pieces improve leverage rather than merely add complexity.</p><ul><li><a href="/blog/hermes-workflow-question-the-instruction/">Teach Your Agent to Question the Instruction →</a></li><li><a href="/blog/meta-prompting-let-ai-write-your-prompt/">Meta-Prompting: Let the AI Write Your Prompt →</a></li><li><a href="/blog/hermes-workflow-six-bots-one-media-company/">Six Bots, One Media Company →</a></li></ul></section>
 
-				<section class="stage" id="help" aria-labelledby="help-title">
-					<p class="stage-no">Stage 06</p><h2 id="help-title">I want guided help applying this.</h2>
-					<p class="outcome">Reading can show the patterns. It cannot choose the right workflow inside your business or force the first version across the finish line.</p>
-					<div class="workshop-date-guard" data-session-start={SESSION_START_ISO}>
-						<div class="workshop workshop-past" hidden={!sessionHasPassed}><p><strong>Next cohort — get notified.</strong> Dates are announced to the list first.</p><p>Bring one real runbook; we'll map the repeated middle, choose the human checkpoints, and leave with a concrete implementation plan. Replay included either way.</p><a href="#subscribe-end">Get notified →</a></div>
-						<div class="workshop workshop-upcoming" hidden={sessionHasPassed}>
-							<p>I run a live, hands-on workshop for founders and engineering leaders. Bring one real runbook; we will map the repeated middle, choose the human checkpoints, and leave with a concrete implementation plan.</p>
-							<ul><li>Map the repeated middle of one real workflow.</li><li>Choose the human checkpoints that keep judgment with you.</li><li>Leave with a concrete implementation plan.</li></ul>
-							<p><strong>For:</strong> founders and engineering managers with one real repeated task they're trying to delegate. <strong>Not for:</strong> anyone shopping for a tool demo — we map your runbook.</p>
-							<p><strong>Replay included either way.</strong></p>
-							<p class="details">{SESSION_DATE} · {EARLY_PRICE} · Small group: {SEAT_CAP}</p>
-							<a href={CHECKOUT_URL} target="_blank" rel="noopener">Reserve a seat →</a> <span class="workshop-secondary"><a href="/workshop/">See workshop details</a></span>
-						</div>
-					</div>
-					<p class="aside">Not ready for guided help? Build one small workflow first, then <a href="#subscribe-end">join the email list</a>. The goal is not to automate everything—it is to let the agent own coordination while you keep judgment.</p>
-				</section>
-
 				<section class="return-block return-end" id="subscribe-end" aria-labelledby="return-end-title">
 					<p class="eyebrow">Come back when the next test is done</p><h2 id="return-end-title">New receipts, weekly-ish.</h2><p>One email, no newsletter noise.</p>
 					<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form">
@@ -151,13 +130,6 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 			</div>
 		</main>
 		<Footer />
-		<script is:inline>
-			document.querySelectorAll('[data-session-start]').forEach((guard) => {
-				const sessionHasPassed = Date.now() > Date.parse(guard.dataset.sessionStart);
-				guard.querySelector('.workshop-upcoming').hidden = sessionHasPassed;
-				guard.querySelector('.workshop-past').hidden = !sessionHasPassed;
-			});
-		</script>
 	</body>
 </html>
 
@@ -175,8 +147,8 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 	.identity a { display: inline-block; margin-top: .35rem; font-size: .77rem; font-weight: 600; }
 	.start-hero h1 { max-width: 930px; margin: 0; font-size: clamp(3.2rem, 6.25vw, 5.75rem); line-height: .98; letter-spacing: -.052em; text-wrap: balance; }
 	.follow-primary { display: inline-block; margin-top: 1.25rem; padding: .68rem 1rem; color: #fff; background: var(--color-accent); border-radius: var(--border-radius); font-size: .88rem; font-weight: 600; }
-	.email-rung { margin: .9rem 0 0; color: var(--color-text-secondary); font-size: .84rem; line-height: 1.55; }
 	.onramp { max-width: 760px; margin: 1.1rem 0 0; color: var(--color-text-secondary); font-size: .84rem; line-height: 1.6; }
+
 	.contact-line { margin: 1.4rem 0 0; color: var(--color-text-secondary); font-size: .84rem; }
 	.follow-primary:hover { color: #fff; background: var(--color-accent-hover); }
 	.dek { max-width: 700px; margin: 1.6rem 0 0; color: var(--color-text-secondary); font-size: clamp(1.05rem, 1.65vw, 1.22rem); line-height: 1.65; }
@@ -201,7 +173,7 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 	.contents-head { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; margin-bottom: 1.15rem; }
 	.contents h2 { margin: 0; padding: 0; border: 0; font-size: 1.35rem; }
 	.contents-head p { margin: 0; color: var(--color-text-secondary); font-size: .82rem; }
-	.contents ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+	.contents ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
 	.contents li { min-width: 0; border-left: 1px solid #d8d1c7; padding: .2rem 1rem .3rem; }
 	.contents li:first-child { border-left: 2px solid var(--color-accent); }
 	.contents a { display: block; color: var(--color-text); font-family: var(--font-heading); font-size: .98rem; line-height: 1.25; overflow-wrap: anywhere; }
@@ -220,12 +192,6 @@ const sessionHasPassed = Date.now() > new Date(SESSION_START_ISO).getTime();
 	.support a { font-size: .9rem; line-height: 1.45; font-weight: 500; }
 	.aside { margin: 1.2rem 0; color: var(--color-text); font-size: .96rem; line-height: 1.65; }
 	.bridge { margin: 1.8rem 0 -2.7rem; color: var(--color-text-secondary); font-family: var(--font-heading); font-style: italic; font-size: 1rem; }
-	.workshop { background: var(--color-bg-secondary); padding: 1.45rem 1.5rem; border-top: 1px solid #d5cec3; }
-	.workshop p { margin: 0 0 .8rem; font-size: .9rem; }
-	.workshop ul { margin: .4rem 0 1rem; padding-left: 1.15rem; }
-	.workshop li { margin: .25rem 0; font-size: .88rem; }
-	.workshop .details { color: var(--color-text-secondary); font-size: .78rem; }
-	.workshop-secondary { margin-left: .65rem; font-size: .8rem; }
 	.deep { max-width: 720px; margin: 0 auto; padding: 5rem 0; border-bottom: 1px solid var(--color-border); }
 	.deep h2 { padding: 0; border: 0; font-size: 2.35rem; line-height: 1.08; margin: 0 0 1rem; }
 	.deep > p:not(.eyebrow) { color: var(--color-text-secondary); }
