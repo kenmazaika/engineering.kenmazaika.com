@@ -13,15 +13,6 @@ related:
   - title: 'Meta-Prompting: Let the AI Write Your Prompt'
     url: '/blog/meta-prompting-let-ai-write-your-prompt/'
 ---
-
-**TL;DR**
-
-- **What it's about:** Your first hour with OpenClaw shouldn't go into wiring channels, cron, and plugins. It should end with one automation you built, understood, and can run again.
-- **What to do:** Pull a few rows from a source, set the judgment the agent applies, push them somewhere you can see, wrap it as a skill, put it on a cron.
-- **The key takeaway:** Many automations you’ll ever build have the same five-part shape. Learn it once, in the first hour, and you'll recognize it in every job after.
-
----
-
 You finished Quick Start. OpenClaw is installed, a model answers, there's a workspace on disk. Then you sit at an empty prompt with a features page open in the next tab — channels, cron, memory, plugins — and no idea which one matters first.
 
 One thing to keep in mind before step one: **you drive this with prompts.** Every step below is a sentence you type. The agent does the work behind it — it picks the feed, writes the parser, hits the API — but the sentence is yours, and that's the whole relationship. The first hour is where you feel it.
