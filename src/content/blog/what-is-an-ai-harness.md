@@ -136,6 +136,8 @@ You do not need an “AI transformation.” Pick one repeated job with four prop
 
 For a small support team, that might be a dedicated onboarding queue. For revenue operations, it might be a daily list of unowned or contradictory CRM rows. For an executive-operations role, it might be the meeting follow-up list and Friday status digest.
 
+If you want a worked example of that first workflow — a source pulled in, a judgment applied, and an output written somewhere you can see — I walk one end to end in [Your First Useful Hour With OpenClaw](/blog/your-first-useful-hour-with-openclaw/).
+
 Write the runbook in plain language. Run it for a week. Keep an exception log: what the harness handled, what it got wrong, and what rule you changed. At the end, do not ask whether it felt futuristic. Ask whether the person who owns the work stopped doing the middle of it.
 
 If they did, you have an AI work harness worth improving. If they did not, you have a small enough failure to understand. Either result is more useful than another clever chat prompt.

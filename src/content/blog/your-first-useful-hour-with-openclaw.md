@@ -1,10 +1,25 @@
 ---
 title: "Your First Useful Hour With OpenClaw: Build One Automation, End to End"
 description: "Your first hour shouldn't go into channels, cron, and plugins — it should end with one automation you built and understood. Every prompt to get there, in order."
+seoTitle: "OpenClaw Tutorial: Build Your First Automation, End to End"
+socialTitle: "Build your first OpenClaw automation in one hour"
 ogCategory: 'Field Note · Agent Systems'
 pubDate: 'Sep 23, 2026'
 heroImage: ../../assets/headers/first-useful-hour-masthead.webp
 layoutVariant: harness
+faq:
+  - question: "What should I build in my first hour with OpenClaw?"
+    answer: "One automation, end to end, rather than configuration. The example builds a Reddit-to-Airtable model-claims board: pull a few rows from a source, set the judgment the agent applies, push them somewhere you can see, wrap the steps as a skill, and put it on a cron. The goal is to understand every part of it, not to wire up channels and plugins first."
+  - question: "Do I need the Reddit API to pull the posts?"
+    answer: "No. The first-hour workflow uses public Reddit RSS feeds (the r/openclaw and r/hermesagent new-post feeds) — no login and no API application. The agent picks the feed format, fetches it, parses it, and prints the rows into chat."
+  - question: "What are the five parts of an AI automation?"
+    answer: "A source that changes, a judgment (a rubric the agent applies), a destination that outlives the session, a reusable form (a skill), and a schedule (that skill on a cron). Swap the source, the rubric, and the destination and you have a different automation; the shape stays the same."
+  - question: "Where should I store an API key for a first automation?"
+    answer: "For the first hour, write it into your TOOLS.md file by hand — that is how you learn the file exists, what it is for, and where the secret lives. Do not paste it into chat for the agent to save, because a token in a chat log is a credential outside your control. Once you understand how the integration works, move the key into something like Bitwarden."
+  - question: "How do I make an OpenClaw automation run on its own?"
+    answer: "Turn the steps into a skill, then put that skill on a cron. For example: put that skill on a cron so it runs every morning at 7. The output then updates while you are doing something else, and the first morning it runs on its own is where the shape clicks."
+  - question: "What if I am not good at writing prompts?"
+    answer: "Yours do not need to be polished — the agent reads intent, not grammar. If you want them genuinely better, ask an AI to write them for you: describe what you want, ask for the prompt, then use that. That is meta-prompting, and it earns its keep on the harder tuning rather than the basic setup."
 related:
   - title: 'What is an AI Work Harness'
     url: '/blog/what-is-an-ai-harness/'
