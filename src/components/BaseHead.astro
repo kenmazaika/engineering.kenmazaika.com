@@ -85,6 +85,16 @@ const jsonLd = JSON.stringify([personSchema, websiteSchema]);
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:alt" content={imageAlt} />
 
+<!-- Google tag (gtag.js) -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KYMS6PB7XC"></script>
+<script is:inline>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-KYMS6PB7XC');
+</script>
+
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
