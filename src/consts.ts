@@ -3,4 +3,4 @@ export const SITE_DESCRIPTION = "Field notes on running AI agents for real work 
 // Slugs of hidden posts that must never appear in the sitemap.
 export const HIDDEN_SLUGS = ['hermes-kit'];
 // Path prefixes of hidden standalone pages that must never appear in the sitemap.
-export const HIDDEN_PATHS = ['/workshop/'];
+export const HIDDEN_PATHS = [];

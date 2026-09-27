@@ -1,6 +1,6 @@
 ---
-// Hidden landing / sign-up page for the $97 OpenClaw workshop (rung 1 teaser).
-// Linked from the site nav; carries noindex/nofollow; excluded from the index, RSS, and sitemap.
+// Landing / sign-up page for the $97 OpenClaw workshop (rung 1 teaser).
+// Linked from the site nav; indexable (included in the sitemap).
 // See: QBall openclaw-consulting-cold-email → receipts/workshop-signup-page-strategy-2026-09-11/
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -18,7 +18,7 @@ import { CHECKOUT_URL, EARLY_PRICE, SEAT_CAP, SESSION_DATE } from '../workshop';
 		<BaseHead
 			title={`Build One Working AI-Ops Workflow in 3 Hours — ${SITE_TITLE}`}
 			description="A live OpenClaw build workshop for founders and engineering leaders. Build one working workflow, get live feedback, and leave with a written map of what to automate next."
-			noindex={true}
+			noindex={false}
 		/>
 	</head>
 	<body>
