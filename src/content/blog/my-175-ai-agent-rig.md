@@ -1,104 +1,126 @@
 ---
-title: "How Much Does It Really Cost to Run an AI Agent? My $175 Rig, Measured"
-description: "I run my AI agent 24/7 on a used $175 computer. The real bill: $175 once for hardware, $20/month for a subscription I already had, ~$10-15 in routine metered months, $60.49 in the month I actually measured — plus ~$21/month for search. Here's the honest breakdown and what the agent does to earn it."
-seoTitle: "What Running an AI Agent 24/7 Actually Costs: A Real Measured Bill"
-socialTitle: 'My $175 AI Agent Rig: What It Really Costs'
+title: "The $175 Production Box I Use to Run an AI Agent 24/7"
+description: "The useful part of my AI agent setup is not the hardware. It is a cheap machine that stays awake, keeps its work, runs on a schedule, and lets me teach a job once instead of repeating it forever."
+seoTitle: "How to Run an AI Agent 24/7 on a $175 Used Computer"
+socialTitle: "You Don't Need a GPU to Run an AI Agent 24/7"
 pubDate: 'Aug 22, 2026'
-updatedDate: 'Aug 30, 2026'
+updatedDate: 'Oct 5, 2026'
 related:
   - title: 'My Default Model Stack for AI Agent Work'
     url: '/blog/my-default-model-stack-for-ai-agent-work/'
+  - title: 'What It Costs to Run a Capable AI Agent Each Month'
+    url: '/blog/cost-to-run-an-agent/'
   - title: 'Which AI Model Should You Run for Agent Work?'
     url: '/blog/best-ai-model-for-agent-work/'
 ogCategory: 'Field Note · AI & Engineering'
 showPopup: true
 faq:
-  - question: "How much does it cost to run an AI agent?"
-    answer: "A used $175 computer for the hardware (one-time), plus a $20/month subscription (that I already had), plus roughly $10-15/month in routine metered model usage — or $60.49 in the month I actually measured. Search adds about $21/month. Hardware is one-time; the variable is how much real work you do."
+  - question: "What hardware do I need to run an AI agent 24/7?"
+    answer: "For my cloud-model workflows, a used Dell OptiPlex with 16GB of RAM and Linux is enough. The important requirement is that the machine stays awake and connected, not that it has a GPU."
+  - question: "What makes an AI agent setup production-grade?"
+    answer: "For this kind of personal agent, production-grade means availability and reliability: an always-on host, a filesystem it can use, durable memory, scheduled jobs, and a dependable way to reach you. It does not mean expensive hardware."
   - question: "Do I need a GPU or local models to run an AI agent?"
-    answer: "No, for this kind of work. The agent runs 24/7 on a cheap always-on box and uses cloud models. Local inference and GPU cost are excessive when a used computer plus cheap per-token cloud models do the job. Availability matters more than horsepower."
-  - question: "What's the honest gap between a routine month and a real month?"
-    answer: "A routine month is about $10-15 in metered model usage. A real month — new models, vision work, a research binge — is $60.49. Both are real. If your budget needs one number, use the bigger one and be pleasantly surprised."
-  - question: "Is a $175 rig really enough?"
-    answer: "Yes, if the agent runs on cloud models and just needs to be awake. I tried a cheaper thin client first and it struggled; people run agents on Raspberry Pis. $175 is where it worked for me."
-  - question: "What can a cheap 24/7 agent actually do?"
-    answer: "In my case: daily apartment scouting, Airbnb expense logging, dictation-to-drafts, a Sunday newsletter from Reddit/Twitter research, and one-off research. Each is teach-once, then it just runs."
-  - question: "Is an autonomous agent loop worth it?"
-    answer: "Generally no — unfettered loops are AI going in circles. What works reliably is narrow loops with well-defined goals and triggers (cron, scheduled, when-X-then-Y) that grind to a decision and then hand off to a human."
+    answer: "No, not for the work described here. My agent uses cloud models, so the local machine mostly provides uptime, storage, scheduling, and access to tools."
+  - question: "What can a cheap always-on AI agent actually do?"
+    answer: "Mine has scouted apartments, logged Airbnb expenses, turned dictation into drafts, assembled a Sunday industry digest, and handled one-off research. Each workflow started as one useful job with a narrow trigger and a human decision at the end."
+  - question: "How should I get started with an AI agent?"
+    answer: "Pick one repeated task you already understand, teach the agent how you judge a good result, save the instructions, and run it on a narrow trigger. Add a schedule only after the manual version works."
 ---
 
-I run my AI agent 24/7 on a used $175 computer. The real bill: **$175 once for hardware, $20/month for a subscription I already had, and metered usage that ran about $10-15 in routine months — but $60.49 in the month I actually measured**, plus about $21/month for search. Here's the honest breakdown and what the agent does to earn it.
+If you want to run an AI agent for real work, start with a cheap computer that never goes to sleep and one task worth teaching it. That is enough to get into production.
 
-> **Setup note:** I measured this setup on Hermes in August 2026. I've since started moving the same rig and workflows to OpenClaw. The hardware and bills below are unchanged; once I have enough real OpenClaw usage to compare honestly, I'll publish that as the next chapter.
+My agent runs 24/7 on a used Dell OptiPlex I bought on Facebook Marketplace for $175. It has 16GB of RAM, runs Linux, and has no GPU. I started these workflows on Hermes and have since been moving them to OpenClaw, but the useful part of the setup has stayed the same: the box is always there, its files survive between conversations, and scheduled work runs whether my laptop is open or not.
 
-Until I signed a lease, every morning at 8am I got an email with one to three apartments worth a look. Each one is already filtered by school district, commute time, budget, bedrooms, and whether the photos show decent light. When I pay the cleaner for the Airbnb, I send one line and it lands in Google Sheets. My LinkedIn content starts as dictated rambling and comes back as drafts.
+That is what I mean by production-grade. Not a rack of servers. Not local inference. Availability and reliability for the work I actually ask it to do.
 
-All of it runs on a used Dell OptiPlex I bought on Facebook Marketplace for $175.
+## The first requirement is availability
 
-I'm not an AI researcher. I'm just an engineering manager. During the period measured here, the agent was Hermes. It sat in my house for months, and I mostly talked to it over Telegram.
+My agent used to live on my laptop. That worked until I closed the lid.
 
-## The real bill
+When the laptop slept, the agent stopped replying. Morning jobs did not run. A request I sent while I was away waited for me to reopen the computer. The model was capable, but the system around it was unreliable.
 
-The hardware is the smallest line: $175, once. The monthly cost has two parts — a subscription and metered usage — and here's the honest version, estimate and measurement side by side:
+An agent that sleeps when you close the lid is a chat session with extra steps.
 
-| Line | Cost | Notes |
-|---|---|---|
-| Hardware, one time | $175 | Used Dell OptiPlex, 16GB RAM, Linux, Facebook Marketplace |
-| ChatGPT subscription | $20/mo | ~80% of my inference. Paid it before the agent existed. |
-| Metered models, routine use | ~$10-15/mo | DeepSeek Flash workhorse, Xiaomi MiMo second. Cheap per token. |
-| Search | ~$21/mo | The agent's web research. Real usage, last 30 days. |
-| Measured 30-day reality | $60.49 | My actual workload. Not an estimate, not a benchmark. |
+The first upgrade was not a smarter model. It was giving the agent a machine whose job was to remain available. That changed the relationship. I could send it something from my phone, expect a scheduled job to run at 8am, or let a longer research task finish without keeping my work laptop awake on a desk.
 
-The gap between the last rows is the honest part of this post. A routine month is cheap. A real month — new models, vision work, a research binge — costs more. If your budget needs one number, use the bigger one and be pleasantly surprised.
+For my workflows, uptime matters more than horsepower. The models run in the cloud. The local computer coordinates the work, keeps the files, calls tools, and waits for the next trigger. Those are modest computing requirements, but they are real operational requirements.
 
-Then there's search. The agent researches constantly — Reddit threads, pricing pages, sources for its Sunday newsletter — and that runs through a search API at about $21 for 30 days of real usage.
+## The $175 production box
 
-That's the estimate. Here's the measurement.
+The machine is a used Dell OptiPlex with 16GB of RAM and Linux. I paid $175 for it once.
 
-In [the battery post](/blog/best-ai-model-for-agent-work/), eleven models reconstructed my actual bill from my own usage data, and the ones that got the accounting right converged on $60.49 for 30 days. That number is my real usage — not the cost of running the test.
+No Mac Mini. No GPU. No local models. I am not arguing that those things are useless. I am saying they do not solve the problem I had. My problem was that the agent disappeared when my laptop went to sleep.
 
-Which models, and why, is [its own post](/blog/my-default-model-stack-for-ai-agent-work/). The one-line version: a frontier subscription for polish, a cheap workhorse for volume.
+I tried to spend even less first. I bought a Wyse thin client for a fraction of the price, fought with the Linux Mint install, and eventually gave up. People run agents on Raspberry Pis, so $175 is not a minimum. It is the point where this became boring and dependable for me.
 
-## Why a used box
+That is a better standard for starter hardware than maximum theoretical performance: can I install the system, leave it running, replace it cheaply, and stop thinking about it?
 
-The agent used to live on my laptop, and that worked fine until I closed the lid. When the lid closed, the agent stopped replying. An agent that goes to sleep every time you shut a laptop isn't much of an agent.
+The OptiPlex clears that bar. It is common hardware, easy to find used, and powerful enough to coordinate cloud-model work. If it dies, I can replace the machine without redesigning the whole setup. The agent's durable work lives in files and configuration, not in some magical property of this particular computer.
 
-The lesson wasn't that I needed more horsepower. It's that I needed availability: a machine that is on 24/7 and answers whenever I send it something. A used OptiPlex with 16GB of RAM and Linux does that for $175.
+## What production-grade means for an agent
 
-No Mac Mini. No GPU. No local models. For the work I do, the cost of local inference and GPUs is excessive. The cheap box isn't a compromise — the agent just needs to be awake.
+For a personal agent doing real work, I need five things:
 
-I didn't start at $175, either. I tried a Wyse thin client first, at a fraction of the price, and it struggled with the Linux Mint install until I gave up on it. I'm sure this can be done cheaper; people run agents on Raspberry Pis. The $175 OptiPlex is where it worked for me.
+1. **An always-on host.** The machine stays awake, connected, and ready to receive work.
+2. **A filesystem it owns.** Drafts, source material, scripts, receipts, and intermediate work need a stable place to live.
+3. **Schedules and triggers.** Cron can start a job at 8am or every Sunday without waiting for me to remember it.
+4. **Durable memory.** Decisions and instructions have to survive beyond one model conversation. I keep them in files the agent can read again.
+5. **A way to reach me.** The system needs a dependable channel for requests, results, and failures. I have mostly used Telegram and Discord.
 
-When I posted the setup, one comment said a cheap rig isn't a flex if you're not running local models. Fair. But you don't need local models for this work, and availability matters more than horsepower. The price was never the point.
+None of those requirements calls for a GPU. They call for a small amount of infrastructure and the discipline to keep the important state outside the model's context window.
 
-## What the agent actually does
+This is a deliberately bounded definition of production-grade. I am not running a bank, and I am not claiming a used desktop has enterprise redundancy. I am running personal workflows where a missed job is annoying, files need to persist, and the agent should answer when I contact it. The setup is reliable enough for that job.
 
-**Apartment scouting.** Every morning at 8am, the agent pulled new rental listings and filtered them: school district, commute time (it called the Google Maps API to estimate my drive), bedrooms, budget, and the lighting in the photos. About 120 listings became one to three in an email, all places that looked better than where I live now. The hard part of apartment hunting was never booking the viewing — it was finding the gems in the pile. That's the part I gave away.
+## Teach it once, then schedule it
 
-One person on that thread said they burned $50 in tokens trying to get an agent to scrape Zillow and got nothing for it. The lesson, I think, is that scouting is filtering, not scraping. My agent doesn't crawl the whole site. It narrows the firehose to the few listings worth my morning. The agent curates. I decide.
+The hardware keeps the agent awake. The teach-once habit makes it useful.
 
-That search is over now. I signed a lease on one of the top picks from those emails. The loop didn't choose the apartment — I did. It just made sure the good ones never got lost in the pile.
+When I give the agent a repeated job, I do not want to re-explain the whole process every time. I run the task with it, correct the places where its judgment differs from mine, and save the instructions as a skill or workflow. Once the manual version works, I give it a narrow trigger: a message, a new item to process, or a cron schedule.
 
-**Expense logging.** I run an Airbnb. "I paid the cleaner $160" becomes a row in Google Sheets. Five minutes of friction I never deal with again.
+That is the production pattern:
 
-**Content.** I set up a Wispr dictation topic: I talk, it transcribes, formats, and pushes back on my ideas, and I repurpose the output. Same with LinkedIn infographics and social cards — I hand it an idea plus an example of the style, we go back and forth a few times, and it ships something good. It's output I'd never produce by hand, because the effort was never worth it.
+1. Pick one job you already do repeatedly.
+2. Show the agent the inputs and what a good result looks like.
+3. Correct its mistakes while the workflow is still manual.
+4. Save those decisions in durable instructions.
+5. Add a narrow trigger and a clear stopping point.
 
-**The Sunday email.** A skill called last-30-days surfaces the most-upvoted and most-controversial posts on Reddit and Twitter from the past month, and the agent writes up what the industry is actually arguing about. It lands Sunday mornings. I curate it lightly and it goes out as my newsletter. I would never read all those threads myself. Now I don't have to.
+The important word is *narrow*. “Help me manage my life” is not a job. “At 8am, find new apartment listings, apply these filters, and send me the best three” is a job. The trigger is obvious, the output is inspectable, and I remain responsible for the decision.
 
-**One-off research.** Before running a book promo with a specific vendor, I had the agent crawl the 18 or so Reddit posts about them and normalize everyone's experience into one table: who succeeded, who failed, what they'd do differently. It didn't change my decision much. It changed my confidence in the decision — I'd seen all the sources, not just the few that happened to surface.
+## What runs on the box
 
-## What doesn't work: loops
+The workflows matter because they are receipts that this setup does real work. They are not a catalog of everything an agent could theoretically do.
 
-The idea going around the internet is the autonomous loop: the agent finds the bugs, files the tickets, implements, opens the PR, reviews itself, ships, and moves on. In practice, unfettered loops are AI going in circles — building a bunch of trash, whether that's content nobody reads or code somebody has to maintain.
+**Apartment scouting.** Until I signed a lease, the agent checked new rental listings every morning at 8am. It filtered about 120 listings by school district, commute time, budget, bedrooms, and the light visible in the photos. One to three places reached my inbox. I signed a lease on one of its top picks. The agent did not choose my apartment; it kept the good options from disappearing into the pile.
 
-Narrow loops with well-defined goals can work. What works reliably for me is triggers: cron jobs, scheduled emails, when X happens, do Y. The agent grinds until it reaches a decision, then stops and hands it to a human. The human bottleneck isn't something to optimize away. It's where judgment lives.
+**Expense logging.** I run an Airbnb. I send “I paid the cleaner $160,” and the agent turns it into a row in Google Sheets. It is a small workflow, which is exactly why it works: one input, one destination, no interpretation theater.
 
-## The unlock
+**Dictation into content.** I talk through an idea in a dedicated dictation topic. The agent transcribes it, shapes the argument, pushes back on weak parts, and turns it into material I can revise. The value is not autonomous publishing. It is removing the blank page and preserving the thought while it is fresh.
 
-Teach it to do something once. Save it as a skill or a cron job. Let it run on a schedule. Stop thinking about it.
+**The Sunday digest.** A saved workflow finds the most-upvoted and most-controversial discussions from the previous month on Reddit and Twitter, then drafts a digest of what the industry is arguing about. It lands on Sunday morning. I curate it before it becomes a newsletter.
 
-Everything above is some version of that pattern, plus the occasional message from me. Each job is teach-once, and then it just runs.
+**One-off research.** Before I ran a book promotion with a vendor, I had the agent collect roughly 18 Reddit posts and normalize the experiences into a table: who succeeded, who failed, and what they would do differently. The research did not make the decision for me. It let me make the decision after seeing the evidence in one place.
 
-None of these things are life-changing individually. But together, it's a layer of operational infrastructure that makes your life measurably less tedious. The $175 setup replaced a handful of apps along the way.
+Each workflow follows the same shape: teach the judgment, preserve the instructions, run from a narrow trigger, and put a human at the end.
 
-$175 once. $20 a month for a subscription I already had. Maybe $10-15 in metered usage in routine months, $60.49 in the measured one, and about $21 a month for search. That's the whole bill for an agent that answers every time I send it something.
+## Where autonomy breaks down
+
+The seductive version of agent work is the unfettered loop: find a problem, plan the work, execute it, review it, and keep going forever. In my experience, that produces motion faster than it produces value.
+
+An unconstrained agent can make content nobody reads or code somebody has to maintain. Giving the loop more time does not fix a vague goal. It just lets the mistake compound unattended.
+
+Narrow loops work better. A scheduled job starts from a known trigger, works toward a defined artifact, stops at a boundary, and hands the result to me. Apartment scouting ends with a short list. Research ends with a table. Dictation ends with a draft. The human bottleneck is not a defect in these workflows. It is where judgment lives.
+
+The important startup receipt here is the box: $175, once. You can begin without a GPU, local models, or a larger hardware budget. The recurring bill is a separate question, and it has its own post.
+
+## What does it cost to run every month?
+
+Setting up is one-time; running it is a monthly line. **What does it cost to run an agent month to month?** For me, about **$50 a month** — a subscription plus a metered workhorse, with an optional premium lane I can decline. Where that number comes from, and the two things that move it, is its own post: [How Much Does It Cost to Run a Capable AI Agent Each Month?](/blog/cost-to-run-an-agent/).
+
+## Start with one useful loop
+
+Do not begin by designing an all-purpose autonomous employee. Buy or repurpose a machine you can leave on, install the agent harness, and choose one repeated task whose output you already know how to judge.
+
+Run it manually first. Write down every correction that should apply next time. Save those corrections with the workflow. Only then put it on a schedule.
+
+That is enough to get started: a box that stays awake and a habit of teaching work once. The production system is not the computer by itself. It is the computer, the durable instructions, the trigger, and the moment where the agent stops and gives the work back to you.
