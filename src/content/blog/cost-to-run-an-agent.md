@@ -1,8 +1,8 @@
 ---
 title: "How Much Does It Cost to Run an AI Agent? My 30-Day Receipt"
-description: "My normal setup cost $38.29: a $20 ChatGPT premium subscription plus $18.29 of metered DeepSeek. Another $84.07 was optional premium experimentation. Here is what each number measures, which work belongs on each meter, and how I keep the bill bounded."
+description: "My normal setup cost $50.93: a $20 ChatGPT premium subscription plus $30.93 of metered DeepSeek. Another $84.07 was optional premium experimentation. Here is what each number measures, which work belongs on each meter, and how I keep the bill bounded."
 seoTitle: "How Much Does It Cost to Run an AI Agent? A 30-Day Cost Breakdown"
-socialTitle: "How much does it cost to run an agent? About $38.29 a month \u2014 and the scary spend was the lane I chose."
+socialTitle: "How much does it cost to run an agent? About $50.93 a month \u2014 and the scary spend was the lane I chose."
 pubDate: 'Oct 5, 2026'
 updatedDate: 'Oct 5, 2026'
 ogCategory: 'Field Note \u00b7 AI & Engineering'
@@ -17,19 +17,19 @@ related:
     url: "/blog/hermes-vs-openclaw/"
 faq:
   - question: "How much does it cost to run an AI agent per month?"
-    answer: "My normal operating setup costs $38.29 over a 30-day window: a $20 ChatGPT premium subscription plus $18.29 of metered DeepSeek. Optional premium experimentation added $84.07 of prepaid Grok credit on top."
-  - question: "Why did 509 million tokens cost only $18.29?"
+    answer: "My normal operating setup costs $50.93 over a 30-day window: a $20 ChatGPT premium subscription plus $30.93 of metered DeepSeek. Optional premium experimentation added $84.07 of prepaid Grok credit on top."
+  - question: "Why did 509 million tokens cost only $30.93?"
     answer: "Because 95% of the traffic was reused context. DeepSeek recorded 487.7 million cache reads against 22.4 million fresh input and 7.0 million output tokens \u2014 and cache reads cost a fraction of fresh input."
   - question: "Is OpenClaw free to run?"
-    answer: "The harnesses are free and open source; the cost is the models behind them. In this setup the normal route ran about $38.29 a month, including the ChatGPT plan I already had."
+    answer: "The harnesses are free and open source; the cost is the models behind them. In this setup the normal route ran about $50.93 a month, including the ChatGPT plan I already had."
   - question: "What\u2019s the biggest hidden cost of running an agent?"
     answer: "Scheduled jobs and retry loops. Cron produced 178.5 million tokens \u2014 34% of the gross total \u2014 across 137 runs and 17 jobs, and three jobs were 79% of that. A loop that fails without advancing its cursor just buys the same failure again."
   - question: "How do you keep agent costs from getting out of control?"
     answer: "Three controls: turn auto-recharge off, cap loops and advance failures, and review unattended jobs monthly by tokens and by whether anyone read the output."
 ---
-The short answer is **$38.29 a month** for my normal operating setup: my **$20 ChatGPT premium subscription** plus **$18.29 of metered DeepSeek use**. I already had the ChatGPT subscription, so if you run the same plan, the number that changes for you is the **$18.29** meter. I use the premium model until it rate-limits, then fall back to DeepSeek V4 for the rest.
+The short answer is **$50.93 a month** for my normal operating setup: my **$20 ChatGPT premium subscription** plus **$30.93 of metered DeepSeek use**. I already had the ChatGPT subscription, so if you run the same plan, the number that changes for you is the **$30.93** meter. I use the premium model until it rate-limits, then fall back to DeepSeek V4 for the rest.
 
-I also used **$84.07 of prepaid Grok credit** in an optional experimental lane. Put the three lines together and the observed usage is **$122.36** — subscription access, metered use, and prepaid credit, each on its own basis.
+I also used **$84.07 of prepaid Grok credit** in an optional experimental lane. Put the three lines together and the observed usage is **$135.00** — subscription access, metered use, and prepaid credit, each on its own basis.
 
 These are my numbers, from **August 24 through September 23, 2026**. They cover model and subscription usage; hosting, storage, monitoring, and my time sit outside them.
 
@@ -40,10 +40,10 @@ The surprising part: **509 million tokens were not the expensive part.** The bil
 | Cost line | Basis | Amount | What it means |
 |---|---|---:|---|
 | ChatGPT premium subscription | Monthly access cost | $20.00 | The plan I already had; counted here because it powers the setup |
-| DeepSeek V4 | Metered use in this window | $18.29 | The pay-per-token fallback I switch to at the plan's rate limit |
-| **Normal operating setup** | Plan + metered use | **$38.29 / month** | The number to count when the plan belongs in your agent budget |
+| DeepSeek V4 | Metered use in this window | $30.93 | The pay-per-token fallback I switch to at the plan's rate limit |
+| **Normal operating setup** | Plan + metered use | **$50.93 / month** | The number to count when the plan belongs in your agent budget |
 | Grok experimental lane | Provider usage against prepaid credit | $84.07 | Optional image/design, search, reasoning, and prompt experimentation |
-| **Observed model/subscription usage** | Three lines, three bases | **$122.36** | Accounting total across mixed bases |
+| **Observed model/subscription usage** | Three lines, three bases | **$135.00** | Accounting total across mixed bases |
 
 The window included 23 published posts, 110 images, 86 PDFs, 288 sessions, and 9,801 tool calls — the workloads behind these period receipts. I report the period rather than a per-post figure, because other work shared the same receipts.
 
@@ -57,7 +57,7 @@ Price the route, not the agent. I run all of this on OpenClaw and Hermes; the ha
 | Polished-image experiments, plus web/X search or reasoning routed to Grok | A separate premium budget; use a cheaper model for good-enough work |
 | Scheduled jobs and retries | A multiplier on whichever route they use — cap and audit it |
 
-## Why 509 million tokens cost $18.29
+## Why 509 million tokens cost $30.93
 
 The normal route was cheap because it was mostly reused context.
 
@@ -65,7 +65,7 @@ DeepSeek recorded **509.1 million tokens**: 22.4 million input, 7.0 million outp
 
 If you are on a metered provider that bills cached context cheaply, inspect your token mix before you react to the token total. Fresh context on every turn, more output, or a different provider means a different bill.
 
-![DeepSeek platform usage — trailing 30 days: 19,136 requests, 2.6B tokens, $60.86](/post-assets/cost-to-run-an-agent/deepseek-usage.png)
+![DeepSeek platform usage for the trailing 30 days](/post-assets/cost-to-run-an-agent/deepseek-usage.png)
 *The DeepSeek meter, straight from the platform dashboard.*
 
 ## What made the observed month expensive
