@@ -2,10 +2,10 @@
 title: "How Much Does It Cost to Run an AI Agent? My 30-Day Receipt"
 description: "My normal setup cost $50.93: a $20 ChatGPT premium subscription plus $30.93 of metered DeepSeek. Another $84.07 was optional premium experimentation. Here is what each number measures, which work belongs on each meter, and how I keep the bill bounded."
 seoTitle: "How Much Does It Cost to Run an AI Agent? A 30-Day Cost Breakdown"
-socialTitle: "How much does it cost to run an agent? About $50.93 a month \u2014 and the scary spend was the lane I chose."
+socialTitle: "How much does it cost to run an agent? About $50.93 a month — and the scary spend was the lane I chose."
 pubDate: 'Oct 5, 2026'
 updatedDate: 'Oct 5, 2026'
-ogCategory: 'Field Note \u00b7 AI & Engineering'
+ogCategory: 'Field Note · AI & Engineering'
 layoutVariant: harness
 heroImage: ../../assets/headers/cost-to-run-an-agent-masthead-totem.png
 related:
@@ -18,12 +18,12 @@ related:
 faq:
   - question: "How much does it cost to run an AI agent per month?"
     answer: "My normal operating setup costs $50.93 over a 30-day window: a $20 ChatGPT premium subscription plus $30.93 of metered DeepSeek. Optional premium experimentation added $84.07 of prepaid Grok credit on top."
-  - question: "Why did 509 million tokens cost only $30.93?"
-    answer: "Because 95% of the traffic was reused context. DeepSeek recorded 487.7 million cache reads against 22.4 million fresh input and 7.0 million output tokens \u2014 and cache reads cost a fraction of fresh input."
+  - question: "Why did 1.75 billion tokens cost only $30.93?"
+    answer: "Because most of it was reused context. The DeepSeek meter shows 1.75 billion tokens across 14,347 requests, and cache reads cost a fraction of fresh input — so a huge token count stayed a small bill."
   - question: "Is OpenClaw free to run?"
     answer: "The harnesses are free and open source; the cost is the models behind them. In this setup the normal route ran about $50.93 a month, including the ChatGPT plan I already had."
-  - question: "What\u2019s the biggest hidden cost of running an agent?"
-    answer: "Scheduled jobs and retry loops. Cron produced 178.5 million tokens \u2014 34% of the gross total \u2014 across 137 runs and 17 jobs, and three jobs were 79% of that. A loop that fails without advancing its cursor just buys the same failure again."
+  - question: "What's the biggest hidden cost of running an agent?"
+    answer: "Scheduled jobs and retry loops. Cron produced 222 million tokens across 167 runs and 19 jobs, and three jobs were 77% of that. A loop that fails without advancing its cursor just buys the same failure again."
   - question: "How do you keep agent costs from getting out of control?"
     answer: "Three controls: turn auto-recharge off, cap loops and advance failures, and review unattended jobs monthly by tokens and by whether anyone read the output."
 ---
@@ -31,9 +31,9 @@ The short answer is **$50.93 a month** for my normal operating setup: my **$20 C
 
 I also used **$84.07 of prepaid Grok credit** in an optional experimental lane. Put the three lines together and the observed usage is **$135.00** — subscription access, metered use, and prepaid credit, each on its own basis.
 
-These are my numbers, from **August 24 through September 23, 2026**. They cover model and subscription usage; hosting, storage, monitoring, and my time sit outside them.
+These are my numbers, from **September 5 through October 5, 2026**. They cover model and subscription usage; hosting, storage, monitoring, and my time sit outside them.
 
-The surprising part: **509 million tokens were not the expensive part.** The bill moved when I opted into premium experimentation, or left a job running after it stopped producing anything useful.
+The surprising part: **1.75 billion tokens were not the expensive part.** The bill moved when I opted into premium experimentation, or left a job running after it stopped producing anything useful.
 
 ## My 30-day agent cost
 
@@ -45,7 +45,7 @@ The surprising part: **509 million tokens were not the expensive part.** The bil
 | Grok experimental lane | Provider usage against prepaid credit | $84.07 | Optional image/design, search, reasoning, and prompt experimentation |
 | **Observed model/subscription usage** | Three lines, three bases | **$135.00** | Accounting total across mixed bases |
 
-The window included 23 published posts, 110 images, 86 PDFs, 288 sessions, and 9,801 tool calls — the workloads behind these period receipts. I report the period rather than a per-post figure, because other work shared the same receipts.
+The window included 19 published posts, 183 images, 142 PDFs, 285 sessions, and 8,658 tool calls — the workloads behind these period receipts. I report the period rather than a per-post figure, because other work shared the same receipts.
 
 ## Which meter applies to your work?
 
@@ -57,11 +57,11 @@ Price the route, not the agent. I run all of this on OpenClaw and Hermes; the ha
 | Polished-image experiments, plus web/X search or reasoning routed to Grok | A separate premium budget; use a cheaper model for good-enough work |
 | Scheduled jobs and retries | A multiplier on whichever route they use — cap and audit it |
 
-## Why 509 million tokens cost $30.93
+## Why 1.75 billion tokens cost $30.93
 
 The normal route was cheap because it was mostly reused context.
 
-DeepSeek recorded **509.1 million tokens**: 22.4 million input, 7.0 million output, and **487.7 million cache reads** — a 95% cache-read mix. The agent carries forward context the model has already seen, and cache reads cost a fraction of fresh input, so a large token count stayed a small bill.
+DeepSeek served **1.75 billion tokens across 14,347 requests**. Most of that was cached context — the agent carries forward what the model has already seen, and a cache read costs a fraction of fresh input — so a huge token count stayed a small bill.
 
 If you are on a metered provider that bills cached context cheaply, inspect your token mix before you react to the token total. Fresh context on every turn, more output, or a different provider means a different bill.
 
@@ -83,12 +83,9 @@ The premium lane was optional experimentation on top of ordinary agent work. I w
 
 That table is a billing breakdown: those are the provider's own categories — prompt text, search, reasoning, and other. My web-search usage alone moved from $2.13 in August to $27.87 in the trailing 30-day window — a routing and workload decision the base model's token price never shows.
 
-![xAI console usage — trailing 30 days: 50.5M tokens, 9,228 requests, $90.70 of credit used](/post-assets/cost-to-run-an-agent/xai-usage.png)
-*The Grok meter, from the xAI console.*
-
 ## What grows while you are not looking
 
-Scheduled work deserves its own line of sight. Cron jobs generated **178.5 million tokens — 34% of the gross total — across 137 runs and 17 jobs.** Three jobs accounted for 79% of the cron tokens. That concentration tells me where to inspect first.
+Scheduled work deserves its own line of sight. Cron jobs generated **222 million tokens across 167 runs and 19 jobs.** Three jobs accounted for 77% of that. That concentration tells me where to inspect first.
 
 One retry storm ran 11 times, used 8.4 million tokens, and produced zero qualified leads (the work that job existed for); it re-picked the same failed offset after every timeout. A job that fails without moving its cursor is buying the same failure again.
 
