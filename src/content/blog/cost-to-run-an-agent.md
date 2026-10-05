@@ -65,6 +65,9 @@ DeepSeek recorded **509.1 million tokens**: 22.4 million input, 7.0 million outp
 
 If you are on a metered provider that bills cached context cheaply, inspect your token mix before you react to the token total. Fresh context on every turn, more output, or a different provider means a different bill.
 
+![DeepSeek platform usage — trailing 30 days: 19,136 requests, 2.6B tokens, $60.86](/post-assets/cost-to-run-an-agent/deepseek-usage.png)
+*The DeepSeek meter, straight from the platform dashboard.*
+
 ## What made the observed month expensive
 
 The premium lane was optional experimentation on top of ordinary agent work. I was mainly chasing more polished images and design, plus web/X search and reasoning. Cheaper models handle good-enough work; I reached for Grok when I wanted the extra finish.
@@ -79,6 +82,9 @@ The premium lane was optional experimentation on top of ordinary agent work. I w
 | **Total** | **$84.07** |
 
 That table is a billing breakdown: those are the provider's own categories — prompt text, search, reasoning, and other. My web-search usage alone moved from $2.13 in August to $27.87 in the trailing 30-day window — a routing and workload decision the base model's token price never shows.
+
+![xAI console usage — trailing 30 days: 50.5M tokens, 9,228 requests, $90.70 of credit used](/post-assets/cost-to-run-an-agent/xai-usage.png)
+*The Grok meter, from the xAI console.*
 
 ## What grows while you are not looking
 
