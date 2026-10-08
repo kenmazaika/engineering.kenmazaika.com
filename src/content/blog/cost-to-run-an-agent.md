@@ -1,10 +1,10 @@
 ---
-title: "How Much Does It Cost to Run a Capable AI Agent Each Month? About $50"
-description: "My 30-day receipt says the durable budget is $50.93: $20 for plan access and $30.93 for a metered workhorse. The expensive month starts when premium routing or unattended jobs escape their own limits."
-seoTitle: "How Much Does It Cost to Run an AI Agent Each Month?"
+title: "What Does It Cost to Run an OpenClaw Agent? About $50 a Month"
+description: "The OpenClaw agent bill, measured over 30 days: $50.93 for the normal setup — a $20 plan plus $30.93 of metered workhorse. The expensive month starts when premium routing or unattended jobs escape their own limits. I run the same workload on Hermes and see the same cost shape."
+seoTitle: "OpenClaw Agent Cost: What It Really Costs to Run Each Month"
 socialTitle: "Budget $50 a Month to Run a Capable AI Agent"
 pubDate: 'Oct 5, 2026'
-updatedDate: 'Oct 5, 2026'
+updatedDate: 'Oct 7, 2026'
 ogCategory: 'Field Note · AI & Engineering'
 layoutVariant: harness
 heroImage: ../../assets/headers/cost-to-run-an-agent-masthead-totem.png
@@ -16,18 +16,24 @@ related:
   - title: "Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included)"
     url: "/blog/hermes-vs-openclaw/"
 faq:
-  - question: "How much should I budget to run a capable AI agent each month?"
-    answer: "I would budget about $50 a month for capable, heavy personal use. My normal operating setup was $50.93: a $20 ChatGPT premium subscription plus $30.93 of metered DeepSeek usage."
+  - question: "How much does it cost to run an OpenClaw agent each month?"
+    answer: "I would budget about $50 a month for capable, heavy personal use. My normal OpenClaw operating setup was $50.93: a $20 ChatGPT premium subscription plus $30.93 of metered DeepSeek usage."
   - question: "Why did 1.75 billion tokens cost only $30.93?"
     answer: "Most of the traffic was cached context. Cache reads cost a fraction of fresh input, so the raw token total looked enormous while the metered bill stayed small."
-  - question: "What makes an AI agent bill exceed $50 a month?"
+  - question: "What makes an agent bill exceed $50 a month?"
     answer: "In my month, the two movers were an optional premium lane and unattended work. Grok experimentation added $84.07, while scheduled jobs and retry loops could keep spending after the output stopped being useful."
   - question: "How do you keep an agent bill bounded?"
     answer: "Turn auto-recharge off, cap loops and advance failures, and review unattended jobs monthly by tokens and by whether anyone read the output."
+  - question: "Is Hermes cheaper or more expensive to run than OpenClaw?"
+    answer: "I don't see a fundamental difference. I run both, and these receipts were primarily driven by the cost of my OpenClaw because that is where most of my day-to-day work runs. When I ran my Hermes agent over a comparable window I saw basically the same cost patterns: the same cached-context discount, the same plan-plus-metered two-line budget, and the same failure modes driving the overspend. The harness changes which model gets called, not the shape of the bill."
 ---
-Budget **about $50 a month** to run a capable AI agent. My normal operating setup cost **$50.93**: a **$20 ChatGPT premium subscription** plus **$30.93 of metered DeepSeek use**.
+## The short answer
+
+Running an **OpenClaw agent** costs me **about $50 a month**. My normal operating setup was **$50.93**: a **$20 ChatGPT premium subscription** plus **$30.93 of metered DeepSeek use**.
 
 That is the ongoing number I would put in a budget. It paid for heavy personal use: **19 published posts, 183 images, 142 PDFs, 285 sessions, and 8,658 tool calls** from **September 5 through October 5, 2026**. The point is not that every month will land on the same 93 cents. The point is that $50 is a credible operating expectation when routine work stays on a plan-plus-workhorse route.
+
+I run both OpenClaw and Hermes, and these receipts come mostly from OpenClaw because that is where most of my day-to-day work runs. **I see basically the same cost patterns on Hermes** — the same cached-context discount, the same plan-plus-metered two-line budget, the same failure modes driving the overspend. The harness changes which model gets called. It does not change the shape of the bill.
 
 I spent more than that during the same window. An optional Grok lane added **$84.07**, bringing observed model and subscription usage to **$135.00**. That did not disprove the $50 budget. It showed exactly what sits outside it: premium work I chose to route separately.
 
@@ -64,7 +70,7 @@ This is why the normal route can absorb substantial work and still stay near $50
 
 ## Price the route, not the model
 
-“Which model do you use?” sounds like a pricing question, but it skips the decision that sets the bill. I price the route: which work runs on subscription access, which spills to the metered workhorse, which earns a premium lane, and which runs unattended.
+“Which model do you use?” sounds like a pricing question, but it skips the decision that sets the bill. I price the route: which work runs on subscription access, which spills to the metered workhorse, which earns a premium lane, and which runs unattended. That same route is [why a new model doesn't rearrange my week](/blog/the-model-isnt-the-bottleneck-anymore/) — the rotation handles the release, not the budget.
 
 | Work route | Meter | Budget decision |
 |---|---|---|
@@ -111,3 +117,20 @@ For capable, heavy personal use, I would start with **$50 a month**: $20 for pla
 Then I would audit scheduled work as its own route. The danger is not that an agent occasionally uses a lot of tokens. My 1.75 billion-token month shows why that number alone can mislead. The danger is paying premium prices by habit or letting a job repeat after it has stopped advancing.
 
 The recurring number is credible because its boundaries are visible. **$50.93** bought the normal operating setup. **$84.07** bought an optional premium lane. The gap between them is not mystery spend. It is a routing decision I can make again next month—or decline.
+
+## FAQ
+
+**How much does it cost to run an OpenClaw agent each month?**
+I would budget about **$50 a month** for capable, heavy personal use. My normal OpenClaw operating setup was **$50.93**: a $20 ChatGPT premium subscription plus $30.93 of metered DeepSeek usage.
+
+**Why did 1.75 billion tokens cost only $30.93?**
+Most of that traffic was cached context. Cache reads cost a fraction of fresh input, so the raw token total looked enormous while the metered bill stayed small. The token counter is not the bill.
+
+**Is Hermes cheaper or more expensive to run than OpenClaw?**
+I don't see a fundamental difference, and I would be skeptical of anyone who claims otherwise with a straight face. I run both. These receipts were **primarily driven by the cost of my OpenClaw**, because that is where most of my day-to-day work runs. When I ran my Hermes agent over a comparable window I saw **basically the same cost patterns**: the same cached-context discount, the same plan-plus-metered two-line budget, and the same failure modes driving the overspend. The harness changes which model gets called. It does not change the shape of the bill.
+
+**What makes the bill exceed $50 a month?**
+In my month, two movers: an optional premium lane, and unattended work. Grok experimentation added **$84.07**. Scheduled jobs and retry loops could keep spending after the output had stopped being useful.
+
+**How do you keep an agent bill bounded?**
+Three things: turn auto-recharge off, cap loops and advance failures, and review unattended jobs monthly by tokens and by whether anyone read the output.
