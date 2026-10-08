@@ -119,7 +119,7 @@ Setting up is one-time; running it is a monthly line. **What does it cost to run
 
 ## Start with one useful loop
 
-Do not begin by designing an all-purpose autonomous employee. Buy or repurpose a machine you can leave on, install the agent harness, and choose one repeated task whose output you already know how to judge.
+Do not begin by designing an all-purpose autonomous employee. Buy or repurpose a machine you can leave on, install the agent harness, and choose one repeated task whose output you already know how to judge. For the job I would hand over first — and why support is the cleanest example — see [Support Isn't Tickets. It's Loops](/blog/support-isnt-tickets-its-loops/).
 
 Run it manually first. Write down every correction that should apply next time. Save those corrections with the workflow. Only then put it on a schedule.
 

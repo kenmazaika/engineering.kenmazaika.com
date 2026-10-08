@@ -263,4 +263,4 @@ That's the difference between owning the automation and renting it.
 
 Pick a source that changes and that you already care about. Ask for the plan. Load a few rows and look at them. Set the judgment. Push them somewhere you can see. Codify it as a skill. Put it on a cron.
 
-One hour, one automation, and the shape you'll use for everything after.
+One hour, one automation, and the shape you'll use for everything after. For choosing which repeated job deserves that hour, the case I'd hand you first is support: [Support Isn't Tickets. It's Loops](/blog/support-isnt-tickets-its-loops/).

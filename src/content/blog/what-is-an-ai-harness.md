@@ -80,7 +80,7 @@ If you could teach a careful junior operator to follow those five lines, you can
 
 Consider a small SaaS support team. A customer writes in because setup failed. The answer may be in the documentation, the account record, a prior ticket, or an engineer's note. The manual job is not merely “write an email.” It is: identify the customer, recognize the issue, find the approved answer, write the reply, update the ticket, record the pattern, and chase it if the customer goes quiet.
 
-That is a good first runbook because every boundary is visible.
+That is a good first runbook because every boundary is visible — and the support queue is the one I break all the way down in [Support Isn't Tickets. It's Loops](/blog/support-isnt-tickets-its-loops/).
 
 The harness watches a dedicated support inbox or ticket queue. It classifies the request against the approved documentation and account context. It drafts a reply with the relevant link, writes a proposed note into the ticket, and adds the next step to the customer record. Billing, security, cancellation, compliance, and low-confidence cases go to a human instead of receiving a confident hallucination.
 

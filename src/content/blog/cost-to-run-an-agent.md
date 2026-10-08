@@ -31,7 +31,7 @@ faq:
 
 Running an **OpenClaw agent** costs me **about $50 a month**. My normal operating setup was **$50.93**: a **$20 ChatGPT premium subscription** plus **$30.93 of metered DeepSeek use**.
 
-That is the ongoing number I would put in a budget. It paid for heavy personal use: **19 published posts, 183 images, 142 PDFs, 285 sessions, and 8,658 tool calls** from **September 5 through October 5, 2026**. The point is not that every month will land on the same 93 cents. The point is that $50 is a credible operating expectation when routine work stays on a plan-plus-workhorse route.
+That is the ongoing number I would put in a budget. It paid for heavy personal use: **19 published posts, 183 images, 142 PDFs, 285 sessions, and 8,658 tool calls** from **September 5 through October 5, 2026**. The point is not that every month will land on the same 93 cents. The point is that $50 is a credible operating expectation when routine work stays on a plan-plus-workhorse route. That budget is also what makes it worth automating a repeated job — the kind of work I break down in [Support Isn't Tickets. It's Loops](/blog/support-isnt-tickets-its-loops/).
 
 I run both OpenClaw and Hermes, and these receipts come mostly from OpenClaw because that is where most of my day-to-day work runs. **I see basically the same cost patterns on Hermes** — the same cached-context discount, the same plan-plus-metered two-line budget, the same failure modes driving the overspend. The harness changes which model gets called. It does not change the shape of the bill.
 
