@@ -7,7 +7,7 @@ import Header from '../components/Header.astro';
 import NewsletterPopup from '../components/NewsletterPopup.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import CodeCopyScript from '../components/CodeCopyScript.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, POPUP_ENABLED } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug: string; readingMinutes?: number };
 const {
@@ -20,7 +20,7 @@ const {
 	socialTitle,
 	readingMinutes = 1,
 	hideDefaultNewsletter = false,
-	showPopup = false,
+	showPopup = true,
 	popupMode = 'email',
 	popupHref,
 	popupTitle,
@@ -136,7 +136,7 @@ const faqSchema = faq && faq.length > 0 ? {
 					</nav>
 				)}
 				{!hideDefaultNewsletter && <NewsletterSignup />}
-				{showPopup && (
+				{POPUP_ENABLED && showPopup && (
 					<NewsletterPopup
 						mode={popupMode}
 						href={popupHref}
