@@ -70,7 +70,7 @@ This is why the normal route can absorb substantial work and still stay near $50
 
 ## Price the route, not the model
 
-“Which model do you use?” sounds like a pricing question, but it skips the decision that sets the bill. I price the route: which work runs on subscription access, which spills to the metered workhorse, which earns a premium lane, and which runs unattended. That same route is [why a new model doesn't rearrange my week](/blog/the-model-isnt-the-bottleneck-anymore/) — the rotation handles the release, not the budget.
+“Which model do you use?” sounds like a pricing question, but it skips the decision that sets the bill. I price the route: which work runs on subscription access, which spills to the metered workhorse, which earns a premium lane, and which runs unattended. That same route is why a new model doesn't rearrange my week — [the rotation handles the release](/blog/my-default-model-stack-for-ai-agent-work/), not the budget.
 
 | Work route | Meter | Budget decision |
 |---|---|---|

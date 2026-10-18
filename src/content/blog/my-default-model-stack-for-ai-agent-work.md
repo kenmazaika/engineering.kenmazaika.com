@@ -23,7 +23,7 @@ That's it. Everything else I run is a bounded-cost experiment. The rest of this 
 
 ## The baseline: a frontier model on subscription quota
 
-The $20/month ChatGPT subscription is the baseline because the frontier model is just good. I haven't found work that the latest GPT on the subscription quota couldn't handle. Sometimes the newest models do a better job on nuanced work, but the current GPT is the reliable default: it doesn't add to the metered bill, and at $0 marginal cost per token, it's the model I reach for when the output needs polish — a document someone else will read, a report I'm putting my name on.
+The $20/month ChatGPT subscription is the baseline because the frontier model is just good. I haven't found work that the latest GPT on the subscription quota couldn't handle. Sometimes the newest models do a better job on nuanced work, but the current GPT is the reliable default: it doesn't add to the metered bill, and at $0 marginal cost per token, it's the model I reach for when the output needs polish — a document someone else will read, a report I'm putting my name on. When a release lands, the question is whether it's better *enough* to switch — the rotation I run decides that on a calendar, not on release day.
 
 ## The workhorse: DeepSeek Flash, 90–97% there
 
