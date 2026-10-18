@@ -1,4 +1,7 @@
 export const SITE_TITLE = 'Ken Mazaika';
+// Homepage-only <title> (the <title> Google shows for the site root).
+// SITE_TITLE stays the site NAME: header, footer, og:site_name, JSON-LD, title suffixes.
+export const SITE_HOME_TITLE = 'Ken Mazaika — Field notes on running AI agents';
 // TEMPORARY kill switch for the sitewide slide-up / exit-intent newsletter popup.
 // Off for the Kagi Small Web submission (its rules forbid newsletter popups; the
 // submission is gated on a popup-free site). A cron job turns this back ON on
