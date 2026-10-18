@@ -27,21 +27,34 @@ const imageURL = typeof image === 'string'
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteURL = Astro.site;
 
+// Identity fields (@id, name, url, jobTitle, sameAs) mirror the author site
+// (kenmazaika-apex: src/layouts/Base.astro). Both domains must describe ONE
+// Person entity — otherwise search engines index two Ken Mazaikas.
 const personSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'Person',
+	'@id': 'https://kenmazaika.com/#person',
 	name: 'Ken Mazaika',
-	url: new URL('/about/', siteURL).href,
-	jobTitle: 'Engineering Manager',
+	url: 'https://kenmazaika.com/',
+	jobTitle: ['Author', 'Engineering Manager'],
 	description: SITE_DESCRIPTION,
-	sameAs: ['https://x.com/kenmazaika'],
+	sameAs: [
+		'https://engineering.kenmazaika.com/about/',
+		'https://x.com/kenmazaika',
+		'https://www.goodreads.com/author/show/68476975.Ken_Mazaika',
+		'https://www.amazon.com/stores/Ken-Mazaika/author/B0GP2JFXX2',
+	],
 };
 const websiteSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'WebSite',
+	'@id': `https://engineering.kenmazaika.com/#website`,
 	name: SITE_TITLE,
 	url: siteURL.href,
 	description: SITE_DESCRIPTION,
+	inLanguage: 'en',
+	publisher: { '@id': 'https://kenmazaika.com/#person' },
+	author: { '@id': 'https://kenmazaika.com/#person' },
 };
 const jsonLd = JSON.stringify([personSchema, websiteSchema]);
 ---

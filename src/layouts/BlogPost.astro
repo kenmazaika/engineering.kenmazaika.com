@@ -45,11 +45,13 @@ const articleSchema = {
 	image: new URL(socialImage, Astro.site).href,
 	author: {
 		'@type': 'Person',
+		'@id': 'https://kenmazaika.com/#person',
 		name: 'Ken Mazaika',
-		url: new URL('/about/', Astro.site).href,
+		url: 'https://kenmazaika.com/',
 	},
 	publisher: {
 		'@type': 'Person',
+		'@id': 'https://kenmazaika.com/#person',
 		name: 'Ken Mazaika',
 	},
 	datePublished: pubDate.toISOString(),
