@@ -66,7 +66,7 @@ The fix is a boring separation of jobs:
 
 - **Search discovers.** It points the agent toward likely files.
 - **Project state decides.** One explicit file says what is done, what remains, and which decisions must survive the next session.
-- **Guidance advises.** Voice rules, strategy, and recommendations stay scoped and reviewable instead of becoming ambient truth.
+- **Guidance advises.** [Voice rules](/blog/give-your-agent-your-voice/), strategy, and recommendations stay scoped and reviewable instead of becoming ambient truth.
 
 Once I made that split, the semantic layer became optional.
 

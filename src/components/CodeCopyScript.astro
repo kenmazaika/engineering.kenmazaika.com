@@ -23,6 +23,7 @@ document.querySelectorAll('.prose pre').forEach((pre) => {
 
   const text = (pre.textContent || '').toLowerCase();
   const label =
+    text.includes('never — words') ? 'voice.md' :
     text.includes('wispr dictation') ? 'topic prompt' :
     text.includes('dictation d-nnn') ? 'file template' :
     text.includes('hermes') ? 'prompt' :

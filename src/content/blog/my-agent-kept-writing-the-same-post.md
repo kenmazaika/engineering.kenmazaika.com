@@ -31,7 +31,7 @@ One piece of feedback, given in the context of one specific post: "I really like
 
 The idea wasn't stored in one place. It was in every layer the pipeline reads:
 
-- **Wiki voice guides** — the belief sections in both the engineering and content guides ("the fix isn't more review — it's less review").
+- **Wiki voice guides** — the belief sections in both the engineering and content guides ("the fix isn't more review — it's less review"). Later one of those guides went further and [invented a memory of mine](/blog/give-your-agent-your-voice/).
 - **Hologram store** — facts 4 and 5, marked helpful and reinforced ("automate the 97%, keep human in the judgment loop").
 - **Persistent memory** — `MEMORY.md` held the same philosophy line, plus the pointer that routed every writing task to the biased guide.
 - **Auto-generated skills** — `ken-writing-feedback` and `industry-pulse` carried review-themed rules, examples, and hooks, and downstream skills re-propagated them.
