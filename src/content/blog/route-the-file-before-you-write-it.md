@@ -6,6 +6,7 @@ socialTitle: "Your Agent Doesn't Need a Bigger Memory. It Needs a Filing Rule."
 ogCategory: 'Field Note · Agent Architecture'
 pubDate: 'Sep 15, 2026'
 layoutVariant: harness
+heroImage: ../../assets/headers/obsidian-kb-masthead-a.jpg
 showPopup: true
 related:
   - title: 'More Context Makes Your Agent Dumber. The Fix Is a File Handoff.'
