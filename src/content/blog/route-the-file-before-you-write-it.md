@@ -15,6 +15,8 @@ related:
     url: '/blog/my-agent-kept-writing-the-same-post/'
   - title: 'What Is an AI Work Harness?'
     url: '/blog/what-is-an-ai-harness/'
+  - title: 'Set Up an Inbox System in Your Obsidian Vault'
+    url: '/blog/obsidian-inbox-system/'
 ---
 
 Before my agent writes a work-product file, it has to decide which project owns it. It searches a one-line registry, attaches to the matching project folder, and writes there. If two projects match, it asks me. If none match, it creates one.

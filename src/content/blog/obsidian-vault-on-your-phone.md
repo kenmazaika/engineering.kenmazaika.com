@@ -184,3 +184,5 @@ From that point you use the vault through the chat window like any other tool: "
 ## What you end up with
 
 A folder on your phone, a folder on the rig, and the same Markdown in both — with one variable telling the agent where to look. Your phone is the reader, the agent is the writer, and the vault, not the chat window, is where the work lives.
+
+Once the pipes work, the next question is what travels through them. [An inbox system your agent can actually act on](/blog/obsidian-inbox-system/) is the other half: four folders, a schema, and a script that turns a ticked box into work.
