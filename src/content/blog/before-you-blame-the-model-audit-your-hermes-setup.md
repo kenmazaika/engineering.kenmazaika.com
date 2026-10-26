@@ -1,5 +1,6 @@
 ---
 title: 'Before You Blame the Model, Audit Your Hermes Setup'
+seoTitle: 'How to Audit Your Hermes Setup Before Changing AI Models'
 description: 'A copyable prompt for finding missing tools, silent fallbacks, and configuration problems before you spend hours comparing AI models.'
 pubDate: 'Jul 14, 2026'
 related:

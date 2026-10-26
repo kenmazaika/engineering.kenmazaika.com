@@ -1,5 +1,6 @@
 ---
 title: 'Meta-Prompting: Let the AI Write Your Prompt'
+seoTitle: 'Meta-Prompting: Let the AI Write Your Prompt'
 description: 'Describe what you want in plain language. Ask the AI to turn it into a structured prompt. Use that prompt.'
 socialTitle: 'Let the AI Write Your Prompt'
 ogCategory: 'Field Note · Hermes Workflows'

@@ -1,5 +1,6 @@
 ---
 title: 'Hermes Workflow: Teach Your Agent to Question the Instruction'
+seoTitle: 'Teach an AI Agent to Question the Instruction'
 description: 'A persistent memory instruction that helps Hermes identify the root cause behind a request.'
 socialTitle: 'Teach Your Agent to Question the Instruction'
 ogCategory: 'Field Note · Hermes Workflows'

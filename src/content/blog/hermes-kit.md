@@ -1,5 +1,6 @@
 ---
 title: "The Hermes Kit"
+seoTitle: "Hermes Setup Guide: Models, Memory, and Workflows That Hold Up"
 description: 'A field guide to which models, memory, and setup actually hold up on real work — built from five real tasks, run end to end, receipts included.'
 pubDate: 'Aug 15, 2026'
 hidden: true

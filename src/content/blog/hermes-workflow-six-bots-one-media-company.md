@@ -1,5 +1,6 @@
 ---
 title: 'Hermes Workflow: Six Bots, One Media Company'
+seoTitle: 'How to Build an AI Content Workflow With Specialized Agents'
 description: "Writing was never the bottleneck. Finding the idea, angling it, and distributing it without repeating yourself is. Here's how Hermes can do all of that."
 socialTitle: 'How to use Hermes for content production'
 ogCategory: 'Field Note · Hermes Workflows'
