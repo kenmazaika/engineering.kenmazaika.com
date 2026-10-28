@@ -11,6 +11,8 @@ layoutVariant: harness
 related:
   - title: "Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included)."
     url: "/blog/hermes-vs-openclaw/"
+  - title: "Setting Up Voice Channels With OpenClaw and Discord"
+    url: "/blog/setting-up-voice-channels-with-openclaw-and-discord/"
 ---
 
 I've set up my agent home three times: twice on Discord, once on Telegram. Discord is where it ended up. Not because it's easier. It isn't.
