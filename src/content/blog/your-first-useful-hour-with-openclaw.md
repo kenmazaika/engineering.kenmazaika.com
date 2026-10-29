@@ -1,5 +1,5 @@
 ---
-title: "Your First Useful Hour With OpenClaw: Build One Automation, End to End"
+title: "OpenClaw Tutorial: Build Your First Automation, End to End"
 description: "Your first hour shouldn't go into channels, cron, and plugins — it should end with one automation you built and understood. Every prompt to get there, in order."
 seoTitle: "OpenClaw Tutorial: Build Your First Automation, End to End"
 socialTitle: "Build your first OpenClaw automation in one hour"
