@@ -222,6 +222,8 @@ The reply contract is what keeps tickets readable. The substance goes in a file;
 
 Queue mode is write, tick Execute, sync. Live mode is the same ticket held in chat, rewritten in the same turn so the file never lags the conversation.
 
+For the chat-side counterpart, see how I use a [live ticket as the durable work log](/blog/agent-hooks/).
+
 ### 6. The script that reads the ticks, and the close
 
 The inbox only drives itself if something reads the ticks. This is a small deterministic script — no model call — that runs on a schedule and prints the notes that need attention:

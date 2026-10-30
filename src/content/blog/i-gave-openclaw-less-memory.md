@@ -78,6 +78,8 @@ My current setup still has several layers, but each one has a narrow job.
 
 `BALLS.md` is a one-line-per-project registry: project, path, status, last touched, next action. Each project points to a QBall folder containing current state, decisions, lineage, and receipts. The mechanics are in [Route the File Before You Write It](/blog/route-the-file-before-you-write-it/); the important part here is that the folder, not a retrieved chat fragment, owns the answer to “what is left?”
 
+Durable memory helps retrieval; a [live ticket preserves the state of work in progress](/blog/agent-hooks/).
+
 The larger vault remains searchable and inspectable. The compiled wiki can synthesize it into Obsidian-friendly pages. Opinionated guidance lives separately and does not get promoted into always-on context without review.
 
 OpenClaw's memory search is still enabled, but it is deliberately lexical. This is the relevant part of my configuration as of September 15, 2026:
@@ -129,4 +131,3 @@ There are setups where semantic memory is worth it. A large corpus full of parap
 My mistake was treating semantic recall as the foundation. It is an escalation path.
 
 Start with a file that says what is true now. Give the agent a reliable way to find it. Make richer memory earn its place.
-

@@ -76,6 +76,8 @@ It did make the boundary obvious. Search is a way to discover information. A pro
 
 This is separate from context-window management. A file handoff keeps one stage from inheriting irrelevant conversation. A routing rule decides which durable project owns the file in the first place. You need both once one agent works across enough jobs — and the same routing applies to [the file that carries my writing voice](/blog/give-your-agent-your-voice/): decide where it lives once, and every run reads it at the top instead of re-deriving your tone from scratch.
 
+A routing rule gives the file a home; [agent hooks keep the active work resumable](/blog/agent-hooks/).
+
 OpenClaw enforces my version through an always-loaded `AGENTS.md` rule and four skills: `qball-router`, `project-boot`, `project-status`, and `vault-keeper`. Those names are implementation details. The useful mechanism fits in any agent setup that can read and write files:
 
 - route at the first durable write;

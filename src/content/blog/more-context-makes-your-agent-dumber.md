@@ -105,6 +105,8 @@ That's the whole rule, in four lines:
 - Fan out only for breadth — if the subtasks don't depend on each other, separate contexts help; if they do, one thread plus compaction beats three agents guessing.
 - Withhold for review — a critic or verifier gets the artifact and the goal, never the maker's transcript. Fresh eyes are the whole mechanism.
 
+A file handoff becomes more useful when a [named hook keeps its state current](/blog/agent-hooks/).
+
 ## The 10× you don't see
 
 Manus calls the KV-cache "the single most important metric" for a production agent, and the arithmetic is stark ([July 18, 2025](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)): on Claude Sonnet, cached input tokens cost $0.30 per million against $3 uncached — a 10× gap. A timestamp precise to the second at the top of the system prompt changes the prefix on every call and throws the cache away. So "write it down" has a corollary: write it down, and keep the front of the prompt frozen. The saving isn't in the model you pick. It's in not changing the thing you already sent.
