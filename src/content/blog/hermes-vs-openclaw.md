@@ -1,7 +1,7 @@
 ---
-title: "Hermes vs OpenClaw: Why OpenClaw Became My Main Workflow (Test Data Included)."
+title: "Hermes vs OpenClaw: Why I Moved My Main Workflow (Test Data Included)."
 description: "App building came out even. Research leaned Hermes; executive framing leaned OpenClaw. The scoreboard didn't decide it — how each tool learns did."
-seoTitle: "Hermes vs OpenClaw 2026: Why OpenClaw Became My Main Workflow"
+seoTitle: "Hermes vs OpenClaw 2026: Real-Work Benchmark, Receipts, and My Verdict"
 socialTitle: "I expected Hermes to win. OpenClaw kept edging ahead, then memory made the decision."
 pubDate: 'Sep 4, 2026'
 ogCategory: 'Field Note · AI & Engineering'
