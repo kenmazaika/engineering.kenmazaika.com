@@ -5,7 +5,6 @@ seoTitle: "How I Tuned OpenClaw Memory Without Embeddings"
 socialTitle: "My OpenClaw Memory Works Better as Pointers, Not a Second Brain"
 pubDate: 'Sep 15, 2026'
 ogCategory: 'Field Note · Agent Memory'
-hideDefaultNewsletter: true
 layoutVariant: harness
 related:
   - title: "My Agent Kept Writing the Same Post. The Memory Was the Problem."

@@ -5,7 +5,6 @@ seoTitle: "My Agent Kept Writing the Same Post. The Memory Was the Problem. (Her
 socialTitle: "My Agent Wrote the Same Post for a Month. The Memory Was the Problem."
 pubDate: 'Sep 1, 2026'
 ogCategory: 'Field Note · Agent Memory'
-hideDefaultNewsletter: true
 heroImage: ../../assets/headers/my-agent-kept-writing-the-same-post-masthead.png
 layoutVariant: harness
 related:
