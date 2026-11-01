@@ -4,6 +4,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 const readingTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
@@ -41,6 +42,7 @@ const posts = (await getCollection('blog'))
 					</li>
 				))}
 			</ul>
+			<NewsletterSignup placement="blog_index" variant="strip" />
 		</main>
 		<Footer />
 	</body>

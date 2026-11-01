@@ -40,9 +40,9 @@ const xFollowUrl = `https://x.com/intent/follow?screen_name=${xUsername}`;
 				<a class="follow-primary" href={xFollowUrl} target="_blank" rel="noopener">Follow {X_HANDLE} on X →</a>
 				<p class="dek">AI agents are easy to demo and surprisingly hard to trust. This is my curated path through building and running a dependable AI work harness—based on actual Hermes and OpenClaw work, organized by the question you have now.</p>
 				<p class="proof"><strong>One receipt:</strong> 11 models · 5 real tasks · identical prompts · measured costs.</p>
-				<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form hero-subscribe">
-					<label for="email-hero"><strong>New receipts, weekly-ish.</strong> One email, no newsletter noise.</label>
-					<div><input type="email" name="email" id="email-hero" autocomplete="email" placeholder="you@example.com" required /><input type="hidden" name="embed" value="1" /><button type="submit">Subscribe</button></div>
+				<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form hero-subscribe" data-nl-form data-nl-placement="start_here">
+					<label for="email-hero"><strong>Get the next post in your inbox.</strong> I write about building and running AI agents — what worked, what failed, and what it cost.</label>
+					<div><input type="email" name="email" id="email-hero" autocomplete="email" placeholder="you@example.com" required /><input type="hidden" name="embed" value="1" /><input type="hidden" name="tag" value="nl-start_here" /><button type="submit">Subscribe</button></div>
 				</form>
 				<div class="start-card">
 					<div><p class="start-label">New to agents?</p><a href="#what">Start with what a harness does →</a><p>Learn what the layer around a model actually does—and whether your work has the repeatable middle that makes a harness useful.</p></div>
@@ -92,10 +92,7 @@ const xFollowUrl = `https://x.com/intent/follow?screen_name=${xUsername}`;
 				</section>
 
 				<section class="return-block" aria-labelledby="return-mid-title">
-					<p class="eyebrow">Keep the thread</p><h2 id="return-mid-title">New receipts, weekly-ish.</h2><p>One email, no newsletter noise.</p>
-					<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form">
-						<label for="email-mid">Email address</label><div><input type="email" name="email" id="email-mid" autocomplete="email" placeholder="you@example.com" required /><input type="hidden" name="embed" value="1" /><button type="submit">Subscribe</button></div>
-					</form>
+					<p class="eyebrow">Keep the thread</p><h2 id="return-mid-title">Get the next post.</h2><p>One email when there is something worth sending. <a href="#subscribe-end">Subscribe →</a></p>
 					<a class="follow-quiet" href={xFollowUrl} target="_blank" rel="noopener">Or follow {X_HANDLE} on X →</a>
 				</section>
 
@@ -120,9 +117,9 @@ const xFollowUrl = `https://x.com/intent/follow?screen_name=${xUsername}`;
 				<section class="deep" aria-labelledby="deep-title"><p class="eyebrow">Continue exploring</p><h2 id="deep-title">Already running an agent? Go deeper.</h2><p>These pieces improve leverage rather than merely add complexity.</p><ul><li><a href="/blog/hermes-workflow-question-the-instruction/">Teach Your Agent to Question the Instruction →</a></li><li><a href="/blog/meta-prompting-let-ai-write-your-prompt/">Meta-Prompting: Let the AI Write Your Prompt →</a></li><li><a href="/blog/hermes-workflow-six-bots-one-media-company/">Six Bots, One Media Company →</a></li></ul></section>
 
 				<section class="return-block return-end" id="subscribe-end" aria-labelledby="return-end-title">
-					<p class="eyebrow">Come back when the next test is done</p><h2 id="return-end-title">New receipts, weekly-ish.</h2><p>One email, no newsletter noise.</p>
-					<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form">
-						<label for="email-end">Email address</label><div><input type="email" name="email" id="email-end" autocomplete="email" placeholder="you@example.com" required /><input type="hidden" name="embed" value="1" /><button type="submit">Subscribe</button></div>
+					<p class="eyebrow">Come back when the next test is done</p><h2 id="return-end-title">Get the next post.</h2><p>I write about building and running AI agents — what worked, what failed, and what it cost.</p>
+					<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form" data-nl-form data-nl-placement="start_here_end">
+						<label for="email-end">Email address</label><div><input type="email" name="email" id="email-end" autocomplete="email" placeholder="you@example.com" required /><input type="hidden" name="embed" value="1" /><input type="hidden" name="tag" value="nl-start_here_end" /><button type="submit">Subscribe</button></div>
 					</form>
 					<p class="return-links"><a href={xFollowUrl} target="_blank" rel="noopener">Follow {X_HANDLE} on X</a><span aria-hidden="true">·</span><a href="/rss.xml">RSS</a><span aria-hidden="true">·</span><a href="/blog/">Latest writing</a></p>
 					<p class="contact-line">Questions? Reply to any email from me — it comes straight to me.</p>

@@ -5,7 +5,6 @@ seoTitle: "Hermes vs OpenClaw 2026: Real-Work Benchmark, Receipts, and My Verdic
 socialTitle: "I expected Hermes to win. OpenClaw kept edging ahead, then memory made the decision."
 pubDate: 'Sep 4, 2026'
 ogCategory: 'Field Note · AI & Engineering'
-hideDefaultNewsletter: true
 showPopup: true
 heroImage: ../../assets/headers/hermes-vs-openclaw-masthead.png
 layoutVariant: harness

@@ -47,7 +47,8 @@ const blog = defineCollection({
 			// Hidden posts exist at their direct URL but are excluded from the
 			// index, RSS feed, and sitemap (used for tests and staged launches).
 			hidden: z.boolean().optional(),
-			// Opt a post into the slide-up / exit-intent newsletter popup.
+			// Slide-up / exit-intent newsletter popup. Shown on ALL posts by
+			// default; set `showPopup: false` to opt a single post out.
 			showPopup: z.boolean().optional(),
 			// Popup mode: 'email' (Buttondown capture) or 'link' (CTA to a post).
 			popupMode: z.enum(['email', 'link']).optional(),

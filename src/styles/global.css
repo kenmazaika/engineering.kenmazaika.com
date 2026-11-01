@@ -659,6 +659,23 @@ a:hover { color: var(--color-link-hover); }
 .article-shell .newsletter-signup {
   width: min(100% - 3rem, var(--max-width));
 }
+/* The signup sits in the same column as the prose. The wrapper owns the width so
+   the component's own margins cannot pull it to the viewport edge. */
+.article-signup {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 680px) {
+  .article-signup { padding-inline: var(--content-padding); }
+}
+.article-signup > .nl-note {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
 
 .newsletter-kicker {
   margin: 0 0 0.65rem;
@@ -742,6 +759,31 @@ a:hover { color: var(--color-link-hover); }
   font-size: 0.7rem;
   line-height: 1.4;
 }
+
+/* ─── Newsletter variants ─── */
+.newsletter-signup.is-compact {
+  margin-top: 3rem;
+  padding: 1.9rem;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+  gap: 1.75rem;
+}
+.newsletter-signup.is-compact h2 { font-size: 1.4rem; }
+.newsletter-signup.is-stacked {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+.newsletter-signup.is-inline {
+  width: 100%;
+  margin: 2.5rem 0;
+  padding: 1.6rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.1rem;
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent);
+}
+.newsletter-signup.is-inline h2 { font-size: 1.3rem; }
+.newsletter-signup.is-inline .newsletter-copy > p:last-child { font-size: 0.86rem; }
+.nl-inline-slot .newsletter-signup.is-inline { margin: 2.5rem 0; }
 
 .newsletter-note a {
   color: inherit;

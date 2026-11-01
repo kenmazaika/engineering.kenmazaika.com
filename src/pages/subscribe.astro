@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { SITE_TITLE } from '../consts';
+
+const description =
+	'Field notes on building and running AI agents — what worked, what failed, and what it cost.';
+
+const posts = await getCollection('blog');
+const picks = ['your-first-useful-hour-with-openclaw', 'cost-to-run-an-agent', 'obsidian-inbox-system']
+	.map((slug) => posts.find((post) => post.id === slug))
+	.filter((post): post is NonNullable<typeof post> => Boolean(post));
+const readingTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Subscribe — ${SITE_TITLE}`} description={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<Header />
+		<main id="main" class="subscribe-page">
+			<header class="subscribe-hero">
+				<h1>Get the next field note.</h1>
+				<p class="subscribe-dek">
+					I write about building and running AI agents — what worked, what failed, and what it cost.
+					One email when there is something worth sending.
+				</p>
+				<NewsletterSignup
+					placement="subscribe_page"
+					variant="endnote"
+					label=""
+					heading=""
+					body=""
+					cta="Subscribe"
+					note="No spam. Unsubscribe anytime. Replies come straight to me."
+				/>
+			</header>
+
+			{picks.length > 0 && (
+				<section class="subscribe-evidence" aria-labelledby="evidence-heading">
+					<h2 id="evidence-heading">Three places to start</h2>
+					<ul>
+						{picks.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`}>
+									<span class="evidence-meta">
+										<FormattedDate date={post.data.pubDate} /> · {readingTime(post.body)} min read
+									</span>
+									<span class="evidence-title">{post.data.title}</span>
+									<span class="evidence-desc">{post.data.description}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+					<p class="evidence-more"><a href="/blog/">All writing →</a></p>
+				</section>
+			)}
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.subscribe-page { max-width: 700px; margin: auto; padding: clamp(2.5rem, 6vw, 4.5rem) 28px 5rem; }
+	.subscribe-hero h1 { margin: 0; font-size: clamp(2.4rem, 5.4vw, 3.9rem); line-height: 1.04; letter-spacing: -0.04em; text-wrap: balance; }
+	.subscribe-dek { max-width: 34rem; margin: 1.1rem 0 1.6rem; color: var(--color-text-secondary); font-size: clamp(1rem, 1.5vw, 1.12rem); line-height: 1.65; }
+	.subscribe-hero :global(.nl-note) { margin-top: 0; padding-top: 0; border-top: 0; }
+	.subscribe-hero :global(.nl-note h2) { display: none; }
+	.subscribe-hero :global(.nl-note-body) { display: none; }
+
+	.subscribe-evidence { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border); }
+	.subscribe-evidence h2 { margin: 0 0 1.2rem; font-size: 1.05rem; letter-spacing: 0.02em; color: var(--color-text-secondary); font-weight: 600; }
+	.subscribe-evidence ul { list-style: none; margin: 0; padding: 0; }
+	.subscribe-evidence li { border-top: 1px solid var(--color-border); }
+	.subscribe-evidence li:first-child { border-top: 0; }
+	.subscribe-evidence a { display: block; padding: 1rem 0; }
+	.evidence-meta { display: block; color: var(--color-text-muted); font-size: 0.74rem; margin-bottom: 0.25rem; }
+	.evidence-title { display: block; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; line-height: 1.3; }
+	.evidence-desc { display: block; margin-top: 0.25rem; color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.55; }
+	.evidence-more { margin: 1.2rem 0 0; font-size: 0.86rem; }
+	@media (max-width: 680px) { .subscribe-page { padding: 2rem 20px 3.5rem; } }
+</style>

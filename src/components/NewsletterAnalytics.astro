@@ -1,0 +1,99 @@
+---
+// Newsletter funnel analytics (attempts only).
+//
+// Fires two GA4 events:
+//   newsletter_form_view   — a signup form was at least 50% visible for 1s
+//   newsletter_form_submit — a *valid* form submission was attempted
+//
+// It deliberately does NOT fire a "confirmed" event. Confirmation happens on
+// Buttondown after double opt-in, which this static site cannot observe. Passing
+// a submit attempt off as a subscriber would inflate the number. Confirmed
+// subscribers are counted in Buttondown by the `nl-<placement>` tag.
+// See docs/newsletter-measurement.md.
+---
+
+<script>
+	type Params = Record<string, string>;
+	const w = window as unknown as { gtag?: (...args: unknown[]) => void; __nlTracked?: Set<string> };
+
+	if (!w.__nlTracked) {
+		w.__nlTracked = new Set<string>();
+		const tracked = w.__nlTracked;
+
+		const path = window.location.pathname;
+		const pageType = path === '/' ? 'home' : path.startsWith('/start') ? 'start' : path.startsWith('/subscribe') ? 'subscribe' : path.startsWith('/blog/') ? 'article' : path.startsWith('/blog') ? 'archive' : 'other';
+
+		const categoryFor = (p: string): string => {
+			if (/openclaw|harness|agent-rig|cron|skill/.test(p)) return 'openclaw';
+			if (/hermes/.test(p)) return 'hermes';
+			if (/obsidian|vault/.test(p)) return 'obsidian';
+			if (/model|cost|token|price/.test(p)) return 'models-cost';
+			if (/cold-email|lead|outreach/.test(p)) return 'outbound';
+			return 'other';
+		};
+
+		const send = (event: string, params: Params) => {
+			if (typeof w.gtag !== 'function') return;
+			w.gtag('event', event, { page_path: path, page_type: pageType, ...params });
+		};
+
+		const placementOf = (el: Element): string =>
+			el.getAttribute('data-nl-placement') || el.closest('[data-nl-placement]')?.getAttribute('data-nl-placement') || 'unknown';
+
+		// View: 50% visible for one second, once per placement per page load.
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (!entry.isIntersecting) continue;
+					const el = entry.target as HTMLElement;
+					const placement = placementOf(el);
+					observer.unobserve(el);
+					window.setTimeout(() => {
+						const key = `view:${placement}`;
+						if (!el.isConnected || tracked.has(key)) return;
+						tracked.add(key);
+						send('newsletter_form_view', {
+							placement,
+							content_category: categoryFor(path),
+						});
+					}, 1000);
+				}
+			},
+			{ threshold: 0.5 },
+		);
+
+		const observeForms = () => {
+			document.querySelectorAll<HTMLElement>('form[data-nl-form]').forEach((form) => {
+				if (!form.dataset.nlObserved) {
+					form.dataset.nlObserved = '1';
+					observer.observe(form);
+				}
+			});
+		};
+
+		// Submit: the native submit event only fires once the browser accepts the
+		// form as valid, so this is a real attempt, not a button click.
+		document.addEventListener(
+			'submit',
+			(event) => {
+				const form = event.target as HTMLFormElement | null;
+				if (!form || !form.matches('form[data-nl-form]')) return;
+				const placement = placementOf(form);
+				const key = `submit:${placement}`;
+				if (tracked.has(key)) return;
+				tracked.add(key);
+				send('newsletter_form_submit', {
+					placement,
+					content_category: categoryFor(path),
+				});
+			},
+			{ capture: true },
+		);
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', observeForms, { once: true });
+		} else {
+			observeForms();
+		}
+	}
+</script>

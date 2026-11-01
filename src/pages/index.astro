@@ -31,7 +31,9 @@ const [featured, ...remaining] = posts;
 				<p class="hero-kicker">Operating AI agents on real work</p>
 				<h1 class="hero-tagline">Workflows, model choices, costs, and receipts.</h1>
 				<p class="hero-sub">Hands-on field notes from running AI agents, plus long-form essays on the engineering systems around them.</p>
+				<p class="hero-newsletter"><a href="/subscribe/">New posts by email <span aria-hidden="true">→</span></a></p>
 			</section>
+
 
 			{featured && (
 				<section class="featured-wrap" aria-labelledby="featured-label">
@@ -44,6 +46,8 @@ const [featured, ...remaining] = posts;
 					</a>
 				</section>
 			)}
+
+			<NewsletterSignup placement="homepage_strip" variant="strip" />
 
 			{remaining.length > 0 && (
 				<section class="archive-preview" aria-labelledby="recent-writing">
@@ -61,8 +65,25 @@ const [featured, ...remaining] = posts;
 					</ul>
 				</section>
 			)}
-			<NewsletterSignup />
+
 		</main>
 		<Footer />
 	</body>
+
+<style>
+	.hero-newsletter {
+		margin: 1.15rem 0 0;
+		font-size: 0.86rem;
+	}
+	.hero-newsletter a {
+		color: var(--color-text-secondary);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-border);
+		padding-bottom: 1px;
+	}
+	.hero-newsletter a:hover {
+		color: var(--color-accent);
+		border-bottom-color: var(--color-accent);
+	}
+</style>
 </html>

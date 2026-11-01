@@ -1,20 +1,268 @@
-<section class="newsletter-signup" aria-labelledby="newsletter-heading">
-	<div class="newsletter-copy">
-		<p class="newsletter-kicker">Stay in the loop</p>
-		<h2 id="newsletter-heading">Get the next field note.</h2>
-		<p>New field notes from running AI agents, plus occasional long-form engineering essays.</p>
-	</div>
-	<form
-		action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
-		method="post"
-		class="embeddable-buttondown-form"
-	>
-		<label for="bd-email">Email address</label>
-		<div class="newsletter-fields">
-			<input type="email" name="email" id="bd-email" autocomplete="email" placeholder="you@example.com" required />
-			<input type="hidden" name="embed" value="1" />
-			<button type="submit">Subscribe</button>
-		</div>
-		<p class="newsletter-note">No spam. Unsubscribe anytime. <a href="https://buttondown.com/refer/mazaika" target="_blank" rel="noopener noreferrer">Powered by Buttondown.</a></p>
-	</form>
-</section>
+---
+// Newsletter signup — editorial treatments, not landing-page cards.
+// Variants:
+//   strip   — homepage: a thin ruled band after the featured post
+//   endnote — article: one compact ask at the end of the piece
+//   page    — /subscribe/: the single proposition, with a form
+// Placement drives both the Buttondown tag and the GA4 event parameter.
+interface Props {
+	placement: string;
+	variant?: 'strip' | 'endnote' | 'page';
+	label?: string;
+	heading?: string;
+	body?: string;
+	cta?: string;
+	note?: string;
+}
+
+const {
+	placement,
+	variant = 'endnote',
+	label = 'Newsletter',
+	heading = 'Enjoyed this field note?',
+	body = 'I write about building and running AI agents — what worked, what failed, and what it cost. Get the next post in your inbox.',
+	cta = 'Subscribe',
+	note = 'Unsubscribe anytime. Replies come straight to me.',
+} = Astro.props;
+
+const id = `nl-${placement.replace(/[^a-z0-9]+/gi, '-')}`;
+const headingId = `${id}-heading`;
+---
+
+{
+	variant === 'strip' ? (
+		<section class="nl-strip" id={id} aria-labelledby={headingId} data-nl-placement={placement}>
+			<p class="nl-strip-label" id={headingId}>{label}</p>
+			<p class="nl-strip-copy">{body}</p>
+			<form
+				class="nl-strip-form"
+				action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+				method="post"
+				data-nl-form
+				data-nl-placement={placement}
+			>
+				<label class="nl-sr" for={`${id}-email`}>Email address</label>
+				<input
+					type="email"
+					name="email"
+					id={`${id}-email`}
+					autocomplete="email"
+					inputmode="email"
+					autocapitalize="off"
+					spellcheck="false"
+					placeholder="you@example.com"
+					required
+				/>
+				<input type="hidden" name="embed" value="1" />
+				<input type="hidden" name="tag" value={`nl-${placement}`} />
+				<button type="submit">{cta}</button>
+			</form>
+		</section>
+	) : (
+		<section class={`nl-note ${variant === 'page' ? 'is-page' : ''}`} id={id} aria-labelledby={headingId} data-nl-placement={placement}>
+			<p class="nl-note-label">{label}</p>
+			<h2 id={headingId}>{heading}</h2>
+			<p class="nl-note-body">{body}</p>
+			<form
+				class="nl-note-form"
+				action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+				method="post"
+				data-nl-form
+				data-nl-placement={placement}
+			>
+				<label class="nl-sr" for={`${id}-email`}>Email address</label>
+				<input
+					type="email"
+					name="email"
+					id={`${id}-email`}
+					autocomplete="email"
+					inputmode="email"
+					autocapitalize="off"
+					spellcheck="false"
+					placeholder="you@example.com"
+					required
+				/>
+				<input type="hidden" name="embed" value="1" />
+				<input type="hidden" name="tag" value={`nl-${placement}`} />
+				<button type="submit">{cta}</button>
+			</form>
+			<p class="nl-note-fine" id={`${id}-fine`}>{note}</p>
+		</section>
+	)
+}
+
+<style>
+	.nl-sr {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	/* ── homepage strip ── */
+	.nl-strip {
+		width: min(100% - 3rem, 940px);
+		margin: 2.75rem auto 0;
+		padding: 0.95rem 0 1rem;
+		display: grid;
+		grid-template-columns: 7.5rem minmax(0, 1fr) minmax(280px, 21rem);
+		gap: 1.4rem;
+		align-items: center;
+		border-top: 1px solid var(--color-border);
+		border-bottom: 1px solid var(--color-border);
+		scroll-margin-top: 38vh;
+	}
+	.nl-strip-label {
+		margin: 0;
+		color: var(--color-accent);
+		font-size: 0.66rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+	.nl-strip-copy {
+		margin: 0;
+		color: var(--color-text-secondary);
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+	.nl-strip-form {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+	.nl-strip-form input[type='email'] {
+		flex: 1;
+		min-width: 0;
+		padding: 0.55rem 0.65rem;
+		font: inherit;
+		font-size: 0.86rem;
+		color: var(--color-text);
+		background: var(--color-bg-card);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+	}
+	.nl-strip-form input[type='email']:focus {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 1px;
+		border-color: transparent;
+	}
+	.nl-strip-form button {
+		padding: 0.5rem 0.85rem;
+		font: inherit;
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--color-bg);
+		background: var(--color-text);
+		border: 0;
+		border-radius: var(--border-radius);
+		cursor: pointer;
+	}
+	.nl-strip-form button:hover {
+		background: var(--color-accent);
+	}
+
+	/* ── article end note + subscribe page ── */
+	.nl-note {
+		margin: 3rem 0 0;
+		padding-top: 1.6rem;
+		border-top: 1px solid var(--color-border);
+	}
+	.nl-note-label {
+		margin: 0 0 0.55rem;
+		color: var(--color-accent);
+		font-size: 0.66rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+	.nl-note h2 {
+		margin: 0 0 0.45rem;
+		padding: 0;
+		border: 0;
+		font-size: 1.42rem;
+		line-height: 1.22;
+	}
+	.nl-note-body {
+		margin: 0 0 1rem;
+		max-width: 34rem;
+		color: var(--color-text-secondary);
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+	.nl-note-form {
+		display: flex;
+		gap: 0.55rem;
+		max-width: 30rem;
+	}
+	.nl-note-form input[type='email'] {
+		flex: 1;
+		min-width: 0;
+		padding: 0.62rem 0.7rem;
+		font: inherit;
+		font-size: 0.9rem;
+		color: var(--color-text);
+		background: var(--color-bg-card);
+		border: 1px solid var(--color-border);
+		border-radius: var(--border-radius);
+	}
+	.nl-note-form input[type='email']:focus {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 1px;
+	}
+	.nl-note-form button {
+		padding: 0.62rem 1rem;
+		font: inherit;
+		font-size: 0.86rem;
+		font-weight: 600;
+		color: var(--color-bg);
+		background: var(--color-text);
+		border: 0;
+		border-radius: var(--border-radius);
+		cursor: pointer;
+	}
+	.nl-note-form button:hover {
+		background: var(--color-accent);
+	}
+	.nl-note-fine {
+		margin: 0.55rem 0 0;
+		color: var(--color-text-muted);
+		font-size: 0.72rem;
+	}
+
+	.nl-note.is-page {
+		margin: 2.5rem 0 0;
+		padding: 0;
+		border: 0;
+	}
+	.nl-note.is-page h2 {
+		font-size: 1.9rem;
+	}
+	.nl-note.is-page .nl-note-body {
+		font-size: 1rem;
+	}
+
+	@media (max-width: 900px) {
+		.nl-strip {
+			grid-template-columns: 1fr;
+			gap: 0.55rem;
+			padding: 1rem 0;
+		}
+	}
+	@media (max-width: 520px) {
+		.nl-strip {
+			margin-top: 2rem;
+		}
+		.nl-strip-form,
+		.nl-note-form {
+			flex-direction: column;
+			align-items: stretch;
+		}
+		.nl-strip-form button,
+		.nl-note-form button {
+			width: 100%;
+		}
+	}
+</style>
