@@ -1,20 +1,55 @@
-<section class="newsletter-signup" aria-labelledby="newsletter-heading">
+---
+// Reusable newsletter signup.
+// One component, one offer, configurable placement. The placement string is
+// carried into Buttondown as a tag (confirmed-subscriber attribution) and into
+// GA4 as an event parameter (attempts only — see docs/newsletter-measurement.md).
+//
+// Every page must use a unique `placement` so form ids never collide.
+interface Props {
+	placement: string;
+	kicker?: string;
+	heading?: string;
+	copy?: string;
+	cta?: string;
+	note?: string;
+	variant?: 'default' | 'compact' | 'inline' | 'stacked';
+}
+
+const {
+	placement,
+	kicker = 'Field notes, weekly-ish',
+	heading = 'What actually worked on real agent work.',
+	copy = 'One email, most Sundays: the workflow I ran, what it cost, and what broke. Real numbers from OpenClaw, Hermes, and Obsidian — not another AI news roundup.',
+	cta = 'Send me the next note',
+	note = 'One email a week, sometimes less. Unsubscribe in one click. Reply and it comes straight to me.',
+	variant = 'default',
+} = Astro.props;
+
+const fieldId = `nl-${placement.replace(/[^a-z0-9]+/gi, '-')}-email`;
+const headingId = `${fieldId}-heading`;
+const className = ['newsletter-signup', variant !== 'default' && `is-${variant}`].filter(Boolean).join(' ');
+---
+
+<section class={className} aria-labelledby={headingId} data-nl-placement={placement}>
 	<div class="newsletter-copy">
-		<p class="newsletter-kicker">Stay in the loop</p>
-		<h2 id="newsletter-heading">Get the next field note.</h2>
-		<p>New field notes from running AI agents, plus occasional long-form engineering essays.</p>
+		<p class="newsletter-kicker">{kicker}</p>
+		<h2 id={headingId}>{heading}</h2>
+		<p>{copy}</p>
 	</div>
 	<form
 		action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
 		method="post"
 		class="embeddable-buttondown-form"
+		data-nl-form
+		data-nl-placement={placement}
 	>
-		<label for="bd-email">Email address</label>
+		<label for={fieldId}>Email address</label>
 		<div class="newsletter-fields">
-			<input type="email" name="email" id="bd-email" autocomplete="email" placeholder="you@example.com" required />
+			<input type="email" name="email" id={fieldId} autocomplete="email" placeholder="you@example.com" required />
 			<input type="hidden" name="embed" value="1" />
-			<button type="submit">Subscribe</button>
+			<input type="hidden" name="tag" value={`nl-${placement}`} />
+			<button type="submit">{cta}</button>
 		</div>
-		<p class="newsletter-note">No spam. Unsubscribe anytime. <a href="https://buttondown.com/refer/mazaika" target="_blank" rel="noopener noreferrer">Powered by Buttondown.</a></p>
+		<p class="newsletter-note">{note}</p>
 	</form>
 </section>

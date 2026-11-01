@@ -13,21 +13,23 @@ interface Props {
 	cta?: string;
 }
 
-const { mode = 'email', href = '/blog/', title, copy, cta } = Astro.props;
+const { mode = 'email', href = '/blog/obsidian-vault-on-your-phone/', title, copy, cta } = Astro.props;
 
 const isLink = mode === 'link';
-const kicker = isLink ? 'The Hermes Kit' : 'The Hermes Kit';
+const kicker = 'The 7-day vault course';
+// Retargeted 2026-10-24 from the Hermes Kit scorecard to the 7-email vault course.
+// Email mode enrolls the subscriber in tag `jdak`, which is the course automation trigger.
 const popupTitle =
 	title ??
 	(isLink
-		? 'Stop configuring by vibes.'
-		: 'Get the Hermes Kit model scorecard.');
+		? 'Set up a vault your agent can actually use.'
+		: 'Get the 7-day vault course.');
 const popupCopy =
 	copy ??
 	(isLink
-		? 'Which models, memory, and setup actually hold up on real work? I ran mine through five real tasks — receipts included, nothing cherry-picked.'
-		: 'Which models actually hold up on real agentic work? I ran 11 models through 5 real tasks — same prompts, no tuning, receipts included.');
-const popupCta = cta ?? (isLink ? 'Read the post' : 'Send me the scorecard');
+		? 'A seven-email course on an Obsidian vault an agent can navigate and file into: notes on your phone, one folder per project, an inbox the agent writes to. One action a day.'
+		: 'Seven emails, one action each. Get the vault onto your phone, give every project one folder, build an inbox your agent can write to, then a weekly pass that keeps it legible. Nothing to configure.');
+const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 ---
 
 <div id="nl-popup" class="nl-popup" role="dialog" aria-modal="false" aria-label={kicker} aria-hidden="true">
@@ -44,12 +46,15 @@ const popupCta = cta ?? (isLink ? 'Read the post' : 'Send me the scorecard');
 					class="nl-popup-form"
 					action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
 					method="post"
+					data-nl-form
+					data-nl-placement="popup_course"
 				>
 					<label class="nl-popup-label" for="nl-popup-email">Email address</label>
 					<div class="nl-popup-fields">
 						<input type="email" name="email" id="nl-popup-email" autocomplete="email" placeholder="you@example.com" required />
 						<input type="hidden" name="embed" value="1" />
-						<input type="hidden" name="metadata__optin" value="scorecard" />
+						<input type="hidden" name="tag" value="jdak" />
+						<input type="hidden" name="metadata__optin" value="course" />
 						<button type="submit">{popupCta}</button>
 					</div>
 				</form>

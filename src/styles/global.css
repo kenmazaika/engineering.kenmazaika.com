@@ -743,6 +743,31 @@ a:hover { color: var(--color-link-hover); }
   line-height: 1.4;
 }
 
+/* ─── Newsletter variants ─── */
+.newsletter-signup.is-compact {
+  margin-top: 3rem;
+  padding: 1.9rem;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+  gap: 1.75rem;
+}
+.newsletter-signup.is-compact h2 { font-size: 1.4rem; }
+.newsletter-signup.is-stacked {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+.newsletter-signup.is-inline {
+  width: 100%;
+  margin: 2.5rem 0;
+  padding: 1.6rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.1rem;
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent);
+}
+.newsletter-signup.is-inline h2 { font-size: 1.3rem; }
+.newsletter-signup.is-inline .newsletter-copy > p:last-child { font-size: 0.86rem; }
+.nl-inline-slot .newsletter-signup.is-inline { margin: 2.5rem 0; }
+
 .newsletter-note a {
   color: inherit;
   text-decoration: underline;

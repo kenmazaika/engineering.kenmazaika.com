@@ -33,6 +33,13 @@ const [featured, ...remaining] = posts;
 				<p class="hero-sub">Hands-on field notes from running AI agents, plus long-form essays on the engineering systems around them.</p>
 			</section>
 
+			<NewsletterSignup
+				placement="homepage_hero"
+				heading="Get the receipts, not the hype."
+				copy="One email, most Sundays: the workflow I ran, what it cost, and what broke. Real numbers from OpenClaw, Hermes, and Obsidian — not another AI news roundup."
+				cta="Send me the next note"
+			/>
+
 			{featured && (
 				<section class="featured-wrap" aria-labelledby="featured-label">
 					<div class="featured-rule"><span id="featured-label">Featured field note</span></div>
@@ -61,7 +68,14 @@ const [featured, ...remaining] = posts;
 					</ul>
 				</section>
 			)}
-			<NewsletterSignup />
+			<NewsletterSignup
+				placement="homepage_footer"
+				variant="compact"
+				kicker="One email, most Sundays"
+				heading="The next field note, in your inbox."
+				copy="Workflows, costs, and the things that broke — written after I ran them, not before."
+				cta="Subscribe"
+			/>
 		</main>
 		<Footer />
 	</body>

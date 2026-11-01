@@ -1,0 +1,84 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import { SITE_TITLE } from '../consts';
+
+const description =
+	'One email, most Sundays: the workflow I ran, what it cost, and what broke. Real numbers from running AI agents on real work — not an AI news roundup.';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Subscribe — ${SITE_TITLE}`} description={description} image="/og/start.png" imageAlt="Subscribe to Ken Mazaika's field notes" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<Header />
+		<main id="main" class="subscribe-page">
+			<header class="subscribe-hero">
+				<p class="eyebrow">Field notes, weekly-ish</p>
+				<h1>What actually worked on real agent work.</h1>
+				<p class="subscribe-dek">One email, most Sundays: the workflow I ran, what it cost, and what broke. Real numbers from OpenClaw, Hermes, and Obsidian — not another AI news roundup.</p>
+			</header>
+
+			<NewsletterSignup
+				placement="subscribe_page"
+				variant="stacked"
+				kicker="No spam, no roundup"
+				heading="Send me the next note."
+				copy="Written after I ran the workflow, not before. Costs are measured, failures are included, and prompts are usually copyable."
+				cta="Subscribe"
+			/>
+
+			<section class="subscribe-faq" aria-labelledby="faq-heading">
+				<h2 id="faq-heading">What you're actually getting</h2>
+				<dl>
+					<div>
+						<dt>What arrives</dt>
+						<dd>One field note: the job I was trying to do, the setup I used, what it cost, and what broke. Occasionally a long essay instead.</dd>
+					</div>
+					<div>
+						<dt>How often</dt>
+						<dd>Most Sundays. Some weeks there is nothing worth sending, and I don't send filler.</dd>
+					</div>
+					<div>
+						<dt>How it's different</dt>
+						<dd>Everything is run first. If a workflow needs a $175 box, a cron job, or four failed attempts, that's in the note with the numbers.</dd>
+					</div>
+					<div>
+						<dt>Why not just bookmark the blog</dt>
+						<dd>The email includes the setup and the failure notes that don't make it into the post, plus what I changed the following week.</dd>
+					</div>
+					<div>
+						<dt>Can I leave</dt>
+						<dd>One click, no questions. Replies come straight to me, not a support queue.</dd>
+					</div>
+				</dl>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.subscribe-page { max-width: 760px; margin: auto; padding: clamp(2.5rem, 6vw, 5rem) 28px 5rem; }
+	.eyebrow { margin: 0 0 1rem; color: var(--color-accent); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+	.subscribe-hero h1 { max-width: 900px; margin: 0; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.02; letter-spacing: -0.045em; text-wrap: balance; }
+	.subscribe-dek { max-width: 640px; margin: 1.4rem 0 0; color: var(--color-text-secondary); font-size: clamp(1.02rem, 1.6vw, 1.16rem); line-height: 1.65; }
+	.subscribe-faq { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--color-border); }
+	.subscribe-faq h2 { margin: 0 0 1.5rem; font-size: 1.7rem; }
+	.subscribe-faq dl { margin: 0; }
+	.subscribe-faq dl > div { padding: 1.1rem 0; border-top: 1px solid var(--color-border); }
+	.subscribe-faq dl > div:first-child { border-top: 0; padding-top: 0; }
+	.subscribe-faq dt { font-weight: 600; font-size: 0.95rem; }
+	.subscribe-faq dd { margin: 0.3rem 0 0; color: var(--color-text-secondary); font-size: 0.94rem; line-height: 1.65; }
+	@media (max-width: 680px) {
+		.subscribe-page { padding: 2rem 20px 3.5rem; }
+		.subscribe-hero h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
+	}
+</style>
