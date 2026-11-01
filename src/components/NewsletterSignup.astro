@@ -31,7 +31,7 @@ const headingId = `${id}-heading`;
 
 {
 	variant === 'strip' ? (
-		<section class="nl-strip" aria-labelledby={headingId} data-nl-placement={placement}>
+		<section class="nl-strip" id={id} aria-labelledby={headingId} data-nl-placement={placement}>
 			<p class="nl-strip-label" id={headingId}>{label}</p>
 			<p class="nl-strip-copy">{body}</p>
 			<form
@@ -42,14 +42,24 @@ const headingId = `${id}-heading`;
 				data-nl-placement={placement}
 			>
 				<label class="nl-sr" for={`${id}-email`}>Email address</label>
-				<input type="email" name="email" id={`${id}-email`} autocomplete="email" placeholder="you@example.com" required />
+				<input
+					type="email"
+					name="email"
+					id={`${id}-email`}
+					autocomplete="email"
+					inputmode="email"
+					autocapitalize="off"
+					spellcheck="false"
+					placeholder="you@example.com"
+					required
+				/>
 				<input type="hidden" name="embed" value="1" />
 				<input type="hidden" name="tag" value={`nl-${placement}`} />
 				<button type="submit">{cta}</button>
 			</form>
 		</section>
 	) : (
-		<section class={`nl-note ${variant === 'page' ? 'is-page' : ''}`} aria-labelledby={headingId} data-nl-placement={placement}>
+		<section class={`nl-note ${variant === 'page' ? 'is-page' : ''}`} id={id} aria-labelledby={headingId} data-nl-placement={placement}>
 			<p class="nl-note-label">{label}</p>
 			<h2 id={headingId}>{heading}</h2>
 			<p class="nl-note-body">{body}</p>
@@ -61,12 +71,22 @@ const headingId = `${id}-heading`;
 				data-nl-placement={placement}
 			>
 				<label class="nl-sr" for={`${id}-email`}>Email address</label>
-				<input type="email" name="email" id={`${id}-email`} autocomplete="email" placeholder="you@example.com" required />
+				<input
+					type="email"
+					name="email"
+					id={`${id}-email`}
+					autocomplete="email"
+					inputmode="email"
+					autocapitalize="off"
+					spellcheck="false"
+					placeholder="you@example.com"
+					required
+				/>
 				<input type="hidden" name="embed" value="1" />
 				<input type="hidden" name="tag" value={`nl-${placement}`} />
 				<button type="submit">{cta}</button>
 			</form>
-			<p class="nl-note-fine">{note}</p>
+			<p class="nl-note-fine" id={`${id}-fine`}>{note}</p>
 		</section>
 	)
 }
@@ -92,6 +112,7 @@ const headingId = `${id}-heading`;
 		align-items: center;
 		border-top: 1px solid var(--color-border);
 		border-bottom: 1px solid var(--color-border);
+		scroll-margin-top: 38vh;
 	}
 	.nl-strip-label {
 		margin: 0;
@@ -135,7 +156,7 @@ const headingId = `${id}-heading`;
 		color: var(--color-bg);
 		background: var(--color-text);
 		border: 0;
-		border-radius: 3px;
+		border-radius: var(--border-radius);
 		cursor: pointer;
 	}
 	.nl-strip-form button:hover {
@@ -160,8 +181,8 @@ const headingId = `${id}-heading`;
 		margin: 0 0 0.45rem;
 		padding: 0;
 		border: 0;
-		font-size: 1.5rem;
-		line-height: 1.2;
+		font-size: 1.42rem;
+		line-height: 1.22;
 	}
 	.nl-note-body {
 		margin: 0 0 1rem;
@@ -184,7 +205,7 @@ const headingId = `${id}-heading`;
 		color: var(--color-text);
 		background: var(--color-bg-card);
 		border: 1px solid var(--color-border);
-		border-radius: 4px;
+		border-radius: var(--border-radius);
 	}
 	.nl-note-form input[type='email']:focus {
 		outline: 2px solid var(--color-accent);
@@ -198,7 +219,7 @@ const headingId = `${id}-heading`;
 		color: var(--color-bg);
 		background: var(--color-text);
 		border: 0;
-		border-radius: 4px;
+		border-radius: var(--border-radius);
 		cursor: pointer;
 	}
 	.nl-note-form button:hover {
@@ -231,7 +252,6 @@ const headingId = `${id}-heading`;
 	}
 	@media (max-width: 520px) {
 		.nl-strip {
-			width: 100%;
 			margin-top: 2rem;
 		}
 		.nl-strip-form,

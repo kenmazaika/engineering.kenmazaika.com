@@ -137,7 +137,11 @@ const faqSchema = faq && faq.length > 0 ? {
 						</ul>
 					</nav>
 				)}
-				{!hideDefaultNewsletter && <NewsletterSignup placement="article_footer" variant="endnote" cta="Subscribe" />}
+				{!hideDefaultNewsletter && (
+					<div class="article-signup">
+						<NewsletterSignup placement="article_footer" variant="endnote" cta="Subscribe" />
+					</div>
+				)}
 				{POPUP_ENABLED && showPopup && (
 					<NewsletterPopup
 						mode={popupMode}

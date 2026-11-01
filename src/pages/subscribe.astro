@@ -11,7 +11,7 @@ const description =
 	'Field notes on building and running AI agents — what worked, what failed, and what it cost.';
 
 const posts = await getCollection('blog');
-const picks = ['what-is-an-ai-harness', 'best-ai-model-for-agent-work', 'your-first-useful-hour-with-openclaw']
+const picks = ['your-first-useful-hour-with-openclaw', 'cost-to-run-an-agent', 'obsidian-inbox-system']
 	.map((slug) => posts.find((post) => post.id === slug))
 	.filter((post): post is NonNullable<typeof post> => Boolean(post));
 const readingTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
@@ -47,7 +47,7 @@ const readingTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\
 
 			{picks.length > 0 && (
 				<section class="subscribe-evidence" aria-labelledby="evidence-heading">
-					<h2 id="evidence-heading">What it looks like</h2>
+					<h2 id="evidence-heading">Three places to start</h2>
 					<ul>
 						{picks.map((post) => (
 							<li>
