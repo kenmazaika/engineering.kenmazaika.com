@@ -66,21 +66,34 @@ reader who decides mid-article has no persistent path to the offer.
 
 ## What this iteration changes
 
-1. One reusable component with a single offer, configured per placement.
-2. Homepage: a signup directly under the hero, above the featured post.
-3. Articles: a contextual inline signup after the second section of long reads
-   (≥8 min), skipping placements that would split a code sample.
+1. One reusable component with three editorial treatments — homepage strip, article
+   end note, subscribe page — instead of a repeating card.
+2. Homepage: the featured post keeps the first screen; the newsletter appears as a
+   thin ruled band immediately after it.
+3. Articles: one end-of-post note. The automatic mid-article injection was removed
+   because it interrupted reading and ignored article context.
 4. Header and footer: a persistent "Subscribe" route to `/subscribe/`.
-5. Start Here: three forms reduced to two, with the middle one becoming a link.
-6. GA4: `newsletter_form_view` and `newsletter_form_submit`, both carrying
+5. `/subscribe/` shows the proposition once, then three real posts as evidence.
+6. Start Here: three forms reduced to two, with the middle one becoming a link.
+7. GA4: `newsletter_form_view` and `newsletter_form_submit`, both carrying
    `placement`, `page_path`, `page_type`, `content_category`. No PII.
-7. Buttondown: one hidden `tag=nl-<placement>` per form for confirmed-subscriber
+8. Buttondown: one hidden `tag=nl-<placement>` per form for confirmed-subscriber
    attribution. `newsletter_signup_confirmed` is deliberately not emitted.
+
+## Rejected in review (2026-11-01)
+
+- **Homepage card above the featured post.** Pushed the featured article out of the
+  first viewport, especially on mobile. Replaced with the ruled strip after it.
+- **Automatic inline article signup.** Placed a generic form after the second
+  section regardless of context. Removed; contextual invitations should be
+  editorial choices, not a default.
+- **"Weekly-ish" / "most Sundays" / "no roundup" copy.** Hedging that undermines
+  confidence, and repeated claims that the work is real instead of showing it.
 
 ## Verification performed
 
-- `npm run build` — 37 pages, no errors.
+- `npm run build` — clean, no errors.
 - Duplicate-id scan on `/`, `/start/`, `/subscribe/`, one article — none.
-- Desktop (1440px) and mobile (390px) screenshots of homepage, Start Here,
-  `/subscribe/`, and an article.
+- Desktop (1440px) and mobile (390px) captures of homepage, article end note, and
+  `/subscribe/`, each checked to contain the form rather than an empty frame.
 - Buttondown submission path unchanged: native POST, no fetch, no provider change.

@@ -6,7 +6,6 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import NewsletterPopup from '../components/NewsletterPopup.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-import NewsletterInline from '../components/NewsletterInline.astro';
 import CodeCopyScript from '../components/CodeCopyScript.astro';
 import { SITE_TITLE, POPUP_ENABLED } from '../consts';
 
@@ -138,15 +137,7 @@ const faqSchema = faq && faq.length > 0 ? {
 						</ul>
 					</nav>
 				)}
-				{!hideDefaultNewsletter && <NewsletterInline minutes={readingMinutes} />}
-				{!hideDefaultNewsletter && (
-					<NewsletterSignup
-						placement="article_footer"
-						heading="Get the next field note."
-						copy="One email, most Sundays: the workflow I ran, what it cost, and what broke. Real numbers from running agents on real work."
-						cta="Send me the next note"
-					/>
-				)}
+				{!hideDefaultNewsletter && <NewsletterSignup placement="article_footer" variant="endnote" cta="Subscribe" />}
 				{POPUP_ENABLED && showPopup && (
 					<NewsletterPopup
 						mode={popupMode}

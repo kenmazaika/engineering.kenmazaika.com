@@ -15,9 +15,8 @@ they measure different things. Do not add them together.
 Parameters on both: `placement`, `page_path`, `page_type`, `content_category`.
 No email address, name, or any other personal data is ever sent to GA4.
 
-Placements in use: `homepage_hero`, `homepage_footer`, `article_inline`,
-`article_footer`, `blog_index`, `start_here`, `start_here_end`, `subscribe_page`,
-`popup_course`.
+Placements in use: `homepage_strip`, `article_footer`, `blog_index`, `start_here`,
+`start_here_end`, `subscribe_page`, `popup_course`.
 
 **`newsletter_signup_confirmed` is not emitted by the website.** With Buttondown's
 embed form the visitor leaves the page to confirm by email; a static site cannot

@@ -42,14 +42,7 @@ const posts = (await getCollection('blog'))
 					</li>
 				))}
 			</ul>
-			<NewsletterSignup
-				placement="blog_index"
-				variant="compact"
-				kicker="Field notes, weekly-ish"
-				heading="What actually worked on real agent work."
-				copy="One email, most Sundays: the workflow I ran, what it cost, and what broke."
-				cta="Send me the next note"
-			/>
+			<NewsletterSignup placement="blog_index" variant="strip" />
 		</main>
 		<Footer />
 	</body>
