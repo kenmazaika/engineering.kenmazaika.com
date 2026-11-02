@@ -2,6 +2,7 @@
 title: 'Hermes Workflow: I thought Kanban was for me to manage'
 seoTitle: 'Use Kanban to Orchestrate AI Agent Workflows'
 description: 'A two-word instruction that hands the orchestration middle to Hermes: three distinct profiles make, critique, and verify the work while I keep the kickoff and the final judgment.'
+seoDescription: "A two-word instruction that hands the orchestration middle to Hermes instead of me managing a board."
 socialTitle: 'I Thought Kanban Was for Me to Manage'
 pubDate: 'Aug 10, 2026'
 related:

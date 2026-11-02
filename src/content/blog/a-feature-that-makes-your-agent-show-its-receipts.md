@@ -1,6 +1,7 @@
 ---
 title: "Does AI Citation Grounding Actually Catch Errors? I Tested It On vs Off"
 description: "I asked my agent the same cost question twice — once with a citation ledger on, once off. Both said stay on DeepSeek, but the grounded run caught pricing errors the ungrounded run flattened. Here's the test and the receipts."
+seoDescription: "I asked my agent the same cost question twice, citation ledger on and off. Both said stay on DeepSeek — but the grounded run caught pricing errors the ungrounded run flattened."
 seoTitle: "Does AI Citation Grounding Catch Errors? An On/Off Test With Real Receipts"
 socialTitle: 'Same Question, Twice. Only One Answer Could Show Its Receipts.'
 pubDate: 'Aug 23, 2026'

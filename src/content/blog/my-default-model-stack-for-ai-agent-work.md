@@ -1,7 +1,7 @@
 ---
 title: 'My Default Model Stack for AI Agent Work'
 description: 'One frontier subscription, one cheap workhorse, one vision specialist — and why the vision layer earned its spot after my workhorse told me it was blind.'
-seoTitle: 'My Default AI Model Stack for Agent Work — What I Run in Hermes'
+seoTitle: "My Default Model Stack for OpenClaw and Hermes Agent Work"
 pubDate: 'Aug 22, 2026'
 related:
   - title: 'I Ran Eleven AI Models on Real Agentic Workflows in Hermes'

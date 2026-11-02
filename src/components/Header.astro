@@ -1,11 +1,11 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_NAME } from '../consts';
 ---
 
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
 	<div class="content">
-		<a href="/" class="site-title"><span class="site-mark" aria-hidden="true"><span class="site-mark-glyph">K</span></span><span>{SITE_TITLE}</span></a>
+		<a href="/" class="site-title"><span class="site-mark" aria-hidden="true"><span class="site-mark-glyph">K</span></span><span>{SITE_NAME}</span></a>
 		<nav class="site-nav" aria-label="Primary">
 			<a href="/start/" aria-current={Astro.url.pathname === '/start/' ? 'page' : undefined}>Start here</a>
 			<a href="/blog" aria-current={Astro.url.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</a>

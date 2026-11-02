@@ -1,6 +1,7 @@
 ---
 title: "Connect Obsidian on Your Phone to Your OpenClaw or Hermes Agent"
 description: "Your agent runs on a machine you don't sit at, and Obsidian only opens vaults that exist on the device it's installed on. This is the bridge I use: Remotely Save, a free Dropbox app, and the normal Dropbox client on both ends — about ten minutes, and the vault your phone writes in is the same one your agent reads."
+seoDescription: "Put an Obsidian vault on your phone so an agent running on another machine can read and write it. The sync path that works."
 seoTitle: "How to Connect Obsidian on Your Phone to an OpenClaw or Hermes Vault"
 socialTitle: "Obsidian on your phone, your agent's vault on the rig"
 ogCategory: 'Field Note · AI & Engineering'

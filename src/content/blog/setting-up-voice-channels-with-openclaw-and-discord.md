@@ -1,6 +1,7 @@
 ---
 title: "Setting Up Voice Channels With OpenClaw and Discord"
 description: "I wired voice onto my agent, said hello, and waited about eight seconds for the reply. It wasn't the model — it was the turn-taking config: a two-second silence grace, and a full-agent round-trip on every turn. Here's the exact OpenClaw + Discord config, the feel before and after, and the per-minute bill."
+seoDescription: "Wiring voice into an OpenClaw agent over Discord: the eight-second delay, what caused it, and how I cut it down."
 seoTitle: "How to Set Up OpenClaw + Discord Voice (and Fix the Awkward Pause)"
 socialTitle: "Setting up OpenClaw + Discord voice channels"
 pubDate: 'Oct 6, 2026'

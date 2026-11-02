@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_NAME } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Page not found — ${SITE_NAME}`}
+			description="That page does not exist. Start with the field notes, the guided path, or the archive."
+			noindex
+		/>
+	</head>
+	<body>
+		<Header />
+		<main id="main" class="notfound">
+			<p class="notfound-kicker">404</p>
+			<h1>That page isn't here.</h1>
+			<p class="notfound-body">The link may be old, or the slug may have changed. These are the three places worth trying:</p>
+			<ul class="notfound-links">
+				<li><a href="/start/">Start here — the guided path</a></li>
+				<li><a href="/blog/">All field notes</a></li>
+				<li><a href="/subscribe/">Get the next one by email</a></li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.notfound { max-width: 640px; margin: auto; padding: clamp(4rem, 10vw, 8rem) 28px 6rem; }
+	.notfound-kicker { margin: 0 0 0.75rem; color: var(--color-accent); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+	.notfound h1 { margin: 0 0 1rem; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.04; letter-spacing: -0.04em; }
+	.notfound-body { margin: 0 0 1.6rem; color: var(--color-text-secondary); font-size: 1.02rem; line-height: 1.65; }
+	.notfound-links { list-style: none; margin: 0; padding: 0; }
+	.notfound-links li { border-top: 1px solid var(--color-border); }
+	.notfound-links li:first-child { border-top: 0; }
+	.notfound-links a { display: block; padding: 0.85rem 0; font-size: 0.98rem; font-weight: 500; }
+</style>

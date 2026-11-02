@@ -1,11 +1,11 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_NAME, SITE_TITLE } from '../consts';
 import NewsletterAnalytics from './NewsletterAnalytics.astro';
 ---
 
 <footer class="site-footer">
 	<div class="content">
-		<p>&copy; {new Date().getFullYear()} {SITE_TITLE}</p>
+		<p>&copy; {new Date().getFullYear()} {SITE_NAME} · written by {SITE_TITLE}</p>
 		<nav aria-label="Footer">
 			<a href="/subscribe/">Subscribe</a>
 			<a href="/rss.xml">RSS</a>

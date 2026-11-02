@@ -13,6 +13,10 @@ const blog = defineCollection({
 			// Optional search-engine title (defaults to title). Lets the visible
 			// H1 stay narrative while the <title> targets a search query.
 			seoTitle: z.string().optional(),
+			// Optional search-result description. The visible deck above the post
+			// keeps `description`; this only changes the meta description when the
+			// editorial deck is too long (or too thin) for a search snippet.
+			seoDescription: z.string().optional(),
 			// Suppress indexing entirely (used for hidden test pages).
 			noindex: z.boolean().optional(),
 			// Related posts shown in the article footer (title + path).
