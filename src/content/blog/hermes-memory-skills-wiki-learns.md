@@ -1,6 +1,6 @@
 ---
 title: 'Hermes Workflow: Memory Remembers, Skills Repeat, and a Wiki Learns'
-seoTitle: 'How to Set Up Memory, Skills, and a Wiki in Hermes'
+seoTitle: "Hermes Agent Memory, Skills, and a Wiki That Learns"
 description: 'How I separate persistent memory, executable skills, a research wiki, and Obsidian so Hermes can recall facts, repeat workflows, and build new understanding.'
 socialTitle: 'How Hermes Remembers, Repeats, and Learns'
 pubDate: 'Jul 18, 2026'

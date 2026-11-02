@@ -2,7 +2,7 @@
 // Import global styling through the shared head component.
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE } from '../consts';
+import { AUTHOR_DESCRIPTION, SITE_DESCRIPTION, SITE_NAME, SITE_TITLE } from '../consts';
 
 interface Props {
 	title: string;
@@ -37,7 +37,7 @@ const personSchema = {
 	name: 'Ken Mazaika',
 	url: 'https://kenmazaika.com/',
 	jobTitle: ['Author', 'Engineering Manager'],
-	description: SITE_DESCRIPTION,
+	description: AUTHOR_DESCRIPTION,
 	sameAs: [
 		'https://engineering.kenmazaika.com/about/',
 		'https://x.com/kenmazaika',

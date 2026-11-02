@@ -7,7 +7,7 @@ import Header from '../components/Header.astro';
 import NewsletterPopup from '../components/NewsletterPopup.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import CodeCopyScript from '../components/CodeCopyScript.astro';
-import { SITE_NAME, POPUP_ENABLED } from '../consts';
+import { POPUP_ENABLED, withPublication } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug: string; readingMinutes?: number };
 const {
@@ -35,7 +35,7 @@ const {
 } = Astro.props;
 const socialImage = `/og/${slug}.png`;
 const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
-const pageTitle = `${seoTitle ?? title} — ${SITE_NAME}`;
+const pageTitle = withPublication(seoTitle ?? title);
 const canonicalURL = new URL(`/blog/${slug}/`, Astro.site);
 
 const articleSchema = {

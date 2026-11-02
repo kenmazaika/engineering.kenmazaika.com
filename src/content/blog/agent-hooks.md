@@ -1,7 +1,7 @@
 ---
 title: "Agent Hooks: Named Triggers for Durable Agent Work"
 description: "Agent hooks are named triggers that route agent behavior into durable state, so work can be inspected, directed, and resumed without reconstructing an old chat."
-seoTitle: "AI Agent Workflows Need a Durable Work Log"
+seoTitle: "Agent Hooks: Named Triggers for Durable Agent Work"
 socialTitle: "Agent Hooks: Named Triggers for Durable Agent Work"
 pubDate: 'Oct 30, 2026'
 ogCategory: 'Field Note · Agent Architecture'

@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
-import { SITE_DESCRIPTION, SITE_HOME_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_HOME_TITLE, SITE_TAGLINE } from '../consts';
 import { getCollection } from 'astro:content';
 
 const readingTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
@@ -28,7 +28,7 @@ const [featured, ...remaining] = posts;
 		<Header />
 		<main id="main">
 			<section class="hero">
-				<p class="hero-kicker">Operating AI agents on real work</p>
+				<p class="hero-kicker">{SITE_TAGLINE}</p>
 				<h1 class="hero-tagline">Workflows, model choices, costs, and receipts.</h1>
 				<p class="hero-sub">Hands-on field notes from running AI agents, plus long-form essays on the engineering systems around them.</p>
 				<p class="hero-newsletter"><a href="/subscribe/">New posts by email <span aria-hidden="true">→</span></a></p>
