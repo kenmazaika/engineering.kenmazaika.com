@@ -1,7 +1,7 @@
 ---
 title: "Set Up an Inbox System in Your Obsidian Vault"
 description: "The Obsidian inbox pattern, why it gets better when an agent can read it, and how to build it: four folders, one schema, one script, three rules."
-seoTitle: "How to Set Up an Agent-Writable Inbox in Obsidian"
+seoTitle: "How to Set Up an Obsidian Inbox for AI Agents"
 socialTitle: "The inbox pattern, and why it changes when an agent can read it"
 ogCategory: 'Field Note · Agent Workflow'
 pubDate: 'Oct 23, 2026'

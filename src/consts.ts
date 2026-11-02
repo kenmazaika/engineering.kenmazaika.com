@@ -24,9 +24,11 @@ export const HIDDEN_SLUGS = ['hermes-kit'];
 // Path prefixes of hidden standalone pages that must never appear in the sitemap.
 export const HIDDEN_PATHS = [];
 
-// Search engines truncate around 60 characters. The publication name is added only
-// when it fits without pushing the query-bearing part out of the visible title.
-export function withPublication(title: string): string {
+// ~60 characters is a guideline for how much of a title search results show, not a
+// rule. The publication name is appended only when it fits inside that budget
+// without pushing the query-bearing words out of view; otherwise the title stands
+// on its own and the name is carried by og:site_name, schema, masthead and footer.
+export function withPublication(title: string, budget = 68): string {
 	const suffix = ` — ${SITE_NAME}`;
-	return title.length + suffix.length <= 60 ? `${title}${suffix}` : title;
+	return title.length + suffix.length <= budget ? `${title}${suffix}` : title;
 }
