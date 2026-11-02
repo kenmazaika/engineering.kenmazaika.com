@@ -7,7 +7,7 @@ import Header from '../components/Header.astro';
 import NewsletterPopup from '../components/NewsletterPopup.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import CodeCopyScript from '../components/CodeCopyScript.astro';
-import { SITE_TITLE, POPUP_ENABLED } from '../consts';
+import { SITE_NAME, POPUP_ENABLED } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'] & { slug: string; readingMinutes?: number };
 const {
@@ -17,6 +17,7 @@ const {
 	updatedDate,
 	slug,
 	seoTitle,
+	seoDescription,
 	socialTitle,
 	readingMinutes = 1,
 	hideDefaultNewsletter = false,
@@ -34,7 +35,7 @@ const {
 } = Astro.props;
 const socialImage = `/og/${slug}.png`;
 const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
-const pageTitle = `${seoTitle ?? title} — ${SITE_TITLE}`;
+const pageTitle = `${seoTitle ?? title} — ${SITE_NAME}`;
 const canonicalURL = new URL(`/blog/${slug}/`, Astro.site);
 
 const articleSchema = {
@@ -79,7 +80,7 @@ const faqSchema = faq && faq.length > 0 ? {
 	<head>
 		<BaseHead
 			title={pageTitle}
-			description={description}
+			description={seoDescription ?? description}
 			image={socialImage}
 			imageAlt={socialImageAlt}
 			type="article"

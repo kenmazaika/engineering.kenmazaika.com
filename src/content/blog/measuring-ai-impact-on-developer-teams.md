@@ -1,6 +1,7 @@
 ---
 title: "How can you measure the impact of AI on your dev team’s velocity?"
 description: "A practicing engineering manager's field answer to how you measure AI's impact on a dev team: METR's 39-point perception gap, why velocity flatlines, and what to report instead of a productivity percentage."
+seoDescription: "How I measure AI's impact on a dev team's velocity without vanity metrics: what to count, and what to ignore."
 seoTitle: "How to Measure AI's Impact on Developer Teams (The Metric Doesn't Exist)"
 socialTitle: "AI's impact on dev teams is enormous. The metric doesn't exist."
 pubDate: 'Aug 21, 2026'

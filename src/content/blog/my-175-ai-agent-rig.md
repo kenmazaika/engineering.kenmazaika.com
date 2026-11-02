@@ -1,6 +1,7 @@
 ---
 title: "The $175 Production Box I Use to Run an AI Agent 24/7"
 description: "The useful part of my AI agent setup is not the hardware. It is a cheap machine that stays awake, keeps its work, runs on a schedule, and lets me teach a job once instead of repeating it forever."
+seoDescription: "The $175 machine I run an agent on, why the hardware is the least interesting part, and what actually matters."
 seoTitle: "How to Run an AI Agent 24/7 on a $175 Used Computer"
 socialTitle: "You Don't Need a GPU to Run an AI Agent 24/7"
 pubDate: 'Aug 22, 2026'

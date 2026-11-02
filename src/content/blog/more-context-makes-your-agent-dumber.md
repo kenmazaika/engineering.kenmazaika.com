@@ -1,6 +1,7 @@
 ---
 title: "More Context Makes Your Agent Dumber. The Fix Is a File Handoff."
 description: "Chroma ran 18 models and found performance drops as the input grows — even on trivial tasks. The fix isn't a bigger window; it's one file per stage and a fresh agent per stage — and, for a critic, deliberately no context at all. Hermes does it with a Kanban board; OpenClaw does it with files. Anthropic's numbers show the bill: about 15× a chat's tokens."
+seoDescription: "Chroma tested 18 models and found accuracy drops as input grows. What that means for how much context you feed an agent."
 seoTitle: "More Context Makes Your Agent Dumber: Context Rot and the File-Handoff Fix (Hermes & OpenClaw)"
 socialTitle: "More Context Makes Your Agent Dumber. The Fix Is a File Handoff."
 pubDate: 'Sep 10, 2026'

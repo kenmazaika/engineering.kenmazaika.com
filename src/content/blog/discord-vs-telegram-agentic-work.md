@@ -1,6 +1,7 @@
 ---
 title: "Discord vs. Telegram for Agentic Work: Three Setups, One Verdict"
 description: "Three setups, one verdict: Discord won as my agent home — not because it's easier to set up, but because threads contain projects while channels scatter them. Telegram still wins on raw message length, and the file-baton pattern is the fix that doesn't require switching."
+seoDescription: "Three agent chat setups compared: what Discord and Telegram each get right for running an agent day to day."
 seoTitle: "Discord vs Telegram for Agentic Work (Hermes & OpenClaw): Three Setups, One Verdict"
 socialTitle: 'Set Up My Agent Home Three Times. Discord Won — And Not Because It Is Easier.'
 pubDate: 'Aug 30, 2026'

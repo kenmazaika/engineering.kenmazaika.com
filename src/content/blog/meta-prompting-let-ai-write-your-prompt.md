@@ -2,6 +2,7 @@
 title: 'Meta-Prompting: Let the AI Write Your Prompt'
 seoTitle: 'Meta-Prompting: Let the AI Write Your Prompt'
 description: 'Describe what you want in plain language. Ask the AI to turn it into a structured prompt. Use that prompt.'
+seoDescription: "Describe the outcome in plain language, have the model write the structured prompt, then run it. A worked example."
 socialTitle: 'Let the AI Write Your Prompt'
 ogCategory: 'Field Note · Hermes Workflows'
 pubDate: 'Aug 07, 2026'

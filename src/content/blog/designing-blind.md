@@ -1,6 +1,7 @@
 ---
 title: "Designing Blind: Does an AI Vision Model Actually Improve Design Output?"
 description: "I built the same infographic with a text-only AI model and its vision sibling — same family, same spec, one variable: the vision encoder. The charts looked almost identical, but the vision model caught and fixed six real defects the blind model couldn't see. Vision doesn't make AI output prettier — it makes the model able to check its own work."
+seoDescription: "The same infographic built with a text-only model and its vision sibling: where vision actually helped, and where it did not."
 seoTitle: "Vision Model vs Text-Only for AI Design: A Controlled A/B Test With Receipts"
 socialTitle: 'Same Chart, Built Twice. One Model Could See What It Made.'
 pubDate: 'Aug 22, 2026'

@@ -1,6 +1,7 @@
 ---
 title: "What is an AI Work Harness"
 description: "The work worth automating is not judgment. It is the repeated middle: reading the queue, applying the runbook, updating the system of record, and returning the exceptions."
+seoDescription: "What an AI work harness actually does — tools, memory, schedules, files — and when a repeated job justifies one."
 seoTitle: "What Is an AI Work Harness? Turn Repetitive Runbooks Into Reliable Work"
 socialTitle: "Your AI wrote the answer. Who moved it into the system?"
 ogCategory: 'Field Note \u00b7 AI & Engineering'

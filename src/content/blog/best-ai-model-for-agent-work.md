@@ -1,6 +1,7 @@
 ---
 title: "Which AI Model Should You Run for Agent Work? 11 Models, 5 Real Tasks, Receipts"
 description: "I ran 11 AI models on 5 real agentic tasks with identical prompts — and the receipts show which to actually run. DeepSeek is the cheap daily driver, OpenAI the quality anchor, grok the vision pick. Full measured results + the real $60.49 bill."
+seoDescription: "11 models, 5 real agent tasks, identical prompts, measured cost and pass rates — and which one I actually run."
 seoTitle: "Best AI Model for Agent Work in 2026: 11 Models, 5 Real Tasks, Receipted Results"
 socialTitle: '11 AI models, 5 real agentic tasks, full receipts'
 pubDate: 'Aug 19, 2026'

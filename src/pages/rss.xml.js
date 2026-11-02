@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_NAME } from '../consts';
 
 export async function GET(context) {
 	const posts = (await getCollection('blog'))
@@ -8,7 +8,7 @@ export async function GET(context) {
 		// Feed readers consume document order, so emit the newest post first.
 		.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 	return rss({
-		title: SITE_TITLE,
+		title: SITE_NAME,
 		description: SITE_DESCRIPTION,
 		site: context.site,
 		items: posts.map((post) => ({
