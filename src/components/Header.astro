@@ -5,7 +5,13 @@ import { SITE_NAME } from '../consts';
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
 	<div class="content">
-		<a href="/" class="site-title"><span class="site-mark" aria-hidden="true"><span class="site-mark-glyph">K</span></span><span>{SITE_NAME}</span></a>
+		<a href="/" class="site-title"><span class="site-mark" aria-hidden="true">
+				<svg viewBox="0 0 32 32" width="19" height="19" fill="none">
+					<circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.6" />
+					<path d="M9 19c2.2-5.5 4.4-5.5 6.6 0s4.4 5.5 6.6 0" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" />
+					<circle cx="16" cy="9.5" r="1.6" fill="currentColor" />
+				</svg>
+			</span><span>{SITE_NAME}</span></a>
 		<nav class="site-nav" aria-label="Primary">
 			<a href="/start/" aria-current={Astro.url.pathname === '/start/' ? 'page' : undefined}>Start here</a>
 			<a href="/blog" aria-current={Astro.url.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</a>

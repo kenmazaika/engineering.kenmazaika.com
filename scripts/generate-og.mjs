@@ -15,7 +15,7 @@ const colors = {
   muted: '#6B6760',
   border: '#E8E3DB',
   faint: '#D8D1C7',
-  accent: '#C2410C',
+  accent: '#6D28D9',
 };
 
 function parseFrontmatter(source) {
@@ -175,8 +175,8 @@ async function main() {
   const entries = (await readdir(contentDir)).filter((name) => /\.(md|mdx)$/.test(name));
   const portrait = `data:image/jpeg;base64,${(await readFile(path.join(root, 'public/images/ken/ken-mazaika-640.jpg'))).toString('base64')}`;
   await renderCard({
-    title: 'Engineering Leadership in the Agent Era',
-    ogCategory: 'KEN MAZAIKA · FIELD NOTES & SYSTEMS',
+    title: 'Notes from the Loop',
+    ogCategory: 'NOTES FROM THE LOOP · FIELD NOTES & SYSTEMS',
   }, 'default.png', fonts);
 
   const startSvg = await satori(startCardTree(portrait), { width: 1200, height: 630, fonts });

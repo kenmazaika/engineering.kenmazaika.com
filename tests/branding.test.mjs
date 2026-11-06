@@ -15,43 +15,32 @@ async function exists(file) {
   }
 }
 
-test('the production site uses the single-K identity in favicon and header assets', async () => {
+test('the production site uses the loop identity in favicon and header', async () => {
   const favicon = await readFile(path.join(root, 'public/favicon.svg'), 'utf8');
   const header = await readFile(path.join(root, 'src/components/Header.astro'), 'utf8');
 
-  assert.match(favicon, /aria-label="K"/);
-  assert.doesNotMatch(favicon, /M50\.4 78\.5/);
+  assert.match(favicon, /aria-label="Notes from the Loop"/);
+  assert.match(favicon, /#6d28d9/);
   assert.match(header, /class="site-mark"/);
-  assert.match(header, />K</);
+  assert.match(header, /<svg/);
+  assert.doesNotMatch(header, />K</);
   assert.equal(await exists('public/favicon.ico'), true);
   assert.equal(await exists('public/apple-touch-icon.png'), true);
 });
 
-test('the single-K favicon is optically centered inside its frame', async () => {
+test('the apple touch icon is square and carries the purple brand color', async () => {
   const { data, info } = await sharp(path.join(root, 'public/apple-touch-icon.png'))
     .removeAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });
-  const xs = [];
-  const ys = [];
 
-  // Restrict the scan to the center so the rust frame is excluded.
-  for (let y = 25; y <= 155; y += 1) {
-    for (let x = 25; x <= 155; x += 1) {
-      const offset = (y * info.width + x) * info.channels;
-      const [red, green, blue] = data.subarray(offset, offset + 3);
-      if (red > 120 && green < 100 && blue < 80) {
-        xs.push(x);
-        ys.push(y);
-      }
-    }
+  assert.equal(info.width, info.height, 'icon should be square');
+  let purple = 0;
+  for (let i = 0; i < data.length; i += info.channels) {
+    const [r, g, b] = data.subarray(i, i + 3);
+    if (b > 120 && r < 140 && g < 90) purple += 1;
   }
-
-  assert.ok(xs.length > 0, 'expected to find the rust K');
-  const centerX = (Math.min(...xs) + Math.max(...xs)) / 2;
-  const centerY = (Math.min(...ys) + Math.max(...ys)) / 2;
-  assert.ok(centerX >= 89 && centerX <= 90.5, `K horizontal center was ${centerX}`);
-  assert.ok(centerY >= 89 && centerY <= 91.5, `K vertical center was ${centerY}`);
+  assert.ok(purple > 1000, `expected purple pixels, found ${purple}`);
 });
 
 function pngDimensions(buffer) {
