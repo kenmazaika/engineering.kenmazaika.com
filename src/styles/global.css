@@ -870,7 +870,7 @@ a:hover { color: var(--color-link-hover); }
 /* Mobile-first: stacked layout — image at 16/9, then a dark text block below it.
    No absolute overlay on small screens, so the headline can never clip or bleed. */
 .article-masthead { position: relative; width: 100vw; margin-left: calc(50% - 50vw); margin-top: 0; }
-.masthead-bg { display: block; width: 100%; height: 150px; object-fit: cover; object-position: center top; }
+.masthead-bg { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
 .masthead-scrim { display: none; }
 .masthead-content { position: static; background: #0D0D12; padding: 1.5rem 1.5rem 2rem; }
 .masthead-textblock { max-width: 640px; }
