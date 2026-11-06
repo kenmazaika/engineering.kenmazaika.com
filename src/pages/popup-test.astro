@@ -1,0 +1,31 @@
+---
+// Unlinked popup test page. Always shows the newsletter popup on load.
+// noindex + excluded from the sitemap.
+import BaseHead from '../components/BaseHead.astro';
+import NewsletterPopup from '../components/NewsletterPopup.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="Popup test — Notes from the Loop"
+			description="Internal popup test page."
+			noindex={true}
+		/>
+	</head>
+	<body>
+		<main style="max-width:720px;margin:0 auto;padding:4rem 1.5rem;font-family:var(--font-body);">
+			<p style="color:var(--color-accent);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;">Internal test</p>
+			<h1 style="font-family:var(--font-heading);font-size:2.4rem;line-height:1.1;margin:.4rem 0 1rem;">Popup test page</h1>
+			<p style="color:var(--color-text-secondary);line-height:1.7;">
+				The newsletter card below is forced open so you can inspect it without scrolling or exiting.
+				Close it with the X or Escape; it will not reappear on this page.
+			</p>
+			<p style="color:var(--color-text-secondary);line-height:1.7;">
+				Unlinked, noindexed, and excluded from the sitemap.
+			</p>
+		</main>
+		<NewsletterPopup forceOpen={true} />
+	</body>
+</html>
