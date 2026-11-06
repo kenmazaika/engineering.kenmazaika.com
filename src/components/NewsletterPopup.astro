@@ -84,8 +84,8 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 	.nl-popup-card {
 		pointer-events: auto;
 		position: relative;
-		background: #fffdfa;
-		border: 1px solid #e8e3db;
+		background: var(--color-bg-card);
+		border: 1px solid var(--color-border);
 		border-radius: 0.75rem;
 		box-shadow: 0 12px 32px rgb(26 24 20 / 0.16);
 		padding: 1.25rem 1.25rem 1rem;
@@ -105,14 +105,14 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		place-items: center;
 		border: 0;
 		background: transparent;
-		color: #6b6760;
+		color: var(--color-text-secondary);
 		font-size: 0.85rem;
 		cursor: pointer;
 		border-radius: 0.375rem;
 	}
 	.nl-popup-close:hover {
-		background: #f0ece4;
-		color: #1a1814;
+		background: var(--color-bg-secondary);
+		color: var(--color-text);
 	}
 	.nl-popup-kicker {
 		margin: 0 0 0.25rem;
@@ -128,20 +128,20 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		font-size: 1.3rem;
 		font-weight: 600;
 		line-height: 1.15;
-		color: #1a1814;
+		color: var(--color-text);
 	}
 	.nl-popup-copy {
 		margin: 0 0 0.75rem;
 		font-size: 0.85rem;
 		line-height: 1.45;
-		color: #6b6760;
+		color: var(--color-text-secondary);
 	}
 	.nl-popup-label {
 		display: block;
 		margin-bottom: 0.3rem;
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: #1a1814;
+		color: var(--color-text);
 	}
 	.nl-popup-fields {
 		display: flex;
@@ -153,9 +153,9 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		padding: 0.5rem 0.65rem;
 		font: inherit;
 		font-size: 0.85rem;
-		color: #1a1814;
+		color: var(--color-text);
 		background: #fff;
-		border: 1px solid #d8d1c7;
+		border: 1px solid var(--color-border);
 		border-radius: 0.375rem;
 	}
 	.nl-popup-fields input[type='email']:focus {
@@ -174,7 +174,7 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		text-align: center;
 		text-decoration: none;
 		color: #fff;
-		background: #1a1814;
+		background: var(--color-text);
 		border: 0;
 		border-radius: 0.375rem;
 		cursor: pointer;

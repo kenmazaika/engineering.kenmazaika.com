@@ -507,8 +507,8 @@ a:hover { color: var(--color-link-hover); }
   font-family: var(--font-body);
   font-size: 0.72rem;
   letter-spacing: 0.02em;
-  color: #6b6760;
-  background: #f3f0eb;
+  color: var(--color-text-secondary);
+  background: var(--color-code-bg);
   border: 1px solid rgba(26, 24, 20, 0.08);
   border-bottom: 0;
   border-radius: 10px 10px 0 0;
@@ -542,7 +542,7 @@ a:hover { color: var(--color-link-hover); }
 }
 
 .code-block-label span {
-  color: #6b6760;
+  color: var(--color-text-secondary);
 }
 
 [data-copy-button] {
@@ -551,7 +551,7 @@ a:hover { color: var(--color-link-hover); }
   appearance: none;
   border: 0;
   background: rgba(26, 24, 20, 0.06);
-  color: #3a3632;
+  color: var(--color-text);
   font-family: var(--font-body);
   font-size: 0.68rem;
   letter-spacing: 0.01em;
@@ -582,7 +582,7 @@ a:hover { color: var(--color-link-hover); }
 
 .prose pre {
   position: relative;
-  background: #f8f7f4;
+  background: var(--color-bg-secondary);
   color: hsl(230, 8%, 24%);
   padding: 1.15rem 1.15rem 1.25rem;
   border-radius: 10px;
@@ -948,19 +948,19 @@ a:hover { color: var(--color-link-hover); }
 
 /* ─── AI work harness — opt-in editorial feature ─── */
 .variant-harness {
-  --harness-paper: #f2eee5;
-  --harness-paper-light: #faf8f2;
-  --harness-ink: #282724;
-  --harness-ink-soft: #5f615f;
-  --harness-rule: #d2ccc0;
-  --harness-rule-dark: #999489;
-  --harness-thread: #9d3f32;
+  --harness-paper: #f7f4fc;
+  --harness-paper-light: #ffffff;
+  --harness-ink: #17141c;
+  --harness-ink-soft: #5f5a6b;
+  --harness-rule: #e7e1f0;
+  --harness-rule-dark: #b9b0cc;
+  --harness-thread: #6d28d9;
   background: var(--harness-paper-light);
   color: var(--harness-ink);
 }
 
 .variant-harness .site-header {
-  background: rgba(250, 248, 242, 0.97);
+  background: rgba(255, 255, 255, 0.97);
   border-bottom-color: var(--harness-rule);
 }
 
@@ -1068,7 +1068,7 @@ a:hover { color: var(--color-link-hover); }
 }
 
 .variant-harness .prose > p:first-child {
-  color: #41423f;
+  color: #3f3a4a;
   font-family: var(--font-heading);
   font-size: clamp(1.32rem, 2vw, 1.55rem);
   line-height: 1.55;
