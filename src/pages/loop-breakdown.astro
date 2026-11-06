@@ -1,0 +1,479 @@
+---
+// Notes from the Loop — 7-part breakdown landing page.
+// Hidden: noindex + excluded from the sitemap via HIDDEN_PATHS. Not linked from anywhere.
+// Form posts to Buttondown with metadata__course=agent-vault-7day (the course cohort).
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE } from '../consts';
+
+const shelves = [
+	'00 - INBOX',
+	'01 - PROJECTS',
+	'02 - AREAS',
+	'03 - PERMANENT',
+	'04 - RESOURCES',
+	'05 - KITS',
+	'06 - LOOPS',
+	'07 - SKILLS',
+	'08 - PRODUCTION',
+	'09 - FLEETING',
+	'10 - ARCHIVE',
+	'99 - META',
+];
+
+const parts = [
+	{
+		title: 'Connect your phone and agent to the same Obsidian vault',
+		body: 'The Remotely Save + Dropbox setup I use so my phone and OpenClaw/Hermes agent work in one shared vault. The phone handles reading and approvals; the agent writes the work.',
+	},
+	{
+		title: 'Give your agent an inbox for decisions and handoffs',
+		body: 'Four folders (handoffs, intake, tickets, outbox), decision checkboxes, and a deterministic closing script that finishes work without another model call.',
+	},
+	{
+		title: 'Make agent work survive a new session',
+		body: 'My QBall approach: route files into one canonical project folder, maintain a project registry, use symlinks instead of copies, and resume from decisions, state, then history.',
+	},
+	{
+		title: 'Turn messy voice notes into executable work',
+		body: 'My capture → shape → execute workflow. Turn raw ideas into structured briefs and approve the direction before the agent starts execution.',
+	},
+	{
+		title: 'Trigger repeatable workflows with agent hooks',
+		body: 'How I connect a named trigger to a reusable procedure and a durable ticket file. Includes the actual three-part pattern: kit, lightweight pointer, and ticket.',
+	},
+	{
+		title: 'Run scheduled agent loops without relying on memory',
+		body: 'How I run twelve autonomous loops using disposable sessions, persistent contracts, ledgers, and per-run folders. Including what happens when an unattended run fails.',
+	},
+	{
+		title: 'Tour the actual vault behind my 12 agent loops',
+		body: 'The complete twelve-shelf Obsidian structure. How PARA and Johnny Decimal organize the system, what lives in each folder, why each exists, and what I’d skip when starting over.',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Inside the Obsidian Vault Behind My 12 Agent Loops — Notes from the Loop`}
+			description="A seven-part technical breakdown of the Obsidian vault, workflows, handoffs, and scheduled loops behind my OpenClaw and Hermes agent setup."
+			noindex={true}
+		/>
+	</head>
+	<body class="nftl">
+		<header class="nftl-header">
+			<a class="nftl-brand" href="/start/" aria-label="Notes from the Loop">
+				<span class="nftl-mark" aria-hidden="true">
+					<svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+						<circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" />
+						<path d="M9 19c2.2-5.5 4.4-5.5 6.6 0s4.4 5.5 6.6 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+						<circle cx="16" cy="9.5" r="1.6" fill="currentColor" />
+					</svg>
+				</span>
+				<span>Notes from the Loop</span>
+			</a>
+			<nav class="nftl-nav" aria-label="Page">
+				<a href="/start/">Start here</a>
+				<details class="nftl-menu">
+					<summary>Menu</summary>
+					<div class="nftl-menu-panel">
+						<a href="/blog/">Writing</a>
+						<a href="/about/">About</a>
+						<a href="/subscribe/">Newsletter</a>
+					</div>
+				</details>
+			</nav>
+		</header>
+
+		<main class="nftl-main">
+			<section class="nftl-hero">
+				<div class="nftl-hero-copy">
+					<p class="nftl-kicker">7-part technical breakdown</p>
+					<h1>Inside the Obsidian vault behind my 12 agent loops.</h1>
+					<p class="nftl-deck">
+						A practical, real-world breakdown of how I run twelve autonomous agent loops with
+						OpenClaw and Hermes — including the Obsidian structure, workflows, handoffs,
+						persistent state, and the lessons I’ve learned along the way.
+					</p>
+
+					<form
+						class="nftl-form"
+						action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+						method="post"
+					>
+						<label class="sr-only" for="email-hero">Your email</label>
+						<input id="email-hero" type="email" name="email" placeholder="Your email" required />
+						<input type="hidden" name="metadata__course" value="agent-vault-7day" />
+						<input type="hidden" name="embed" value="1" />
+						<button type="submit">Get the breakdown</button>
+					</form>
+
+					<p class="nftl-fine">
+						Seven emails with implementation details, real examples, and operational lessons from a
+						live system.
+					</p>
+				</div>
+
+				<aside class="nftl-shelves" aria-label="Vault sections">
+					{shelves.map((shelf) => (
+						<div class="nftl-shelf">
+							<span>{shelf}</span>
+							<span class="nftl-arrow" aria-hidden="true">→</span>
+						</div>
+					))}
+				</aside>
+			</section>
+
+			<section class="nftl-parts" aria-labelledby="parts-title">
+				<header class="nftl-parts-head">
+					<h2 id="parts-title">The 7-part breakdown</h2>
+					<p>A behind-the-scenes look at the system, from structure to scheduled loops.</p>
+				</header>
+
+				<ol class="nftl-list">
+					{parts.map((part, i) => (
+						<li>
+							<span class="nftl-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+							<div>
+								<h3>{part.title}</h3>
+								<p>{part.body}</p>
+							</div>
+						</li>
+					))}
+				</ol>
+			</section>
+
+			<section class="nftl-cta" aria-labelledby="cta-title">
+				<h2 id="cta-title">Get the full breakdown.</h2>
+				<p>
+					Seven emails with the implementation details, patterns, and operational lessons from a live
+					Obsidian setup running twelve agent loops.
+				</p>
+				<form
+					class="nftl-form nftl-form-center"
+					action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+					method="post"
+				>
+					<label class="sr-only" for="email-cta">Your email</label>
+					<input id="email-cta" type="email" name="email" placeholder="Your email" required />
+					<input type="hidden" name="metadata__course" value="agent-vault-7day" />
+					<input type="hidden" name="embed" value="1" />
+					<button type="submit">Get the breakdown</button>
+				</form>
+			</section>
+		</main>
+
+		<footer class="nftl-footer">
+			<p>Notes from the Loop · written by Ken Mazaika</p>
+			<p><a href="/subscribe/">Subscribe</a> · <a href="/blog/">Writing</a> · <a href="/about/">About</a></p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	.nftl {
+		--plum: #6d28d9;
+		--plum-dark: #5b21b6;
+		--ink: #17151a;
+		--muted: #6b6760;
+		--rule: #e6e1da;
+		--paper: #faf8f5;
+		background: var(--paper);
+		color: var(--ink);
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.nftl-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1120px;
+		margin: 0 auto;
+		padding: 22px 28px;
+	}
+
+	.nftl-brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		color: var(--ink);
+		text-decoration: none;
+		font-weight: 600;
+		letter-spacing: -0.01em;
+	}
+
+	.nftl-mark { color: var(--plum); display: inline-flex; }
+
+	.nftl-nav {
+		display: flex;
+		align-items: center;
+		gap: 22px;
+		font-size: 0.92rem;
+	}
+
+	.nftl-nav a { color: var(--ink); text-decoration: none; }
+	.nftl-nav a:hover { color: var(--plum); }
+
+	.nftl-menu { position: relative; }
+	.nftl-menu summary {
+		list-style: none;
+		cursor: pointer;
+		color: var(--ink);
+	}
+	.nftl-menu summary::-webkit-details-marker { display: none; }
+	.nftl-menu-panel {
+		position: absolute;
+		right: 0;
+		top: 1.9rem;
+		background: #fff;
+		border: 1px solid var(--rule);
+		border-radius: 10px;
+		padding: 8px;
+		min-width: 170px;
+		display: grid;
+		gap: 2px;
+		box-shadow: 0 12px 30px rgba(23, 21, 26, 0.08);
+		z-index: 5;
+	}
+	.nftl-menu-panel a {
+		padding: 8px 10px;
+		border-radius: 6px;
+		font-size: 0.9rem;
+	}
+	.nftl-menu-panel a:hover { background: #f5f2ee; }
+
+	.nftl-main {
+		max-width: 1120px;
+		margin: 0 auto;
+		padding: 26px 28px 90px;
+	}
+
+	.nftl-hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.75fr);
+		gap: 56px;
+		align-items: start;
+		padding: 26px 0 64px;
+	}
+
+	.nftl-kicker {
+		margin: 0 0 18px;
+		color: var(--plum);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.nftl-hero h1 {
+		margin: 0 0 20px;
+		max-width: 16ch;
+		font-family: var(--font-heading);
+		font-size: clamp(2.7rem, 5.4vw, 4.4rem);
+		line-height: 1.02;
+		letter-spacing: -0.035em;
+		font-weight: 600;
+	}
+
+	.nftl-deck {
+		margin: 0 0 26px;
+		max-width: 56ch;
+		font-size: 1.05rem;
+		line-height: 1.65;
+		color: #3f3b45;
+	}
+
+	.nftl-form {
+		display: flex;
+		gap: 10px;
+		max-width: 470px;
+	}
+
+	.nftl-form input[type='email'] {
+		flex: 1;
+		min-width: 0;
+		padding: 13px 14px;
+		font: inherit;
+		font-size: 0.95rem;
+		color: var(--ink);
+		background: #fff;
+		border: 1px solid var(--rule);
+		border-radius: 7px;
+	}
+
+	.nftl-form input[type='email']:focus {
+		outline: none;
+		border-color: var(--plum);
+		box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.12);
+	}
+
+	.nftl-form button {
+		padding: 13px 18px;
+		font: inherit;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: #fff;
+		background: var(--plum);
+		border: 0;
+		border-radius: 7px;
+		cursor: pointer;
+		white-space: nowrap;
+	}
+
+	.nftl-form button:hover { background: var(--plum-dark); }
+
+	.nftl-fine {
+		margin: 12px 0 0;
+		font-size: 0.86rem;
+		line-height: 1.5;
+		color: var(--muted);
+		max-width: 46ch;
+	}
+
+	.nftl-shelves {
+		border: 1px solid var(--rule);
+		border-radius: 12px;
+		background: #fff;
+		padding: 10px 14px;
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+	}
+
+	.nftl-shelf {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		padding: 9px 2px;
+		color: #2c2833;
+		border-bottom: 1px solid #f1ede7;
+	}
+	.nftl-shelf:last-child { border-bottom: 0; }
+
+	.nftl-arrow { color: var(--plum); }
+
+	.nftl-parts {
+		border-top: 1px solid var(--rule);
+		padding: 54px 0 20px;
+	}
+
+	.nftl-parts-head { margin-bottom: 30px; }
+	.nftl-parts-head h2 {
+		margin: 0 0 8px;
+		font-family: var(--font-heading);
+		font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+		letter-spacing: -0.02em;
+		font-weight: 600;
+	}
+	.nftl-parts-head p { margin: 0; color: var(--muted); }
+
+	.nftl-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		counter-reset: none;
+	}
+
+	.nftl-list li {
+		display: grid;
+		grid-template-columns: 54px 1fr;
+		gap: 10px;
+		padding: 22px 0;
+		border-top: 1px solid var(--rule);
+	}
+
+	.nftl-num {
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		color: var(--plum);
+		padding-top: 4px;
+	}
+
+	.nftl-list h3 {
+		margin: 0 0 7px;
+		font-family: var(--font-body);
+		font-size: 1.06rem;
+		font-weight: 650;
+		letter-spacing: -0.01em;
+		line-height: 1.35;
+	}
+
+	.nftl-list p {
+		margin: 0;
+		max-width: 70ch;
+		color: #4a454f;
+		font-size: 0.97rem;
+		line-height: 1.62;
+	}
+
+	.nftl-cta {
+		margin: 46px 0 0;
+		padding: 46px 36px;
+		border-radius: 16px;
+		background: #f3eefc;
+		border: 1px solid #e4d9fb;
+		text-align: center;
+	}
+
+	.nftl-cta h2 {
+		margin: 0 0 10px;
+		font-family: var(--font-heading);
+		font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+		letter-spacing: -0.02em;
+		font-weight: 600;
+	}
+
+	.nftl-cta p {
+		margin: 0 auto 22px;
+		max-width: 56ch;
+		color: #4a454f;
+	}
+
+	.nftl-form-center {
+		margin: 0 auto;
+		justify-content: center;
+		max-width: 470px;
+	}
+
+	.nftl-footer {
+		max-width: 1120px;
+		margin: 0 auto;
+		padding: 24px 28px 40px;
+		border-top: 1px solid var(--rule);
+		color: var(--muted);
+		font-size: 0.82rem;
+		display: flex;
+		justify-content: space-between;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+	.nftl-footer p { margin: 0; }
+	.nftl-footer a { color: var(--muted); }
+
+	@media (max-width: 880px) {
+		.nftl-hero { grid-template-columns: 1fr; gap: 34px; }
+		.nftl-shelves { max-width: 520px; }
+		.nftl-hero h1 { max-width: 20ch; }
+	}
+
+	@media (max-width: 560px) {
+		.nftl-header, .nftl-main, .nftl-footer { padding-left: 20px; padding-right: 20px; }
+		.nftl-nav { gap: 16px; }
+		.nftl-form { flex-direction: column; }
+		.nftl-form button { width: 100%; }
+		.nftl-list li { grid-template-columns: 34px 1fr; }
+		.nftl-cta { padding: 34px 20px; }
+	}
+</style>
