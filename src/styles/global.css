@@ -34,6 +34,7 @@
 * { box-sizing: border-box; }
 
 html {
+  overflow-x: clip;
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -45,6 +46,7 @@ html {
 }
 
 body {
+  overflow-x: clip;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -586,6 +588,7 @@ a:hover { color: var(--color-link-hover); }
   color: hsl(230, 8%, 24%);
   padding: 1.15rem 1.15rem 1.25rem;
   border-radius: 10px;
+  max-width: 100%;
   overflow-x: auto;
   font-size: 0.82rem;
   line-height: 1.72;
@@ -901,7 +904,7 @@ a:hover { color: var(--color-link-hover); }
 
 .prose { max-width: 720px; margin: 0 auto; padding: 3.35rem 0 0; }
 .prose > p:first-child { font-size: 1.16rem; line-height: 1.72; }
-.prose table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.prose table { display: block; width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .article-footer { max-width: 720px; margin: 4rem auto 0; padding-top: 1.75rem; border-top: 1px solid var(--color-border); color: var(--color-text-secondary); font-size: .88rem; }
 .article-footer p { max-width: 540px; }
 .article-footer .back-link { margin: .5rem 0 0; }
@@ -1278,4 +1281,10 @@ a:hover { color: var(--color-link-hover); }
   .variant-harness .article-shell .newsletter-signup {
     padding: 1.5rem;
   }
+}
+
+/* Mobile: contain any wide prose child (tables, code, embeds) inside the column.
+   The table and pre keep their own horizontal scroll; nothing escapes to the page. */
+@media (max-width: 760px) {
+  .prose { overflow-x: hidden; }
 }
