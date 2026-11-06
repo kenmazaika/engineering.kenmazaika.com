@@ -1288,3 +1288,10 @@ a:hover { color: var(--color-link-hover); }
 @media (max-width: 760px) {
   .prose { overflow-x: hidden; }
 }
+
+.prose .inline-cta {
+  margin: 1.9em 0;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+.prose .inline-cta a { color: var(--color-link); font-style: normal; }

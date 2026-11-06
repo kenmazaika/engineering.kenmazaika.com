@@ -3,6 +3,7 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
+import rehypeInlineCta from './src/lib/rehype-inline-cta.mjs';
 import { HIDDEN_PATHS, HIDDEN_SLUGS } from './src/consts';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -37,7 +38,7 @@ const lastmodBySlug = buildLastmodMap();
 export default defineConfig({
 	site: 'https://engineering.kenmazaika.com',
 	integrations: [
-		mdx(),
+		mdx({ rehypePlugins: [rehypeInlineCta] }),
 		sitemap({
 			filter: (page) =>
 				!HIDDEN_SLUGS.some((slug) => page.includes(`/blog/${slug}/`)) &&
@@ -53,6 +54,7 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
+		rehypePlugins: [rehypeInlineCta],
 		shikiConfig: {
 			theme: oneLightTheme,
 		},

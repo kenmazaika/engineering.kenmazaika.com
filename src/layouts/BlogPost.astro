@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import NewsletterPopup from '../components/NewsletterPopup.astro';
+import { getPopupCampaign } from '../lib/popup-routes';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import CodeCopyScript from '../components/CodeCopyScript.astro';
 import { POPUP_ENABLED, withPublication } from '../consts';
@@ -34,6 +35,7 @@ const {
 	layoutVariant,
 } = Astro.props;
 const socialImage = `/og/${slug}.png`;
+const popupCampaign = getPopupCampaign(slug);
 const socialImageAlt = `${socialTitle ?? title} — Ken Mazaika`;
 const pageTitle = withPublication(seoTitle ?? title);
 const canonicalURL = new URL(`/blog/${slug}/`, Astro.site);
@@ -143,14 +145,8 @@ const faqSchema = faq && faq.length > 0 ? {
 						<NewsletterSignup placement="article_footer" variant="endnote" cta="Subscribe" />
 					</div>
 				)}
-				{POPUP_ENABLED && showPopup && (
-					<NewsletterPopup
-						mode={popupMode}
-						href={popupHref}
-						title={popupTitle}
-						copy={popupCopy}
-						cta={popupCta}
-					/>
+				{POPUP_ENABLED && popupCampaign !== 'none' && (
+					<NewsletterPopup campaign={popupCampaign} />
 				)}
 				<footer class="article-footer">
 					<p><strong>Ken Mazaika</strong> writes about engineering leadership, AI productivity, and practical systems.</p>

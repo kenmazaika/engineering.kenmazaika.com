@@ -1,65 +1,70 @@
 ---
-// NewsletterPopup.astro
-// Slide-up (scroll depth) + exit-intent capture card, wired per post via frontmatter.
-// Modes:
-//   - 'email' (default): Buttondown email capture (showPopup: true)
-//   - 'link': CTA card linking to a post (showPopup + popupMode: link + popupHref)
-// Test control: append ?popup=1 to the URL to bypass the 7-day frequency cap.
+// Newsletter popup with campaign variants.
+// campaign: 'start' (5-part getting started), 'obsidian' (7-part breakdown), 'general'.
+// Trigger: 55% scroll depth, 20s on page, or exit intent. One per session; dismissal 7 days.
 interface Props {
-	mode?: 'email' | 'link';
-	href?: string;
-	title?: string;
-	copy?: string;
-	cta?: string;
+	campaign?: 'start' | 'obsidian' | 'general';
 	forceOpen?: boolean;
 }
 
-const { mode = 'email', href = '/blog/obsidian-vault-on-your-phone/', title, copy, cta, forceOpen = false } = Astro.props;
+const { campaign = 'general', forceOpen = false } = Astro.props;
 
-const isLink = mode === 'link';
-const kicker = 'The 7-day vault course';
-// Retargeted 2026-10-24 from the Hermes Kit scorecard to the 7-email vault course.
-// Email mode enrolls the subscriber in tag `jdak`, which is the course automation trigger.
-const popupTitle =
-	title ??
-	(isLink
-		? 'Set up a vault your agent can actually use.'
-		: 'Get the 7-day vault course.');
-const popupCopy =
-	copy ??
-	(isLink
-		? 'A seven-email course on an Obsidian vault an agent can navigate and file into: notes on your phone, one folder per project, an inbox the agent writes to. One action a day.'
-		: 'Seven emails, one action each. Get the vault onto your phone, give every project one folder, build an inbox your agent can write to, then a weekly pass that keeps it legible. Nothing to configure.');
-const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
+const OFFERS = {
+	start: {
+		kicker: 'Free 5-part breakdown',
+		title: 'Is running your own AI agent worth it?',
+		copy: 'Five emails on what agents can do, what they actually cost, whether cheaper models work, and how to get your first one running.',
+		cta: 'Get the 5-part breakdown',
+		fields: [{ name: 'metadata__sequence', value: 'agent-worth-5part' }],
+	},
+	obsidian: {
+		kicker: '7-part technical breakdown',
+		title: 'Inside my 12 agent loops.',
+		copy: 'Seven emails showing how I use Obsidian with OpenClaw and Hermes: phone sync, approval inboxes, persistent state, hooks, and scheduled workflows.',
+		cta: 'Get the 7-part breakdown',
+		fields: [{ name: 'metadata__course', value: 'agent-vault-7day' }],
+	},
+	general: {
+		kicker: 'Notes from the Loop',
+		title: 'Get the next post by email.',
+		copy: 'Field notes on running agents: what worked, what it cost, and what I changed.',
+		cta: 'Subscribe',
+		fields: [],
+	},
+} as const;
+
+const offer = OFFERS[campaign];
 ---
 
-<div id="nl-popup" class={forceOpen ? 'nl-popup is-open' : 'nl-popup'} data-force-open={forceOpen ? 'true' : undefined} role="dialog" aria-modal="false" aria-label={kicker} aria-hidden={forceOpen ? 'false' : 'true'}>
+<div
+	id="nl-popup"
+	class={forceOpen ? 'nl-popup is-open' : 'nl-popup'}
+	data-force-open={forceOpen ? 'true' : undefined}
+	role="dialog"
+	aria-modal="false"
+	aria-labelledby="nl-popup-title"
+	aria-hidden={forceOpen ? 'false' : 'true'}
+>
 	<div class="nl-popup-card">
 		<button id="nl-popup-close" class="nl-popup-close" type="button" aria-label="Close popup">✕</button>
-		<p class="nl-popup-kicker">{kicker}</p>
-		<h2 class="nl-popup-title">{popupTitle}</h2>
-		<p class="nl-popup-copy">{popupCopy}</p>
-		{
-			isLink ? (
-				<a class="nl-popup-cta" href={href}>{popupCta}<span aria-hidden="true"> →</span></a>
-			) : (
-				<form
-					class="nl-popup-form"
-					action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
-					method="post"
-					data-nl-form
-					data-nl-placement="popup_course"
-				>
-					<label class="nl-popup-label" for="nl-popup-email">Email address</label>
-					<div class="nl-popup-fields">
-						<input type="email" name="email" id="nl-popup-email" autocomplete="email" placeholder="you@example.com" required />
-						<input type="hidden" name="embed" value="1" />
-						<input type="hidden" name="metadata__course" value="agent-vault-7day" />
-						<button type="submit">{popupCta}</button>
-					</div>
-				</form>
-			)
-		}
+		<p class="nl-popup-kicker">{offer.kicker}</p>
+		<h2 id="nl-popup-title" class="nl-popup-title">{offer.title}</h2>
+		<p class="nl-popup-copy">{offer.copy}</p>
+		<form
+			class="nl-popup-form"
+			action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+			method="post"
+			data-nl-form
+			data-nl-placement={`popup_${campaign}`}
+		>
+			<label class="nl-popup-label" for="nl-popup-email">Email address</label>
+			<div class="nl-popup-fields">
+				<input type="email" name="email" id="nl-popup-email" autocomplete="email" placeholder="you@example.com" required />
+				<input type="hidden" name="embed" value="1" />
+				{offer.fields.map((f) => <input type="hidden" name={f.name} value={f.value} />)}
+				<button type="submit">{offer.cta}</button>
+			</div>
+		</form>
 	</div>
 </div>
 
@@ -75,11 +80,7 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		pointer-events: none;
 	}
 	@media (min-width: 40rem) {
-		.nl-popup {
-			left: auto;
-			right: 1.5rem;
-			margin: 0;
-		}
+		.nl-popup { left: auto; right: 1.5rem; margin: 0; }
 	}
 	.nl-popup-card {
 		pointer-events: auto;
@@ -87,14 +88,14 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		background: var(--color-bg-card);
 		border: 1px solid var(--color-border);
 		border-radius: 0.75rem;
-		box-shadow: 0 12px 32px rgb(26 24 20 / 0.16);
+		box-shadow: 0 12px 32px rgb(23 20 28 / 0.16);
 		padding: 1.25rem 1.25rem 1rem;
 		transform: translateY(calc(100% + 2rem));
 		transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+		max-height: min(80vh, 26rem);
+		overflow-y: auto;
 	}
-	.nl-popup.is-open .nl-popup-card {
-		transform: translateY(0);
-	}
+	.nl-popup.is-open .nl-popup-card { transform: translateY(0); }
 	.nl-popup-close {
 		position: absolute;
 		top: 0.5rem;
@@ -110,10 +111,7 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		cursor: pointer;
 		border-radius: 0.375rem;
 	}
-	.nl-popup-close:hover {
-		background: var(--color-bg-secondary);
-		color: var(--color-text);
-	}
+	.nl-popup-close:hover { background: var(--color-bg-secondary); color: var(--color-text); }
 	.nl-popup-kicker {
 		margin: 0 0 0.25rem;
 		font-size: 0.72rem;
@@ -124,7 +122,7 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 	}
 	.nl-popup-title {
 		margin: 0 0 0.35rem;
-		font-family: Newsreader, Georgia, serif;
+		font-family: var(--font-heading);
 		font-size: 1.3rem;
 		font-weight: 600;
 		line-height: 1.15;
@@ -143,10 +141,7 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		font-weight: 600;
 		color: var(--color-text);
 	}
-	.nl-popup-fields {
-		display: flex;
-		gap: 0.5rem;
-	}
+	.nl-popup-fields { display: flex; gap: 0.5rem; }
 	.nl-popup-fields input[type='email'] {
 		flex: 1;
 		min-width: 0;
@@ -163,10 +158,9 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		outline-offset: 1px;
 		border-color: transparent;
 	}
-	.nl-popup-fields button,
-	.nl-popup-cta {
-		display: block;
-		width: 100%;
+	.nl-popup-fields button {
+		width: auto;
+		flex-shrink: 0;
 		padding: 0.55rem 0.85rem;
 		font: inherit;
 		font-size: 0.85rem;
@@ -180,18 +174,10 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 		cursor: pointer;
 		white-space: nowrap;
 	}
-	.nl-popup-fields button:hover,
-	.nl-popup-cta:hover {
-		background: var(--color-accent);
-		color: #fff;
-	}
-	.nl-popup-fields {
-		display: flex;
-		gap: 0.5rem;
-	}
-	.nl-popup-fields button {
-		width: auto;
-		flex-shrink: 0;
+	.nl-popup-fields button:hover { background: var(--color-accent); color: #fff; }
+	@media (max-width: 420px) {
+		.nl-popup-fields { flex-direction: column; }
+		.nl-popup-fields button { width: 100%; }
 	}
 </style>
 
@@ -200,66 +186,70 @@ const popupCta = cta ?? (isLink ? 'Start with day 1' : 'Send me day 1');
 	const closeBtn = document.getElementById('nl-popup-close');
 	if (!popup || !closeBtn) throw new Error('NewsletterPopup: missing elements');
 
-	if (popup.dataset.forceOpen === 'true') {
-		closeBtn.addEventListener('click', () => {
-			popup.classList.remove('is-open');
-			popup.setAttribute('aria-hidden', 'true');
-		});
-		document.addEventListener('keydown', (event) => {
-			if (event.key === 'Escape') {
-				popup.classList.remove('is-open');
-				popup.setAttribute('aria-hidden', 'true');
-			}
-		});
-	} else {
-	const KEY = 'km-nl-popup-seen';
+	const DISMISS_KEY = 'km-nl-popup-dismissed';
+	const SESSION_KEY = 'km-nl-popup-shown';
+	const CTA_KEY = 'km-nl-cta-clicked';
 	const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
-	const force = new URLSearchParams(window.location.search).get('popup') === '1';
-	let shown = false;
 
-	function isEligible() {
-		if (force) return true;
-		const last = Number(localStorage.getItem(KEY) || 0);
-		return Date.now() - last > SEVEN_DAYS;
-	}
-
-	function cleanup() {
-		window.removeEventListener('scroll', onScroll, { capture: true });
-		document.removeEventListener('mouseout', onMouseOut);
-	}
-
-	function show() {
-		if (shown || !isEligible()) return;
-		shown = true;
-		localStorage.setItem(KEY, String(Date.now()));
-		popup.classList.add('is-open');
-		popup.setAttribute('aria-hidden', 'false');
-		closeBtn.focus();
-		cleanup();
-	}
-
-	function hide() {
+	function hide(persist = false) {
 		popup.classList.remove('is-open');
 		popup.setAttribute('aria-hidden', 'true');
-		cleanup();
+		if (persist) localStorage.setItem(DISMISS_KEY, String(Date.now()));
 	}
 
-	function onScroll() {
-		const doc = document.documentElement;
-		const progress = (window.scrollY + window.innerHeight) / doc.scrollHeight;
-		if (progress >= 0.55) show();
-	}
+	if (popup.dataset.forceOpen === 'true') {
+		closeBtn.addEventListener('click', () => hide(true));
+		document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(true); });
+	} else {
+		let shown = false;
+		let timer;
 
-	function onMouseOut(event) {
-		// Exit intent: cursor leaves the window through the top edge.
-		if (!event.relatedTarget && event.clientY <= 0) show();
-	}
+		function eligible() {
+			if (sessionStorage.getItem(SESSION_KEY) || sessionStorage.getItem(CTA_KEY)) return false;
+			const dismissed = Number(localStorage.getItem(DISMISS_KEY) || 0);
+			return Date.now() - dismissed > SEVEN_DAYS;
+		}
 
-	closeBtn.addEventListener('click', hide);
-	document.addEventListener('keydown', (event) => {
-		if (event.key === 'Escape') hide();
-	});
-	window.addEventListener('scroll', onScroll, { passive: true, capture: true });
-	document.addEventListener('mouseout', onMouseOut);
+		function show() {
+			if (shown || !eligible()) return;
+			shown = true;
+			sessionStorage.setItem(SESSION_KEY, '1');
+			popup.classList.add('is-open');
+			popup.setAttribute('aria-hidden', 'false');
+			closeBtn.focus();
+			cleanup();
+		}
+
+		function cleanup() {
+			window.removeEventListener('scroll', onScroll, { capture: true } as any);
+			document.removeEventListener('mouseout', onMouseOut);
+			clearTimeout(timer);
+		}
+
+		function onScroll() {
+			const doc = document.documentElement;
+			const progress = (window.scrollY + window.innerHeight) / doc.scrollHeight;
+			if (progress >= 0.55) show();
+		}
+
+		function onMouseOut(event: MouseEvent) {
+			if (!event.relatedTarget && event.clientY <= 0) show();
+		}
+
+		closeBtn.addEventListener('click', () => hide(true));
+		document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(true); });
+
+		// Don't interrupt a reader who has already clicked an inline signup link.
+		document.addEventListener('click', (e) => {
+			const a = (e.target as HTMLElement)?.closest('a');
+			if (a && ['/start/', '/loop-breakdown/', '/subscribe/'].includes(a.getAttribute('href') || '')) {
+				sessionStorage.setItem(CTA_KEY, '1');
+				cleanup();
+			}
+		});
+
+		window.addEventListener('scroll', onScroll, { passive: true, capture: true });
+		document.addEventListener('mouseout', onMouseOut);
+		timer = window.setTimeout(show, 20000);
 	}
 </script>

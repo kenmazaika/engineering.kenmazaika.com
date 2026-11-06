@@ -12,7 +12,7 @@ export const SITE_TAGLINE = 'Real-World OpenClaw & Hermes Workflows';
 // Off for the Kagi Small Web submission (its rules forbid newsletter popups; the
 // submission is gated on a popup-free site). A cron job turns this back ON on
 // 2026-10-22. While false, no post renders the popup regardless of its frontmatter.
-export const POPUP_ENABLED = false;
+export const POPUP_ENABLED = true;
 export const SITE_DESCRIPTION =
 	'Practical guides to building and running AI agents with OpenClaw and Hermes. Explore real workflows, Obsidian integrations, automation, memory, and costs.';
 // The author entity keeps its own description; the publication description above
@@ -22,7 +22,7 @@ export const AUTHOR_DESCRIPTION =
 // Slugs of hidden posts that must never appear in the sitemap.
 export const HIDDEN_SLUGS = ['hermes-kit'];
 // Path prefixes of hidden standalone pages that must never appear in the sitemap.
-export const HIDDEN_PATHS = ['/popup-test/'];
+export const HIDDEN_PATHS = ['/popup-test/', '/popup-start-test/', '/popup-obsidian-test/'];
 
 // ~60 characters is a guideline for how much of a title search results show, not a
 // rule. The publication name is appended only when it fits inside that budget
