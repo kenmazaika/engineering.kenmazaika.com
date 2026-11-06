@@ -141,4 +141,3 @@ Find the loop you hate most. Write down its steps — trigger, retrieve the cont
 
 **If you want to stop running the loop by hand:** the recommended next step is to get started with a harness like [OpenClaw](https://openclaw.ai) or [Hermes](https://hermes-agent.nousresearch.com). Point it at one of your support entry points and let it close one loop end to end — you'll learn more from that than from any amount of planning.
 
-**Cut to the chase:** if I'm running a workshop, you can skip ahead and sign up at [engineering.kenmazaika.com/workshop](https://engineering.kenmazaika.com/workshop/).

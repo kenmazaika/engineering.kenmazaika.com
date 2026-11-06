@@ -22,7 +22,7 @@ export const AUTHOR_DESCRIPTION =
 // Slugs of hidden posts that must never appear in the sitemap.
 export const HIDDEN_SLUGS = ['hermes-kit'];
 // Path prefixes of hidden standalone pages that must never appear in the sitemap.
-export const HIDDEN_PATHS = ['/loop-breakdown/'];
+export const HIDDEN_PATHS = [];
 
 // ~60 characters is a guideline for how much of a title search results show, not a
 // rule. The publication name is appended only when it fits inside that budget
