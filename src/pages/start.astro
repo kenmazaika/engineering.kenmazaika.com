@@ -1,209 +1,287 @@
 ---
+// /start/ — landing page for the five-part "Is Running Your Own AI Agent Worth It?" campaign.
+// Staged only: do not deploy until Ken approves. Form writes metadata.sequence=agent-worth-5part.
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_TITLE } from '../consts';
+import Footer from '../components/Footer.astro';
 
-const X_HANDLE = '@kenmazaika';
-const xUsername = X_HANDLE.slice(1);
-const xProfileUrl = `https://x.com/${xUsername}`;
-const xFollowUrl = `https://x.com/intent/follow?screen_name=${xUsername}`;
+const parts = [
+	{
+		title: 'What can you actually do with an AI agent?',
+		body: 'The difference between a chat answer and a recurring job, using a real support loop: reproduce the bug, find the cause, check the fix, and write the knowledge-base entry.',
+	},
+	{
+		title: 'What does it really cost?',
+		body: 'A measured month: $50.93 for the normal setup, $30.93 of it metered, and the optional premium lane that pushed observed spending to $135.',
+	},
+	{
+		title: 'Do you need expensive hardware?',
+		body: 'The $175 used desktop with no GPU that runs an agent 24/7 — and why the computer you already own is enough to start.',
+	},
+	{
+		title: 'Are cheaper AI models good enough?',
+		body: 'Eleven models, five real tasks, identical prompts. Where the cheap daily driver held up, where the expensive models earned their price, and what to test on your own work.',
+	},
+	{
+		title: 'How do you build your first useful agent?',
+		body: 'Source, judgment, destination, reusable instructions, schedule — the five-part shape behind a Reddit-to-Airtable workflow that takes about an hour.',
+	},
+];
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead
-			title={`Start here: running an AI agent for real work — ${SITE_TITLE}`}
-			description="A guided path through choosing, building, and debugging an AI work harness, based on real Hermes and OpenClaw work."
-			image="/og/start.png"
-			imageAlt={`Run an AI agent for real work — Ken Mazaika, ${X_HANDLE}`}
+			title="Is Running Your Own AI Agent Worth It? — Notes from the Loop"
+			description="Five free emails covering what AI agents can actually do, what they cost, whether cheaper models work, and how to get started with OpenClaw or Hermes."
 		/>
 	</head>
 	<body>
 		<Header />
 		<main id="main" class="start-page">
-			<section class="start-hero" aria-labelledby="page-title">
-				<div class="identity">
-					<picture>
-						<source type="image/webp" srcset="/images/ken/ken-mazaika-256.webp 256w, /images/ken/ken-mazaika-640.webp 640w" sizes="80px" />
-						<img src="/images/ken/ken-mazaika-640.jpg" srcset="/images/ken/ken-mazaika-256.jpg 256w, /images/ken/ken-mazaika-640.jpg 640w" sizes="80px" width="80" height="80" alt="Ken Mazaika" />
-					</picture>
-					<div>
-						<p class="identity-cred">Former cofounder of the Firehose project, acquired by Trilogy Education — I developed the curriculum that taught career switchers what they need, and I've taught coding-education workshops for business people at Harvard Business School, RISD, Carnegie Mellon, Babson, and Brown.</p>
-						<p class="identity-sub">I'm Ken Mazaika, an engineering manager and operator. I run AI agents on real work, keep the receipts, and write down only what survives outside the demo.</p>
-						<a href={xProfileUrl} target="_blank" rel="me noopener">{X_HANDLE} on X</a>
-					</div>
-				</div>
-				<p class="eyebrow">A guided reading path</p>
-				<h1 id="page-title">Run an AI agent for real work.</h1>
-				<a class="follow-primary" href={xFollowUrl} target="_blank" rel="noopener">Follow {X_HANDLE} on X →</a>
-				<p class="dek">AI agents are easy to demo and surprisingly hard to trust. This is my curated path through building and running a dependable AI work harness—based on actual Hermes and OpenClaw work, organized by the question you have now.</p>
-				<p class="proof"><strong>One receipt:</strong> 11 models · 5 real tasks · identical prompts · measured costs.</p>
-				<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form hero-subscribe" data-nl-form data-nl-placement="start_here">
-					<label for="email-hero"><strong>Get the next post in your inbox.</strong> I write about building and running AI agents — what worked, what failed, and what it cost.</label>
-					<div><input type="email" name="email" id="email-hero" autocomplete="email" placeholder="you@example.com" required /><input type="hidden" name="embed" value="1" /><input type="hidden" name="tag" value="nl-start_here" /><button type="submit">Subscribe</button></div>
+			<section class="hero">
+				<p class="eyebrow">Five-part breakdown · Free</p>
+				<h1>Is Running Your Own AI Agent Worth It?</h1>
+				<p class="deck">
+					Five free emails covering what AI agents can actually do, what they cost, whether cheaper
+					models work, and how to get started with OpenClaw or Hermes.
+				</p>
+
+				<form
+					class="signup"
+					action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+					method="post"
+				>
+					<label class="sr-only" for="email-hero">Your email</label>
+					<input id="email-hero" type="email" name="email" placeholder="Your email" required />
+					<input type="hidden" name="metadata__sequence" value="agent-worth-5part" />
+					<input type="hidden" name="embed" value="1" />
+					<button type="submit">Get the 5-Part Breakdown</button>
 				</form>
-				<div class="start-card">
-					<div><p class="start-label">New to agents?</p><a href="#what">Start with what a harness does →</a><p>Learn what the layer around a model actually does—and whether your work has the repeatable middle that makes a harness useful.</p></div>
-					<div><p class="start-label">Already running one?</p><a href="/blog/best-ai-model-for-agent-work/">Start with the model receipts →</a><p>Eleven models, five real tasks, identical prompts, measured costs, and the raw artifacts.</p></div>
-				</div>
-				<p class="onramp">Not an engineer, and this is all new? Start with <a href="/blog/what-is-an-ai-harness/">the plain-English definition</a>.</p>
+				<p class="fine">One email per send, no drip until you confirm. Unsubscribe any time.</p>
 			</section>
 
-			<div class="contents-wrap">
-				<nav class="contents" aria-labelledby="contents-title">
-					<div class="contents-head"><h2 id="contents-title">On this page</h2><p>Already running agents? Jump to the problem you have now.</p></div>
-					<ol>
-						<li><a href="#what"><span>01</span>What is a harness?</a></li>
-						<li><a href="#choose"><span>02</span>Which setup?</a></li>
-						<li><a href="#workflow"><span>03</span>First workflow</a></li>
-						<li><a href="#models"><span>04</span>Which models?</a></li>
-						<li><a href="#diagnose"><span>05</span>Why is it wrong?</a></li>
-					</ol>
-				</nav>
-			</div>
+			<section class="parts" aria-labelledby="parts-title">
+				<div class="parts-head">
+					<h2 id="parts-title">The five-part breakdown</h2>
+					<p>A practical look at the work, the bill, the hardware, and the models.</p>
+				</div>
 
-			<div class="journey">
-				<section class="stage" id="what" aria-labelledby="what-title">
-					<p class="stage-no">Stage 01</p><h2 id="what-title">What is an AI work harness—and do I need one?</h2>
-					<p class="outcome">A harness gives a model tools, memory, instructions, schedules, files, and a place to work. It is useful when a repeated job has a clear middle—not when you only need a one-off answer.</p>
-					<a class="featured" href="/blog/what-is-an-ai-harness/"><strong>What Is an AI Work Harness? →</strong><span>Read this for the plain-English definition, the jobs a harness is good at, and the line between automation and judgment.</span></a>
-					<p class="support-label">Also useful</p><ul class="support"><li><a href="/blog/my-175-ai-agent-rig/">Run an AI Agent 24/7 on a $175 Box</a></li></ul>
-					<p class="bridge">Once the job fits a harness, the next decision is the working environment.</p>
-				</section>
+				<ol>
+					{parts.map((part, i) => (
+						<li>
+							<span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+							<div>
+								<h3>{part.title}</h3>
+								<p>{part.body}</p>
+							</div>
+						</li>
+					))}
+				</ol>
+			</section>
 
-				<section class="stage" id="choose" aria-labelledby="choose-title">
-					<p class="stage-no">Stage 02</p><h2 id="choose-title">Which setup should I choose?</h2>
-					<p class="aside">My short version: OpenClaw is my main tool for assignment fidelity and tighter memory control. I still use Hermes for established workflows and research-oriented work.</p>
-					<p class="outcome">Choose the environment whose defaults fit how you work. The differences show up in memory, research, orchestration, and whether the agent follows the assignment you actually gave it.</p>
-					<a class="featured" href="/blog/hermes-vs-openclaw/"><strong>Hermes vs. OpenClaw: Why I Moved My Main Workflow →</strong><span>Read my real-work comparison—including where each won and why memory changed my decision.</span></a>
-					<p class="support-label">Decision guides</p><ul class="support"><li><a href="/blog/discord-vs-telegram-agentic-work/">Discord vs. Telegram for Agentic Work</a></li></ul>
-					<p class="bridge">The platform matters less than the first bounded job you give it.</p>
-				</section>
-
-				<section class="stage" id="workflow" aria-labelledby="workflow-title">
-					<p class="stage-no">Stage 03</p><h2 id="workflow-title">How do I turn a repeated task into a workflow?</h2>
-					<p class="outcome">Start with one bounded runbook: a clear trigger, repeatable middle, visible output, and human judgment at the end. Let the agent own coordination without pretending to replace judgment.</p>
-					<a class="featured" href="/blog/your-first-useful-hour-with-openclaw/"><strong>Your First Useful Hour With OpenClaw: Build One Automation, End to End →</strong><span>Read this to build your first automation start to finish — pull a source, set the judgment, push it somewhere you can see, wrap it as a skill, and put it on a cron. Every prompt included.</span></a>
-					<p class="support-label">Pick the closest shape</p><ul class="support"><li><a href="/blog/capture-workflow/">A Capture Workflow for Work That Contains Your Judgment</a></li><li><a href="/blog/hermes-workflow-apartment-scouting/">Using the Scouting Pattern for Apartment Hunting</a></li><li><a href="/blog/hermes-workflow-i-thought-kanban-was-for-me-to-manage/">I Thought Kanban Was for Me to Manage</a></li><li><a href="/blog/route-the-file-before-you-write-it/">Route the File Before You Write It</a></li><li><a href="/blog/agent-hooks/">Agent Hooks: Named Triggers for Durable Agent Work</a></li><li><a href="/blog/support-isnt-tickets-its-loops/">Support Isn't Tickets. It's Loops</a></li><li><a href="/blog/obsidian-inbox-system/">Set Up an Inbox System in Your Obsidian Vault</a></li><li><a href="/blog/hermes-memory-skills-wiki-learns/">Memory Remembers, Skills Repeat, and a Wiki Learns</a></li></ul>
-					<p class="aside">The fastest path is to copy one example's shape — the first-hour walkthrough does exactly that, one automation end to end.</p>
-					<p class="bridge">Once the workflow is clear, choose the least expensive model stack that can inspect its own work.</p>
-				</section>
-
-				<section class="return-block" aria-labelledby="return-mid-title">
-					<p class="eyebrow">Keep the thread</p><h2 id="return-mid-title">Get the next post.</h2><p>One email when there is something worth sending. <a href="#subscribe-end">Subscribe →</a></p>
-					<a class="follow-quiet" href={xFollowUrl} target="_blank" rel="noopener">Or follow {X_HANDLE} on X →</a>
-				</section>
-
-				<section class="stage" id="models" aria-labelledby="models-title">
-					<p class="stage-no">Stage 04</p><h2 id="models-title">Which models should I use?</h2>
-					<p class="aside">For my own work, DeepSeek is the economical daily driver; I use an OpenAI model for a quality anchor or vision.</p>
-					<p class="outcome">Use a cheap, capable workhorse for routine steps and a model that can see for visual work and final inspection. You do not need a model zoo.</p>
-					<a class="featured" href="/blog/my-default-model-stack-for-ai-agent-work/"><strong>My Default Model Stack for AI Agent Work →</strong><span>See the small stack I actually use for routine work, quality checks, and visual inspection.</span></a>
-					<p class="support-label">Build the stack</p><ul class="support"><li><a href="/blog/cost-to-run-an-agent/">What It Costs to Run an Agent Each Month</a></li><li><a href="/blog/designing-blind/">Designing Blind</a></li><li><a href="/blog/measuring-ai-impact-on-developer-teams/">Measuring AI's Impact on Developer Teams</a></li></ul>
-					<p class="bridge">A weak tool, retrieval failure, or bad handoff can make every model look bad.</p>
-				</section>
-
-				<section class="stage" id="diagnose" aria-labelledby="diagnose-title">
-					<p class="stage-no">Stage 05</p><h2 id="diagnose-title">What should I check when the agent gets things wrong?</h2>
-					<p class="aside">My order: verify tools, inspect evidence, reduce active context, check persistent memory, and only then compare models.</p>
-					<p class="outcome">Before switching models, inspect the system around the model: tools, retrieved evidence, active context, and persistent memory.</p>
-					<a class="featured" href="/blog/before-you-blame-the-model-audit-your-hermes-setup/"><strong>Before You Blame the Model, Audit Your Hermes Setup →</strong><span>Use a copyable prompt to find missing tools, silent fallbacks, and configuration bottlenecks.</span></a>
-					<p class="support-label">Follow the evidence</p><ul class="support"><li><a href="/blog/a-feature-that-makes-your-agent-show-its-receipts/">Does AI Citation Grounding Actually Catch Errors?</a></li><li><a href="/blog/my-agent-kept-writing-the-same-post/">My Agent Kept Writing the Same Post</a></li><li><a href="/blog/i-gave-openclaw-less-memory/">I Gave OpenClaw Less Memory</a></li><li><a href="/blog/more-context-makes-your-agent-dumber/">More Context Makes Your Agent Dumber</a></li></ul>
-					<p class="bridge">If the system is still only a pile of good intentions, bring one real runbook and map it with help.</p>
-				</section>
-
-				<section class="deep" aria-labelledby="deep-title"><p class="eyebrow">Continue exploring</p><h2 id="deep-title">Already running an agent? Go deeper.</h2><p>These pieces improve leverage rather than merely add complexity.</p><ul><li><a href="/blog/hermes-workflow-question-the-instruction/">Teach Your Agent to Question the Instruction →</a></li><li><a href="/blog/meta-prompting-let-ai-write-your-prompt/">Meta-Prompting: Let the AI Write Your Prompt →</a></li><li><a href="/blog/hermes-workflow-six-bots-one-media-company/">Six Bots, One Media Company →</a></li></ul></section>
-
-				<section class="return-block return-end" id="subscribe-end" aria-labelledby="return-end-title">
-					<p class="eyebrow">Come back when the next test is done</p><h2 id="return-end-title">Get the next post.</h2><p>I write about building and running AI agents — what worked, what failed, and what it cost.</p>
-					<form action="https://buttondown.com/api/emails/embed-subscribe/mazaika" method="post" class="receipt-form" data-nl-form data-nl-placement="start_here_end">
-						<label for="email-end">Email address</label><div><input type="email" name="email" id="email-end" autocomplete="email" placeholder="you@example.com" required /><input type="hidden" name="embed" value="1" /><input type="hidden" name="tag" value="nl-start_here_end" /><button type="submit">Subscribe</button></div>
-					</form>
-					<p class="return-links"><a href={xFollowUrl} target="_blank" rel="noopener">Follow {X_HANDLE} on X</a><span aria-hidden="true">·</span><a href="/rss.xml">RSS</a><span aria-hidden="true">·</span><a href="/blog/">Latest writing</a></p>
-					<p class="contact-line">Questions? Reply to any email from me — it comes straight to me.</p>
-				</section>
-			</div>
+			<section class="closing" aria-labelledby="closing-title">
+				<h2 id="closing-title">Start with the honest version.</h2>
+				<p>
+					Five emails, each with the real numbers and one concrete step. No testimonials, no
+					projections.
+				</p>
+				<form
+					class="signup signup-center"
+					action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
+					method="post"
+				>
+					<label class="sr-only" for="email-bottom">Your email</label>
+					<input id="email-bottom" type="email" name="email" placeholder="Your email" required />
+					<input type="hidden" name="metadata__sequence" value="agent-worth-5part" />
+					<input type="hidden" name="embed" value="1" />
+					<button type="submit">Get the 5-Part Breakdown</button>
+				</form>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
-	:global(html) { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
-	.start-page { overflow: hidden; }
-	.start-hero { max-width: 760px; margin: auto; padding: clamp(3rem, 7vw, 6rem) 28px 4.5rem; }
-	.eyebrow, .stage-no, .start-label, .support-label { color: var(--color-accent); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
-	.eyebrow { margin: 0 0 1rem; }
-	.identity { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.7rem; }
-	.identity picture { flex: 0 0 auto; }
-	.identity img { display: block; width: 80px; height: 80px; object-fit: cover; border-radius: 50%; }
-	.identity-cred { margin: 0; color: var(--color-text); font-size: .9rem; line-height: 1.55; }
-	.identity-sub { margin: .4rem 0 0; color: var(--color-text-secondary); font-size: .76rem; line-height: 1.5; }
-	.identity a { display: inline-block; margin-top: .35rem; font-size: .77rem; font-weight: 600; }
-	.start-hero h1 { max-width: 930px; margin: 0; font-size: clamp(3.2rem, 6.25vw, 5.75rem); line-height: .98; letter-spacing: -.052em; text-wrap: balance; }
-	.follow-primary { display: inline-block; margin-top: 1.25rem; padding: .68rem 1rem; color: #fff; background: var(--color-accent); border-radius: var(--border-radius); font-size: .88rem; font-weight: 600; }
-	.onramp { max-width: 760px; margin: 1.1rem 0 0; color: var(--color-text-secondary); font-size: .84rem; line-height: 1.6; }
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
 
-	.contact-line { margin: 1.4rem 0 0; color: var(--color-text-secondary); font-size: .84rem; }
-	.follow-primary:hover { color: #fff; background: var(--color-accent-hover); }
-	.dek { max-width: 700px; margin: 1.6rem 0 0; color: var(--color-text-secondary); font-size: clamp(1.05rem, 1.65vw, 1.22rem); line-height: 1.65; }
-	.proof { margin: 1.2rem 0 0; padding-left: .9rem; border-left: 2px solid var(--color-accent); font-size: .88rem; line-height: 1.55; }
-	.receipt-form { margin-top: 1.25rem; }
-	.receipt-form label { display: block; margin-bottom: .45rem; font-size: .82rem; }
-	.receipt-form > div { display: flex; gap: .5rem; }
-	.receipt-form input[type='email'] { flex: 1; min-width: 0; padding: .72rem .8rem; color: var(--color-text); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--border-radius); font: inherit; font-size: .88rem; }
-	.receipt-form input[type='email']:focus { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-	.receipt-form button { padding: .72rem .95rem; color: #fff; background: var(--color-accent); border: 0; border-radius: var(--border-radius); font: inherit; font-size: .86rem; font-weight: 600; cursor: pointer; }
-	.hero-subscribe { max-width: 560px; padding-top: 1rem; border-top: 1px solid var(--color-border); }
-	.hero-subscribe button { color: var(--color-accent); background: transparent; border: 1px solid var(--color-accent); }
-	.hero-subscribe button:hover { color: #fff; background: var(--color-accent); }
-	.start-card { max-width: 760px; margin-top: 2.4rem; display: grid; grid-template-columns: 1fr 1fr; background: var(--color-bg-card); border-top: 2px solid var(--color-accent); box-shadow: 0 12px 35px rgba(38,28,18,.06); }
-	.start-card > div { padding: 1.4rem 1.5rem 1.5rem; }
-	.start-card > div + div { border-left: 1px solid var(--color-border); }
-	.start-label { margin: 0 0 .35rem; color: var(--color-text-secondary); }
-	.start-card a { display: inline-block; font-family: var(--font-heading); font-size: 1.3rem; line-height: 1.25; font-weight: 600; }
-	.start-card div > p:last-child { margin: .45rem 0 0; color: var(--color-text-secondary); font-size: .86rem; line-height: 1.55; }
-	.contents-wrap { background: var(--color-bg-secondary); border-block: 1px solid var(--color-border); }
-	.contents { max-width: 1120px; margin: auto; padding: 2rem 28px; }
-	.contents-head { display: flex; align-items: baseline; justify-content: space-between; gap: 2rem; margin-bottom: 1.15rem; }
-	.contents h2 { margin: 0; padding: 0; border: 0; font-size: 1.35rem; }
-	.contents-head p { margin: 0; color: var(--color-text-secondary); font-size: .82rem; }
-	.contents ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
-	.contents li { min-width: 0; border-left: 1px solid var(--color-border); padding: .2rem 1rem .3rem; }
-	.contents li:first-child { border-left: 2px solid var(--color-accent); }
-	.contents a { display: block; color: var(--color-text); font-family: var(--font-heading); font-size: .98rem; line-height: 1.25; overflow-wrap: anywhere; }
-	.contents a span { display: block; color: var(--color-text-secondary); font-family: var(--font-body); font-size: .68rem; margin-bottom: .3rem; }
-	.journey { max-width: 760px; margin: auto; padding: 2rem 28px 6rem; }
-	.stage { padding: 5.4rem 0; border-bottom: 1px solid var(--color-border); scroll-margin-top: 74px; }
-	.stage-no { margin: 0 0 .75rem; }
-	.stage h2 { margin: 0 0 1.5rem; padding: 0; border: 0; font-size: clamp(2.15rem, 3.8vw, 3.3rem); line-height: 1.04; letter-spacing: -.035em; text-wrap: balance; }
-	.outcome { margin: .1rem 0 1.6rem; font-size: 1.01rem; line-height: 1.7; }
-	.featured { display: block; padding: 1.25rem 1.35rem; background: var(--color-bg-card); border-left: 3px solid var(--color-accent); color: var(--color-text); }
-	.featured strong { display: block; font-family: var(--font-heading); font-size: 1.32rem; line-height: 1.25; }
-	.featured span { display: block; margin-top: .45rem; color: var(--color-text-secondary); font-size: .86rem; line-height: 1.55; }
-	.support-label { margin: 1.65rem 0 .55rem; color: var(--color-text-secondary); }
-	.support { list-style: none; margin: 0; padding: 0; }
-	.support li { border-top: 1px solid var(--color-border); padding: .7rem 0; }
-	.support a { font-size: .9rem; line-height: 1.45; font-weight: 500; }
-	.aside { margin: 1.2rem 0; color: var(--color-text); font-size: .96rem; line-height: 1.65; }
-	.bridge { margin: 1.8rem 0 -2.7rem; color: var(--color-text-secondary); font-family: var(--font-heading); font-style: italic; font-size: 1rem; }
-	.deep { max-width: 720px; margin: 0 auto; padding: 5rem 0; border-bottom: 1px solid var(--color-border); }
-	.deep h2 { padding: 0; border: 0; font-size: 2.35rem; line-height: 1.08; margin: 0 0 1rem; }
-	.deep > p:not(.eyebrow) { color: var(--color-text-secondary); }
-	.deep ul { list-style: none; margin: 2rem 0 0; padding: 0; }
-	.deep li { padding: 1rem 0; border-top: 1px solid var(--color-border); }
-	.deep li a { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 600; }
-	.return-block { margin: 0; padding: 3rem 0; border-bottom: 1px solid var(--color-border); }
-	.return-block h2 { margin: 0 0 .4rem; padding: 0; border: 0; font-size: 1.8rem; }
-	.return-block > p:not(.eyebrow, .return-links) { margin: 0; color: var(--color-text-secondary); }
-	.follow-quiet { display: inline-block; margin-top: .9rem; font-size: .82rem; font-weight: 600; }
-	.return-end { margin-top: 1rem; padding-bottom: 1rem; border-bottom: 0; }
-	.return-links { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.1rem 0 0; font-size: .84rem; }
-	@media (max-width: 900px) { .contents ol { grid-template-columns: repeat(2, 1fr); row-gap: 1.1rem; } .contents li:nth-child(3), .contents li:nth-child(5) { border-left: 2px solid var(--color-accent); } }
-	@media (max-width: 680px) { .start-hero { padding: 1.6rem 20px 3rem; } .identity { gap: .8rem; margin-bottom: 1.15rem; } .identity img { width: 72px; height: 72px; } .identity-cred { font-size: .8rem; line-height: 1.45; } .identity-sub { font-size: .68rem; line-height: 1.35; } .identity a { font-size: .7rem; } .start-hero .eyebrow { margin-bottom: .65rem; } .start-hero h1 { font-size: clamp(2.1rem, 9vw, 3rem); line-height: 1; } .follow-primary { margin-top: .85rem; padding: .58rem .8rem; font-size: .8rem; } .dek { font-size: 1rem; margin-top: 1.25rem; } .start-card { grid-template-columns: 1fr; margin-top: 2rem; } .start-card > div { padding: 1.2rem; } .start-card > div + div { border-left: 0; border-top: 1px solid var(--color-border); } .start-card a { font-size: 1.25rem; } .contents { padding: 1.6rem 20px; } .contents-head { display: block; margin-bottom: 1rem; } .contents-head p { margin-top: .35rem; } .contents ol { gap: .75rem 0; } .contents li { padding: .2rem .8rem; } .journey { padding: 0 20px 4rem; } .stage { padding: 4rem 0; } .stage h2 { font-size: 2.05rem; } .outcome { font-size: .96rem; } .featured { padding: 1.15rem; width: 100%; } .featured strong { font-size: 1.23rem; } .bridge { margin-bottom: -2rem; } .deep { padding-top: 4rem; } .deep h2 { font-size: 2rem; } }
-	@media (max-width: 520px) { .receipt-form > div { flex-direction: column; } .receipt-form button { width: 100%; } }
-	@media (max-width: 360px) { .start-hero, .contents, .journey { padding-left: 16px; padding-right: 16px; } .start-hero h1 { font-size: clamp(2.1rem, 9vw, 3rem); } .identity img { width: 72px; height: 72px; } .contents ol { grid-template-columns: 1fr; } .contents li, .contents li:nth-child(3), .contents li:nth-child(5) { border-left: 2px solid var(--color-accent); } }
-	@media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } }
+	.start-page {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: clamp(3rem, 7vw, 6rem) 1.5rem 5rem;
+	}
+
+	.hero { max-width: 720px; }
+
+	.eyebrow {
+		margin: 0 0 1rem;
+		color: var(--color-accent);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.hero h1 {
+		margin: 0 0 1.1rem;
+		max-width: 18ch;
+		font-family: var(--font-heading);
+		font-size: clamp(2.6rem, 6vw, 4.3rem);
+		line-height: 1.02;
+		letter-spacing: -0.035em;
+		font-weight: 600;
+	}
+
+	.deck {
+		margin: 0 0 1.8rem;
+		max-width: 58ch;
+		color: var(--color-text-secondary);
+		font-size: 1.08rem;
+		line-height: 1.65;
+	}
+
+	.signup {
+		display: flex;
+		gap: 0.65rem;
+		max-width: 480px;
+	}
+
+	.signup input[type='email'] {
+		flex: 1;
+		min-width: 0;
+		padding: 0.82rem 0.9rem;
+		font: inherit;
+		font-size: 0.95rem;
+		color: var(--color-text);
+		background: var(--color-bg-card);
+		border: 1px solid var(--color-border);
+		border-radius: 7px;
+	}
+
+	.signup input[type='email']:focus {
+		outline: none;
+		border-color: var(--color-accent);
+		box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.12);
+	}
+
+	.signup button {
+		padding: 0.82rem 1.1rem;
+		font: inherit;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: #fff;
+		background: var(--color-accent);
+		border: 0;
+		border-radius: 7px;
+		cursor: pointer;
+		white-space: nowrap;
+	}
+
+	.signup button:hover { background: var(--color-accent-hover); }
+
+	.fine {
+		margin: 0.7rem 0 0;
+		color: var(--color-text-muted);
+		font-size: 0.84rem;
+	}
+
+	.parts {
+		margin-top: clamp(3.5rem, 8vw, 6rem);
+		padding-top: 2.5rem;
+		border-top: 1px solid var(--color-border);
+	}
+
+	.parts-head h2 {
+		margin: 0 0 0.5rem;
+		font-family: var(--font-heading);
+		font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+		font-weight: 600;
+		letter-spacing: -0.02em;
+	}
+
+	.parts-head p {
+		margin: 0 0 1.6rem;
+		color: var(--color-text-secondary);
+	}
+
+	.parts ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.parts li {
+		display: grid;
+		grid-template-columns: 3.2rem 1fr;
+		gap: 0.6rem;
+		padding: 1.35rem 0;
+		border-top: 1px solid var(--color-border-light);
+	}
+
+	.num {
+		padding-top: 0.2rem;
+		color: var(--color-accent);
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+	}
+
+	.parts h3 {
+		margin: 0 0 0.35rem;
+		font-size: 1.06rem;
+		font-weight: 650;
+		letter-spacing: -0.01em;
+		line-height: 1.35;
+	}
+
+	.parts p {
+		margin: 0;
+		max-width: 66ch;
+		color: var(--color-text-secondary);
+		font-size: 0.97rem;
+		line-height: 1.62;
+	}
+
+	.closing {
+		margin-top: 3.5rem;
+		padding: 2.6rem 2rem;
+		border: 1px solid var(--color-border);
+		border-radius: 14px;
+		background: var(--color-accent-light);
+		text-align: center;
+	}
+
+	.closing h2 {
+		margin: 0 0 0.6rem;
+		font-family: var(--font-heading);
+		font-size: clamp(1.7rem, 3vw, 2.2rem);
+		font-weight: 600;
+		letter-spacing: -0.02em;
+	}
+
+	.closing p {
+		margin: 0 auto 1.3rem;
+		max-width: 52ch;
+		color: var(--color-text-secondary);
+	}
+
+	.signup-center { margin: 0 auto; justify-content: center; }
+
+	@media (max-width: 560px) {
+		.signup { flex-direction: column; }
+		.signup button { width: 100%; }
+		.parts li { grid-template-columns: 2.2rem 1fr; }
+		.closing { padding: 2rem 1.25rem; }
+	}
 </style>
