@@ -79,7 +79,7 @@ My current setup still has several layers, but each one has a narrow job.
 
 Durable memory helps retrieval; a [live ticket preserves the state of work in progress](/blog/agent-hooks/).
 
-The larger vault remains searchable and inspectable. The compiled wiki can synthesize it into Obsidian-friendly pages. Opinionated guidance lives separately and does not get promoted into always-on context without review.
+The larger vault remains searchable and inspectable, and its shelves are [in the vault walkthrough](/blog/obsidian-vault-structure/). The compiled wiki can synthesize it into Obsidian-friendly pages. Opinionated guidance lives separately and does not get promoted into always-on context without review.
 
 OpenClaw's memory search is still enabled, but it is deliberately lexical. This is the relevant part of my configuration as of September 15, 2026:
 

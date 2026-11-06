@@ -280,3 +280,5 @@ It also means you can give it more rope. A job can start without asking, stop at
 Four folders, one script, three rules, and an address. Half-finished work gets a place to wait, the agent can ask for a decision, and a crash doesn't lose your approval.
 
 The pattern was already good for one person keeping notes. It is better with two participants — once the second one can read the folder, and the instructions were written where it looks.
+
+That inbox is shelf `00`. The other eleven shelves, and why each one exists, are in [A Walkthrough of My Obsidian Vault](/blog/obsidian-vault-structure/).

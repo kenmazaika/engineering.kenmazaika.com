@@ -80,7 +80,8 @@ access, skills, and shell. Each job carries its own model, timeout, and delivery
 loop rather than inherited from a default.
 
 The vault supplies everything that outlives the session: the loop's folder, its procedure, its history, and its
-output surface. Plain markdown, versioned with git, synced to my phone.
+output surface. Plain markdown, versioned with git, synced to my phone. The shelves themselves are [the vault
+walkthrough](/blog/obsidian-vault-structure/); this post is about what runs inside them.
 
 ```
 OpenClaw cron ── isolated session ──▶ prompt → LOOP.md + prompt.md → skill → model
