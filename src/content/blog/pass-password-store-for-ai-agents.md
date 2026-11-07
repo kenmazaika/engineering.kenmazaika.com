@@ -65,6 +65,9 @@ pass show example.com | head -1
 
 **Check:** the last command returns `password`. Do not add real credentials yet.
 
+
+<p class="inline-cta"><em>Secrets are one piece of the operating setup; <a href="/loop-breakdown/">seven emails</a> cover the rest.</em></p>
+
 ## 2. Push the encrypted store to GitHub
 
 ```text

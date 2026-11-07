@@ -54,6 +54,9 @@ Many automations you’ll ever build are these five:
 
 Swap the source, the rubric, and the destination and you have a different automation. The shape doesn't move.
 
+
+<p class="inline-cta"><em>If you want a structured path from here, <a href="/start/">five emails</a> cover the first automation, models, and costs.</em></p>
+
 ## Before you start
 
 Start after Quick Start gives you a working chat — installation is its own variable runway of sign-ins and downloads, and it isn't hour one. You need a working chat, the default workspace, and a free Airtable account. Nothing else. No channels, no cron, no plugins. That's on purpose.

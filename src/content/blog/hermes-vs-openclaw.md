@@ -68,6 +68,9 @@ The job-search test was the clearest example. Both tools did the mechanics fine 
 
 Neither answer is wrong. The problem is the slide: I asked for one thing, and the other thing slipped in, driven by stored context. What I would love from a tool in that moment is a question — "is this what you want, or does this conflict with what you said before?" — instead of silent substitution. Hermes's automatic memory makes that kind of substitution more likely, because it has more unexamined context to slide in.
 
+
+<p class="inline-cta"><em>If you’re still deciding whether to run one, <a href="/start/">five emails</a> cover the costs and tradeoffs.</em></p>
+
 ## The scoreboard
 
 Scores are my judgment from reading the paired artifacts side by side, not a measured quantity:

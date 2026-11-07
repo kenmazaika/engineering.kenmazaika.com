@@ -56,6 +56,9 @@ The $30.93 line is the one that expands and contracts with use. The $20 line buy
 
 This post is about the bill that comes back next month, not the one-time setup.
 
+
+<p class="inline-cta"><em>If you’re thinking about trying an agent yourself, I put together <a href="/start/">five emails</a> on the costs, models, and how I’d get started.</em></p>
+
 ## Why 1.75 billion tokens were not the cost center
 
 The DeepSeek meter recorded **1.75 billion tokens across 14,347 requests** and charged **$30.93**. The token count looks like the headline. It was not the cost center.

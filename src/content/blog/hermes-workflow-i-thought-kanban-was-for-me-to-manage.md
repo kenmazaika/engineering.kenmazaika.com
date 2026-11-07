@@ -40,6 +40,9 @@ Make a new version. Waffle it.
 
 In practice, I add `Waffle it.` to the end of a prompt, and the quality of the output improves drastically for me. The request goes through the orchestrator, and three distinct profiles handle the work: a maker creates it, a critic reviews it, and a verifier checks the result.
 
+
+<p class="inline-cta"><em>If you’re new to orchestrating agents, <a href="/start/">five emails</a> cover the first workflow.</em></p>
+
 ## The skill
 
 This is the current public-safe skill that defines how the orchestrator handles that middle; readers can copy it as `SKILL.md`. For parity checks, I normalize one optional final newline on both the embedded and standalone copies.

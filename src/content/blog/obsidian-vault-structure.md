@@ -76,6 +76,9 @@ There's a small amount of evidence for why the shelf framing helps, beyond it be
 *Neuron*, six weeks of method-of-loci training — associating items with remembered places — took recall of a
 72-word list from about 26 words to about 62. Place is a memory aid. The agent doesn't need the metaphor; I do.
 
+
+<p class="inline-cta"><em>If you want the full system behind this tour, I break it down in <a href="/loop-breakdown/">seven emails</a>.</em></p>
+
 ## 00 — INBOX
 
 This is the one I look at first. The agent and I needed a way to talk when I'm not sitting in a chat, and more

@@ -24,6 +24,9 @@ That exposed a useful rule for working with AI agents:
 
 An agent's results depend on more than the model. They also depend on its search and extraction providers, browser access, credentials, permissions, dependencies, and tool configuration. If one of those is missing or silently falling back, model comparisons can be misleading.
 
+
+<p class="inline-cta"><em>If you’re still setting up, <a href="/start/">five emails</a> cover the basics before tuning.</em></p>
+
 ## The Hermes setup audit prompt
 
 Here is the prompt I now use to audit a Hermes setup:

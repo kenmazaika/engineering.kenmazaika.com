@@ -8,6 +8,9 @@ noindex: true
 showPopup: true
 ---
 
+
+<p class="inline-cta"><em>For the starting path rather than the kit itself, <a href="/start/">five emails</a> cover it.</em></p>
+
 ## The Hermes Kit
 
 A field guide to running an AI agent on real work: which models hold up, which setups break, and what it actually costs.

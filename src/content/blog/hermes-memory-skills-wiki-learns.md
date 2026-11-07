@@ -78,6 +78,9 @@ The workflow is not “save a note.” It is:
 
 That distinction matters because most useful thinking does not arrive fully formed. It needs intermediate artifacts.
 
+
+<p class="inline-cta"><em>I go deeper on the memory and wiki setup in <a href="/loop-breakdown/">seven emails</a>.</em></p>
+
 ## I ask it for questions, not summaries
 
 Every morning, one scheduled Hermes job reads the goals, the index, the existing concepts, the open questions, and the working documents. Its instruction is to identify one gap that could change how I spend my limited time.

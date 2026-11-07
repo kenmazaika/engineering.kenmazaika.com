@@ -53,6 +53,9 @@ The third piece is the **record**: the ticket file. When live mode opens, the ti
 
 The kit supplies Direction. The ticket and project folder supply Routing. The running log supplies Collaboration. The recap and durable artifacts make later work build on a real record, which is the useful form of Compounding.
 
+
+<p class="inline-cta"><em>I walk through how these hooks fit into my Obsidian workflow in the <a href="/loop-breakdown/">seven-part breakdown</a>.</em></p>
+
 ## A project bundle makes agent work resumable
 
 The live ticket is a running work log. Behind it is a project bundle—in my case, a QBall—that holds longer-lived state, decisions, receipts, lineage, and the artifacts themselves. The ticket points into that bundle while the conversation is active. That keeps chat fast without making it disposable.

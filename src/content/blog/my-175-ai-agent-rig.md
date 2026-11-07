@@ -58,6 +58,9 @@ That is a better standard for starter hardware than maximum theoretical performa
 
 The OptiPlex clears that bar. It is common hardware, easy to find used, and powerful enough to coordinate cloud-model work. If it dies, I can replace the machine without redesigning the whole setup. The agent's durable work lives in files and configuration, not in some magical property of this particular computer.
 
+
+<p class="inline-cta"><em>If you’re weighing the hardware, the broader starting path is in <a href="/start/">five emails</a>.</em></p>
+
 ## What production-grade means for an agent
 
 For a personal agent doing real work, I need five things:

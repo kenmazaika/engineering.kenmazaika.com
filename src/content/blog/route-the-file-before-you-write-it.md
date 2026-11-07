@@ -68,6 +68,9 @@ One canonical folder owns each project. Other convenient paths are symlinks, nev
 
 The registry has a maintenance cost. A stale `next action` sends the next session confidently in the wrong direction. I added a weekly vault-maintenance skill to refresh the rows, but the portable rule is simpler: if the registry is part of the resume path, updating it is part of finishing the work.
 
+
+<p class="inline-cta"><em>The full routing and project system is in <a href="/loop-breakdown/">seven emails</a>.</em></p>
+
 ## Placement and recall are different jobs
 
 The same day I installed this rule, I temporarily switched off my memory-search tool. Project state was still available in `BALL.md` and `LINEAGE.md`. That was one same-day observation, not a controlled test, and it does not prove this convention reduces lost work or makes agents resume faster.

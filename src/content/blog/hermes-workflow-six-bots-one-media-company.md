@@ -20,3 +20,6 @@ Writing was never the bottleneck in content production. Finding the idea, anglin
 The fix is a team of six specialized Hermes bots, each owning one decision: **Signal Scout** finds ideas with a reason to exist, **Researcher** builds the evidence, **Content Strategist** picks the angle, **Long-form Writer** produces the flagship, **Distribution Bot** rebuilds it natively per platform, and **Editor** checks everything before it reaches you. A shared vault holds voice, audience, and proof, every handoff is an inspectable record, and a human stays at the approval gate.
 
 [@VibeMarketer_](https://x.com/vibemarketer_) wrote the full field guide: [How to Build a One-Person Media Company With Hermes Bots](https://x.com/vibemarketer_/status/2093330541177352217). Worth reading if you use Hermes for content.
+
+
+<p class="inline-cta"><em>If you want the simpler starting version, <a href="/start/">five emails</a> cover it.</em></p>

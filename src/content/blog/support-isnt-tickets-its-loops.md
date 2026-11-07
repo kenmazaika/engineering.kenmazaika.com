@@ -49,6 +49,9 @@ Here's the loop I mean (Figure 1). Requests arrive from every angle — an email
 
 Two things fall out of drawing it. The steps across the top are **repetitive and rule-shaped** — a machine can run them. The right edge is **judgment** — the novel case, the angry customer, the high-stakes call — and a person should keep it. Support, seen this way, is a loop with a human bolted onto the exceptions.
 
+
+<p class="inline-cta"><em>If you want to try this on your own queue, I put the starting path into <a href="/start/">five emails</a> — costs, models, and the first workflow.</em></p>
+
 ## Support is loops, not tickets
 
 To check that this wasn't just my one company, I pulled twenty real support and customer-success job postings and clustered the responsibilities. Fifteen recurring duties fell out, in four families: a **case loop** (intake → triage → resolve → escalate → close), a **learning loop** (cases → patterns → docs → upstream → fewer cases), an **account loop** (onboard → monitor → renew), and a **system loop** (set standards → staff → inspect → change the tooling). The most common duty on the list wasn't answering anything — it was *improving the workflows and tooling*. The job is loops all the way down.

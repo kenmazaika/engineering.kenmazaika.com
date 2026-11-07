@@ -64,6 +64,9 @@ Nothing in there is proprietary. That's the whole reason this works: the agent d
 
 **Remotely Save is not Obsidian Sync: one is a free community plugin writing to storage you own, the other is the paid first-party service that keeps the vault to itself.** I use the plugin because owning the folder is what lets the agent's machine have the same files.
 
+
+<p class="inline-cta"><em>This is one piece of the setup; <a href="/loop-breakdown/">seven emails</a> cover the rest.</em></p>
+
 ## Step 1 — Install Obsidian and make a vault
 
 Install it from the App Store or Play Store, then create a new vault and name it. Mine is `JDAK Vault` because I run it on the [JDAK framework](https://github.com/kenmazaika/jdak-template); the name is yours.

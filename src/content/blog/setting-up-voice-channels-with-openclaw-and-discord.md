@@ -88,6 +88,9 @@ The block, after:
 
 (You'll need an API account to do this — OpenAI, or Grok if you want to see whether that side is cheaper.)
 
+
+<p class="inline-cta"><em>If you’re still building the basics, <a href="/start/">five emails</a> cover the first automation.</em></p>
+
 ## What it feels like now
 
 The realtime model answers first, then tells you what it actually called. Talking to it feels less like talking *to* my agent and more like talking to someone who has access to my agent — and it is very effective. Back-and-forth is what this is supreme at, and the awkward pause is gone.

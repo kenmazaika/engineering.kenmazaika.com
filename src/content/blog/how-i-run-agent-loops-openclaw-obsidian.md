@@ -73,6 +73,9 @@ So does the third.
 
 Every loop answers all seven. The system's job is that the answers already exist.
 
+
+<p class="inline-cta"><em>I go deeper on the loops and vault in <a href="/loop-breakdown/">seven emails</a>.</em></p>
+
 ## Two halves: the runtime and the state store
 
 OpenClaw supplies the runtime. A cron entry starts an isolated session, hands it a prompt, and gives it model

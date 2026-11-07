@@ -60,6 +60,9 @@ Peak hours are 01:00–04:00 and 06:00–10:00 UTC — 9am to noon and 2 to 6pm 
 
 If you run agents, the questions are concrete: how big is the hike, and when should work be scheduled to dodge the peak? A rate table doesn't answer that at a glance. A 24-hour chart does — flat dashed line for the old price, sawtooth for the new one, spikes on Beijing business hours. Your agent doesn't care what time it is. Your bill does.
 
+
+<p class="inline-cta"><em>I write about AI tools with receipts; <a href="/subscribe/">get the next post by email</a>.</em></p>
+
 ## Getting to a fair fight
 
 My first attempts weren't apples-to-apples — both models had freedom in both directions, and the gap looked much bigger than it was. I couldn't tell how much was vision and how much was two models choosing differently.

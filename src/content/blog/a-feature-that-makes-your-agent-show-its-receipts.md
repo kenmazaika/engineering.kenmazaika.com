@@ -52,6 +52,9 @@ The ungrounded run flattened all of this into "use DeepSeek." It also got a few 
 
 That's the difference. Grounded Citations converts a plausible answer into one you can act on.
 
+
+<p class="inline-cta"><em>If you want more of these tests, <a href="/subscribe/">get the next post by email</a>.</em></p>
+
 ## The cache-blend twist
 
 The most counterintuitive part is worth calling out on its own. If you compare output prices in isolation, OpenRouter at $0.168/M looks like the clear win over DeepSeek direct at $0.66/M off-peak. That's the "obvious" move — and it's wrong for how agents actually run.

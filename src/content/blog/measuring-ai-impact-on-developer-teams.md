@@ -74,6 +74,9 @@ Taken together, the three results explain why there is still no trustworthy gene
 
 ***
 
+
+<p class="inline-cta"><em>I write about what actually works when running agents; you can <a href="/subscribe/">get the next post by email</a>.</em></p>
+
 ## Code production is not the same as shipped releases
 
 The next place to look is the pipeline between writing code and shipping it. The studies below measure different populations and outcomes, so they cannot be combined into one productivity number, but they agree on the direction: code production can rise much faster than shipped releases.

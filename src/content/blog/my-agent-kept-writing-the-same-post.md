@@ -22,6 +22,9 @@ A month of engineering output on one theme: "the review is the bottleneck." Blog
 
 I was experimenting with OpenClaw at the time, running the same research task one-shot on both harnesses. The Hermes output got pulled into the same well-worn track — the review bottleneck again. The OpenClaw output didn't. One run isn't a controlled experiment, and I'm not claiming it is. But it made the question concrete: what in my setup was doing the steering? (The full side-by-side field test is [Hermes vs OpenClaw](/blog/hermes-vs-openclaw/).)
 
+
+<p class="inline-cta"><em>The memory structure behind this is in <a href="/loop-breakdown/">seven emails</a>.</em></p>
+
 ## The root cause
 
 One piece of feedback, given in the context of one specific post: "I really liked this idea of the peer review thing." Memory stripped the context and generalized it into a global steering signal. Consolidation drops the applicability conditions — the when and where of the feedback — and keeps only the rule.

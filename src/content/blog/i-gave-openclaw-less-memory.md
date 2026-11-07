@@ -53,6 +53,9 @@ During the rollout, the system developed enough latency and timeout friction tha
 
 The test did not say embeddings were bad. It said they were not solving my binding problem.
 
+
+<p class="inline-cta"><em>I cover the file-based memory setup in <a href="/loop-breakdown/">seven emails</a>.</em></p>
+
 ## I needed project continuity, not better similarity search
 
 The problem that sent me into memory tuning was simple: I would open a new Discord thread and have to explain the project again. Work lived in several chats and several folders. I did not know what the agent knew, and it did not know which artifact represented the current state.

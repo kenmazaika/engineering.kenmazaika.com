@@ -47,6 +47,9 @@ Without a control a guide gets credit for everything: a draft improves and the g
 
 I picked one thing: a 663-upvote r/OpenClaw post, tip three — *"Work on this overnight doesn't work the way you think."* The brief was a short essay about that post, 150–200 words, no headers. The post is the subject. The essay is the sample, and the same one gets written three ways: plain, under the full guide, under the trimmed one.
 
+
+<p class="inline-cta"><em>I write about what actually works when running agents; you can <a href="/subscribe/">get the next post by email</a>.</em></p>
+
 ## The same essay, no guide
 
 > I learned to stop treating "work on this overnight" as a durable instruction. A highly voted r/OpenClaw post—663 upvotes—calls out the same trap: a chat session is stateful only while that chat stays open. If I tell the agent to keep working, then close the chat, it does not continue holding the task in memory. The work disappears with the session. For actual background work, I use cron jobs with isolated session targets. Each run starts an independent agent session on schedule, gives it a defined job, and messages me with the result. That is reliable because the task is encoded outside the conversation instead of depending on a chat remaining alive. For one-off deferred work, cron alone is not enough; I pair it with a queue. The queue can be Notion, SQLite, or even a plain text file. A scheduled agent checks for pending items, claims one, does the work, records the outcome, and notifies me. The rule I use is simple: chat is for work happening now; cron plus durable state is for work that must survive after I leave.

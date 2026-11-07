@@ -101,6 +101,9 @@ Five tests, in the shape of work I really do (original run on 2026-08-17, with a
 
 Eleven models: deepseek-v4-flash, glm-4.5, glm-4.5-flash, glm-5.3, mimo-v2.5, kimi-k2.6, grok-4.6, gpt-5.5, gpt-5.6-luna, gpt-5.6-terra, gpt-5.6-sol — plus GLM-family native vision on the tests that need eyes.
 
+
+<p class="inline-cta"><em>I go deeper on the model choices and cost tradeoffs in <a href="/start/">five emails</a>.</em></p>
+
 ## The results by task
 
 ### Test 1 — The weekly workflow: research vs. generic

@@ -33,3 +33,6 @@ The instruction does not tell Hermes to ignore my request. It tells Hermes to ch
 I keep it in Hermes's persistent user profile, `USER.md`. Hermes loads that profile in future sessions, so the preference carries into the next conversation.
 
 [Hermes persistent memory documentation](https://hermes-agent.nousresearch.com/docs/user-guide/features/memory)
+
+
+<p class="inline-cta"><em>If you’re just getting started with agent instructions, <a href="/start/">five emails</a> cover the first workflow.</em></p>

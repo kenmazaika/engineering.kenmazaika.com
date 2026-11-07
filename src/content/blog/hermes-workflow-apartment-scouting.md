@@ -55,6 +55,9 @@ Saved-search alerts were the better interface. Zillow and Trulia already know wh
 
 Hermes still opens accessible listing pages and searches an exact address elsewhere when it needs to verify something. Scraping just is not responsible for discovery anymore.
 
+
+<p class="inline-cta"><em>If you want to build a workflow like this, <a href="/start/">five emails</a> cover the first one.</em></p>
+
 ## Give the agent its own inbox
 
 The rental alerts go to a dedicated Gmail account that I use for agent-facing workflows.

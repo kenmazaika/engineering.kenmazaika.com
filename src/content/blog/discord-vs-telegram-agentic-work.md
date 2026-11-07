@@ -37,6 +37,9 @@ I'd learned one thing by then: multiple channels beat one. So I made four, each 
 
 *The four workflow channels — General, Capture, wwjd, Wispr. One clicked; the rest sat there.*
 
+
+<p class="inline-cta"><em>If you’re choosing where to run yours, <a href="/start/">five emails</a> cover the setup tradeoffs.</em></p>
+
 ## The clutter failure
 
 Then the real problem showed up. My general channel would be mid-turn — my agent churning on something, me waiting on output — and I'd want to do something else in parallel. So I'd grab one of those unused workflow channels and use it for whatever I was actually doing, which was almost never the workflow it was named for.

@@ -37,6 +37,9 @@ Cognition looked at the same architecture and said don't ([Don't Build Multi-Age
 
 Both are right, and the gap between them is the lesson: isolation buys independent breadth and charges for it in tokens and shared reasoning. Spend it where the work is parallel. Refuse it where the steps depend on each other.
 
+
+<p class="inline-cta"><em>The file handoff is one part of the larger system in <a href="/loop-breakdown/">seven emails</a>.</em></p>
+
 ## The fork: keep it, hand it off, or withhold it
 
 "More context is bad" is too flat to actually use, so here's the plain version. Three questions decide it.

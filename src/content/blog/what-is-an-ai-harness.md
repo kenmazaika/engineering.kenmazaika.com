@@ -77,6 +77,9 @@ If you could teach a careful junior operator to follow those five lines, you can
 
 [OpenClaw and Hermes](/blog/hermes-vs-openclaw/) are two examples of tools built around this shape. They can keep instructions in readable files, call approved tools, and run work on a schedule or in response to an event. Their feature lists matter less than the practical consequence: a workflow can retain its procedure, touch the right systems, and come back with exceptions after you close the chat tab.
 
+
+<p class="inline-cta"><em>If you’re new to this, <a href="/start/">five emails</a> cover what a harness is good for and how to start.</em></p>
+
 ## What it looks like in a support queue
 
 Consider a small SaaS support team. A customer writes in because setup failed. The answer may be in the documentation, the account record, a prior ticket, or an engineer's note. The manual job is not merely “write an email.” It is: identify the customer, recognize the issue, find the approved answer, write the reply, update the ticket, record the pattern, and chase it if the customer goes quiet.

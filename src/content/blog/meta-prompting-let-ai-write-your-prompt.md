@@ -34,6 +34,9 @@ You know what you want. The AI knows how to structure instructions. The gap betw
 
 When you write a prompt yourself, you're doing two jobs: figuring out what you want and figuring out how to ask for it. This technique splits those jobs. You handle the first. The AI handles the second.
 
+
+<p class="inline-cta"><em>If you’re new to prompting agents, <a href="/start/">five emails</a> cover the first workflow.</em></p>
+
 ## A real example
 
 I had a topic I wanted to research — how to measure AI's impact on engineering teams. I had opinions, but no plan. So I talked into my AI for a few minutes. Thirteen hundred words of scattered thoughts.

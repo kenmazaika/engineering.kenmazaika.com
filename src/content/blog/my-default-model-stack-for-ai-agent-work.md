@@ -31,6 +31,9 @@ DeepSeek Flash is, in my experience, as-is GPT but 90–97% of the way there. Th
 
 When my recent test battery ran the job-scouting task, DeepSeek's quantity-as-quality approach — filter less, hand over raw volume — turned out to be a strategy, not a flaw. When the model is cheap, you can afford to let it spray and then filter yourself. It returned 23 listings where most models returned five to eight, and its volume was what produced the usable hits.
 
+
+<p class="inline-cta"><em>If you’re choosing models for your own setup, <a href="/start/">five emails</a> cover the tradeoffs and costs.</em></p>
+
 ## The vision blind spot
 
 Here's the lesson that earned the third layer.

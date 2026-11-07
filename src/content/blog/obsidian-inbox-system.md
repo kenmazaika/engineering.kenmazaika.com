@@ -61,6 +61,9 @@ A folder in the vault avoids all three, and adds something none of them can do â
 - **A ticket** carries a long job across sessions: what was done, whose turn it is, what is next.
 - **A decision card** is the same idea for one choice, with the options pre-written.
 
+
+<p class="inline-cta"><em>This inbox is one piece of a larger setup. I break down the full system in <a href="/loop-breakdown/">seven emails</a>, including the files and workflows I actually use.</em></p>
+
 ## The docs are the agent's instructions
 
 Every folder has a `README.md`, and the vault root has a `SCHEMA.md`. That looks like documentation for you. It is also the agent's rulebook, and that is the more load-bearing job. The schema opens with:
