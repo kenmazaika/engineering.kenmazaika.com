@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://engineering.kenmazaika.com/sitemap-index.xml

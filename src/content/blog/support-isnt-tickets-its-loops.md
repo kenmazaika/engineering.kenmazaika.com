@@ -116,9 +116,9 @@ To be clear about what this is: a harness is a support-**engineer's** tool. It s
 
 Two numbers make this cheaper than it sounds.
 
-The hardware first: you don't need anything special. Mine runs on a **used desktop I bought on Facebook Marketplace for $175** — an old PC doing work that used to need a data-center contract. ([Here's the exact box.](https://engineering.kenmazaika.com/blog/my-175-ai-agent-rig/))
+The hardware first: you don't need anything special. Mine runs on a **used desktop I bought on Facebook Marketplace for $175** — an old PC doing work that used to need a data-center contract. ([Here's the exact box.](/blog/my-175-ai-agent-rig/))
 
-The running cost: the harnesses are **open source**, and the tokens are cheap when you route to the low-cost lane. Pointed at a Chinese model like DeepSeek, running this kind of work lands around **$50 a month** — for heavy use, not a demo. ([Here's the full bill.](https://engineering.kenmazaika.com/blog/cost-to-run-an-agent/))
+The running cost: the harnesses are **open source**, and the tokens are cheap when you route to the low-cost lane. Pointed at a Chinese model like DeepSeek, running this kind of work lands around **$50 a month** — for heavy use, not a demo. ([Here's the full bill.](/blog/cost-to-run-an-agent/))
 
 So the barrier isn't money or hardware. It's deciding which loop to hand over first.
 
