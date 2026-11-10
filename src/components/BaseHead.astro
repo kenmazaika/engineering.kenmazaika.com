@@ -98,14 +98,15 @@ const jsonLd = JSON.stringify([personSchema, websiteSchema]);
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:alt" content={imageAlt} />
 
-<!-- Google tag (gtag.js) -->
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KYMS6PB7XC"></script>
+<!-- Google Tag Manager -->
+<script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MF3D6HNN');</script>
+<!-- End Google Tag Manager -->
+
+<!-- gtag shim: keeps existing gtag('event', …) calls flowing into the GTM dataLayer -->
 <script is:inline>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
-
-	gtag('config', 'G-KYMS6PB7XC');
 </script>
 
 <!-- Twitter / X -->
