@@ -25,6 +25,7 @@ export const POPUP_ROUTES: Record<string, PopupCampaign> = {
 	'setting-up-voice-channels-with-openclaw-and-discord': 'start',
 
 	// Obsidian / advanced operating system
+	'inspect-harness': 'obsidian',
 	'obsidian-vault-structure': 'obsidian',
 	'obsidian-inbox-system': 'obsidian',
 	'obsidian-vault-on-your-phone': 'obsidian',
