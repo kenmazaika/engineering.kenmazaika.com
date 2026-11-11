@@ -28,3 +28,7 @@ mockups/
 
 # obsolete local font copies retained outside the production generator
 scripts/og-fonts/
+
+# generated image variants + manifest (rebuilt by scripts/optimize-images.mjs)
+public/_img/
+src/generated/

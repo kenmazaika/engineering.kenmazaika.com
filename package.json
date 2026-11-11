@@ -9,7 +9,10 @@
     "dev": "astro dev",
     "generate:og": "node scripts/generate-og.mjs",
     "test": "node --test --test-concurrency=1",
-    "build": "npm run generate:og && astro build",
+    "prebuild": "node scripts/optimize-images.mjs",
+		"build": "npm run generate:og && astro build && node scripts/check-image-budget.mjs",
+		"images:budget": "node scripts/check-image-budget.mjs",
+		"deploy": "npm run build && wrangler deploy",
     "preview": "astro preview",
     "astro": "astro"
   },

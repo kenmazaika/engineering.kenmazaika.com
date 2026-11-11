@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -75,6 +76,31 @@ const faqSchema = faq && faq.length > 0 ? {
 		},
 	})),
 } : null;
+
+// Masthead delivery: width-appropriate AVIF + WebP srcsets, one small JPEG
+// fallback. The PNG source art stays in the repo; re-encoding it at display
+// size cost 1.5-7.9 MB per variant, which is the defect this fixes.
+const heroWidths = heroImage
+	? [640, 960, 1280, 1600, 2000].filter((w) => w <= (heroImage.width ?? 2000))
+	: [];
+const heroAvif = heroImage
+	? await Promise.all(heroWidths.map((width) => getImage({ src: heroImage, width, format: 'avif', quality: 50 })))
+	: [];
+const heroWebp = heroImage
+	? await Promise.all(heroWidths.map((width) => getImage({ src: heroImage, width, format: 'webp', quality: 72 })))
+	: [];
+const toSrcset = (images: { src: string; attributes: { width?: number } }[]) =>
+	images.map((img) => `${img.src} ${img.attributes.width}w`).join(', ');
+const heroAvifSrcset = toSrcset(heroAvif);
+const heroWebpSrcset = toSrcset(heroWebp);
+const heroFallback = heroImage
+	? await getImage({
+			src: heroImage,
+			width: Math.min(1280, heroImage.width ?? 1280),
+			format: 'jpeg',
+			quality: 78,
+		})
+	: null;
 ---
 
 <!doctype html>
@@ -101,7 +127,20 @@ const faqSchema = faq && faq.length > 0 ? {
 			<article>
 				{heroImage ? (
 					<header class="article-masthead">
-						<img src={heroImage.src} alt="" class="masthead-bg" fetchpriority="high" />
+						<picture>
+							<source type="image/avif" srcset={heroAvifSrcset} sizes="100vw" />
+							<source type="image/webp" srcset={heroWebpSrcset} sizes="100vw" />
+							<img
+								src={heroFallback.src}
+								width={heroFallback.attributes.width}
+								height={heroFallback.attributes.height}
+								alt=""
+								class="masthead-bg"
+								loading="eager"
+								decoding="async"
+								fetchpriority="high"
+							/>
+						</picture>
 						<div class="masthead-scrim" />
 						<div class="masthead-content">
 							<div class="masthead-textblock">
