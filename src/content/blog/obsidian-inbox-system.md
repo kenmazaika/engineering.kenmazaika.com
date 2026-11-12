@@ -194,7 +194,7 @@ intake: ""        # dictation | command | link | ticket | card  (agent fills aft
 status: new       # new | done
 ```
 
-That is the whole schema: two keys and five boxes. The checked box is the routing key — the agent does that thing, flips `status: new → done`, and links the outcome into the daily note. One item per note, and the note is transient: durable output goes to its numbered home.
+That is the whole schema: two keys and five boxes. The checked box is the routing key — the agent does that thing, flips `status: new → done`, and links the outcome into the [daily note](/blog/daily-note-that-replaced-my-morning-metrics-crawl/). One item per note, and the note is transient: durable output goes to its numbered home.
 
 The template names the note for you (`00.02.03 - Wednesday 10-14 capture`), and the sweep renames it to a descriptive slug later, so a filename never costs you a decision. The catch is that the core Templates plugin will not do this; it needs Templater's `<% %>` syntax and `tp.file.rename()`.
 

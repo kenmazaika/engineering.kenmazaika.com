@@ -8,6 +8,8 @@ pubDate: 'Nov 4, 2026'
 layoutVariant: harness
 heroImage: ../../assets/headers/how-i-run-agent-loops-openclaw-obsidian-masthead.jpg
 related:
+  - title: 'The daily note that replaced my morning metrics crawl'
+    url: '/blog/daily-note-that-replaced-my-morning-metrics-crawl/'
   - title: 'Set Up an Inbox System in Your Obsidian Vault'
     url: '/blog/obsidian-inbox-system/'
   - title: 'Connect Obsidian on Your Phone to Your OpenClaw or Hermes Agent'
