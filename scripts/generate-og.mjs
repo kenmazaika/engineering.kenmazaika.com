@@ -96,7 +96,7 @@ function cardTree({ title, category, active }) {
     element('div', { style: {
       position: 'absolute', right: '76px', top: '556px', fontSize: '19px', fontWeight: 400,
       color: colors.muted,
-    } }, 'engineering.kenmazaika.com'),
+    } }, 'notesfromtheloop.com'),
   );
 }
 
@@ -137,7 +137,7 @@ function startCardTree(portrait) {
     element('div', { style: {
       position: 'absolute', right: '76px', top: '556px', fontSize: '19px', fontWeight: 400,
       color: colors.muted,
-    } }, 'engineering.kenmazaika.com/start/'),
+    } }, 'notesfromtheloop.com/start/'),
   );
 }
 

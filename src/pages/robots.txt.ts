@@ -4,7 +4,7 @@ import type { APIRoute } from 'astro';
 // domain actually serving the build. A hardcoded copy in public/ would keep
 // pointing at the old host after the migration to notesfromtheloop.com.
 export const GET: APIRoute = ({ site }) => {
-	const base = site ?? new URL('https://engineering.kenmazaika.com');
+	const base = site ?? new URL('https://notesfromtheloop.com');
 	const sitemap = new URL('sitemap-index.xml', base).href;
 	const body = `User-agent: *\nAllow: /\n\nSitemap: ${sitemap}\n`;
 
