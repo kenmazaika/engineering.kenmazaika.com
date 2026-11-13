@@ -188,6 +188,24 @@ async function main() {
     const data = parseFrontmatter(source);
     if (!data.title) throw new Error(`${entry} is missing a title`);
     const filename = entry.replace(/\.(md|mdx)$/, '.png');
+
+    // A post with a masthead gets a crop of the real art; the generated title
+    // card is the fallback for posts that have no hero.
+    const hero = data.heroImage;
+    if (hero && hero.startsWith('.')) {
+      const heroPath = path.resolve(contentDir, hero);
+      try {
+        await sharp(heroPath)
+          .resize(1200, 630, { fit: 'cover', position: 'centre' })
+          .png({ compressionLevel: 9 })
+          .toFile(path.join(outputDir, filename));
+        console.log(`Generated public/og/${filename} (masthead)`);
+        continue;
+      } catch (error) {
+        console.warn(`Masthead missing for ${entry}: ${error.message} — falling back to the card`);
+      }
+    }
+
     await renderCard(data, filename, fonts);
     console.log(`Generated public/og/${filename}`);
   }
