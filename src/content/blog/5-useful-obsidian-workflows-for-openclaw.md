@@ -25,8 +25,6 @@ faq:
     answer: "Yes. If the vault syncs to your phone, decisions can be checkboxes in a note. Ticking one gives the agent a durable signal to act on, while the note retains the decision and timestamp."
 ---
 
-# 5 Useful Obsidian Workflows for OpenClaw
-
 For the first few months I used OpenClaw, my project management system was a chat window and the unread filter.
 
 I would start something, get pulled away, and mark the conversation unread. The unread badge was my backlog, and the thread list was my project list. If I cleared the badge, I had usually lost the reminder.

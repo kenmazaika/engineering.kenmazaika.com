@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 import { HIDDEN_PATHS, HIDDEN_SLUGS } from './src/consts';
 import { rehypeResponsiveImages } from './src/lib/rehype-responsive-images.mjs';
+import { remarkStripDuplicateTitle } from './src/lib/remark-strip-duplicate-title.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -38,7 +39,7 @@ const lastmodBySlug = buildLastmodMap();
 export default defineConfig({
 	site: 'https://notesfromtheloop.com',
 	integrations: [
-		mdx({ rehypePlugins: [rehypeResponsiveImages] }),
+		mdx({ remarkPlugins: [remarkStripDuplicateTitle], rehypePlugins: [rehypeResponsiveImages] }),
 		sitemap({
 			filter: (page) =>
 				!HIDDEN_SLUGS.some((slug) => page.includes(`/blog/${slug}/`)) &&
@@ -54,6 +55,7 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
+		remarkPlugins: [remarkStripDuplicateTitle],
 		rehypePlugins: [rehypeResponsiveImages],
 		shikiConfig: {
 			theme: oneLightTheme,
