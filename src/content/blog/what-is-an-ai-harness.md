@@ -129,6 +129,8 @@ Start with a dedicated account or limited-access queue. Keep early actions in a 
 
 This is also why the runbook is part of the product. It lets a person inspect the policy, identify where the workflow is overreaching, and improve it after a real failure. You want a visible exception queue, not a mystery system with a cheerful summary.
 
+When the fix is not obvious, the safer move is [to inspect the harness before changing the behavior](/blog/inspect-harness/): bundle everything the agent knows about that one behavior, hand it to a second model, and change the prompt that model writes back rather than guessing at an edit.
+
 ## The first workflow is the decision
 
 You do not need an “AI transformation.” Pick one repeated job with four properties:

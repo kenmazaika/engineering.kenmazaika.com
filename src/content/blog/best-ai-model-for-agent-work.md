@@ -36,6 +36,8 @@ faq:
 
 > **The full battery, 101 pages:** every prompt, every scored result, every receipt — **[download the PDF here (2.1 MB)](/battery-post-raw-data.pdf)**. Everything below is a summary of what's in it; you should draw your own conclusions.
 
+> If you want a smaller version of the same method, I ran one question twice — once with citation grounding on, once off — and kept both answers: [a feature that makes your agent show its receipts](/blog/a-feature-that-makes-your-agent-show-its-receipts/).
+
 > **Setup note:** I ran this battery on Hermes in August 2026. I've since run the same kind of real work through OpenClaw side by side — the full comparison with receipts is [Hermes vs OpenClaw](/blog/hermes-vs-openclaw/) — and moved the main workflow there. The measurements and rankings below are unchanged: this is a dated experiment, not a permanent recommendation.
 
 ## The short answer

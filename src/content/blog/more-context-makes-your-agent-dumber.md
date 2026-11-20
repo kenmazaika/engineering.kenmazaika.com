@@ -111,6 +111,8 @@ That's the whole rule, in four lines:
 
 A file handoff becomes more useful when a [named hook keeps its state current](/blog/agent-hooks/).
 
+And when a fresh agent keeps getting one stage wrong, the first move is not more context — it is [inspecting the harness for that behavior](/blog/inspect-harness/) and changing the instruction the artifact actually carries.
+
 ## The 10× you don't see
 
 Manus calls the KV-cache "the single most important metric" for a production agent, and the arithmetic is stark ([July 18, 2025](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)): on Claude Sonnet, cached input tokens cost $0.30 per million against $3 uncached — a 10× gap. A timestamp precise to the second at the top of the system prompt changes the prefix on every call and throws the cache away. So "write it down" has a corollary: write it down, and keep the front of the prompt frozen. The saving isn't in the model you pick. It's in not changing the thing you already sent.
