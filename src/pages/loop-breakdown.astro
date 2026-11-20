@@ -3,6 +3,7 @@
 // Hidden: noindex + excluded from the sitemap via HIDDEN_PATHS. Not linked from anywhere.
 // Form posts to Buttondown with metadata__course=agent-vault-7day (the course cohort).
 import BaseHead from '../components/BaseHead.astro';
+import NewsletterAnalytics from '../components/NewsletterAnalytics.astro';
 import { SITE_TITLE } from '../consts';
 
 const shelves = [
@@ -101,6 +102,8 @@ const parts = [
 						class="nftl-form"
 						action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
 						method="post"
+						data-nl-form
+						data-nl-placement="loop_breakdown_page"
 					>
 						<label class="sr-only" for="email-hero">Your email</label>
 						<input id="email-hero" type="email" name="email" placeholder="Your email" required />
@@ -154,6 +157,8 @@ const parts = [
 					class="nftl-form nftl-form-center"
 					action="https://buttondown.com/api/emails/embed-subscribe/mazaika"
 					method="post"
+					data-nl-form
+					data-nl-placement="loop_breakdown_page"
 				>
 					<label class="sr-only" for="email-cta">Your email</label>
 					<input id="email-cta" type="email" name="email" placeholder="Your email" required />
@@ -168,6 +173,7 @@ const parts = [
 			<p>Notes from the Loop · written by Ken Mazaika</p>
 			<p><a href="/subscribe/">Subscribe</a> · <a href="/blog/">Writing</a> · <a href="/about/">About</a></p>
 		</footer>
+		<NewsletterAnalytics />
 	</body>
 </html>
 
