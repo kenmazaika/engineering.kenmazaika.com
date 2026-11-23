@@ -1,4 +1,4 @@
-import { readFile, readdir, mkdir } from 'node:fs/promises';
+import { readFile, readdir, mkdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import satori from 'satori';
@@ -8,6 +8,14 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentDir = path.join(root, 'src/content/blog');
 const outputDir = path.join(root, 'public/og');
 const fontDir = path.join(root, 'node_modules/@fontsource');
+
+// Social previews ship as JPEG, not PNG. Every card here is either a
+// photographic masthead crop or a flat 1200x630 panel; PNG carries both at
+// 3-10x the bytes (the 20 masthead posts alone were 13.6 MB as PNG and 0.9 MB
+// as JPEG at q82). These files are fetched by scrapers and chat clients, never
+// rendered as page art, so JPEG artifacts do not cost anything visible.
+const JPEG_QUALITY = 82;
+const OUTPUT_EXT = 'jpg';
 
 const colors = {
   background: '#FAF8F5',
@@ -154,11 +162,19 @@ async function renderCard(data, filename, fonts) {
     height: 630,
     fonts,
   });
-  await sharp(Buffer.from(svg)).png().toFile(path.join(outputDir, filename));
+  await sharp(Buffer.from(svg))
+    .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
+    .toFile(path.join(outputDir, filename));
 }
 
 async function main() {
   await mkdir(outputDir, { recursive: true });
+  // Drop previously generated cards first. Without this a PNG-era file would
+  // sit next to its JPEG replacement forever and keep shipping 1 MB previews
+  // that nothing references.
+  for (const name of await readdir(outputDir)) {
+    if (/\.(png|jpe?g)$/i.test(name)) await unlink(path.join(outputDir, name));
+  }
   const [newsreader600, newsreader700, inter400, inter600] = await Promise.all([
     readFile(path.join(fontDir, 'newsreader/files/newsreader-latin-600-normal.woff')),
     readFile(path.join(fontDir, 'newsreader/files/newsreader-latin-700-normal.woff')),
@@ -177,17 +193,19 @@ async function main() {
   await renderCard({
     title: 'Notes from the Loop',
     ogCategory: 'NOTES FROM THE LOOP · FIELD NOTES & SYSTEMS',
-  }, 'default.png', fonts);
+  }, `default.${OUTPUT_EXT}`, fonts);
 
   const startSvg = await satori(startCardTree(portrait), { width: 1200, height: 630, fonts });
-  await sharp(Buffer.from(startSvg)).png().toFile(path.join(outputDir, 'start.png'));
-  console.log('Generated public/og/start.png');
+  await sharp(Buffer.from(startSvg))
+    .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
+    .toFile(path.join(outputDir, `start.${OUTPUT_EXT}`));
+  console.log(`Generated public/og/start.${OUTPUT_EXT}`);
 
   for (const entry of entries) {
     const source = await readFile(path.join(contentDir, entry), 'utf8');
     const data = parseFrontmatter(source);
     if (!data.title) throw new Error(`${entry} is missing a title`);
-    const filename = entry.replace(/\.(md|mdx)$/, '.png');
+    const filename = entry.replace(/\.(md|mdx)$/, `.${OUTPUT_EXT}`);
 
     // A post with a masthead gets a crop of the real art; the generated title
     // card is the fallback for posts that have no hero.
@@ -197,7 +215,7 @@ async function main() {
       try {
         await sharp(heroPath)
           .resize(1200, 630, { fit: 'cover', position: 'centre' })
-          .png({ compressionLevel: 9 })
+          .jpeg({ quality: JPEG_QUALITY, mozjpeg: true })
           .toFile(path.join(outputDir, filename));
         console.log(`Generated public/og/${filename} (masthead)`);
         continue;

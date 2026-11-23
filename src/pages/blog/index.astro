@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import NewsletterSignup from '../../components/NewsletterSignup.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { withPublication } from '../../consts';
 
 const readingTime = (body: string) => Math.max(1, Math.ceil(body.trim().split(/\s+/).length / 220));
 const posts = (await getCollection('blog'))
@@ -18,7 +18,7 @@ const posts = (await getCollection('blog'))
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={`Writing — ${SITE_TITLE}`} description="Hands-on field notes about running AI agents, plus long-form essays on the engineering systems around them." />
+		<BaseHead title={withPublication('OpenClaw & Hermes Field Notes')} description="Hands-on field notes about running AI agents, plus long-form essays on the engineering systems around them." />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
