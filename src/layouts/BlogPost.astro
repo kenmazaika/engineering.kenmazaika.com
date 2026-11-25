@@ -185,7 +185,7 @@ const heroFallback = heroImage
 						<NewsletterSignup placement="article_footer" variant="endnote" cta="Subscribe" />
 					</div>
 				)}
-				{POPUP_ENABLED && popupCampaign !== 'none' && (
+				{POPUP_ENABLED && showPopup && popupCampaign !== 'none' && (
 					<NewsletterPopup campaign={popupCampaign} />
 				)}
 				<footer class="article-footer">

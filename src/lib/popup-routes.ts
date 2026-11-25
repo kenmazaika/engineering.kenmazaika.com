@@ -38,6 +38,9 @@ export const POPUP_ROUTES: Record<string, PopupCampaign> = {
 	'pass-password-store-for-ai-agents': 'obsidian',
 	'capture-workflow': 'obsidian',
 	'hermes-memory-skills-wiki-learns': 'obsidian',
+	'daily-note-that-replaced-my-morning-metrics-crawl': 'obsidian',
+	'5-useful-obsidian-workflows-for-openclaw': 'obsidian',
+	'create-an-intent-map-and-work-map-for-your-personal-agent': 'obsidian',
 
 	// General newsletter
 	'measuring-ai-impact-on-developer-teams': 'general',
